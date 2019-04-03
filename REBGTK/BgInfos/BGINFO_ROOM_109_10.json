@@ -1,0 +1,30 @@
+{
+    "namePrefix": "ROOM_109_10",
+    "status": 0,
+    "bgMd5": "F0CDF1194FAD010DE1984E41C678F3C2",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_109_10"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "masks": []
+}

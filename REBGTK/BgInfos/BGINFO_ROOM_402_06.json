@@ -1,0 +1,30 @@
+{
+    "namePrefix": "ROOM_402_06",
+    "status": 0,
+    "bgMd5": "2F0699E54666481A0FB399CC09DF826B",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_402_06"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "masks": []
+}

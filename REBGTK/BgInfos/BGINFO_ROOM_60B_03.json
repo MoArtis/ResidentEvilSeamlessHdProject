@@ -1,0 +1,30 @@
+{
+    "namePrefix": "ROOM_60B_03",
+    "status": 0,
+    "bgMd5": "1745AECBDBB7765C710081ECAC6A943C",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_60B_03"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "masks": []
+}

@@ -1,0 +1,41 @@
+{
+    "namePrefix": "ROOM_40F_03",
+    "status": 0,
+    "bgMd5": "2731112DDAD7FEECB9282E333817669E",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_40F_03"
+            ],
+            "partIndices": [
+                0
+            ]
+        },
+        {
+            "formatName": "RE2 GameCube",
+            "texNames": [
+                "tex1_128x160_325af231c777b991_5",
+                "tex1_256x240_d0f075dd4a11e1c4_5"
+            ],
+            "partIndices": [
+                1,
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "masks": []
+}

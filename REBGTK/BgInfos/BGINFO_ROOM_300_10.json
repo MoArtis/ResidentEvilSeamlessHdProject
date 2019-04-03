@@ -1,0 +1,768 @@
+{
+    "namePrefix": "ROOM_300_10",
+    "status": 0,
+    "bgMd5": "88DD3BED8E3BD071363B5D22130334F6",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_300_10",
+                "ROOM_300_10_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE2 GameCube",
+            "texNames": [
+                "tex1_128x160_4311a4b08e7ed02c_5",
+                "tex1_256x240_eb9e42e9c8ffc5b6_5",
+                "tex1_256x256_65cb11d31700928a_13a728dc40f20a28_9"
+            ],
+            "partIndices": [
+                1,
+                0,
+                2
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 10,
+    "groupsCount": 2,
+    "maskMd5": "6DAC6330832ED6A6884A1150FBD2FDA6",
+    "maskTexSize": {
+        "x": 256,
+        "y": 256
+    },
+    "useProcessedMaskTex": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 192,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 304,
+                    "y": 48
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                39,
+                48,
+                -1,
+                54,
+                64,
+                -1,
+                69,
+                80,
+                -1,
+                85,
+                96,
+                -1,
+                100,
+                112,
+                -1,
+                115
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 184
+                },
+                "dstPos": {
+                    "x": 256,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                438
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 192
+                },
+                "dstPos": {
+                    "x": 280,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                414,
+                551,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 184
+                },
+                "dstPos": {
+                    "x": 304,
+                    "y": 24
+                },
+                "size": {
+                    "x": 16,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                271,
+                274,
+                -1,
+                287,
+                289,
+                -1,
+                383
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 216,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 256,
+                    "y": 0
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 280,
+                    "y": 0
+                },
+                "size": {
+                    "x": 40,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                959
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 48,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 40
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                791,
+                794,
+                -1,
+                815
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 64,
+                    "y": 192
+                },
+                "dstPos": {
+                    "x": 72,
+                    "y": 48
+                },
+                "size": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                149
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 80,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 88,
+                    "y": 56
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                15
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 248,
+                    "y": 248
+                },
+                "dstPos": {
+                    "x": 104,
+                    "y": 56
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                6
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 176,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 88,
+                    "y": 48
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 160,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 104,
+                    "y": 48
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 144,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 120,
+                    "y": 48
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                2,
+                16,
+                -1,
+                20,
+                32,
+                -1,
+                42,
+                48,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 128,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 136,
+                    "y": 48
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                48,
+                49,
+                64,
+                -1,
+                73,
+                80,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 112,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 152,
+                    "y": 48
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                70,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 96,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 168,
+                    "y": 48
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                64,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 240,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 72,
+                    "y": 24
+                },
+                "size": {
+                    "x": 16,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                383
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 144,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 88,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 120,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 112,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 96,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 136,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                561
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 72,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 160,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                537
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 184,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                512
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 208,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                488
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 224,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 232,
+                    "y": 24
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                463
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 192,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 48,
+                    "y": 0
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 160,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 72,
+                    "y": 0
+                },
+                "size": {
+                    "x": 32,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                767
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 128,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 104,
+                    "y": 0
+                },
+                "size": {
+                    "x": 32,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                767
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 96,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 136,
+                    "y": 0
+                },
+                "size": {
+                    "x": 32,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                767
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 64,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 168,
+                    "y": 0
+                },
+                "size": {
+                    "x": 32,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                767
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 192,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 200,
+                    "y": 0
+                },
+                "size": {
+                    "x": 32,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                767
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 168,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 232,
+                    "y": 0
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                575
+            ]
+        }
+    ]
+}

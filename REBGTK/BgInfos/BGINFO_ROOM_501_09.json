@@ -1,0 +1,30 @@
+{
+    "namePrefix": "ROOM_501_09",
+    "status": 0,
+    "bgMd5": "E7A81C40CA147EAB5A3077B6C07945D5",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_501_09"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "masks": []
+}

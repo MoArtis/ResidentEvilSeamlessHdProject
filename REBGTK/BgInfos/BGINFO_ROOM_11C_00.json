@@ -1,0 +1,32 @@
+{
+    "namePrefix": "ROOM_11C_00",
+    "status": 0,
+    "bgMd5": "99D6A6959918A160CFF3EB3BD62CC6E7",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_11C_00",
+                "ROOM_11C_00_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "3C984135ED67210661D89B93B2972F48",
+    "maskTexSize": {
+        "x": 256,
+        "y": 256
+    },
+    "useProcessedMaskTex": false,
+    "masks": []
+}

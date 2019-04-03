@@ -1,0 +1,8 @@
+== Texture recreation report ==
+== Textures recreation Started! ==
+Selected Format: RE2 GameCube
+ROOM_410_05 is missing the alpha channel texture 0.
+ROOM_410_05 is missing the alpha channel texture 1.
+ROOM_410_05 is missing the alpha channel texture 2.
+ROOM_410_05 is missing the alpha channel texture 3.
+== Textures recreation Done! (1524,9 seconds) ==

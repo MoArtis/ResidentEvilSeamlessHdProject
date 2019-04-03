@@ -1,0 +1,75 @@
+<Project TreatAsLocalProperty="TaskFolder;TaskAssembly">
+  <PropertyGroup>
+    <TaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core' ">netstandard2.0</TaskFolder>
+    <TaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net46</TaskFolder>
+    <TaskAssembly>$(MSBuildThisFileDirectory)..\tasks\$(TaskFolder)\ResourceEmbedder.MsBuild.dll</TaskAssembly>
+    <EmbedderSignAssembly Condition="$(EmbedderSignAssembly) == '' Or $(EmbedderSignAssembly) == '*Undefined*'">$(SignAssembly)</EmbedderSignAssembly>
+    <IntermediateDir>$(ProjectDir)$(IntermediateOutputPath)</IntermediateDir>
+  </PropertyGroup>
+  <UsingTask TaskName="ResourceEmbedder.MsBuild.SatelliteAssemblyEmbedderTask" AssemblyFile="$(TaskAssembly)" />
+  <UsingTask TaskName="ResourceEmbedder.MsBuild.SatelliteAssemblyCleanupTask" AssemblyFile="$(TaskAssembly)" />
+  <UsingTask TaskName="ResourceEmbedder.MsBuild.SatelliteAssemblyCleanupPublishTask" AssemblyFile="$(TaskAssembly)" />
+  <!--
+  We want to run as soon as the satellite assemblies are generated
+
+  Two AfterTargets because Core* is for .Net Core only and the other one for Full framework only.. luckily MSBuild seems to OR the condition automatically
+  -->
+  <Target AfterTargets="GenerateSatelliteAssemblies;CoreGenerateSatelliteAssemblies" Name="EmbedderTarget">
+    <ResourceEmbedder.MsBuild.SatelliteAssemblyEmbedderTask AssemblyPath="@(IntermediateAssembly)"
+                                                            IntermediateDirectory="$(ProjectDir)$(IntermediateOutputPath)"
+                                                            KeyFilePath="$(AssemblyOriginatorKeyFile)"
+                                                            ProjectDirectory="$(ProjectDir)"
+                                                            TargetPath="$(TargetPath)"
+                                                            SignAssembly="$(EmbedderSignAssembly)"
+                                                            References="@(ReferencePath)"
+                                                            DebugSymbols="$(DebugSymbols)"
+                                                            DebugType="$(DebugType)">
+      <Output TaskParameter="EmbeddedCultures" PropertyName="EmbeddedCultures" />
+    </ResourceEmbedder.MsBuild.SatelliteAssemblyEmbedderTask>
+  </Target>
+  <!--
+    Cleanup after generating. Need to selectively run depending on PostBuild:
+    - When no PostBuild events exist, run directly after CoreBuild
+    - Otherwise run before PostBuild events
+    Reason for this: PostBuild runs directly after "CoreBuild", if we just run as "After CoreBuild"
+    then PostBuild will run first, and as noted in issue #9* the user can see/copy all the resource files.
+    * https://github.com/MarcStan/Resource.Embedder/issues/9
+  -->
+  
+  <!--
+  Condition copied from MSBuild post build event
+  TODO: doesn't work correctly, according to MSBuild PostBuildEvent is always empty, except when MSBuild uses it in which case it is correctly filled
+  therefore this condition is always false for me and never triggers -> if PostBuildEvents copy all files they will also see the resource directories as I can't delete them quick enough
+  -->
+  <Target Name="CleanupTargetBeforePostBuild" BeforeTargets="PostBuildEvent"
+          Condition="'$(PostBuildEvent)' != '' and ('$(RunPostBuildEvent)' != 'OnOutputUpdated' or '$(_AssemblyTimestampBeforeCompile)' != '$(_AssemblyTimestampAfterCompile)')">
+    <ResourceEmbedder.MsBuild.SatelliteAssemblyCleanupTask AssemblyPath="@(IntermediateAssembly)"
+                                                           ProjectDirectory="$(ProjectDir)"
+                                                           TargetPath="$(TargetPath)"
+                                                           EmbeddedCultures="$(EmbeddedCultures)"
+                                                           SignAssembly="$(EmbedderSignAssembly)" />
+  </Target>
+  <Target Name="CleanupTargetAfterCoreBuild" AfterTargets="CoreBuild"
+          Condition="'$(PostBuildEvent)' == ''">
+    <ResourceEmbedder.MsBuild.SatelliteAssemblyCleanupTask AssemblyPath="@(IntermediateAssembly)"
+                                                           ProjectDirectory="$(ProjectDir)"
+                                                           TargetPath="$(TargetPath)"
+                                                           EmbeddedCultures="$(EmbeddedCultures)"
+                                                           SignAssembly="$(EmbedderSignAssembly)" />
+  </Target>
+  <!--
+    workaround for publishing as per https://github.com/MarcStan/Resource.Embedder/issues/12
+    the publish task collects all files from obj (not knowing about some being embedded)
+    manually delete them after publish
+    -->
+  <Target Name="ExcludeMergedResources" AfterTargets="_CopyResolvedFilesToPublishAlways">
+    <ResourceEmbedder.MsBuild.SatelliteAssemblyCleanupPublishTask AssemblyPath="@(IntermediateAssembly)"
+                                                                  ProjectDirectory="$(ProjectDir)"
+                                                                  PublishDir="$(PublishDir)"
+                                                                  TargetPath="$(TargetPath)"
+                                                                  SignAssembly="$(EmbedderSignAssembly)"
+                                                                  EmbeddedCultures="$(EmbeddedCultures)"
+                                                                  ExistingPublishPath="@(IntermediateSatelliteAssembliesWithTargetPath->'$(PublishDir)%(Culture)\$(TargetName).resources.dll')">
+    </ResourceEmbedder.MsBuild.SatelliteAssemblyCleanupPublishTask>
+  </Target>
+</Project>

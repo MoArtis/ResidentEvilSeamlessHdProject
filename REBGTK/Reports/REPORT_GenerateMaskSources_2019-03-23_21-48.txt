@@ -1,0 +1,7 @@
+== Mask Source Generation report ==
+== Mask Source Generation Started! ==
+ROOM_109_01 is missing its BG texture in the dump folder (.\Dumps\RE2 Classic Rebirth)
+ROOM_109_02 is missing its BG texture in the dump folder (.\Dumps\RE2 Classic Rebirth)
+ROOM_112_09 is missing its BG texture in the dump folder (.\Dumps\RE2 Classic Rebirth)
+ROOM_112_10 is missing its BG texture in the dump folder (.\Dumps\RE2 Classic Rebirth)
+== Mask source generation done! (1,6 seconds) ==

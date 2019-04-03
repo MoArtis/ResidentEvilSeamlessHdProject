@@ -1,0 +1,169 @@
+{
+    "namePrefix": "ROOM_601_00",
+    "status": 0,
+    "bgMd5": "8B3AA103200D4F78673EDB5AF8A3BD8E",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_601_00",
+                "ROOM_601_00_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE2 GameCube",
+            "texNames": [
+                "tex1_128x160_f4f24149a5c05259_5",
+                "tex1_256x240_bd66c1744c73d227_5",
+                "tex1_128x128_ecd4d6f6fe3fda92_dbf03609e9a436ee_9"
+            ],
+            "partIndices": [
+                1,
+                0,
+                2
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 0,
+    "groupsCount": 1,
+    "maskMd5": "16C5D66F00F752047E8926B50C84190B",
+    "maskTexSize": {
+        "x": 128,
+        "y": 128
+    },
+    "useProcessedMaskTex": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 56,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 248,
+                    "y": 168
+                },
+                "size": {
+                    "x": 24,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                1,
+                -1,
+                16,
+                26,
+                -1,
+                38,
+                51,
+                -1,
+                60,
+                76,
+                -1,
+                82,
+                101,
+                -1,
+                104,
+                126
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 240,
+                    "y": 160
+                },
+                "size": {
+                    "x": 32,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                2,
+                -1,
+                19,
+                35,
+                -1,
+                52,
+                68,
+                -1,
+                86,
+                100,
+                -1,
+                108,
+                111,
+                -1,
+                119,
+                133,
+                -1,
+                152,
+                166,
+                -1,
+                174,
+                177,
+                -1,
+                185,
+                199,
+                -1,
+                218,
+                232,
+                -1,
+                250
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 240,
+                    "y": 152
+                },
+                "size": {
+                    "x": 24,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                34,
+                35,
+                56,
+                -1,
+                61,
+                78,
+                -1,
+                86,
+                100,
+                -1,
+                111,
+                122,
+                -1,
+                136,
+                145,
+                -1,
+                161,
+                169,
+                -1,
+                186
+            ]
+        }
+    ]
+}

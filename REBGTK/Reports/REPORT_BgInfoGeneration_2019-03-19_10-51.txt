@@ -1,0 +1,58 @@
+== BgInfo generation Started! ==
+WARNING: ROOM_109_07_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_110_11_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_110_12_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_00_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_01_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_02_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_03_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_04_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_05_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_06_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_07_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_08_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_11D_09_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_04_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_05_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_06_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_07_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_08_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_09_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_10_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_11_mask.png is a mask without a BG. Please check your CR folder.
+WARNING: ROOM_403_13_mask.png is a mask without a BG. Please check your CR folder.
+INFO:ROOM_108_15 has a duplicate: ROOM_11C_06
+INFO:ROOM_110_14 has a duplicate: ROOM_200_07
+INFO:ROOM_112_15 has a duplicate: ROOM_20F_07
+INFO:ROOM_211_12 has a duplicate: ROOM_213_08
+INFO:ROOM_40A_11 has a duplicate: ROOM_410_06
+INFO:ROOM_40E_11 has a duplicate: ROOM_500_09
+INFO:ROOM_505_08 has a duplicate: ROOM_606_09
+INFO:ROOM_505_09 has a duplicate: ROOM_600_08
+INFO:ROOM_603_15 has a duplicate: ROOM_605_07
+INFO:ROOM_604_15 has a duplicate: ROOM_605_08
+INFO:ROOM_606_06 has a duplicate: ROOM_607_13
+INFO:ROOM_608_00 has a duplicate: ROOM_611_00
+INFO:ROOM_608_01 has a duplicate: ROOM_611_01
+INFO:ROOM_608_02 has a duplicate: ROOM_611_02
+INFO:ROOM_608_04 has a duplicate: ROOM_611_04
+INFO:ROOM_608_05 has a duplicate: ROOM_611_05
+INFO:ROOM_608_07 has a duplicate: ROOM_611_07
+INFO:ROOM_608_08 has a duplicate: ROOM_611_08
+INFO:ROOM_608_09 has a duplicate: ROOM_611_09
+INFO:ROOM_608_10 has a duplicate: ROOM_611_10
+INFO:ROOM_608_11 has a duplicate: ROOM_611_11
+INFO:ROOM_700_11 has a duplicate: ROOM_704_00
+INFO:ROOM_700_12 has a duplicate: ROOM_704_01
+Warning: ROOM_11C_00 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_11C_01 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_11C_02 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_11C_03 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_11C_04 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_11C_05 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_40C_00 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_40C_01 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_40C_02 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+Warning: ROOM_40C_03 is supposed to have a mask but the associated RDT file has no mask data... This is not normal.
+1197 BgInfos, 23 duplicates for 2081 textures, 502 Rdt files (367 Uniques)
+== BgInfo generation done! (115,2 seconds) ==

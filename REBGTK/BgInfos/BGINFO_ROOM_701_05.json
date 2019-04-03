@@ -1,0 +1,404 @@
+{
+    "namePrefix": "ROOM_701_05",
+    "status": 0,
+    "bgMd5": "D91EB362DC0695E93EC3837D97F57476",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_701_05",
+                "ROOM_701_05_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE2 GameCube",
+            "texNames": [
+                "tex1_128x160_0d78407dce7d1f2a_5",
+                "tex1_256x240_68feffe0a0ea298c_5",
+                "tex1_256x256_2e4ee026255156ca_59e20be699de8217_9"
+            ],
+            "partIndices": [
+                1,
+                0,
+                2
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 5,
+    "groupsCount": 2,
+    "maskMd5": "57D7C28DAE7DD298E558BF51AC82DE07",
+    "maskTexSize": {
+        "x": 256,
+        "y": 256
+    },
+    "useProcessedMaskTex": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 256,
+                    "y": 224
+                },
+                "size": {
+                    "x": 32,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                511
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 216,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 224
+                },
+                "size": {
+                    "x": 32,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                511
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 184,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 256,
+                    "y": 208
+                },
+                "size": {
+                    "x": 32,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                160,
+                -1,
+                165,
+                192,
+                -1,
+                215,
+                224,
+                -1,
+                511
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 152,
+                    "y": 208
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 208
+                },
+                "size": {
+                    "x": 32,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                224,
+                -1,
+                234,
+                256,
+                -1,
+                285,
+                288,
+                -1,
+                511
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 96,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 0,
+                    "y": 200
+                },
+                "size": {
+                    "x": 32,
+                    "y": 40
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                20,
+                32,
+                -1,
+                1279
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 64,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 32,
+                    "y": 200
+                },
+                "size": {
+                    "x": 32,
+                    "y": 40
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                32,
+                -1,
+                39,
+                64,
+                -1,
+                89,
+                96,
+                -1,
+                1279
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 64,
+                    "y": 200
+                },
+                "size": {
+                    "x": 32,
+                    "y": 40
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                96,
+                -1,
+                108,
+                128,
+                -1,
+                158,
+                160,
+                -1,
+                1279
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 96,
+                    "y": 200
+                },
+                "size": {
+                    "x": 32,
+                    "y": 40
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                160,
+                -1,
+                177,
+                192,
+                -1,
+                1279
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 128,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 128,
+                    "y": 200
+                },
+                "size": {
+                    "x": 24,
+                    "y": 40
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                144,
+                -1,
+                147,
+                168,
+                -1,
+                190,
+                192,
+                -1,
+                959
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 216,
+                    "y": 224
+                },
+                "dstPos": {
+                    "x": 152,
+                    "y": 208
+                },
+                "size": {
+                    "x": 32,
+                    "y": 32
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                0,
+                -1,
+                16,
+                32,
+                -1,
+                1023
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 184,
+                    "y": 224
+                },
+                "dstPos": {
+                    "x": 184,
+                    "y": 208
+                },
+                "size": {
+                    "x": 32,
+                    "y": 32
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                32,
+                -1,
+                35,
+                64,
+                -1,
+                85,
+                96,
+                -1,
+                1023
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 152,
+                    "y": 224
+                },
+                "dstPos": {
+                    "x": 216,
+                    "y": 208
+                },
+                "size": {
+                    "x": 32,
+                    "y": 32
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                96,
+                -1,
+                104,
+                128,
+                -1,
+                154,
+                160,
+                -1,
+                1023
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 248,
+                    "y": 224
+                },
+                "dstPos": {
+                    "x": 248,
+                    "y": 208
+                },
+                "size": {
+                    "x": 8,
+                    "y": 32
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                40,
+                -1,
+                255
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 248,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 0,
+                    "y": 192
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "opaqueIndices": [
+                56,
+                57
+            ]
+        }
+    ]
+}

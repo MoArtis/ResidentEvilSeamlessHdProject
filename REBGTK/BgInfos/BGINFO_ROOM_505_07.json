@@ -1,0 +1,43 @@
+{
+    "namePrefix": "ROOM_505_07",
+    "status": 0,
+    "bgMd5": "92CD76280DB5EAB4E18A8EB4788C4FB4",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_505_07"
+            ],
+            "partIndices": [
+                0
+            ]
+        },
+        {
+            "formatName": "RE2 GameCube",
+            "texNames": [
+                "tex1_128x160_bc29386ef8b10326_5",
+                "tex1_256x240_58b165766bc3f6ef_5",
+                "tex1_256x240_606b03697ce62d39_5"
+            ],
+            "partIndices": [
+                1,
+                0,
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "masks": []
+}

@@ -1,0 +1,93 @@
+{
+    "namePrefix": "ROOM_702_03",
+    "status": 0,
+    "bgMd5": "6678E915151A0A83DABEA06CEE535301",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE2 Classic Rebirth",
+            "texNames": [
+                "ROOM_702_03",
+                "ROOM_702_03_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE2 GameCube",
+            "texNames": [
+                "tex1_128x160_337d8f31debac580_5",
+                "tex1_256x240_5c602f95bee5e811_5",
+				"tex1_64x64_bb1a83cb3147e28d_ece9d004185375db_9"
+            ],
+            "partIndices": [
+                1,
+                0,
+				2
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 3,
+    "groupsCount": 1,
+    "maskMd5": "D04219ACCBA942D7564E97F87492F09E",
+    "maskTexSize": {
+        "x": 64,
+        "y": 64
+    },
+    "useProcessedMaskTex": true,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 48
+                },
+                "dstPos": {
+                    "x": 160,
+                    "y": 120
+                },
+                "size": {
+                    "x": 32,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                20,
+                22,
+                -1,
+                511
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 48
+                },
+                "dstPos": {
+                    "x": 160,
+                    "y": 104
+                },
+                "size": {
+                    "x": 32,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "opaqueIndices": [
+                0,
+                -1,
+                511
+            ]
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+== Texture recreation report ==
+== Textures recreation Started! ==
+Selected Format: RE2 GameCube
+Missing special mask source textures: ROOM_10B_05
+Missing special mask source textures: ROOM_10B_07
+Missing special mask source textures: ROOM_10B_15
+Missing special mask source textures: ROOM_605_09
+== Textures recreation Done! (5,3 seconds) ==
