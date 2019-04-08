@@ -1,3 +1,0 @@
-<Project>
-  <Import Project="..\build\Resource.Embedder.props" />
-</Project>
