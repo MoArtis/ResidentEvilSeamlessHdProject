@@ -99,7 +99,7 @@ StyleCopReport.xml
 *_p.c
 *_i.h
 *.ilk
-*.meta
+#*.meta
 *.obj
 *.iobj
 *.pch
@@ -217,7 +217,8 @@ PublishScripts/
 # NuGet Packages
 *.nupkg
 # The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
+# lower case "packages" folder for VS (Upper case "Packages" is used by Unity)
+**/packages/* 
 # except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
