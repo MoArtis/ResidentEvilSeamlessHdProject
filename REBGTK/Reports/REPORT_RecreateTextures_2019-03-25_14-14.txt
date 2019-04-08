@@ -1,4 +1,0 @@
-== Texture recreation report ==
-== Textures recreation Started! ==
-Selected Format: RE2 GameCube
-== Textures recreation Done! (2,7 seconds) ==

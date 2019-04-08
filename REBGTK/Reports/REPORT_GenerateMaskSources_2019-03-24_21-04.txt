@@ -1,3 +1,0 @@
-== Mask Source Generation report ==
-== Mask Source Generation Started! ==
-== Mask source generation done! (1,7 seconds) ==

@@ -1,3 +1,0 @@
-== BgInfo generation Started! ==
-10 BgInfos, 0 duplicates for 19 textures, 502 Rdt files (367 Uniques)
-== BgInfo generation done! (3,6 seconds) ==

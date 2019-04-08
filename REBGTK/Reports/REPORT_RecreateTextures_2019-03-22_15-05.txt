@@ -1,4 +1,0 @@
-== Texture recreation report ==
-== Textures recreation Started! ==
-Selected Format: RE2 Classic Rebirth
-== Textures recreation Done! (,7 seconds) ==

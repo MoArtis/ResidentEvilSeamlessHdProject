@@ -1,5 +1,0 @@
-== Texture Matching report ==
-== Texture Matching Started! ==
-Selected Format: RE2 GameCube
-29 matches for 29 textures (0 duplicates). 0 unmatchable textures from 0 candidates.
-== Texture Matching done! (,4 seconds) ==

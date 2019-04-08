@@ -102,7 +102,7 @@
     <Compile Include="Assets\xBRZnet\Scalers\ScaleSize.cs" />
     <Compile Include="Assets\xBRZnet\xBRZScaler.cs" />
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Gamedev/Projects/Tools/REBGTK/REBGTK/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Projects/ResidentEvilSeamlessHdProject/ResidentEvilSeamlessHdProject/REBGTK/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/2018.3.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -306,13 +306,13 @@
       <HintPath>C:/Program Files/Unity/2018.3.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing">
-      <HintPath>D:/Gamedev/Projects/Tools/REBGTK/REBGTK/Assets/System.Drawing.dll</HintPath>
+      <HintPath>D:/Projects/ResidentEvilSeamlessHdProject/ResidentEvilSeamlessHdProject/REBGTK/Assets/System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="Ookii.Dialogs">
-      <HintPath>D:/Gamedev/Projects/Tools/REBGTK/REBGTK/Assets/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll</HintPath>
+      <HintPath>D:/Projects/ResidentEvilSeamlessHdProject/ResidentEvilSeamlessHdProject/REBGTK/Assets/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms">
-      <HintPath>D:/Gamedev/Projects/Tools/REBGTK/REBGTK/Assets/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll</HintPath>
+      <HintPath>D:/Projects/ResidentEvilSeamlessHdProject/ResidentEvilSeamlessHdProject/REBGTK/Assets/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/2018.3.0f2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

@@ -1,3 +1,0 @@
-== Alpha channel generation report ==
-== Alpha channel generation Started! ==
-== Alpha channel generation Done! (,3 seconds) ==
