@@ -1,0 +1,53 @@
+{
+  "name": "Resident Evil 2 - SHDP",
+  "TexFolders": [
+    {
+      "FolderPath": "2D FX",
+      "Format": 2
+    },
+    {
+      "FolderPath": "3D Models",
+      "Format": 6
+    },
+    {
+      "FolderPath": "3D Models/Do not crop these",
+      "Format": 6
+    },
+    {
+      "FolderPath": "Opening Endings",
+      "Format": 6
+    },
+    {
+      "FolderPath": "Rooms/Bgs",
+      "Format": 6
+    },
+    {
+      "FolderPath": "Rooms/Masks",
+      "Format": 0
+    },
+    {
+      "FolderPath": "User Interface/Files",
+      "Format": 6
+    },
+    {
+      "FolderPath": "User Interface/Files/Images",
+      "Format": 6
+    },
+    {
+      "FolderPath": "User Interface/Inventory",
+      "Format": 2
+    },
+    {
+      "FolderPath": "User Interface/Items",
+      "Format": 6
+    },
+    {
+      "FolderPath": "User Interface/Maps",
+      "Format": 6
+    },
+    {
+      "FolderPath": "User Interface/Texts",
+      "Format": 2
+    }
+  ]
+}

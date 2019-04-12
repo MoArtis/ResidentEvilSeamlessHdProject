@@ -1,0 +1,19 @@
+﻿<Application x:Class="RESHDP_PackConv.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:RESHDP_PackConv"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:RESHDP_PackConv="clr-namespace:RESHDP_PackConv"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <!--Get the Dxgi format from XAML-->
+        <ObjectDataProvider x:Key="DxgiFormat" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="RESHDP_PackConv:DxgiFormat"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        
+    </Application.Resources>
+</Application>

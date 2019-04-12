@@ -30,8 +30,6 @@ namespace BgInfoEditor
 
         public ObservableCollection<BgFileInfo> BgFileInfos { get; set; } = new ObservableCollection<BgFileInfo>();
 
-        private double imagesScaleRatio = 1.0;
-
         public static Random random = new Random();
 
         private static string bgInfosPath = "./BgInfos";

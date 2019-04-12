@@ -5,7 +5,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:src="clr-namespace:BgInfoEditor"
-        xmlns:local="clr-namespace:BgInfoEditor"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1060" MinHeight="400">
 
