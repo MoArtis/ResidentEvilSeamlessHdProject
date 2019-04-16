@@ -17,6 +17,7 @@ using System.ComponentModel;
 using System.Windows.Threading;
 using System.Threading;
 using System.Media;
+using System.IO.Compression;
 
 namespace RESHDP_PackConv
 {
@@ -29,6 +30,7 @@ namespace RESHDP_PackConv
         public string CurrentPackPath { get; set; } = "Enter a pack location first...";
         public FolderStructure Fs { get; set; }
 
+        private const string RESPACKASSETS_PATH = "./ResourcePackAssets/";
         private const string TEXCONV_PATH = "./dependencies/texconv.exe";
         private FileManager fm = new FileManager();
         private List<Tuple<FileInfo, string, DxgiFormat>> conversionTasks = new List<Tuple<FileInfo, string, DxgiFormat>>();
@@ -251,18 +253,12 @@ namespace RESHDP_PackConv
 
             processingFileCount = 0;
 
-            configList.IsEnabled = false;
-            buttonBrowse.IsEnabled = false;
-            buttonConvert.IsEnabled = false;
-            packFolderPath.IsEnabled = false;
+            SwitchInterface(false);
         }
 
         private void ConversionDone()
         {
-            configList.IsEnabled = true;
-            buttonBrowse.IsEnabled = true;
-            buttonConvert.IsEnabled = true;
-            packFolderPath.IsEnabled = true;
+            SwitchInterface(true);
 
             convSb.AppendLine();
             convSb.AppendLine("Conversion time: " + DateTime.Now.Subtract(conversionStartTime).TotalSeconds.ToString("#") + " seconds");
@@ -272,5 +268,111 @@ namespace RESHDP_PackConv
             SystemSounds.Exclamation.Play();
         }
 
+        private void SwitchInterface(bool isEnable)
+        {
+            configList.IsEnabled = isEnable;
+            buttonBrowse.IsEnabled = isEnable;
+            buttonConvert.IsEnabled = isEnable;
+            packFolderPath.IsEnabled = isEnable;
+            buttonCreateResPack.IsEnabled = isEnable;
+        }
+
+        private void CreateResPack()
+        {
+            //No directory picked
+            DirectoryInfo packDi = new DirectoryInfo(CurrentPackPath);
+            if (packDi.Exists == false)
+            {
+                MessageBox.Show("Please enter the root directory of the pack first...", "No directory", MessageBoxButton.OK, MessageBoxImage.Error);
+                Dispatcher.BeginInvoke(DispatcherPriority.Normal, new CreateResPackDoneDelegate(CreateResPackDone));
+                return;
+            }
+
+            DirectoryInfo resPackAssetsDi = new DirectoryInfo(RESPACKASSETS_PATH);
+            if (resPackAssetsDi.Exists == false)
+            {
+                MessageBox.Show("The resource pack assets folder is missing...\nPlace at least a manifest file in there.", "No Resource Pack assets", MessageBoxButton.OK, MessageBoxImage.Error);
+                Dispatcher.BeginInvoke(DispatcherPriority.Normal, new CreateResPackDoneDelegate(CreateResPackDone));
+                return;
+            }
+
+            string archivePath = "";
+            using (TextReader tr = File.OpenText(resPackAssetsDi.FullName + "ArchiveName.txt"))
+            {
+                archivePath = "./" + tr.ReadLine();
+            }
+
+            string gameId = "";
+            using (TextReader tr = File.OpenText(resPackAssetsDi.FullName + "GameId.txt"))
+            {
+                gameId = tr.ReadLine();
+            }
+
+            FileInfo manifestFi = new FileInfo(resPackAssetsDi.FullName + "manifest.json");
+            if (manifestFi.Exists == false)
+            {
+                MessageBox.Show("The manifest file is missing...", "No manifest", MessageBoxButton.OK, MessageBoxImage.Error);
+                Dispatcher.BeginInvoke(DispatcherPriority.Normal, new CreateResPackDoneDelegate(CreateResPackDone));
+                return;
+            }
+
+            FileInfo logoFi = new FileInfo(resPackAssetsDi.FullName + "logo.png");
+
+
+            //Create the textures folder and move the pack in there
+            //https://gist.github.com/spycrab/9d05056755d8d7908bdb871a99d050bf
+            DirectoryInfo texturesDi = fm.CreateDirectory("./Textures/");
+
+            packDi.MoveTo(Path.Combine(texturesDi.FullName, gameId));
+
+            //Create a zip archive as a Resource Pack
+
+            //Brutal approach - no progress bar
+            DirectoryInfo tempDi = fm.CreateDirectory("./Temp/");
+
+            if (logoFi.Exists)
+                logoFi = logoFi.CopyTo(tempDi.FullName + logoFi.Name);
+
+            manifestFi = manifestFi.CopyTo(tempDi.FullName + manifestFi.Name);
+
+            texturesDi.MoveTo(Path.Combine(tempDi.FullName, texturesDi.Name));
+
+            ZipFile.CreateFromDirectory(tempDi.FullName, archivePath, CompressionLevel.NoCompression, false);
+
+            //TODO - File by file approach - Allows displaying a Progress bar
+            //using (FileStream zipToOpen = new FileStream(archivePath, FileMode.Open))
+            //{
+            //    using (ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update))
+            //    {
+            //        archive.CreateEntryFromFile(manifestFi.FullName, manifestFi.Name, CompressionLevel.NoCompression);
+            //        if (logoFi.Exists)
+            //            archive.CreateEntryFromFile(logoFi.FullName, "test/" + logoFi.Name, CompressionLevel.NoCompression);
+            //    }
+            //}
+
+            packDi = new DirectoryInfo(Path.Combine(tempDi.FullName, texturesDi.Name, packDi.Name));
+            packDi.MoveTo(CurrentPackPath);
+
+            tempDi.Delete(true);
+
+            Dispatcher.BeginInvoke(DispatcherPriority.Normal, new CreateResPackDoneDelegate(CreateResPackDone));
+        }
+
+        private void CreateResPackDone()
+        {
+            SwitchInterface(true);
+        }
+
+        private delegate void CreateResPackDelegate();
+        private delegate void CreateResPackDoneDelegate();
+
+        private void Button_CreateResPack(object sender, RoutedEventArgs e)
+        {
+            //Dispatcher.BeginInvoke(DispatcherPriority.Normal, new CreateResPackDelegate(CreateResPack));
+
+            SwitchInterface(false);
+
+            new CreateResPackDelegate(CreateResPack).BeginInvoke(null, null);
+        }
     }
 }

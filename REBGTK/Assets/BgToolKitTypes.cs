@@ -186,6 +186,7 @@ namespace BgTk
     public struct BgTexturePart
     {
         public string name;
+        public bool needGapCompensation; //Will shift the bottom part of the right part one pixel down. Only needed for Dolphin.
         public Patch[] patches;
         public Vector2Int size;
     }

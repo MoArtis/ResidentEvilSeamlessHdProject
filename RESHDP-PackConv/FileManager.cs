@@ -27,6 +27,9 @@ public class FileManager
     public int LoadFiles(string path, string extension, SearchOption searchOption)
     {
         DirectoryInfo dirInfo = new DirectoryInfo(path);
+        if (dirInfo.Exists == false)
+            return 0;
+
         fileInfos = dirInfo.GetFiles("*." + extension, searchOption);
         return fileInfos.Length;
     }
@@ -36,13 +39,15 @@ public class FileManager
         Process.Start(path);
     }
 
-    public void CreateDirectory(string path)
+    public DirectoryInfo CreateDirectory(string path)
     {
         if (path == null || path == "")
-            return;
+            return null;
 
         if (Directory.Exists(path) == false)
-            Directory.CreateDirectory(path);
+            return Directory.CreateDirectory(path);
+        else
+            return new DirectoryInfo(path);
     }
 
     public void OrderFiles<T>(Func<FileInfo, T> keySelector, bool isAscending)

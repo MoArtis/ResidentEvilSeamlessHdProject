@@ -19,9 +19,10 @@
         <GroupBox Header="Main" Margin="10" Grid.Row="0">
             <Grid>
 
-                <TextBox Name="packFolderPath" Text="{Binding CurrentPackPath}" Grid.Row="0" HorizontalAlignment="Left" Width="505" Margin="10,10,0,10"/>
-                <Button Name="buttonBrowse" Click="Button_Browse" Grid.Row="0" HorizontalAlignment="Left" Width="100" Margin="520,10,0,10">Browse</Button>
-                <Button Name="buttonConvert" Click="Button_Convert" Grid.Row="0" HorizontalAlignment="Left" Width="100" Margin="625,10,0,10">Convert!</Button>
+                <TextBox Name="packFolderPath" Text="{Binding CurrentPackPath}" Grid.Row="0" HorizontalAlignment="Left" Width="467" Margin="10,10,0,10"/>
+                <Button Name="buttonBrowse" Click="Button_Browse" Grid.Row="0" HorizontalAlignment="Left" Width="80" Margin="482,10,0,10">Browse</Button>
+                <Button Name="buttonConvert" Click="Button_Convert" Grid.Row="0" HorizontalAlignment="Left" Width="80" Margin="567,10,0,10">Convert!</Button>
+                <Button Name="buttonCreateResPack" Click="Button_CreateResPack" Grid.Row="0" HorizontalAlignment="Left" Width="80" Margin="652,10,0,10">Pack!</Button>
 
             </Grid>
         </GroupBox>

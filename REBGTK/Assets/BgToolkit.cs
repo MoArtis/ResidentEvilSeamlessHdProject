@@ -881,9 +881,19 @@ namespace BgTk
                             p.dstPos.x, p.dstPos.y,
                             p.size.x, p.size.y);
 
+                        if(dumpFormat.bgParts[j].needGapCompensation && k == 1)
+                        {
                         bgPartTex.SetPixels(
+                            p.srcPos.x, p.srcPos.y + 1,
+                            p.size.x, p.size.y, pColors);
+                        }
+                        else
+                        {
+                            bgPartTex.SetPixels(
                             p.srcPos.x, p.srcPos.y,
                             p.size.x, p.size.y, pColors);
+                        }
+
                     }
 
                     for (int k = 0; k < dumpMatch.partIndices.Length; k++)
@@ -924,7 +934,7 @@ namespace BgTk
                     {
                         //Object.Destroy(processedTex);
                         processedTexAms = fm.GetTextureFromPath(Path.Combine(processedPath, string.Concat(bgInfo.namePrefix, altMaskSourceSuffix)));
-                        if (processedTex == null)
+                        if (processedTexAms == null)
                         {
                             reportSb.AppendLine(string.Concat("Missing special mask source textures: ", bgInfo.namePrefix));
                             continue;
@@ -947,9 +957,13 @@ namespace BgTk
                         Color[] pColors;
 
                         if (bgInfo.useProcessedMaskTex == false || mask.ignoreAltMaskSource)
+                        {
                             pColors = processedTex.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y);
+                        }
                         else
+                        {
                             pColors = processedTexAms.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y);
+                        }
 
                         Color[] aColors = alphaChannels[mask.groupIndex].GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y);
                         for (int k = 0; k < pColors.Length; k++)

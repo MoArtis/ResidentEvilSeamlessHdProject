@@ -29,14 +29,8 @@ namespace RESHDP_PackConv
         Premultiplied = 2,
     }
 
-    public struct FolderStructure : INotifyPropertyChanged
+    public struct FolderStructure
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string arg)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(arg));
-        }
-
         public string name;
         public TextureFolder[] TexFolders { get; set; }
     }
