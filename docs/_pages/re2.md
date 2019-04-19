@@ -30,8 +30,8 @@ header:
 ---
 
 <div id="juxtapose-wrapper" class="juxtapose">
-    <img src="/img/juxtapose/ROOM_409_01_WithMask.jpg" />
-    <img src="/img/juxtapose/ROOM_409_01_Gigapixel4x.jpg" />
+    <img src="{{ '/img/juxtapose/ROOM_409_01_WithMask.jpg' | prepend: site.baseurl }}" />
+    <img src="{{ '/img/juxtapose/ROOM_409_01_Gigapixel4x.jpg' | prepend: site.baseurl }}" />
 </div>
 
 # Test?

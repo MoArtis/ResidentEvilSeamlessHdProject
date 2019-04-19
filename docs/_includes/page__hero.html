@@ -66,7 +66,7 @@
           {% endif %}
           <div class="btn--wrapper"><a href="{{ url }}" class="btn btn--re2title btn--large">
 		  {% if action.icon %}
-			<img class="icon" src="{{ action.icon }}" alt="{{ action.icon }}">
+			<img class="icon" src="{{ action.icon | prepend: site.baseurl }}" alt="{{ action.icon }}">
 		  {% elsif action.fa_icon %}
 			<i class="fas fa-{{ action.fa_icon | default: 'file-alt' }}"></i>
 		  {% endif %}{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
