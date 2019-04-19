@@ -1,0 +1,10 @@
+# main links
+main:
+    - title: "News"
+      url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    - title: "Resident Evil 1 (Soon)"
+      url: https://mmistakes.github.io/minimal-mistakes/about/
+    - title: "Resident Evil 2"
+      url: /re2/
+    - title: "Resident Evil 3 (Soon)"
+      url: /
