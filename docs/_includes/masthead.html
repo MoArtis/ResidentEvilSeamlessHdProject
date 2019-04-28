@@ -3,8 +3,8 @@
         <div class="masthead__menu">
             <nav class="greedy-nav" id="site-nav">
                 {% if page.show_logo %}
-                    <a class="site-logo" href="{{ '/' | base_url }}">
-                      <img src="{{ site.logo | base_url }}" alt="">
+                    <a class="site-logo" href="{{ '/' | prepend: site.baseurl }}">
+                      <img src="{{ site.logo | prepend: site.baseurl }}" alt="">
                     </a>
                 {% endif %}
                 {% if page.show_title == true %}
