@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "RE2SHDP"
 layout: showcase
 permalink: /re2/
 show_logo: true

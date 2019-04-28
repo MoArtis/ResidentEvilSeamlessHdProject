@@ -12,14 +12,14 @@
 </script>
 
 {% if page.use_juxtapose %}
-  <script src="/assets/js/juxtapose.js"></script>
-  <link rel="stylesheet" href="/assets/css/juxtapose.css">
+  <script src="{{ '/assets/js/juxtapose.js' | prepend: site.baseurl }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/juxtapose.css' | prepend: site.baseurl }}">
 {% endif %}
 
 {% if page.use_carousel %}
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.slim.min.js"></script>
-  <script src="/assets/js/carousel.min.js"></script>
-  <link rel="stylesheet" href="/assets/css/carousel.css">
+  <script src="{{ '/assets/js/carousel.min.js' | prepend: site.baseurl }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/carousel.css' | prepend: site.baseurl }}">
 {% endif %}
 
 <!-- For all browsers -->
