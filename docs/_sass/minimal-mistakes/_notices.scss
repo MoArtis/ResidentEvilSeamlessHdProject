@@ -15,9 +15,9 @@
   padding: 1em;
   color: $dark-gray;
   font-family: $global-font-family;
-  font-size: $type-size-6 !important;
+  font-size: $type-size-5 !important;
   text-indent: initial; /* override*/
-  background-color: mix(#fff, $notice-color, 90%);
+  background-color: mix(#fff, $notice-color, 80%);
   border-radius: $border-radius;
   box-shadow: 0 1px 1px rgba($notice-color, 0.25);
 
@@ -72,7 +72,8 @@
 /* Primary notice */
 
 .notice--primary {
-  @include notice($primary-color);
+  /* @include notice($primary-color); */
+  @include notice(#6f777d);
 }
 
 /* Info notice */

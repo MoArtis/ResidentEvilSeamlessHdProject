@@ -15,6 +15,17 @@
             "partIndices": [
                 0
             ]
+        },
+        {
+            "formatName": "RE2 GameCube",
+            "texNames": [
+                "tex1_128x160_55d352c539c596e3_5",
+                "tex1_256x240_c1d64137bfde7247_5"
+            ],
+            "partIndices": [
+                1,
+                0
+            ]
         }
     ],
     "hasMask": false,

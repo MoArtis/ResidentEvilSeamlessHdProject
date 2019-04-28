@@ -41,6 +41,7 @@
         "y": 256
     },
     "useProcessedMaskTex": true,
+	"isReversedMaskOrder": true,
     "masks": [
         {
             "patch": {

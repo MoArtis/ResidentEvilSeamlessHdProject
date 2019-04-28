@@ -12,8 +12,10 @@
           {% unless logo_path == empty %}
             <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt=""></a>
           {% endunless %}
-		{% endif %}
+    {% endif %}
+    {% if page.show_title == true %}
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.masthead_title | default: site.title }}</a>
+        {% endif %}
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             {%- if link.url contains '://' -%}
@@ -26,6 +28,17 @@
             </li>
           {%- endfor -%}
         </ul>
+
+        <button class="team__toggle" type="button">
+          <span class="visually-hidden">Toggle team</span>
+          <i class="fas fa-users" style="font-size: 1.5em"></i>
+        </button>
+
+        <button class="github__masthead" type="button">
+            <span class="visually-hidden">Report an issue</span>
+            <i class="fab fa-github" style="font-size: 1.5em"></i>
+        </button>
+
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>

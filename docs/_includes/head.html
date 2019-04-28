@@ -12,8 +12,14 @@
 </script>
 
 {% if page.use_juxtapose %}
-  <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+  <script src="/assets/js/juxtapose.js"></script>
+  <link rel="stylesheet" href="/assets/css/juxtapose.css">
+{% endif %}
+
+{% if page.use_carousel %}
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.slim.min.js"></script>
+  <script src="/assets/js/carousel.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/carousel.css">
 {% endif %}
 
 <!-- For all browsers -->

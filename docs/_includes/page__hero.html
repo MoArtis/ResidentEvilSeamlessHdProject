@@ -34,7 +34,7 @@
   style="{% if page.header.min-height %}min-height: {{ page.header.min-height | default: '0' }};{% endif %} 
 		 {% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: 'transparent' }};{% endif %} 
 		 {% if overlay_img_path %}background-image: 
-				{% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}">
+				{% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}'); background-repeat: repeat-x; background-size: cover{% endif %}">
 				
   {% if page.header.overlay_color or page.header.overlay_image %}
     <div class="wrapper">
@@ -64,7 +64,7 @@
           {% else %}
             {% assign url = action.url | relative_url %}
           {% endif %}
-          <div class="btn--wrapper"><a href="{{ url }}" class="btn btn--re2title btn--large">
+          <div class="btn--wrapper"><a href="{{ url }}" class="btn btn--primary btn--large">
 		  {% if action.icon %}
 			<img class="icon" src="{{ action.icon | prepend: site.baseurl }}" alt="{{ action.icon }}">
 		  {% elsif action.fa_icon %}

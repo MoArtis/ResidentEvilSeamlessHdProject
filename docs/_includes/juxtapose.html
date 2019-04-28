@@ -1,0 +1,23 @@
+<div style="max-width:100%; min-width:100%" id="juxtapose_{{ include.name }}"></div>
+<script>
+slider = new juxtapose.JXSlider('#juxtapose_{{ include.name }}',
+    [
+        {
+            src: "{{ site.baseurl }}/img/juxtapose/{{ include.prev_img }}",
+            label: "{{ include.prev_label }}",
+            credit: ''
+        },
+        {
+            src: "{{ site.baseurl }}/img/juxtapose/{{ include.next_img }}",
+            label: "{{ include.next_label }}",
+            credit: ''
+        }
+    ],
+    {
+        animate: true,
+        showLabels: true,
+        showCredits: false,
+        startingPosition: "50%",
+        makeResponsive: false
+    });
+</script>

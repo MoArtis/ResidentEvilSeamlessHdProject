@@ -40,7 +40,8 @@
         "x": 256,
         "y": 256
     },
-    "useProcessedMaskTex": false,
+    "useProcessedMaskTex": true,
+	"isReversedMaskOrder": true,
     "masks": [
         {
             "patch": {
@@ -3062,6 +3063,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 5,
                 -1,
@@ -3240,6 +3242,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 1,
                 -1,
@@ -3442,6 +3445,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3644,6 +3648,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 1,
@@ -3841,6 +3846,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 6,
                 -1,
@@ -4022,6 +4028,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 1,
                 -1,
@@ -4225,6 +4232,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 1,
@@ -4406,6 +4414,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 2,
                 -1,
@@ -4566,6 +4575,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 29,
                 -1,
@@ -4696,6 +4706,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 13,
                 -1,
@@ -4844,6 +4855,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -4988,6 +5000,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 56,
                 -1,
@@ -5082,6 +5095,7 @@
                 }
             },
             "groupIndex": 3,
+			"ignoreAltMaskSource": true,
             "opaqueIndices": [
                 60,
                 -1,

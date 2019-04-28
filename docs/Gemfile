@@ -4,5 +4,6 @@ source 'https://gems.ruby-china.com/'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'jekyll-include-cache'
 gem "github-pages", '193', group: :jekyll_plugins
+gem 'jemoji'
 
 #gemspec

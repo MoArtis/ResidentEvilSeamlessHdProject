@@ -268,9 +268,8 @@ namespace BgTk
     {
         public Patch patch;
         public int groupIndex;
+        public bool ignoreAltMaskSource;
         public int[] opaqueIndices; //It seems studid to store the alpha in a file and as text.
-        //TODO - a test to store the needed alpha from the top as png ? it can be processed to generate AA (keep two file)
-		public bool ignoreAltMaskSource;
     }
 
     [System.Serializable]
@@ -295,7 +294,8 @@ namespace BgTk
         public int groupsCount;
         public string maskMd5;
         public Vector2Int maskTexSize;
-        public bool useProcessedMaskTex;       //For tex generation, will throw an error (in the log) if name_mask.png is missing
+        public bool useProcessedMaskTex; //For tex and AMS generation. Will throw an error (in the log) if name_mask.png or name_altMaskSource.png is missing
+        public bool isReversedMaskOrder; //For AMS generation. When the mask group order leads to an AMS which looks exactly the same as the BG.
         public Mask[] masks;
 
         public string GetFileName()

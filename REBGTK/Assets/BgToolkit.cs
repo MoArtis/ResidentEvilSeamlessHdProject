@@ -78,8 +78,9 @@ namespace BgTk
                     continue;
                 }
 
-                //Hack for reversing the mask order, it solves some cases where mask groups are multilayered (Only ROOM_109_02)
-                //bgInfo.masks = bgInfo.masks.Reverse().ToArray();
+                //Reversing the mask order, it solves some cases where mask groups are multilayered (Only ROOM_109_02 and 103_00)
+                if(bgInfo.isReversedMaskOrder)
+                    bgInfo.masks = bgInfo.masks.Reverse().ToArray();
 
                 //Read all the mask patches from the mask texture and apply them to the bgTex, then save it into a new special texture.
                 for (int j = 0; j < bgInfo.masks.Length; j++)
@@ -777,66 +778,7 @@ namespace BgTk
 
                 int texRatio = Mathf.RoundToInt(texRatioFloat);
 
-                if (pixelShift.x != 0 || pixelShift.y != 0)
-                {
-                    processedTex.wrapMode = TextureWrapMode.Clamp;
-
-                    int pixelShiftCount = Mathf.Abs(pixelShift.x) >= Mathf.Abs(pixelShift.y) ? Mathf.Abs(pixelShift.x) : Mathf.Abs(pixelShift.y);
-                    int shiftX = 0;
-                    int shiftY = 0;
-
-                    //x
-                    for (int j = 0; j < Mathf.Abs(pixelShift.x); j++)
-                    {
-                        int gx = 0;
-                        int sx = 0;
-                        int w = 0;
-
-                        shiftX = j * 1 * texRatio;
-
-                        if (pixelShift.x > 0)
-                        {
-                            gx = shiftX;
-                            sx = gx + 1;
-                        }
-                        else
-                        {
-                            sx = 0;
-                            gx = sx + 1;
-                        }
-
-                        w = processedTex.width - shiftX - 1;
-
-                        Color[] colors = processedTex.GetPixels(gx, 0, w, processedTex.height);
-                        processedTex.SetPixels(sx, 0, w, processedTex.height, colors);
-                    }
-
-                    //Y
-                    for (int j = 0; j < Mathf.Abs(pixelShift.y); j++)
-                    {
-                        int gy = 0;
-                        int sy = 0;
-                        int h = 0;
-
-                        shiftY = j * 1 * texRatio;
-
-                        if (pixelShift.y > 0)
-                        {
-                            gy = shiftY;
-                            sy = gy + 1;
-                        }
-                        else
-                        {
-                            sy = 0;
-                            gy = sy + 1;
-                        }
-
-                        h = processedTex.height - shiftY - 1;
-
-                        Color[] colors = processedTex.GetPixels(0, gy, processedTex.width, h);
-                        processedTex.SetPixels(0, sy, processedTex.width, h, colors);
-                    }
-                }
+                CompensatePixelShift(pixelShift, processedTex, texRatio);
 
                 //Dynamic bg size only works for full background with no parts then... it's not good.
                 //I really hope Resident evil 3 or something doesn't have backgrounds texture with different size AND splitted in some bullshit way.
@@ -939,6 +881,7 @@ namespace BgTk
                             reportSb.AppendLine(string.Concat("Missing special mask source textures: ", bgInfo.namePrefix));
                             continue;
                         }
+                        CompensatePixelShift(pixelShift, processedTexAms, texRatio);
                     }
 
                     //Reconstruct the mask texture itself based on processed BG and the smoothed alpha texture
@@ -1341,6 +1284,70 @@ namespace BgTk
             }
 
             return true;
+        }
+
+        protected void CompensatePixelShift(Vector2Int pixelShift, Texture2D tex, int texRatio)
+        {
+            if (pixelShift.x != 0 || pixelShift.y != 0)
+            {
+                tex.wrapMode = TextureWrapMode.Clamp;
+
+                int pixelShiftCount = Mathf.Abs(pixelShift.x) >= Mathf.Abs(pixelShift.y) ? Mathf.Abs(pixelShift.x) : Mathf.Abs(pixelShift.y);
+                int shiftX = 0;
+                int shiftY = 0;
+
+                //x
+                for (int j = 0; j < Mathf.Abs(pixelShift.x); j++)
+                {
+                    int gx = 0;
+                    int sx = 0;
+                    int w = 0;
+
+                    shiftX = j * 1 * texRatio;
+
+                    if (pixelShift.x > 0)
+                    {
+                        gx = shiftX;
+                        sx = gx + 1;
+                    }
+                    else
+                    {
+                        sx = 0;
+                        gx = sx + 1;
+                    }
+
+                    w = tex.width - shiftX - 1;
+
+                    Color[] colors = tex.GetPixels(gx, 0, w, tex.height);
+                    tex.SetPixels(sx, 0, w, tex.height, colors);
+                }
+
+                //Y
+                for (int j = 0; j < Mathf.Abs(pixelShift.y); j++)
+                {
+                    int gy = 0;
+                    int sy = 0;
+                    int h = 0;
+
+                    shiftY = j * 1 * texRatio;
+
+                    if (pixelShift.y > 0)
+                    {
+                        gy = shiftY;
+                        sy = gy + 1;
+                    }
+                    else
+                    {
+                        sy = 0;
+                        gy = sy + 1;
+                    }
+
+                    h = tex.height - shiftY - 1;
+
+                    Color[] colors = tex.GetPixels(0, gy, tex.width, h);
+                    tex.SetPixels(0, sy, tex.width, h, colors);
+                }
+            }
         }
 
         protected void GetBgInfoFromTexFiles(ref BgInfo bgInfo, FileInfo bgFileInfo, FileInfo maskFileInfo)

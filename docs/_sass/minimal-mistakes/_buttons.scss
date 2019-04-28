@@ -51,9 +51,7 @@
   (info, $info-color),
   (facebook, $facebook-color),
   (twitter, $twitter-color),
-  (linkedin, $linkedin-color),
-  
-  (re2title, $re2title-color);
+  (linkedin, $linkedin-color);
 
   @each $buttoncolor, $color in $buttoncolors {
     &--#{$buttoncolor} {
@@ -101,7 +99,7 @@
 
   /* large button */
   &--large {
-    font-size: $type-size-6
+    font-size: $type-size-5
   }
 
   /* small button */
@@ -111,7 +109,7 @@
   
   &--caption {
 	margin-left: 0.5em;
-    font-size: $type-size-8;
+    font-size: $type-size-7;
   }
   
   &--wrapper {

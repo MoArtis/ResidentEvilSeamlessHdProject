@@ -1,0 +1,113 @@
+{% if include.images.size < 1 %}
+{% elsif include.images.size == 1 %}
+
+<div style="width:{{ include.width}}px; margin-right: auto; margin-left: auto; position: relative; max-width:100%; height:auto; margin-bottom: 2em">
+
+{% assign prev_img=include.images[0] | append:include.img_format %}
+{% assign next_img=include.images[0] | append:include.comp_suffix | append:include.img_format %}
+{% if include.isReversed %}
+	{% include juxtapose.html name=include.name prev_img=prev_img next_img=next_img prev_label=include.prev_label next_label=include.next_label %}
+{% else %}
+	{% include juxtapose.html name=include.name prev_img=next_img next_img=prev_img prev_label=include.prev_label next_label=include.next_label %}
+{% endif %}
+
+</div>
+
+{% else %}
+
+{% if include.selectedIndex %}
+	{% assign selectedIndex=include.selectedIndex %}
+{% else %}
+	{% assign selectedIndex=0 %}
+{% endif %}
+
+<script>
+var currentIndex = {{ selectedIndex }};
+
+function refreshWidthSelector(index) {
+
+	var items = document.getElementsByClassName("juxtapose");
+	for(i = 0; i < items.length; i++)
+	{
+		items[i].style.height = items[currentIndex].style.height;
+		items[i].style.width = items[currentIndex].style.width;
+	} 
+
+	currentIndex = index;
+
+}
+
+function refreshWidth(isNext) {
+
+	var items = document.getElementsByClassName("juxtapose");
+	for(i = 0; i < items.length; i++)
+	{
+		items[i].style.height = items[currentIndex].style.height;
+		items[i].style.width = items[currentIndex].style.width;
+	}  
+	  
+	if(isNext)
+	{
+		currentIndex++;
+		if(currentIndex >= items.length)
+			currentIndex = 0;
+	}
+	else
+	{
+		currentIndex--;
+		if(currentIndex < 0)
+			currentIndex = items.length - 1;
+	}
+	
+}
+</script>
+
+<div style="width:{{ include.width | plus: 88 }}px; padding-left: 2em; padding-right: 2em; margin-right: auto; margin-left: auto; position: relative; max-width:100%; height:auto; margin-bottom: 2em">
+	
+	<a style="height: 1.5em; width: 1.5em; top:50%; -ms-transform: translateY(-50%); transform: translateY(-50%); margin: 0; position: absolute; cursor: pointer" onclick="refreshWidth(false)" class="carousel-control-prev" 
+		data-target="#carousel_{{ include.name }}" role="button" data-slide="prev">
+		<span style="height: 1.5em; width: 1.5em" class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	
+	<div style="max-width:100%; height:auto" id="carousel_{{ include.name }}" class="carousel slide" data-ride="carousel" data-interval="false">
+
+		<ol class="carousel-indicators">  
+			{% for product in include.images %}
+				{% assign index = forloop.index0 %}
+				<li data-target="#carousel_{{ include.name }}" onclick="refreshWidth({{ index }})" data-slide-to="{{ index }}" {% if forloop.index0 == selectedIndex %}class="active"{% endif %}></li>
+			{% endfor %}
+		</ol>
+
+		<div class="carousel-inner">
+	  
+			{% for product in include.images %}
+				{% if forloop.index0 == selectedIndex %}
+					<div class="carousel-item active">
+				{% else %}
+					<div class="carousel-item">
+				{% endif %}	
+						{% assign index = forloop.index0 %}
+						{% assign prev_img=include.images[index] | append:include.img_format %}
+						{% assign next_img=include.images[index] | append:include.comp_suffix | append:include.img_format %}
+						{% assign name=include.name | append:"_" | append: index %}
+						{% if include.isReversed %}
+							{% include juxtapose.html name=name prev_img=prev_img next_img=next_img prev_label=include.prev_label next_label=include.next_label %}
+						{% else %}
+							{% include juxtapose.html name=name prev_img=next_img next_img=prev_img prev_label=include.prev_label next_label=include.next_label %}
+						{% endif %}
+					</div>
+			{% endfor %}
+	  
+		</div>
+
+	</div>
+
+	<a style="height: 1.5em; width: 1.5em; top:50%; -ms-transform: translateY(-50%); transform: translateY(-50%); margin: 0; position: absolute; cursor: pointer" onclick="refreshWidth(true)" class="carousel-control-next" data-target="#carousel_{{ include.name }}" role="button" data-slide="next">
+		<span style="height:1.5em; width: 1.5em" class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+  
+</div>
+
+{% endif %}

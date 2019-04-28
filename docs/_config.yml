@@ -24,7 +24,7 @@ url                      : "https://moartis.github.io" # the base hostname & pro
 baseurl                  : "/ResidentEvilSeamlessHdProject" # the subpath of your site, e.g. "/blog"
 repository               : MoArtis/ResidentEvilSeamlessHdProject # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/img/teaser.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/img/logo.jpg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : "/img/RESHDP_logo.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -242,6 +242,8 @@ whitelist:
   - jemoji
   - jekyll-include-cache
 
+emoji:
+  src: "https://github.githubassets.com/images/icons"
 
 # Archives
 #  Type
