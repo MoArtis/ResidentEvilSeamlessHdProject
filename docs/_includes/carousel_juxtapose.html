@@ -1,7 +1,7 @@
 {% if include.images.size < 1 %}
 {% elsif include.images.size == 1 %}
 
-<div style="width:{{ include.width}}px; margin-right: auto; margin-left: auto; position: relative; max-width:100%; height:auto; margin-bottom: 2em">
+<div class="juxtapose_container" style="width:{{ include.width }}px">
 
 {% assign prev_img=include.images[0] | append:include.img_format %}
 {% assign next_img=include.images[0] | append:include.comp_suffix | append:include.img_format %}
@@ -62,7 +62,7 @@ function refreshWidth(isNext) {
 }
 </script>
 
-<div style="width:{{ include.width | plus: 88 }}px; padding-left: 2em; padding-right: 2em; margin-right: auto; margin-left: auto; position: relative; max-width:100%; height:auto; margin-bottom: 2em">
+<div class="juxtapose_container carousel" style="width:{{ include.width | plus: 88 }}px">
 	
 	<a style="height: 1.5em; width: 1.5em; top:50%; -ms-transform: translateY(-50%); transform: translateY(-50%); margin: 0; position: absolute; cursor: pointer" onclick="refreshWidth(false)" class="carousel-control-prev" 
 		data-target="#carousel_{{ include.name }}" role="button" data-slide="prev">

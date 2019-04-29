@@ -6,6 +6,7 @@ show_logo: true
 show_title: false
 use_juxtapose: true
 use_carousel: true
+github_issue: https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues
 
 gallery_menus:
   - url: /img/galleries/menus/bgs_masks_re2shdp_f.jpg
@@ -82,7 +83,7 @@ Time to re-experience this classic survival-horror game with **Neural-networks**
 
 # How the backgrounds look like?
 
-    {% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original incl. masks" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=10 %}
+{% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original incl. masks" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=10 %}
 
 <div class="feature__wrapper"></div>
 
@@ -135,12 +136,12 @@ Something can be better? you spotted a bug? help us by filling up a new issue on
 
 # Video showcase
 
-  {% include video id="VF6-hbhFHGI" provider="youtube" %}
+{% include video id="VF6-hbhFHGI" provider="youtube" %}
 
 <div class="feature__wrapper"></div>
 
 # Comparison Gallery
 
-  {% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original incl. masks" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=10 %}
+{% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original incl. masks" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=10 %}
 
 <div class="feature__wrapper"></div>

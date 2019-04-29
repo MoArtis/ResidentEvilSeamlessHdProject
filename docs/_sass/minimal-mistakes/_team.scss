@@ -8,7 +8,7 @@
   }
 }
 
-.github__masthead {
+a.github__masthead {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   height: $nav-toggle-height;
@@ -19,9 +19,16 @@
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  vertical-align: baseline;
+  position: relative;
+  top: 0.1em;
 
   &:hover {
     color: mix(#000, $primary-color, 25%);
+  }
+
+  svg {
+    text-align: center;
   }
 }
 
