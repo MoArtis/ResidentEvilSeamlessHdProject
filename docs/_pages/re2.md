@@ -50,6 +50,7 @@ gallery_do:
     title: "Upscaled menu elements and HR portraits."
 
 backgrounds:
+  - /bgs/ROOM_60E_01
   - /bgs/ROOM_109_03
   - /bgs/ROOM_118_05
   - /bgs/ROOM_11B_03
@@ -60,7 +61,6 @@ backgrounds:
   - /bgs/ROOM_508_11
   - /bgs/ROOM_603_10
   - /bgs/ROOM_60D_02
-  - /bgs/ROOM_60E_01
   - /bgs/ROOM_60F_04
 
 #Header
@@ -98,7 +98,7 @@ Time to re-experience this classic survival-horror game with **Neural-networks**
 
 # How the backgrounds look like?
 
-{% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original incl. masks" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=10 %}
+{% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original incl. masks" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=0 %}
 
 <div class="feature__wrapper"></div>
 
