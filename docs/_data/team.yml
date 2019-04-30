@@ -1,0 +1,17 @@
+feature_row:
+  - image_path: /img/team/moartis.png
+    alt: "placeholder image 1"
+    title: "Placeholder 1"
+    excerpt: "fuck"
+  - image_path: /img/team/kayael.png
+    alt: "placeholder image 1"
+    title: "Placeholder 1"
+    excerpt: "fuck"
+  - image_path: /img/team/saeed.png
+    alt: "placeholder image 1"
+    title: "Placeholder 1"
+    excerpt: "fuck"
+  - image_path: /img/team/frankwesker.png
+    alt: "placeholder image 1"
+    title: "Placeholder 1"
+    excerpt: "fuck"
