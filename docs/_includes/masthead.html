@@ -3,7 +3,7 @@
         <div class="masthead__menu">
             <nav class="greedy-nav" id="site-nav">
                 {% if page.show_logo %}
-                    <a class="site-logo" href="{{ '/' | prepend: site.baseurl }}">
+                    <a class="site-logo" href="{{ '/' | relative_url }}">
                       <img src="{{ site.logo | prepend: site.baseurl }}" alt="">
                     </a>
                 {% endif %}

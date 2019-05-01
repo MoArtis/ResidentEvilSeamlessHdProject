@@ -7,7 +7,6 @@ show_title: false
 use_juxtapose: true
 use_carousel: true
 github_issue: https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues
-redirect_from: "/"
 
 gallery_dolphin:
   - url: /img/galleries/dolphin/aspect_ratio_f.jpg
