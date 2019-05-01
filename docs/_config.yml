@@ -76,7 +76,7 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification :
+google_site_verification : eYocQSGuyB5bIt-sCoqDNn-uRtM6pWXeflEAeMhdLRg
 bing_site_verification   :
 yandex_site_verification :
 naver_site_verification  :
@@ -88,7 +88,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
+og_image                 : "/img/RE2SHDP_logo_og.jpg" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
