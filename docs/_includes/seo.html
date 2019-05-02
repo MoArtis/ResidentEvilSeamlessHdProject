@@ -32,11 +32,16 @@
   {%- assign author_twitter = author.twitter | replace: "@", "" -%}
 {%- endif -%}
 
+{% assign unsecure_baseurl = site.url_unsecure | append: site.baseurl_path }} %}
+
 {%- assign page_large_image = page.header.og_image | default: page.header.overlay_image | default: page.header.image -%}
+{%- assign page_large_image_unsecure = page_large_image -%}
 {%- unless page_large_image contains '://' -%}
   {%- assign page_large_image = page_large_image | absolute_url -%}
+  {%- assign page_large_image_unsecure = page_large_image_unsecure | prepend: unsecure_baseurl -%}
 {%- endunless -%}
 {%- assign page_large_image = page_large_image | escape -%}
+{%- assign page_large_image_unsecure = page_large_image_unsecure | escape -%}
 
 {%- assign page_teaser_image = page.header.teaser | default: site.og_image -%}
 {%- unless page_teaser_image contains '://' -%}
@@ -72,10 +77,10 @@
 <meta property="og:description" content="{{ seo_description }}">
 
 {% if page_large_image %}
-  <meta property="og:image" content="{{ page_large_image }}">
+  <meta property="og:image" content="{{ page_large_image_unsecure }}">
   <meta property="og:image:secure_url" content="{{ page_large_image }}">
 {% elsif page_teaser_image %}
-  <meta property="og:image" content="{{ page_teaser_image }}">
+  <meta property="og:image" content="{{ page_large_image_unsecure }}">
   <meta property="og:image:secure_url" content="{{ page_teaser_image }}">
 {% endif %}
 
@@ -87,12 +92,12 @@
 
   {% if page_large_image %}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{{ page_large_image }}">
+    <meta name="twitter:image" content="{{ page_large_image_unsecure }}">
     <meta name="twitter:image:secure_url" content="{{ page_large_image }}">
   {% else %}
     <meta name="twitter:card" content="summary">
     {% if page_teaser_image %}
-      <meta name="twitter:image" content="{{ page_teaser_image }}">
+      <meta name="twitter:image" content="{{ page_large_image_unsecure }}">
       <meta name="twitter:image:secure_url" content="{{ page_teaser_image }}">
     {% endif %}
   {% endif %}

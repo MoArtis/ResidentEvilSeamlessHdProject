@@ -21,6 +21,8 @@ title_separator          : "-"
 name                     : "RESHDP"
 description              : "HD Texture packs for the classic Resident Evil games without seams!"
 url                      : "https://www.reshdp.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url_unsecure             : "http://www.reshdp.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl_path             : # Only to deal with the OG https bug on images...
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "MoArtis/ResidentEvilSeamlessHdProject" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/img/teaser.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
