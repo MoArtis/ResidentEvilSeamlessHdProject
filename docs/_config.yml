@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "RE Seamless HD Project"
 title_separator          : "-"
 name                     : "RESHDP"
-description              : "A project to bring you processed textures without background Mask seams for the classic Resident Evil games."
+description              : "HD Texture packs for the classic Resident Evil games without background seams!"
 url                      : "https://www.reshdp.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : MoArtis/ResidentEvilSeamlessHdProject # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -83,7 +83,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : "MoArtis"
 facebook:
   username               :
   app_id                 :
@@ -92,16 +92,20 @@ og_image                 : "/img/RE2SHDP_logo_og.jpg" # Open Graph/Twitter defau
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : "Organization" # Person or Organization (defaults to Person)
+  name                   : "Resident Evil Seamless HD Project" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://twitter.com/MoArtis"
+    - "https://twitter.com/FrankWeskerFkw"
+    - "https://twitter.com/StephaneStein1"
+
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google-gtag" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
-    anonymize_ip         : # true, false (default)
+    tracking_id          : "UA-137824029-2"
+    anonymize_ip         : false # true, false (default)
 
 
 # Site Author
@@ -222,7 +226,6 @@ permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
 
 # Plugins (previously gems:)
 plugins:

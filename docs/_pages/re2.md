@@ -136,7 +136,7 @@ comparison with a directly upscaled and leave it as such (pixel)
 
 Since 2016, RE2 and RE3 on Dolphin, a great open-source Gamecube emulator, suffer from a [music stuttering bug <i class="fas fa-external-link-alt"></i>](https://bugs.dolphin-emu.org/issues/9840). 
 
-To ensure the best experience, we created a custom build by modifying a recent version of the emulator. This allows us to distribute our pack as DDS BC7 format ensuring no additional stuttering when the background changes.
+To ensure the best experience, we created a custom build by modifying a recent version of the emulator. This allows us to distribute our pack using the [BC7 texture format <i class="fas fa-external-link-alt"></i>](https://docs.microsoft.com/en-us/windows/desktop/direct3d11/bc7-format) ensuring no additional stuttering when the background changes.
 
 Here are the most important modifications:
 
