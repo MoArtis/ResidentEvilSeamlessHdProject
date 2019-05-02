@@ -66,6 +66,7 @@ backgrounds:
 #Header
 #excerpt: " "
 header:
+  og_image: "/img/RE2SHDP_logo_og.jpg"
   hide_title: true
   #min-height: 25em
   # image: /img/re2header.jpg
