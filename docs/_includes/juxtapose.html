@@ -1,6 +1,7 @@
-<div style="max-width:100%; min-width:100%" id="juxtapose_{{ include.name }}"></div>
+{% assign name=include.name | append:"_" | append: index %}
+<div style="max-width:100%; min-width:100%" class="juxtapose_{{ include.name }}" id="juxtapose_{{ name }}"></div>
 <script>
-slider = new juxtapose.JXSlider('#juxtapose_{{ include.name }}',
+slider = new juxtapose.JXSlider('#juxtapose_{{ name }}',
     [
         {
             src: "{{ site.baseurl }}/img/juxtapose/{{ include.prev_img }}",

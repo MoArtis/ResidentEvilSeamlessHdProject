@@ -8,30 +8,6 @@
   }
 }
 
-a.github__masthead {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  height: $nav-toggle-height;
-  border: 0;
-  outline: none;
-  color: $primary-color;
-  background-color: transparent;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  vertical-align: baseline;
-  position: relative;
-  top: 0.1em;
-
-  &:hover {
-    color: mix(#000, $primary-color, 25%);
-  }
-
-  svg {
-    text-align: center;
-  }
-}
-
 .team__toggle {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -55,10 +31,94 @@ a.github__masthead {
 }
 
 .team-content {
+
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0em;
+
   display: none;
   visibility: hidden;
-  padding-top: 1em;
+  padding-top: 0em;
   padding-bottom: 1em;
+
+  .team-member {
+    @include breakpoint($small) {
+      width: calc(25% - 1em);
+    }
+
+    a {
+
+      width: 75%;
+
+      svg {
+        font-size: $type-size-3;
+        margin-right: 0em;
+
+      }
+    }
+
+    // a {
+    //   margin-left: 0.25em;
+    //   margin-right: 0.25em;
+    //   height: $nav-toggle-height;
+    //   border: 0;
+    //   outline: none;
+    //   color: $text-color;
+    //   background-color: transparent;
+    //   cursor: pointer;
+    //   -webkit-transition: 0.2s;
+    //   transition: 0.2s;
+    //   vertical-align: baseline;
+    //   position: relative;
+    //   top: 0.1em;
+
+    //   &:hover {
+    //     color: mix(#000, $text-color, 25%);
+    //   }
+
+    //   svg {
+    //     font-size: $type-size-1;
+    //     text-align: center;
+    //   }
+    // }
+
+    text-align: center;
+    vertical-align: middle;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    // position: relative;
+    // margin-bottom: 2em;
+    // font-size: 1.125em;
+
+    // display: table-cell;
+    // text-align: center;
+    // vertical-align: middle;
+
+    img {
+      padding-top: 1em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+
+    .role {
+      display: block;
+      font-size: $type-size-5;
+      margin-bottom: 1em;
+    }
+
+    .name {
+      color: $primary-color;
+      font-size: $type-size-3;
+      font-weight: bold;
+    }
+  }
 
   &__inner-wrap {
     width: 100%;
@@ -70,6 +130,7 @@ a.github__masthead {
     animation: $intro-transition;
     -webkit-animation-delay: 0.15s;
     animation-delay: 0.15s;
+    margin-top: 1em;
 
     @include breakpoint($x-large) {
       max-width: $max-width;

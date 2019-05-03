@@ -2,6 +2,32 @@
    MASTHEAD
    ========================================================================== */
 
+.greedy-nav {
+  a.github__masthead {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: $nav-toggle-height;
+    border: 0;
+    outline: none;
+    color: $primary-color;
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    vertical-align: baseline;
+    position: relative;
+    top: 0.1em;
+
+    &:hover {
+      color: mix(#000, $primary-color, 25%);
+    }
+
+    svg {
+      text-align: center;
+    }
+  }
+}
+
 .masthead {
   position: relative;
   border-bottom: 0px solid $border-color;

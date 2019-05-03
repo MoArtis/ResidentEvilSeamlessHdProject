@@ -1,1 +1,1 @@
-<i class="fas fa-{{ include.n }}"></i>
+<i class="{{ include.n }}"></i>

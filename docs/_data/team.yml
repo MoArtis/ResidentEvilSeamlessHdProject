@@ -1,17 +1,35 @@
-feature_row:
-  - image_path: /img/team/moartis.png
-    alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "fuck"
-  - image_path: /img/team/kayael.png
-    alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "fuck"
-  - image_path: /img/team/saeed.png
-    alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "fuck"
-  - image_path: /img/team/frankwesker.png
-    alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "fuck"
+- name: "MoArtis" 
+  image: /img/team/moartis_256.png
+  role: "Programming"
+  excerpt: "Game designer living in China."
+  links:
+    - link: "https://twitter.com/MoArtis"
+      icon: "fab fa-twitter"
+    - link: "https://github.com/MoArtis"
+      icon: "fab fa-github"
+    - link: "https://www.youtube.com/channel/UC1_TcBESx8VKmgCcuvFi7Vg"
+      icon: "fab fa-youtube"
+- name: "Kayael"
+  image: /img/team/kayael_256.png
+  role: "HD textures"
+  excerpt: ""
+  links:
+  - link: "https://mobile.twitter.com/StephaneStein1"
+    icon: "fab fa-twitter"
+  - link: "https://www.youtube.com/channel/UCXXDesaEK0DwrCLjpXFhidA"
+    icon: "fab fa-youtube"
+- name: "Saeed"
+  image: /img/team/saeed_256.png
+  role: "Quality Assurance"
+  excerpt: ""
+- name: "FrankWesker"
+  image: /img/team/frankwesker_256.png
+  role: "Additional Art"
+  excerpt: ""
+  links:
+  - link: "https://twitter.com/frankweskerfkw"
+    icon: "fab fa-twitter"
+  - link: "https://www.deviantart.com/frankalcantara"
+    icon: "fab fa-deviantart"
+  - link: "https://www.instagram.com/iFrankWesker/"
+    icon: "fab fa-instagram"

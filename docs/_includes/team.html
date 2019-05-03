@@ -1,14 +1,14 @@
-<div class="team-content__inner-wrap">
-    <div style="width: 25%">
-        <img src="/img/team/moartis.png">
+<figure class="team-content__inner-wrap">
+    {% for member in site.data.team %}
+    <div class="team-member">
+        <span class="name">{{ member.name }}</span>
+        <img alt="{{ member.name }}" src="{{ member.image }}">
+        <span class="role">{{ member.role }}</span>
+        {% for link in member.links %}
+        <a href="{{ link.link }}" title="{{ link.link }}" class="btn btn--primary btn--x-large">
+            {%- include fa n=link.icon -%}
+        </a>
+        {% endfor %}
     </div>
-    <div style="width: 25%; float:left">
-        <img src="/img/team/kayael.png">
-    </div>
-    <div style="width: 25%">
-        <img src="/img/team/saeed.png">
-    </div>
-    <div style="width: 25%">
-        <img src="/img/team/frankwesker.png">
-    </div>
-</div>
+    {% endfor %}
+</figure>

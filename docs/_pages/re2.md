@@ -92,7 +92,7 @@ header:
 <!-- <div class="feature__wrapper"> -->
 
 Time to re-experience this classic survival-horror game with **Neural-networks** processed backgrounds,<br> **seamless** masks and many other small improvements in this **all-in-one texture pack.**<br>
-{% include fa n="exclamation-circle" %} Please note that **RESHDP** is a free fan project. {% include fa n="exclamation-circle" %}
+{% include fa n="fas fa-exclamation-circle" %} Please note that **RESHDP** is a free fan project. {% include fa n="fas fa-exclamation-circle" %}
 {: .text-center}
 {: .notice--primary}
 
