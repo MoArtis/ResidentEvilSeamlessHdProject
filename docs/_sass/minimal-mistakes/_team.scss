@@ -8,6 +8,10 @@
   }
 }
 
+.team-title {
+  font-size: $type-size-4;
+}
+
 .team__toggle {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -44,16 +48,33 @@
   display: none;
   visibility: hidden;
   padding-top: 0em;
-  padding-bottom: 1em;
+  padding-bottom: 0em;
 
   .team-member {
     @include breakpoint($small) {
-      width: calc(25% - 1em);
+      width: calc(25%);
+      padding-bottom: 0em;
+      padding-top: 0em;
+      border-bottom-width: 0em;
     }
+
+    width: 100%;
+
+    border-bottom-width: 2px;
+    border-bottom-color: $border-color;
+    border-bottom-style: solid;
+    padding-bottom: 1em;
+    padding-top: 1em;
+
+    text-align: center;
+    vertical-align: middle;
+
+    margin-left: auto;
+    margin-right: auto;
 
     a {
 
-      width: 75%;
+      width: 70%;
 
       svg {
         font-size: $type-size-3;
@@ -62,49 +83,9 @@
       }
     }
 
-    // a {
-    //   margin-left: 0.25em;
-    //   margin-right: 0.25em;
-    //   height: $nav-toggle-height;
-    //   border: 0;
-    //   outline: none;
-    //   color: $text-color;
-    //   background-color: transparent;
-    //   cursor: pointer;
-    //   -webkit-transition: 0.2s;
-    //   transition: 0.2s;
-    //   vertical-align: baseline;
-    //   position: relative;
-    //   top: 0.1em;
-
-    //   &:hover {
-    //     color: mix(#000, $text-color, 25%);
-    //   }
-
-    //   svg {
-    //     font-size: $type-size-1;
-    //     text-align: center;
-    //   }
-    // }
-
-    text-align: center;
-    vertical-align: middle;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    // position: relative;
-    // margin-bottom: 2em;
-    // font-size: 1.125em;
-
-    // display: table-cell;
-    // text-align: center;
-    // vertical-align: middle;
-
     img {
       padding-top: 1em;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
+      max-width: 256px;
     }
 
     .role {
@@ -114,6 +95,7 @@
     }
 
     .name {
+      display: block;
       color: $primary-color;
       font-size: $type-size-3;
       font-weight: bold;
