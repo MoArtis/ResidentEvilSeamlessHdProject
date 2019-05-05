@@ -145,56 +145,42 @@
     animation: $intro-transition;
     -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
-	/* height: 100%; */
-	
-	min-height: 20em;
-	
-	@include breakpoint($small) {
-        min-height: 22em;
+    /* height: 100%; */
+
+    min-height: 20em;
+
+    @include breakpoint($small) {
+      min-height: 22em;
     }
-	
-	@include breakpoint($medium) {
-        min-height: 24em;
+
+    @include breakpoint($medium) {
+      min-height: 24em;
     }
-		
-	@include breakpoint($medium-wide) {
-        min-height: 28em;
+
+    @include breakpoint($medium-wide) {
+      min-height: 28em;
     }
-	
-	@include breakpoint($large) {
-        min-height: 30em;
+
+    @include breakpoint($large) {
+      min-height: 30em;
     }
-	
-	@include breakpoint($x-large) {
-        min-height: 32em;
+
+    @include breakpoint($x-large) {
+      min-height: 32em;
     }
-	
+
     a {
       color: #fff;
     }
 
     .wrapper {
-		
-	  position: absolute;
-	  /* margin-right: auto; */
-	  bottom: 1em;
-	  /* display: inline-block; */
-	  /* vertical-align: bottom; */
-	  /* padding-top: 25em; */
-	  /* min-height: 20em; */
-	  /* vertical-align: bottom; */
-	  /* max-width: 100%; */
-	  /* margin-left: 1em; */
-	  /* margin-right: auto; */
-	  /* min-height: 100%; */
-	  /* height: 100%; */
-	  /* padding-bottom: 1em; */
+      position: absolute;
+      bottom: 1em;
       padding-left: 1em;
       padding-right: 1em;
-	  /* overflow: hidden; */
 
       @include breakpoint($x-large) {
-		max-width: $x-large;
+        max-width: $x-large;
         margin-left: calc((100% - #{$x-large}) / 2);
       }
     }

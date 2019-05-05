@@ -8,7 +8,8 @@ use_juxtapose: true
 use_carousel: true
 github_issue: https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues
 # redirect_from: "/"
-share: "true"
+share: true
+discord: true
 
 gallery_dolphin:
   - url: /img/galleries/dolphin/aspect_ratio_f.jpg
@@ -65,27 +66,18 @@ backgrounds:
   - /bgs/ROOM_60F_04
 
 #Header
-#excerpt: " "
 header:
   og_image: "/img/RE2SHDP_logo_og.jpg"
   hide_title: true
-  #min-height: 25em
-  # image: /img/re2header.jpg
   overlay_image: /img/re2header_uw.jpg
-  #caption: ""
   actions:
    - label: "Download"
-    #  fa_icon: download
      icon: /img/gamecube_logo_rect.png
-     caption: "Custom Dolphin + RE2SHDP v1.0 DDS files <a href=\"#customized-dolphin-build\">more info...</a>"
+     caption: "<a href=\"#customized-dolphin-build\">Custom Dolphin</a> + RE2SHDP v1.0"
      url: "https://mega.nz/#!OB4GSaQA!ysGTBlVle2SqTAmQuSpXU8Jca0lND4HXvBODs7d0_TE"
-  #  - label: "Download"
-  #    fa_icon: desktop
-  #    caption: "RE2SHDP v1.0-Gigapixel-1x PNG files for Classic Rebirth <a href=\"\">more info...</a>"
-  #    url: ""
    - label: "Download"
-     fa_icon: images
-     caption: "RE2SHDP v1.0 PNG files"
+     fa_icon: "fas fa-images"
+     caption: "RE2SHDP v1.0 PNG files only"
      url: "https://mega.nz/#!0sNFCYbY!3raWMmiajJpmu8zFPC6F_ZsNDQv-u0uRgVpcq98NJeI"
 ---
 
@@ -94,7 +86,7 @@ header:
 Time to re-experience this classic survival-horror game with **Neural-networks** processed backgrounds,<br> **seamless** masks and many other small improvements in this **all-in-one texture pack.**<br>
 {% include fa n="fas fa-exclamation-circle" %} Please note that **RESHDP** is a free fan project. {% include fa n="fas fa-exclamation-circle" %}
 {: .text-center}
-{: .notice--primary}
+{: .notice }
 
 <!-- </div> -->
 
@@ -107,6 +99,30 @@ Time to re-experience this classic survival-horror game with **Neural-networks**
 # What changes does this pack include?
 
 {% include feature_gallery.html id="gallery_do" %}
+
+<div class="feature__wrapper"></div>
+
+# Frequently Asked Questions
+
+>**Is the game included ?**<br>
+Absolutely not. We only provide the modified textures and the emulator.
+{: .notice }
+
+>**Can I use the pack on PC ?**<br>
+Sadly no... Two community patches exist for RE2 PC: _Peixoto_ and _Classic Rebirth_. _Peixoto_ would require us to dump the textures of the game manually one by one. _Classic Rebirth_, while being a great and easy to use patch, doesn't feature texture upscaling (yet). We will work on a PC version when it will be possible.
+{: .notice }
+
+>**Is it compatible with the PAL version ?**<br>
+Yes but the pack was made with the US (NTSC) version. Therefore you need to rename the folder "\*dolphin_path\*\User\Load\Textures\\**GHAE08**" to "**GHAP08**". Please note that the texts and some 3d models will not be upscaled. We plan to make the pack fully compatible with the PAL version in the future.
+{: .notice }
+
+>**Do I need to download the 2 packs ?**<br>
+No, if you just want to play, only the first link is necessary ("Custom Dolphin + RE2SHDP"). The second link is only provided to people who wants to have a look at the source files since the playable pack is using optimized DDS files.
+{: .notice }
+
+>**Can you help me regarding Dolphin ?**<br>
+We only made tiny modifications to the emulator so, if you have any problem or question regarding Dolphin you better off checking their [FAQ <i class="fas fa-external-link-alt"></i>](https://dolphin-emu.org/docs/faq/) or asking on their [forum <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/).
+{: .notice }
 
 <div class="feature__wrapper"></div>
 
@@ -164,7 +180,7 @@ These issues are barely noticeable at such low resolution and on a CRT (And the 
 But these issues can be very distracting at an high resolution and on a flatscreen. We touched up the worst offenders but thousands of man-hours is required to clean up everything.
 
 ![image-left](/img/perfect/vectorization_issue.jpg){: .align-left}
-The full process to create this pack is quite complex and involve multiple tools through multiple steps: Game data analysis, PC to GameCube texture matching, analysis of mask special cases, mask alpha layers vectorization, texture upscaling, texture recreation... Bugs are expected with such complicated process. So even if we carefully tested the pack during development, you will certainly encounter small unexpected issues.
+The full process to create this pack is quite complex and involve multiple tools through multiple steps: Game data analysis, PC to GameCube texture matching, analysis of mask special cases, mask alpha layers vectorization, texture upscaling, texture recreation... Bugs to be expected with such process. So even if we carefully tested the pack during development, you will certainly encounter small unexpected issues.
 
 That being said, if you encounter such issues, have any problem with the pack or notice a big imperfection, don't hesitate to report it on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).
 

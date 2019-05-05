@@ -7,6 +7,14 @@
    ========================================================================== */
 
 .btn {
+  svg {
+    font-size: inherit;
+    display: inline-block;
+    margin-right: 0.25em;
+    height: 1em;
+    width: 1.125em;
+  }
+
   /* default */
   display: inline-block;
   margin-bottom: 0.25em;
@@ -21,37 +29,21 @@
   cursor: pointer;
 
   .icon {
-	/* border: 0; */
-	/* max-width: 100%; */
-	/* height: auto; */
-	/* vertical-align: middle; */
-	font-size: inherit;
-	display: inline-block;
-    margin-right: 0.5em;
-	height: 1em;
-	width: 1.125em;
+    font-size: inherit;
+    display: inline-block;
+    margin-right: 0.25em;
+    height: 1em;
+    width: 1.125em;
   }
 
   .icon + .hidden {
     margin-left: -0.5em; /* override for hidden text*/
   }
-  
-  svg.svg-inline--fa {
-    margin-right: 0.5em;
-  }
 
   /* button colors */
-  $buttoncolors:
-  (primary, $primary-color),
-  (inverse, #fff),
-  (light-outline, transparent),
-  (success, $success-color),
-  (warning, $warning-color),
-  (danger, $danger-color),
-  (info, $info-color),
-  (facebook, $facebook-color),
-  (twitter, $twitter-color),
-  (linkedin, $linkedin-color);
+  $buttoncolors: (primary, $primary-color), (inverse, #fff), (light-outline, transparent), (success, $success-color),
+    (warning, $warning-color), (danger, $danger-color), (info, $info-color), (facebook, $facebook-color),
+    (twitter, $twitter-color), (linkedin, $linkedin-color), (discord, $discord-color);
 
   @each $buttoncolor, $color in $buttoncolors {
     &--#{$buttoncolor} {
@@ -99,19 +91,30 @@
 
   /* large button */
   &--large {
-    font-size: $type-size-5
+    font-size: $type-size-5;
+
+    &--large-icon {
+      svg {
+        font-size: $type-size-4 !important;
+      }
+  
+      // .label {
+      //   float: right;
+      //   margin-top: 0.01em;
+      // } 
+    }
   }
 
   /* small button */
   &--small {
     font-size: $type-size-7;
   }
-  
+
   &--caption {
-	margin-left: 0.5em;
+    margin-left: 0.5em;
     font-size: $type-size-7;
   }
-  
+
   &--wrapper {
     height: 100%;
   }

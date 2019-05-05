@@ -1,0 +1,20 @@
+/* ==========================================================================
+   JUXTAPOSE
+   ========================================================================== */
+
+.juxtapose_container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+
+  .carousel {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  
+}
+

@@ -2,7 +2,8 @@
 
 {% include seo.html %}
 
-<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"
+  type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +13,18 @@
 </script>
 
 {% if page.use_juxtapose %}
-  <script src="{{ '/assets/js/juxtapose.js' | prepend: site.baseurl }}"></script>
-  <link rel="stylesheet" href="{{ '/assets/css/juxtapose.css' | prepend: site.baseurl }}">
+<script src="{{ '/assets/js/juxtapose.js' | prepend: site.baseurl }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/juxtapose.css' | prepend: site.baseurl }}">
 {% endif %}
 
 {% if page.use_carousel %}
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.slim.min.js"></script>
-  <script src="{{ '/assets/js/carousel.min.js' | prepend: site.baseurl }}"></script>
-  <link rel="stylesheet" href="{{ '/assets/css/carousel.css' | prepend: site.baseurl }}">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.slim.min.js"></script>
+<script src="{{ '/assets/js/carousel.min.js' | prepend: site.baseurl }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/carousel.css' | prepend: site.baseurl }}">
+{% endif %}
+
+{% if page.discord %}
+<script src="/assets/js/discord_widget.js"></script>
 {% endif %}
 
 <!-- For all browsers -->
@@ -41,12 +46,12 @@
 <![endif]-->
 
 {% if site.head_scripts %}
-  {% for script in site.head_scripts %}
-    {% if script contains "://" %}
-      {% capture script_path %}{{ script }}{% endcapture %}
-    {% else %}
-      {% capture script_path %}{{ script | relative_url }}{% endcapture %}
-    {% endif %}
-    <script src="{{ script_path }}"></script>
-  {% endfor %}
+{% for script in site.head_scripts %}
+{% if script contains "://" %}
+{% capture script_path %}{{ script }}{% endcapture %}
+{% else %}
+{% capture script_path %}{{ script | relative_url }}{% endcapture %}
+{% endif %}
+<script src="{{ script_path }}"></script>
+{% endfor %}
 {% endif %}

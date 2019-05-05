@@ -11,7 +11,7 @@
  */
 
 @mixin notice($notice-color) {
-  margin: 2em 0 !important;  /* override*/
+  margin: 1.5em 0 !important;  /* override*/
   padding: 1em;
   color: $dark-gray;
   font-family: $global-font-family;
@@ -61,6 +61,10 @@
       margin-bottom: 0; /* override*/
     }
   }
+}
+
+blockquote.notice {
+  font-style: normal;
 }
 
 /* Default notice */
