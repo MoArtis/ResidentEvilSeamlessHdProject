@@ -124,6 +124,10 @@ No, if you just want to play, only the first link is necessary ("Custom Dolphin 
 We only made tiny modifications to the emulator so, if you have any problem or question regarding Dolphin you better off checking their [FAQ <i class="fas fa-external-link-alt"></i>](https://dolphin-emu.org/docs/faq/) or asking on their [forum <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/).
 {: .notice }
 
+>**How can I contact you ?**<br>
+You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q) or write us an issue on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues). We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with different ways to contact us.
+{: .notice }
+
 <div class="feature__wrapper"></div>
 
 <!-- # What's the big deal with "seamless masks"?
