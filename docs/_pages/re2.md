@@ -73,12 +73,12 @@ header:
   actions:
    - label: "Download"
      icon: /img/gamecube_logo_rect.png
-     caption: "<a href=\"#customized-dolphin-build\">Custom Dolphin</a> + RE2SHDP v1.0"
+     caption: "RE2SHDP v1.0 + <a href=\"#customized-dolphin-build\">Custom Dolphin</a>"
      url: "https://mega.nz/#!OB4GSaQA!ysGTBlVle2SqTAmQuSpXU8Jca0lND4HXvBODs7d0_TE"
-   - label: "Download"
-     fa_icon: "fas fa-images"
-     caption: "RE2SHDP v1.0 PNG files only"
-     url: "https://mega.nz/#!0sNFCYbY!3raWMmiajJpmu8zFPC6F_ZsNDQv-u0uRgVpcq98NJeI"
+  #  - label: "Download"
+  #    fa_icon: "fas fa-images"
+  #    caption: "RE2SHDP v1.0 PNG Pack"
+  #    url: "https://mega.nz/#!0sNFCYbY!3raWMmiajJpmu8zFPC6F_ZsNDQv-u0uRgVpcq98NJeI"
 ---
 
 <!-- <div class="feature__wrapper"> -->
