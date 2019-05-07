@@ -117,7 +117,7 @@ Yes but the pack was made with the US (NTSC) version. Therefore you need to rena
 {: .notice }
 
 >**Do I need to download the 2 packs ?**<br>
-No, if you just want to play, only the first link is necessary ("Custom Dolphin + RE2SHDP"). The second link is only provided to people who wants to have a look at the source files since the playable pack is using optimized DDS files.
+No, if you just want to play, only the first link is necessary ("Custom Dolphin + RE2SHDP"). The second link is only provided to people who want to have a look at the source files since the playable pack is using optimized DDS files.
 {: .notice }
 
 >**Can you help me regarding Dolphin ?**<br>
