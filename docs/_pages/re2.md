@@ -11,6 +11,20 @@ github_issue: https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues
 share: true
 discord: true
 
+gallery_seamless:
+  - url: /img/galleries/seamless/Seam_crop_f.jpg
+    image_path: /img/galleries/seamless/Seam_crop_th.jpg
+    alt: "Filtering applied on the mask texture"
+    title: "Filtering applied on the mask texture"
+  - url: /img/galleries/seamless/Mixed_crop_f.jpg
+    image_path: /img/galleries/seamless/Mixed_crop_th.jpg
+    alt: "Basic solution: Skipping the mask textures"
+    title: "Basic solution: Skipping the mask textures"
+  - url: /img/galleries/seamless/Seamless_crop_f.jpg
+    image_path: /img/galleries/seamless/Seamless_crop_th.jpg
+    alt: "The RESHDP solution"
+    title: "The RESHDP solution"
+
 gallery_dolphin:
   - url: /img/galleries/dolphin/aspect_ratio_f.jpg
     image_path: /img/galleries/dolphin/aspect_ratio_th.jpg
@@ -83,7 +97,7 @@ header:
 
 <!-- <div class="feature__wrapper"> -->
 
-Time to re-experience this classic survival-horror game with **Neural-networks** processed backgrounds,<br> **seamless** masks and many other small improvements in this **all-in-one texture pack.**<br>
+Time to re-experience this classic survival-horror game with **Machine Learning** upscaled backgrounds,<br> **seamless masks** and many other small improvements in this **all-in-one texture pack.**<br>
 {% include fa n="fas fa-exclamation-circle" %} Please note that **RESHDP** is a free fan project. {% include fa n="fas fa-exclamation-circle" %}
 {: .text-center}
 {: .notice }
@@ -99,6 +113,16 @@ Time to re-experience this classic survival-horror game with **Neural-networks**
 # What changes does this pack include?
 
 {% include feature_gallery.html id="gallery_do" %}
+
+<div class="feature__wrapper"></div>
+
+# What's the big deal with "seamless masks"?
+
+The RESHDP texture pack solves the **seam issue** that always comes up when any kind of filtering or upscaling is applied to the game's **mask textures**. 
+
+{% include feature_gallery.html id="gallery_seamless" %}
+
+Our solution was to create a tool that analyzes the game data to **regenerate completely new mask textures** from the upscaled background textures. The original mask textures are not used or processed in any way.
 
 <div class="feature__wrapper"></div>
 
@@ -129,30 +153,6 @@ You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord
 {: .notice }
 
 <div class="feature__wrapper"></div>
-
-<!-- # What's the big deal with "seamless masks"?
-
-While it's not the first time the backgrounds of the classic RE games are being upscaled with ESRGAN or other similar tools, the result is usually not playable.
-
-Trying to just use upscaled background will give you that result:
-
-<div class="align-center" style="width:960px; margin-bottom:2em">
-{% include juxtapose.html name="sl_mixed" prev_img="/seamless/Mixed.jpg" next_img="/seamless/Seamless.jpg" prev_label="Bg Only" next_label="Seamless" %}
-</div>
-
-Parts of the background is still pixelated. This is due to the fact that Classic RE games use pre-rendered backgrounds covered by sprites to create an illusion of depth. The parts still pixelated on the previous was these mask sprites being drawn on top of the background.
-
-The mask setup in these games is quite complex. With multiple layer of "mask groups" and special cases where groups are switched on and off to animate the background.
-
-The masks are packed as a texture sheet and like a puzzle, each parts (usually) correspond to a spot on the background texture.
-
-Thus, processing the mask texture sheets will always end up creating seams around these masks. The color of a mask parts will be mixed with other parts and will miss the color information where there is transparency.
-
-Our solution is to use the game data to determine proper Mask to background texture mapping coordinates, allowing us to regenerate the masks from any processed and upscaled background textures.
-
-comparison with a directly upscaled and leave it as such (pixel)
-
-<div class="feature__wrapper"></div> -->
 
 # Customized Dolphin build
 
