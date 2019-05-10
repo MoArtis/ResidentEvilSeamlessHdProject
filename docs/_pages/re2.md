@@ -87,7 +87,7 @@ header:
   actions:
    - label: "Download"
      icon: /img/gamecube_logo_rect.png
-     caption: "RE2SHDP v1.0 + <a href=\"#customized-dolphin-build\">Custom Dolphin</a>"
+     caption: "RE2SHDP v1.0 + <a href=\"#customized-dolphin-build\">Custom Dolphin</a><br>Mirror links: <a href=\"https://drive.google.com/file/d/1x6UOL7yoBd11hIs5llPYLJfX43C0PWSQ/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP-1.0 + Custom Dolphin.torrent\">Torrent</a>"
      url: "https://mega.nz/#!OB4GSaQA!ysGTBlVle2SqTAmQuSpXU8Jca0lND4HXvBODs7d0_TE"
   #  - label: "Download"
   #    fa_icon: "fas fa-images"
@@ -128,21 +128,25 @@ Our solution was to create a tool that analyzes the game data to **regenerate co
 
 # Frequently Asked Questions
 
->**Is the game included ?**<br>
-Absolutely not. We only provide the modified textures and the emulator.
-{: .notice }
-
->**Can I use the pack on PC ?**<br>
-Sadly no... Two community patches exist for RE2 PC: _Peixoto_ and _Classic Rebirth_. _Peixoto_ would require us to dump the textures of the game manually one by one. _Classic Rebirth_, while being a great and easy to use patch, doesn't feature texture upscaling (yet). We will work on a PC version when it will be possible.
+>**How do I install the pack ?**<br>
+Our pack comes along a custom version of Dolphin (a Gamecube emulator). All you have to do is to extract the Zip file, open Dolphin.exe, select the folder containing your game ISO, configure the controller if needed and play! **We don't provide the game ISO** and we will not help you to find one. If you can't open the zip file, you might need to download and use [7Zip <i class="fas fa-external-link-alt"></i>](https://www.7-zip.org/download.html).
 {: .notice }
 
 >**Is it compatible with the PAL version ?**<br>
-Yes but the pack was made with the US (NTSC) version. Therefore you need to rename the folder "\*dolphin_path\*\User\Load\Textures\\**GHAE08**" to "**GHAP08**". Please note that the texts and some 3d models will not be upscaled. We plan to make the pack fully compatible with the PAL version in the future.
+Yes but the pack was made with the US (NTSC) version in mind. Therefore you need to rename the folder "\*dolphin_path\*\User\Load\Textures\\<wbr>**GHAE08**" to "**GHAP08**". Please note that the texts and some 3d models will not be upscaled. We plan to make the pack fully compatible with the PAL version in the future.
 {: .notice }
 
->**Do I need to download the 2 packs ?**<br>
-No, if you just want to play, only the first link is necessary ("Custom Dolphin + RE2SHDP"). The second link is only provided to people who want to have a look at the source files since the playable pack is using optimized DDS files.
+>**Can I use the pack on the PC version ?**<br>
+Sadly no... Two community patches exist for RE2 PC: _Peixoto_ and _Classic Rebirth_. _Peixoto_ would require us to dump the textures of the game manually one by one. _Classic Rebirth_, while being a great and easy to use patch, doesn't feature texture upscaling (yet). We will work on a PC version when it will be possible.
 {: .notice }
+
+>**...and on Dolphin for Mac/Android  ?**<br>
+Yes. But we don't provide a custom version of Dolphin for these platforms. We are looking into it though.
+{: .notice }
+
+<!-- >**Do I need to download the 2 packs ?**<br>
+No, if you just want to play, only the first link is necessary ("Custom Dolphin + RE2SHDP"). The second link is only provided to people who want to have a look at the source files since the playable pack is using optimized DDS files.
+{: .notice } -->
 
 >**Can you help me regarding Dolphin ?**<br>
 We only made tiny modifications to the emulator so, if you have any problem or question regarding Dolphin you better off checking their [FAQ <i class="fas fa-external-link-alt"></i>](https://dolphin-emu.org/docs/faq/) or asking on their [forum <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/).
@@ -175,16 +179,16 @@ The source code of this custom build is available on [Github <i class="fab fa-gi
 No. And we would like to give you more details about the most obvious issues.
 
 ![image-left](/img/perfect/text_issue.jpg){: .align-left}
-Neural networks upscaling is not magic. The algorithm has an especially hard time with dark areas and RE2 is clearly not a game with bright and colorful backgrounds. Expect to see a lot of "melting" artefacts on dark corners and distant parts of the backgrounds.<br>
+**Neural networks upscaling is not magic.** The algorithm has an especially hard time with dark areas and RE2 is clearly not a game with bright and colorful backgrounds. Expect to see a lot of **"melting" artefacts** on dark corners and distant parts of the backgrounds.<br>
 Small texts will also end up being processed as melting garbage. We replaced them when the result was too distracting.
 
 ![image-right](/img/perfect/mask_issue.jpg){: .align-right}
-Many original mask textures don't line up perfectly with their respective background texture. Thus some pixels which are not part of the foreground appear on top of the 3D models.<br>
+Many original **mask textures don't line up perfectly** with their respective background texture. Thus some pixels which are not part of the foreground appear on top of the 3D models.<br>
 These issues are barely noticeable at such low resolution and on a CRT (And the game was intended to be displayed on a CRT like any game of that era).<br>
 But these issues can be very distracting at an high resolution and on a flatscreen. We touched up the worst offenders but thousands of man-hours is required to clean up everything.
 
 ![image-left](/img/perfect/vectorization_issue.jpg){: .align-left}
-The full process to create this pack is quite complex and involve multiple tools through multiple steps: Game data analysis, PC to GameCube texture matching, analysis of mask special cases, mask alpha layers vectorization, texture upscaling, texture recreation... Bugs to be expected with such process. So even if we carefully tested the pack during development, you will certainly encounter small unexpected issues.
+The full process to create this pack is quite complex and involve multiple tools through multiple steps: Game data analysis, PC to GameCube texture matching, analysis of mask special cases, mask alpha layers vectorization, texture upscaling, texture recreation... **Bugs are to be expected** with such process. So even if we carefully tested the pack during development, you will certainly encounter small unexpected issues.
 
 That being said, if you encounter such issues, have any problem with the pack or notice a big imperfection, don't hesitate to report it on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).
 
