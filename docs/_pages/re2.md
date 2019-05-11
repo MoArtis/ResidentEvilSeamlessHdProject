@@ -128,11 +128,11 @@ Our solution was to create a tool that analyzes the game data to **regenerate co
 
 # Frequently Asked Questions
 
->**How do I install the pack ?**<br>
+>**How do I install the pack?**<br>
 Our pack comes along a custom version of Dolphin (a Gamecube emulator). All you have to do is to extract the Zip file, open Dolphin.exe, select the folder containing your game ISO, configure the controller if needed and play! **We don't provide the game ISO** and we will not help you to find one. If you can't open the zip file, you might need to download and use [7Zip <i class="fas fa-external-link-alt"></i>](https://www.7-zip.org/download.html).
 {: .notice }
 
->**Is it compatible with the PAL version ?**<br>
+>**Is it compatible with the PAL version?**<br>
 Yes but the pack was made with the US (NTSC) version in mind. Therefore you need to rename the folder "\*dolphin_path\*\User\Load\Textures\\<wbr>**GHAE08**" to "**GHAP08**". Please note that the texts and some 3d models will not be upscaled. We plan to make the pack fully compatible with the PAL version in the future.
 {: .notice }
 
@@ -140,7 +140,7 @@ Yes but the pack was made with the US (NTSC) version in mind. Therefore you need
 Sadly no... Two community patches exist for RE2 PC: _Peixoto_ and _Classic Rebirth_. _Peixoto_ would require us to dump the textures of the game manually one by one. _Classic Rebirth_, while being a great and easy to use patch, doesn't feature texture upscaling (yet). We will work on a PC version when it will be possible.
 {: .notice }
 
->**...and on Dolphin for Mac/Android  ?**<br>
+>**...and on Dolphin for Mac/Android?**<br>
 Yes. But we don't provide a custom version of Dolphin for these platforms. We are looking into it though.
 {: .notice }
 
@@ -148,11 +148,15 @@ Yes. But we don't provide a custom version of Dolphin for these platforms. We ar
 No, if you just want to play, only the first link is necessary ("Custom Dolphin + RE2SHDP"). The second link is only provided to people who want to have a look at the source files since the playable pack is using optimized DDS files.
 {: .notice } -->
 
->**Can you help me regarding Dolphin ?**<br>
+>**How to turn off the pack while playing?**<br>
+You can turn the pack on and off while playing with **ALT + F10**.
+{: .notice }
+
+>**Can you help me regarding Dolphin?**<br>
 We only made tiny modifications to the emulator so, if you have any problem or question regarding Dolphin you better off checking their [FAQ <i class="fas fa-external-link-alt"></i>](https://dolphin-emu.org/docs/faq/) or asking on their [forum <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/).
 {: .notice }
 
->**How can I contact you ?**<br>
+>**How can I contact you?**<br>
 You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q) or write us an issue on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues). We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with different ways to contact us.
 {: .notice }
 
