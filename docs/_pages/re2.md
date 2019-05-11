@@ -148,8 +148,14 @@ Yes. But we don't provide a custom version of Dolphin for these platforms. We ar
 No, if you just want to play, only the first link is necessary ("Custom Dolphin + RE2SHDP"). The second link is only provided to people who want to have a look at the source files since the playable pack is using optimized DDS files.
 {: .notice } -->
 
+>**What can I do if I have hiccups?**<br>
+If you are experiencing **noticeable performance hiccups and slowdowns** when the background changes or when you open the inventory, try this on Dolphin: Open the "Graphics" menu, go to the "Advanced" tab and, in the "Utility" section, turn on the the "**Prefetch Custom Textures**" option. You need to restart the game and wait for a bit for the change to take effect. 
+{: .notice }
+
+<!-- Please note that this option uses a lot of RAM (~4GB), the game will slow down a lot for a minute and turning on and off the pack -->
+
 >**How to turn off the pack while playing?**<br>
-You can turn the pack on and off while playing with **ALT + F10**.
+You can turn the pack on and off while playing with **ALT + F10**. Please note that if you have the "**Prefetch Custom Textures**" option activated, the textures will have to be reloaded entirely again.
 {: .notice }
 
 >**Can you help me regarding Dolphin?**<br>
