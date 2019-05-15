@@ -43,7 +43,7 @@ gallery_do:
   - url: /img/galleries/do/bgs_masks_re2shdp_f.jpg
     image_path: /img/galleries/do/bgs_masks_re2shdp_th.jpg
     alt: "RE2SHDP Bgs and Masks"
-    title: "Upscaled backgrounds with seamless masks"
+    title: "Upscaled backgrounds with vectorized masks"
   - url: /img/galleries/do/bg_texts_re2shdp_f.jpg
     image_path: /img/galleries/do/bg_texts_re2shdp_th.jpg
     alt: "RE2SHDP Bg Texts"
@@ -97,7 +97,7 @@ header:
 
 <!-- <div class="feature__wrapper"> -->
 
-Time to re-experience this classic survival-horror game with **Machine Learning** upscaled backgrounds,<br> **vectorized masks** and many other small improvements in this **all-in-one texture pack.**<br>
+Time to re-experience this classic survival-horror game with **Machine Learning** upscaled backgrounds,<br> **seamless masks** and many other small improvements in this **all-in-one texture pack.**<br>
 {% include fa n="fas fa-exclamation-circle" %} Please note that **RESHDP** is a free fan project. {% include fa n="fas fa-exclamation-circle" %}
 {: .text-center}
 {: .notice }
