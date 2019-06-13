@@ -1,0 +1,280 @@
+{
+    "namePrefix": "R20304",
+    "status": 0,
+    "bgMd5": "1842D2584129AED1471BE650FE3DBCE4",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R20304",
+                "R20304_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE3 GameCube",
+            "texNames": [
+                "tex1_640x480_5150e771fa5b65a2_5"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 4,
+    "groupsCount": 1,
+    "maskMd5": "37BAAF17CB186EE7032CA8D91E577F4E",
+    "maskTexSize": {
+        "x": 40,
+        "y": 24
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 8
+                },
+                "dstPos": {
+                    "x": 248,
+                    "y": 192
+                },
+                "size": {
+                    "x": 8,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                8,
+                9,
+                16,
+                -1,
+                18,
+                24,
+                -1,
+                26,
+                32,
+                -1,
+                36,
+                40,
+                -1,
+                45,
+                48,
+                -1,
+                54,
+                56,
+                -1,
+                62,
+                64,
+                -1,
+                79,
+                82,
+                -1,
+                87,
+                92,
+                -1,
+                95,
+                102,
+                103,
+                111
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 16
+                },
+                "dstPos": {
+                    "x": 256,
+                    "y": 200
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                8,
+                16,
+                17,
+                24,
+                25,
+                32
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 16,
+                    "y": 0
+                },
+                "dstPos": {
+                    "x": 224,
+                    "y": 176
+                },
+                "size": {
+                    "x": 8,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                11,
+                -1,
+                14,
+                18,
+                -1,
+                23,
+                26,
+                27,
+                29,
+                -1,
+                31,
+                34,
+                -1,
+                39,
+                42,
+                -1,
+                47,
+                51,
+                -1,
+                55,
+                59,
+                -1,
+                63,
+                66,
+                -1,
+                71,
+                74,
+                -1,
+                79,
+                81,
+                -1,
+                87,
+                93,
+                -1,
+                95,
+                102,
+                103,
+                110,
+                111,
+                117,
+                -1,
+                119,
+                125,
+                126,
+                135,
+                143,
+                151
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 8,
+                    "y": 0
+                },
+                "dstPos": {
+                    "x": 232,
+                    "y": 176
+                },
+                "size": {
+                    "x": 8,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                1,
+                -1,
+                3,
+                8,
+                -1,
+                10,
+                16,
+                -1,
+                19,
+                24,
+                -1,
+                159,
+                162,
+                -1,
+                167
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 0
+                },
+                "dstPos": {
+                    "x": 240,
+                    "y": 176
+                },
+                "size": {
+                    "x": 8,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                16,
+                24,
+                34,
+                35,
+                40,
+                -1,
+                44,
+                48,
+                -1,
+                53,
+                56,
+                -1,
+                61,
+                64,
+                -1,
+                70,
+                72,
+                -1,
+                78,
+                80,
+                -1,
+                86,
+                88,
+                -1,
+                94,
+                96,
+                -1,
+                167,
+                171,
+                -1,
+                175,
+                181,
+                -1,
+                183,
+                190,
+                191
+            ]
+        }
+    ]
+}

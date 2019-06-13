@@ -1,0 +1,42 @@
+{
+    "namePrefix": "R1040E",
+    "status": 0,
+    "bgMd5": "AAAA4D6A24AF134DA8EC924E9BD25683",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R1040E",
+                "R11F0E"
+            ],
+            "partIndices": [
+                0,
+                0
+            ]
+        },
+        {
+            "formatName": "RE3 GameCube",
+            "texNames": [
+                "tex1_640x480_66530ff631164e6b_5"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

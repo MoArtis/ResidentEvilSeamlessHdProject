@@ -1,0 +1,8 @@
+{
+    "name": "RE3 GameCube",
+    "bgParts": [],
+	"maskForcedSize": {
+        "x": 256,
+        "y": 256
+    }
+}

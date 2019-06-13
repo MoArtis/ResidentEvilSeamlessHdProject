@@ -1,0 +1,41 @@
+{
+    "namePrefix": "R30707",
+    "status": 0,
+    "bgMd5": "178CDBEDAE62DDDF60046F62D1DA85B4",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R30707",
+                "R30806",
+                "R30F0B",
+                "R31307",
+                "R31406",
+                "R3170B"
+            ],
+            "partIndices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

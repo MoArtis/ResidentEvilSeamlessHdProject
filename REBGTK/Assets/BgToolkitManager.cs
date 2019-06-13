@@ -40,9 +40,6 @@ public class BgToolkitManager : MonoBehaviour
 
     [SerializeField] protected bool prettifyJsonOnSave;
 
-    [SerializeField] protected string baseDumpFormatName;
-    protected DumpFormat baseDumpFormat;
-
     protected int matchTexDumpFormatIndex;
     protected int recreateTexDumpFormatIndex;
     protected DumpFormat[] dumpFormats;
@@ -70,26 +67,45 @@ public class BgToolkitManager : MonoBehaviour
 
         ChangeState(State.MainMenu);
 
-        for (int i = 0; i < dumpFormats.Length; i++)
-        {
-            if (dumpFormats[i].name == baseDumpFormatName)
-            {
-                baseDumpFormat = dumpFormats[i];
-                break;
-            }
-        }
 
-        if (baseDumpFormat.name == null || baseDumpFormat.name == "")
-        {
-            //ChangeState(State.Error);
-            //errorMessage.ChangeMessage("The dump format named " + baseDumpFormatName + " is missing. Check the Dump Format folder.");
-            Debug.LogError("The dump format named " + baseDumpFormatName + " is missing. Check the Dump Formats folder.");
-            ChangeState(State.None);
-        }
-        else
-        {
-            toolkit = new BgToolkit(maskSuffix, altMaskSourceSuffix, prettifyJsonOnSave, baseDumpFormat);
-        }
+        //Trash code to reverse determine the PC names of the upscaled GC named backgrounds on RE3
+        //int bgInfoCount = fm.LoadFiles(System.IO.Path.Combine(bgInfoPath, "RE3"), "json");
+        //BgInfo[] bgInfos = fm.GetObjectsFromFiles<BgInfo>();
+
+        //int bgCount = fm.LoadFiles(System.IO.Path.Combine(processedPath, "RE3"), "png", System.IO.SearchOption.AllDirectories);
+
+        //for (int i = 0; i < bgCount; i++)
+        //{
+        //    string bgName = fm.RemoveExtensionFromFileInfo(fm.fileInfos[i]);
+        //    bool isFound = false;
+
+        //    for (int j = 0; j < bgInfoCount; j++)
+        //    {
+        //        BgInfo bgInfo = bgInfos[j];
+        //        for (int k = 0; k < bgInfo.texDumpMatches.Length; k++)
+        //        {
+        //            if (bgInfo.texDumpMatches[k].formatName == "RE3 GameCube")
+        //            {
+        //                for (int l = 0; l < bgInfo.texDumpMatches[k].texNames.Length; l++)
+        //                {
+        //                    if (bgInfo.texDumpMatches[k].texNames[l] == bgName)
+        //                    {
+        //                        string texName = bgInfo.namePrefix + ".png";
+        //                        string newFullName = System.IO.Path.Combine(fm.fileInfos[i].DirectoryName, texName);
+        //                        Debug.Log(fm.fileInfos[i].FullName + " || " + newFullName);
+        //                        System.IO.File.Move(fm.fileInfos[i].FullName, newFullName);
+        //                        isFound = true;
+        //                        break;
+        //                    }
+        //                }
+        //            }
+        //            if (isFound)
+        //                break;
+        //        }
+        //        if (isFound)
+        //            break;
+        //    }
+        //}
 
         //Trash code for dealing with the mixed Special masks (the ones mixing Alt mask source and the BG for reconstructing the mask) 
         //int bgInfoCount = fm.LoadFiles(bgInfoPath, "json");
@@ -186,6 +202,50 @@ public class BgToolkitManager : MonoBehaviour
         //    }
         //}
         //Debug.LogWarning(sb.ToString());
+    }
+
+    public void ChangeGame(int gameIndex)
+    {
+        Game currentGame = (Game)gameIndex;
+        toolkit = new BgToolkit(currentGame, GetBaseDumpFormat(currentGame), maskSuffix, altMaskSourceSuffix, prettifyJsonOnSave);
+
+        Debug.Log("Game changed to " + currentGame);
+    }
+
+    public DumpFormat GetBaseDumpFormat(Game game)
+    {
+        string baseDumpFormatName = "";
+        switch (game)
+        {
+            case Game.RE2:
+                baseDumpFormatName = "RE2 Classic Rebirth";
+                break;
+
+            case Game.RE3:
+                baseDumpFormatName = "RE3 SourceNext";
+                break;
+        }
+
+        DumpFormat baseDumpFormat = new DumpFormat();
+
+        for (int i = 0; i < dumpFormats.Length; i++)
+        {
+            if (dumpFormats[i].name == baseDumpFormatName)
+            {
+                baseDumpFormat = dumpFormats[i];
+                break;
+            }
+        }
+
+        if (baseDumpFormat.name == null || baseDumpFormat.name == "")
+        {
+            //ChangeState(State.Error);
+            //errorMessage.ChangeMessage("The dump format named " + baseDumpFormatName + " is missing. Check the Dump Format folder.");
+            Debug.LogError("The dump format named " + baseDumpFormatName + " is missing. Check the Dump Formats folder.");
+            ChangeState(State.None);
+        }
+
+        return baseDumpFormat;
     }
 
     public void GenerateSpecialMaskSources()

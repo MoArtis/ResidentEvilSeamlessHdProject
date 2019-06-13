@@ -17,10 +17,10 @@ public class FileManager
         return File.ReadAllBytes(fileInfos[index].FullName);
     }
 
-    public int LoadFiles(string path, string extension)
+    public int LoadFiles(string path, string extension, SearchOption searchOption = SearchOption.TopDirectoryOnly)
     {
         DirectoryInfo dirInfo = new DirectoryInfo(path);
-        fileInfos = dirInfo.GetFiles("*." + extension, SearchOption.TopDirectoryOnly);
+        fileInfos = dirInfo.GetFiles("*." + extension, searchOption);
         return fileInfos.Length;
     }
 

@@ -1,4 +1,8 @@
 {
     "name": "RE2 Classic Rebirth",
-    "bgParts": []
+    "bgParts": [],
+	"maskUsageSize": {
+        "x": 320,
+        "y": 240
+    }
 }

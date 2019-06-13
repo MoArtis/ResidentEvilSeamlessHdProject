@@ -1,0 +1,42 @@
+{
+    "namePrefix": "R11A0A",
+    "status": 0,
+    "bgMd5": "39456208BCD3A2B4902F49BEF0E803E5",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R11A0A",
+                "R11A0A_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE3 GameCube",
+            "texNames": [
+                "tex1_640x480_2614bb13a772795c_5"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "F61B0A4047DDD623578C30A38B879741",
+    "maskTexSize": {
+        "x": 256,
+        "y": 16
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

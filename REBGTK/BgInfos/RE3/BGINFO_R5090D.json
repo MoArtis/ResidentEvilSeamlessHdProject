@@ -1,0 +1,180 @@
+{
+    "namePrefix": "R5090D",
+    "status": 0,
+    "bgMd5": "48C1E8A1C35C3D12BE5B6E71BB6F174E",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R5090D",
+                "R5090D_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE3 GameCube",
+            "texNames": [
+                "tex1_640x480_87343d69521416c7_5"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 13,
+    "groupsCount": 1,
+    "maskMd5": "224B337E438EDA8DED83888398347461",
+    "maskTexSize": {
+        "x": 96,
+        "y": 16
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 64,
+                    "y": 8
+                },
+                "dstPos": {
+                    "x": 152,
+                    "y": 128
+                },
+                "size": {
+                    "x": 32,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                7,
+                -1,
+                28,
+                40,
+                -1,
+                59,
+                73,
+                -1,
+                91,
+                107,
+                -1,
+                123,
+                142,
+                -1,
+                154,
+                180,
+                -1,
+                185
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 8
+                },
+                "dstPos": {
+                    "x": 152,
+                    "y": 120
+                },
+                "size": {
+                    "x": 32,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                7,
+                -1,
+                29,
+                39,
+                -1,
+                61,
+                70,
+                -1,
+                93,
+                102,
+                -1,
+                125,
+                134,
+                -1,
+                157,
+                166,
+                -1,
+                188,
+                198,
+                -1,
+                220,
+                230,
+                -1,
+                252
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 0
+                },
+                "dstPos": {
+                    "x": 152,
+                    "y": 104
+                },
+                "size": {
+                    "x": 32,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                137,
+                169,
+                -1,
+                171,
+                201,
+                -1,
+                204,
+                233,
+                -1,
+                237,
+                264,
+                -1,
+                273,
+                296,
+                -1,
+                310,
+                319,
+                328,
+                -1,
+                351,
+                360,
+                -1,
+                383,
+                392,
+                -1,
+                414,
+                423,
+                -1,
+                446,
+                455,
+                -1,
+                478,
+                487,
+                -1,
+                510
+            ]
+        }
+    ]
+}

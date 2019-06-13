@@ -1,0 +1,33 @@
+{
+    "namePrefix": "R20C0F",
+    "status": 0,
+    "bgMd5": "C4C6710899A93064AA5652203372F0F5",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R20C0F",
+                "R2150F"
+            ],
+            "partIndices": [
+                0,
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

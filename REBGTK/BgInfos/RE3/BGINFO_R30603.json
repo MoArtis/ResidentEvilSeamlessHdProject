@@ -1,0 +1,33 @@
+{
+    "namePrefix": "R30603",
+    "status": 0,
+    "bgMd5": "96CCE2D2DB09552557E3361C5EB9A5BE",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R30603",
+                "R31203"
+            ],
+            "partIndices": [
+                0,
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

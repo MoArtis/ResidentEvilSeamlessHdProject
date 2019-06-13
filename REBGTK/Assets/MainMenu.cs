@@ -6,9 +6,15 @@ using BgTk;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] protected Dropdown gameDropdown;
     [SerializeField] protected Dropdown matchTexturesDropdown;
     [SerializeField] protected Dropdown recreateTexturesDropdown;
     [SerializeField] protected CanvasGroup canvasGroup;
+
+    private void Start()
+    {
+        UpdateGameOptions(2);
+    }
 
     public void Show()
     {
@@ -22,6 +28,20 @@ public class MainMenu : MonoBehaviour
         canvasGroup.interactable = false;
     }
 
+    public void UpdateGameOptions(int selectedIndex)
+    {
+        List<Dropdown.OptionData> optionDatas = new List<Dropdown.OptionData>();
+        for (int i = 0; i < 4; i++)
+        {
+            string gameName = ((Game)i).ToString();
+            optionDatas.Add(new Dropdown.OptionData(gameName));
+        }
+
+        gameDropdown.options = optionDatas;
+
+        gameDropdown.value = selectedIndex;
+        gameDropdown.RefreshShownValue();
+    }
 
     public void UpdateMatchTexturesFormatOptions(DumpFormat[] dumpFormats, int selectedIndex)
     {

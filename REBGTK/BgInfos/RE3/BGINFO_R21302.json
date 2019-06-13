@@ -1,0 +1,44 @@
+{
+    "namePrefix": "R21302",
+    "status": 0,
+    "bgMd5": "0034DFC46CD21EC44D322AB54E28E281",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R21302",
+                "R21302_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE3 GameCube",
+            "texNames": [
+                "tex1_640x480_c4223fb9c7303756_5",
+                "tex1_256x256_$_456c1142aee47049_9"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "CC6D9517725E77D3F37F437B7C897B7C",
+    "maskTexSize": {
+        "x": 256,
+        "y": 112
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

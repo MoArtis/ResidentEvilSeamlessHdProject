@@ -18,6 +18,7 @@ using System.Windows.Threading;
 using System.Threading;
 using System.Media;
 using System.IO.Compression;
+using System.Windows.Shell;
 
 namespace RESHDP_PackConv
 {
@@ -114,11 +115,19 @@ namespace RESHDP_PackConv
 
                 string path = Path.Combine(di.FullName, tf.FolderPath);
 
-                int fileCount = fm.LoadFiles(path, "png", SearchOption.TopDirectoryOnly);
+                int fileCount = fm.LoadFiles(path, "png", tf.IsAllDirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
                 for (int j = 0; j < fileCount; j++)
                 {
+                    //I'm tired of this, let's just make it work with one folder deep structure.
+                    string fileTargetPath = "";
+                    if (tf.IsAllDirectories)
+                        fileTargetPath = Path.Combine(targetPath, fm.fileInfos[j].Directory.Name);
+                    else
+                        fileTargetPath = targetPath;
+
+                    fm.CreateDirectory(fileTargetPath);
                     //string newFilePath = Path.Combine(targetPath, fm.RemoveExtensionFromFileInfo(fm.fileInfos[j]) + ".dds");
-                    conversionTasks.Add(new Tuple<FileInfo, string, DxgiFormat>(fm.fileInfos[j], targetPath, tf.Format));
+                    conversionTasks.Add(new Tuple<FileInfo, string, DxgiFormat>(fm.fileInfos[j], fileTargetPath, tf.Format));
                 }
             }
 
@@ -212,7 +221,9 @@ namespace RESHDP_PackConv
 
         private void ReportProgress()
         {
-            progressBar.Value = (processingFileCount / (double)conversionTasks.Count) * 100.0;
+            double progress = (processingFileCount / (double)conversionTasks.Count);
+            progressBar.Value = progress * 100.0;
+            TaskbarItemInfo.ProgressValue = progress;
         }
 
         //https://github.com/Microsoft/DirectXTex/wiki/Texconv
@@ -254,6 +265,8 @@ namespace RESHDP_PackConv
             processingFileCount = 0;
 
             SwitchInterface(false);
+
+            TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Normal;
         }
 
         private void ConversionDone()
@@ -266,6 +279,8 @@ namespace RESHDP_PackConv
             fm.SaveReportToFile(convSb, "./", "Conversion");
 
             SystemSounds.Exclamation.Play();
+
+            TaskbarItemInfo.ProgressState = TaskbarItemProgressState.None;
         }
 
         private void SwitchInterface(bool isEnable)

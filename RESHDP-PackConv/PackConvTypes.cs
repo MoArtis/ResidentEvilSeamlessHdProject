@@ -39,5 +39,6 @@ namespace RESHDP_PackConv
     {
         public string FolderPath { get; set; }
         public DxgiFormat Format { get; set; }
+        public bool IsAllDirectories { get; set; }
     }
 }

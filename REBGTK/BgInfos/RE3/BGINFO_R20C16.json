@@ -1,0 +1,33 @@
+{
+    "namePrefix": "R20C16",
+    "status": 0,
+    "bgMd5": "1C15248BF0BD5B834B1BBE5FD5AD11DE",
+    "bgTexSize": {
+        "x": 640,
+        "y": 480
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE3 SourceNext",
+            "texNames": [
+                "R20C16",
+                "R21516"
+            ],
+            "partIndices": [
+                0,
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:RESHDP_PackConv"
         mc:Ignorable="d"
         Title="RESHDP - PackConv" Height="450" Width="780" ResizeMode="NoResize" Closed="Window_Closed" Icon="Thinking+Joy-128.ico">
+
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo/>
+    </Window.TaskbarItemInfo>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="85" />
@@ -59,4 +64,5 @@
         </GroupBox>
 
     </Grid>
+
 </Window>

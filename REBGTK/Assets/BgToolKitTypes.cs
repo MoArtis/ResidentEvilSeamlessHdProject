@@ -5,6 +5,14 @@ using System.Linq;
 
 namespace BgTk
 {
+    public enum Game
+    {
+        RE1,
+        RE2,
+        RE3,
+        DC2
+    }
+
     public enum BgInfoStatus
     {
         Todo,
@@ -22,7 +30,8 @@ namespace BgTk
         //public int[] histBgPartPatchIndices;
         public Patch[] HistPatches;
 
-        public Histogram bgHistogram;
+        //Could / should? be function variable tbh - Not sure why I did that...
+        public Histogram tempHistogram;
 
         //public bool isMatched;
         public bool isMask;
@@ -31,6 +40,7 @@ namespace BgTk
         //TODO - convert them into array? I need to add element conveniently and the list will never be big.
         public List<int> bgInfoMatchIndex;
         public List<float> bgInfoMatchValue;
+        public float bestMatchValue;
 
         public void SetFileInfoIndices(int[] indices)
         {
@@ -159,6 +169,7 @@ namespace BgTk
         public int histGenAttemptsMaxCount;
         public float patchMinMatchValue;
         public float candidateMinMatchValue;
+        public bool savePatchTexures;
     }
 
     [System.Serializable]
@@ -195,7 +206,9 @@ namespace BgTk
     public struct DumpFormat
     {
         public string name;
-        public BgTexturePart[] bgParts; //if none = The BG texture remains whole
+        public BgTexturePart[] bgParts; //if none => The BG texture remains whole
+        public Vector2Int maskForcedSize; //if 0,0 => follow what is indicated in the BgInfo
+        public Vector2Int maskUsageSize; //At which screen resolution these maks are being rendered / used (320x240 on RE2 and RE3)
 
         public override bool Equals(object obj)
         {
