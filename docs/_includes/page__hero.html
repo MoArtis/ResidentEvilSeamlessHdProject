@@ -68,7 +68,7 @@
     {% assign url = action.url | relative_url %}
     {% endif %}
     <div class="btn--wrapper">
-      <a href="{{ url }}" class="btn btn--primary btn--large">
+      <a href="{{ url }}" class="btn btn--primary btn--fixedWidth">
         {% if action.icon %}
         <img class="icon" src="{{ action.icon | prepend: site.baseurl }}" alt="{{ action.icon }}">
         {% elsif action.fa_icon %}

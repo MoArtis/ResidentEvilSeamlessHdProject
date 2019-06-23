@@ -1,7 +1,7 @@
 ---
-title: "RE2SHDP"
+title: "RE3SHDP"
 layout: showcase
-permalink: /re2/
+permalink: /re3/
 show_logo: true
 show_title: false
 use_juxtapose: true
@@ -56,31 +56,22 @@ gallery_do:
     image_path: /img/galleries/do/computer_re2shdp_th.jpg
     alt: "RE2SHDP Computer"
     title: "Manually edited in-game screens"
-  - url: /img/galleries/do/vfx_re2shdp_f.jpg
-    image_path: /img/galleries/do/vfx_re2shdp_th.jpg
-    alt: "RE2SHDP visual effects"
-    title: "Improved visual effects"
+  - url: /img/galleries/do/file_re2shdp_f.jpg
+    image_path: /img/galleries/do/file_re2shdp_th.jpg
+    alt: "RE2SHDP file"
+    title: "Recreated Image-based 'files'"
   - url: /img/galleries/do/inventory_portrait_re2shdp_f.jpg
     image_path: /img/galleries/do/inventory_portrait_re2shdp_th.jpg
     alt: "RE2SHDP inventory and portraits"
     title: "Upscaled menu elements and HR portraits."
-
-fmvs:
-  - /fmvs/FMV_Birkin
-  - /fmvs/FMV_Pistol
-  # - /fmvs/FMV_Claire
-  - /fmvs/FMV_RPD
-  - /fmvs/FMV_Explosion
 
 backgrounds:
   - /bgs/ROOM_60E_01
   - /bgs/ROOM_109_03
   - /bgs/ROOM_118_05
   - /bgs/ROOM_11B_03
-  - /bgs/ROOM_11C_11
   - /bgs/ROOM_200_06
   - /bgs/ROOM_20B_05
-  - /bgs/ROOM_212_00
   - /bgs/ROOM_300_01
   - /bgs/ROOM_501_12
   - /bgs/ROOM_508_11
@@ -90,29 +81,19 @@ backgrounds:
 
 #Header
 header:
-  og_image: "/img/RE2SHDP_logo_og.jpg"
+  og_image: "/img/RE3SHDP_logo_og.jpg"
   hide_title: true
-  overlay_image: /img/re2header_uw.jpg
+  overlay_image: /img/re3header_uw.jpg
   actions:
-   - label: "1.1 Full Pack"
-     # icon: /img/gamecube_logo_rect.png
-     caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1eZuRyDj_leiehOV5HUARKmPyEuCmjIp7/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP-1.1.torrent\">Torrent</a>"
-     url: "https://mega.nz/#!HZwDjSiD!TiiYPfpvqa5B9R5vzq7G82ZXBBsf1eWrtF7SYVmg7IM"
-   - label: "1.0 to 1.1 Pack"
-     # icon: /img/gamecube_logo_rect.png
-     caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1MzAR4C1Tk1sdOyZhi6hIwpJPdzW3Oa2S/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP - 1.0 to 1.1 Patch.torrent\">Torrent</a>"
-     url: "https://mega.nz/#!aVg3CC4B!uKJsRWckyjzcO2fYRIDbOAQ84-8VpVrj2Fazy-epwv4"
-   - label: "FMV Pack"
-     # icon: /img/gamecube_logo_rect.png
-     caption: "<a href=\"#fmv-pack\">More Info</a> - Mirrors: <a href=\"/assets/RE2SHDP - FMVs Only.torrent\">Torrent</a>"
-     url: "https://mega.nz/#!XUQ1BSTR!RvlzAWakDtkH-VsCjAiFI6YWXMujJOU-nLxp7S_8WvY"
+   - label: "Download"
+     icon: /img/gamecube_logo_rect.png
+     caption: "RE2SHDP v1.0 + <a href=\"#customized-dolphin-build\">Custom Dolphin</a><br>Mirror links: <a href=\"https://drive.google.com/file/d/1x6UOL7yoBd11hIs5llPYLJfX43C0PWSQ/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP-1.0 + Custom Dolphin.torrent\">Torrent</a>"
+     url: "https://mega.nz/#!OB4GSaQA!ysGTBlVle2SqTAmQuSpXU8Jca0lND4HXvBODs7d0_TE"
   #  - label: "Download"
   #    fa_icon: "fas fa-images"
   #    caption: "RE2SHDP v1.0 PNG Pack"
   #    url: "https://mega.nz/#!0sNFCYbY!3raWMmiajJpmu8zFPC6F_ZsNDQv-u0uRgVpcq98NJeI"
 ---
-
-<!-- [![Join us on Discord!](https://discordapp.com/api/guilds/549168005553192980/widget.png?style=banner3)](https://discord.gg/HCZWV6q) -->
 
 <!-- <div class="feature__wrapper"> -->
 
@@ -125,7 +106,7 @@ Time to re-experience this classic survival-horror game with **Machine Learning*
 
 # How the backgrounds look like?
 
-{% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=0 %}
+{% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original incl. masks" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=0 %}
 
 <div class="feature__wrapper"></div>
 
@@ -174,11 +155,7 @@ If you are experiencing **noticeable performance hiccups and slowdowns** when th
 <!-- Please note that this option uses a lot of RAM (~4GB), the game will slow down a lot for a minute and turning on and off the pack -->
 
 >**How to turn off the pack while playing?**<br>
-You can turn the pack on and off while playing with the **DELETE** key. Please note that if you have the "**Prefetch Custom Textures**" option activated, the textures will have to be reloaded entirely again.
-{: .notice }
-
->**How to skip the door animations?**<br>
-You can't do that in the Gamecube version. But you can hold the **TAB** key to speed up the emulator at any time.
+You can turn the pack on and off while playing with **ALT + F10**. Please note that if you have the "**Prefetch Custom Textures**" option activated, the textures will have to be reloaded entirely again.
 {: .notice }
 
 >**Can you help me regarding Dolphin?**<br>
@@ -226,18 +203,6 @@ The full process to create this pack is quite complex and involve multiple tools
 That being said, if you encounter such issues, have any problem with the pack or notice a big imperfection, don't hesitate to report it on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).
 
 Your feedbacks will help us to improve the quality of the pack.
-
-<div class="feature__wrapper"></div>
-
-# FMV Pack
-
-RESHDP provides an optional pack which replaces the original interlaced 320x160 FMVs to a new WHOPPING resolution of 400x200...?
-
-Considering the massive size of the pack (3.4 GB), the new resolution might seems oddly small. The main reason is that **we can't replace the actual video files from the disc.** Thus we are replacing their frames as they are displayed by the GPU using a massive amount of texture files. It's extremely wasteful as we can't benefit from any basic video compression techniques.
-
-But even with those constrains, we still believe the quality to be noticeably better anyway. Check out our comparison images below and [give it a try yourself](#top). One caveat though: **we do not recommend to use texture prefetching** with the FMV pack as the amount of memory needed is extremely high.
-
-{% include carousel_juxtapose.html name="fmvs" width=1000 images=page.fmvs prev_label="Original" next_label="RE2SHDP" comp_suffix="_original" img_format=".jpg" selectedIndex=0 %}
 
 <div class="feature__wrapper"></div>
 

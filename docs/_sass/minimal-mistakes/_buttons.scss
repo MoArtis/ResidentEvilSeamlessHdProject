@@ -7,6 +7,11 @@
    ========================================================================== */
 
 .btn {
+
+  &--fixedWidth {
+    width: 10em;
+  }
+
   svg {
     font-size: inherit;
     display: inline-block;
