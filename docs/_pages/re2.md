@@ -68,7 +68,7 @@ gallery_do:
 fmvs:
   - /fmvs/FMV_Birkin
   - /fmvs/FMV_Pistol
-  # - /fmvs/FMV_Claire
+  - /fmvs/FMV_Claire
   - /fmvs/FMV_RPD
   - /fmvs/FMV_Explosion
 
