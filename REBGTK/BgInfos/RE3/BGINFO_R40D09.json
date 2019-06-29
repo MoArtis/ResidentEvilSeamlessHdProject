@@ -15,6 +15,15 @@
             "partIndices": [
                 0
             ]
+        },
+        {
+            "formatName": "RE3 GameCube",
+            "texNames": [
+                "tex1_640x480_014a1c77c2558d5b_5"
+            ],
+            "partIndices": [
+                0
+            ]
         }
     ],
     "hasMask": false,

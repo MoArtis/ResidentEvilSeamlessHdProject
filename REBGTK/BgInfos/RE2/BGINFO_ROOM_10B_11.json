@@ -22,10 +22,12 @@
             "formatName": "RE2 GameCube",
             "texNames": [
                 "tex1_256x240_db82864c945252fd_5",
+				"tex1_128x160_de180780b0f12d0f_5",
                 "tex1_64x64_81664e2b9965ca2b_ebebab8e66144a42_9"
             ],
             "partIndices": [
                 0,
+				1,
                 2
             ]
         }

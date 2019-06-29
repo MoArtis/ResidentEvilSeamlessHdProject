@@ -22,11 +22,13 @@
             "formatName": "RE2 GameCube",
             "texNames": [
                 "tex1_128x160_f88e49bf078d7fa2_5",
-                "tex1_256x240_936685707a05bc18_5"
+                "tex1_256x240_936685707a05bc18_5",
+				"tex1_256x256_ee53d34237341cd4_51079fedc0fa247e_9"
             ],
             "partIndices": [
                 1,
-                0
+                0,
+				2
             ]
         }
     ],
@@ -38,7 +40,7 @@
         "x": 256,
         "y": 256
     },
-    "useProcessedMaskTex": false,
+    "useProcessedMaskTex": true,
     "masks": [
         {
             "patch": {

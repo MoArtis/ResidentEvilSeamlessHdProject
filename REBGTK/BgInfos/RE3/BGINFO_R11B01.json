@@ -21,34 +21,14 @@
         {
             "formatName": "RE3 GameCube",
             "texNames": [
-                "tex1_640x480_20c67ecf1252aacb_5",
-                "tex1_256x256_1df68408229a64af_e3c364c1425f893c_9",
-                "tex1_256x256_32d93175ca72765b_e3c364c1425f893c_9",
-                "tex1_256x256_42a4e4adaa9a4393_e3c364c1425f893c_9",
-                "tex1_256x256_92253fcb12ff98cf_e3c364c1425f893c_9",
-                "tex1_256x256_a35c68f575fbe43f_e3c364c1425f893c_9",
-                "tex1_256x256_a9e6e26344a8fd34_e3c364c1425f893c_9",
-                "tex1_256x256_bb17ea4db802b47a_e3c364c1425f893c_9",
-                "tex1_256x256_c84467131ca35b7b_e3c364c1425f893c_9",
-                "tex1_256x256_d86acaaea9e7f8d8_e3c364c1425f893c_9",
-                "tex1_256x256_dbd980eec3fbef0d_e3c364c1425f893c_9",
-                "tex1_256x256_e3441353f2786c79_e3c364c1425f893c_9",
-                "tex1_256x256_ea96c37dc993e924_e3c364c1425f893c_9"
+                "tex1_256x256_083b4fa0f1c9efd7_e3c364c1425f893c_9",
+                "tex1_256x256_0bf6ec51b94cef03_e3c364c1425f893c_9",
+                "tex1_640x480_20c67ecf1252aacb_5"
             ],
             "partIndices": [
-                0,
                 1,
                 1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1               
+                0
             ]
         }
     ],

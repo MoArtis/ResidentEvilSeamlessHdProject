@@ -67,6 +67,59 @@ public class BgToolkitManager : MonoBehaviour
 
         ChangeState(State.MainMenu);
 
+        //Trash code to generate RE3 OSD Room ID
+        //int bgInfoCount = fm.LoadFiles(System.IO.Path.Combine(bgInfoPath, "RE3"), "json");
+        //BgInfo[] bgInfos = fm.GetObjectsFromFiles<BgInfo>();
+        //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+        //for (int i = 0; i < bgInfoCount; i++)
+        //{
+        //    if (bgInfos[i].texDumpMatches.Length <= 1)
+        //        continue;
+
+        //    for (int j = 0; j < bgInfos[i].texDumpMatches[1].partIndices.Length; j++)
+        //    {
+        //        if(bgInfos[i].texDumpMatches[1].partIndices[j] == 0)
+        //        {
+        //            sb.AppendLine(string.Format("if (base_filename == \"{0}\")", bgInfos[i].texDumpMatches[1].texNames[j]));
+        //            sb.AppendLine("{");
+        //            sb.AppendLine(string.Format("OSD::AddMessage(\"{0}\");", bgInfos[i].namePrefix));
+        //            sb.AppendLine("}");
+        //        }
+        //    }
+        //}
+
+        //System.IO.File.WriteAllText("./RE3_OSD_CODE.txt", sb.ToString());
+
+        //Trash code to find a stupid missing background
+        //int processedBgCount = fm.LoadFiles(System.IO.Path.Combine(processedPath, "RE2"), "png");
+        //string[] bgNames = new string[processedBgCount];
+        //for (int i = 0; i < processedBgCount; i++)
+        //{
+        //    bgNames[i] = fm.RemoveExtensionFromFileInfo(fm.fileInfos[i]);
+        //}
+
+        //int bgInfoCount = fm.LoadFiles(System.IO.Path.Combine(bgInfoPath, "RE2"), "json");
+        //BgInfo[] bgInfos = fm.GetObjectsFromFiles<BgInfo>();
+        //for (int i = 0; i < bgNames.Length; i++)
+        //{
+        //    bool found = false;
+        //    for (int j = 0; j < bgInfoCount; j++)
+        //    {
+        //        if (bgInfos[j].namePrefix == bgNames[i])
+        //        {
+        //            if (bgInfos[j].texDumpMatches[1].texNames.Length >= 2)
+        //            {
+        //                found = true;
+        //                break;
+        //            }
+        //        }
+        //    }
+        //    if (found == false)
+        //    {
+        //        Debug.LogError(bgNames[i] + " is pure trash...");
+        //    }
+        //}
 
         //Trash code to reverse determine the PC names of the upscaled GC named backgrounds on RE3
         //int bgInfoCount = fm.LoadFiles(System.IO.Path.Combine(bgInfoPath, "RE3"), "json");

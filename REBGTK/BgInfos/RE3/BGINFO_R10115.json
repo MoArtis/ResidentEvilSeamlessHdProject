@@ -23,12 +23,14 @@
             "texNames": [
                 "tex1_640x480_331da3abb5e205d8_5",
                 "tex1_256x256_$_2a49d390ec1d2def_9",
-                "tex1_256x256_$_ecc2de4f0fdc846e_9"
+                "tex1_256x256_$_ecc2de4f0fdc846e_9",
+                "tex1_640x480_a164ac9b0777e475_5"
             ],
             "partIndices": [
                 0,
                 1,
-                1
+                1,
+                0
             ]
         }
     ],

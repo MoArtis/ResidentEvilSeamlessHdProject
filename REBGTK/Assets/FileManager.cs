@@ -128,6 +128,8 @@ public class FileManager
         if (jsonData == null || jsonData == "")
             return default;
 
+        //Debug.Log(fileInfos[index].Name);
+
         return JsonUtility.FromJson<T>(jsonData);
     }
 

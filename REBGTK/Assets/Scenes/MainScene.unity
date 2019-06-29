@@ -265,7 +265,6 @@ MonoBehaviour:
   mainMenu: {fileID: 1158554323}
   prettifyJsonOnSave: 1
   alphaConfig:
-    alphaChannelSize: {x: 320, y: 240}
     scaleRatio: 1
     scalingType: 0
     hasBlur: 0
@@ -281,8 +280,10 @@ MonoBehaviour:
     histogramStepCount: 16
     histGenAttemptsMaxCount: 4
     patchMinMatchValue: 0.2
-    candidateMinMatchValue: 0.5
+    candidateMinMatchValue: 0.8
     savePatchTexures: 0
+    inconsistentMaskSize: 0
+    resetDumpMatches: 0
 --- !u!1 &191453687
 GameObject:
   m_ObjectHideFlags: 0

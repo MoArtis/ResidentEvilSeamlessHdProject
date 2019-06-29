@@ -60,11 +60,15 @@ namespace BgTk
 
                 BgInfo bgInfo = bgInfos[i];
 
+                int scaleRatio = bgInfo.bgTexSize.y / baseDumpFormat.maskUsageSize.y;
+
                 progressCb(new ProgressInfo("Generating special Mask source", i + 1, bgInfoCount, i / (float)(bgInfoCount - 1)));
                 yield return new WaitForEndOfFrame();
 
                 Texture2D bgTex = fm.GetTextureFromPath(Path.Combine(dumpTexPath, bgInfo.namePrefix));
-                Texture2D maskTex = fm.GetTextureFromPath(Path.Combine(dumpTexPath, string.Concat(bgInfo.namePrefix, maskSuffix)));
+                Texture2D srcMaskTex = fm.GetTextureFromPath(Path.Combine(dumpTexPath, string.Concat(bgInfo.namePrefix, maskSuffix)));
+                Texture2D maskTex = ScaleTexture(srcMaskTex, scaleRatio);
+                //fm.SaveTextureToPng(maskTex, dumpTexPath, srcMaskTex.name + "_us");
 
                 if (bgTex == null)
                 {
@@ -88,8 +92,9 @@ namespace BgTk
                 {
                     Mask mask = bgInfo.masks[j];
 
-                    Color[] maskColors = maskTex.GetPixels(mask.patch.srcPos.x, mask.patch.srcPos.y, mask.patch.size.x, mask.patch.size.y);
-                    Color[] bgColors = bgTex.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y);
+                    Color[] maskColors = maskTex.GetPixels(mask.patch.srcPos.x * scaleRatio, mask.patch.srcPos.y * scaleRatio, mask.patch.size.x * scaleRatio, mask.patch.size.y * scaleRatio);
+
+                    Color[] bgColors = bgTex.GetPixels(mask.patch.dstPos.x * scaleRatio, mask.patch.dstPos.y * scaleRatio, mask.patch.size.x * scaleRatio, mask.patch.size.y * scaleRatio);
 
                     for (int k = 0; k < maskColors.Length; k++)
                     {
@@ -100,7 +105,7 @@ namespace BgTk
                         }
                     }
 
-                    bgTex.SetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y, maskColors);
+                    bgTex.SetPixels(mask.patch.dstPos.x * scaleRatio, mask.patch.dstPos.y * scaleRatio, mask.patch.size.x * scaleRatio, mask.patch.size.y * scaleRatio, maskColors);
                 }
 
                 //Todo - store the special mask suffix as a variable
@@ -108,6 +113,7 @@ namespace BgTk
 
                 Object.Destroy(maskTex);
                 Object.Destroy(bgTex);
+                Object.Destroy(srcMaskTex);
             }
 
             reportSb.AppendLine(string.Format("== Mask source generation done! ({0} seconds) ==", (Time.unscaledTime - taskTime).ToString("#.0")));
@@ -376,13 +382,17 @@ namespace BgTk
                         reportSb.AppendLine(string.Concat(mcTex.name, " is a duplicate of ", fm.fileInfos[candidatesList[j].fileInfoIndices[0]].Name));
                         texDuplicatesCount++;
 
-                        int[] indices = new int[candidatesList[j].fileInfoIndices.Length + 1];
-                        for (int k = 0; k < candidatesList[j].fileInfoIndices.Length; k++)
-                        {
-                            indices[k] = candidatesList[j].fileInfoIndices[k];
-                        }
-                        indices[indices.Length - 1] = j;
-                        candidatesList[j].SetFileInfoIndices(indices);
+                        //int[] indices = new int[candidatesList[j].fileInfoIndices.Length + 1];
+                        //for (int k = 0; k < candidatesList[j].fileInfoIndices.Length; k++)
+                        //{
+                        //    indices[k] = candidatesList[j].fileInfoIndices[k];
+                        //}
+                        //indices[indices.Length - 1] = j;
+                        int[] indices = candidatesList[j].fileInfoIndices.Concat(new int[] { i }).ToArray();
+
+                        MatchCandidate duplicatedMc = candidatesList[j];
+                        duplicatedMc.SetFileInfoIndices(indices);
+                        candidatesList[j] = duplicatedMc;
 
                         isDuplicate = true;
 
@@ -431,7 +441,7 @@ namespace BgTk
                 Patch partPatch = new Patch();
                 if (mc.isMask)
                 {
-                    if (game == Game.RE3)
+                    if (config.inconsistentMaskSize)
                     {
                         partPatch = new Patch(0, mcTex.height - 23, 0, mcTex.height - 23, 128, 23);
                     }
@@ -584,7 +594,8 @@ namespace BgTk
                 yield return new WaitForEndOfFrame();
                 //}
 
-                bgInfos[i].ResetDumpMatches(dumpFormat.name);
+                if (config.resetDumpMatches)
+                    bgInfos[i].ResetDumpMatches(dumpFormat.name);
 
                 //Every candidate is matched, stop searching.
                 //TODO - Track the best BgInfo into the MCandidate. This could be perfect. But requires to get rid of that and the isMatched flag stored into the MC.
@@ -618,7 +629,7 @@ namespace BgTk
                             continue;
 
                         //In RE3, the masks have a fixed resolution on GC and a variable on PC (cropped)
-                        if (game == Game.RE3)
+                        if (config.inconsistentMaskSize)
                         {
                             if (maskTex.width < 128 || maskTex.height < 23)
                                 continue;
@@ -647,7 +658,7 @@ namespace BgTk
                         Color[] pixels;
                         if (mc.isMask)
                         {
-                            if (game == Game.RE3)
+                            if (config.inconsistentMaskSize)
                             {
                                 int dstPosY = maskTex.height - 23 + (p.dstPos.y - (256 - 23));
                                 pixels = maskTex.GetPixels(p.dstPos.x, dstPosY, p.size.x, p.size.y);
@@ -777,6 +788,7 @@ namespace BgTk
                     for (int j = 0; j < mc.fileInfoIndices.Length; j++)
                     {
                         string texName = fm.RemoveExtensionFromFileInfo(fm.fileInfos[mc.fileInfoIndices[j]]);
+
                         bgInfos[bestBgInfoIndex].AddDumpMatch(dumpFormat.name, texName, mc.bgPartIndex);
                         texMatchesCount++;
                     }
@@ -981,8 +993,12 @@ namespace BgTk
                         processedTexAms = fm.GetTextureFromPath(Path.Combine(processedPath, string.Concat(bgInfo.namePrefix, altMaskSourceSuffix)));
                         if (processedTexAms == null)
                         {
-                            reportSb.AppendLine(string.Concat("Missing special mask source textures: ", bgInfo.namePrefix));
-                            continue;
+                            processedTexAms = fm.GetTextureFromPath(Path.Combine(processedPath, "AMS", string.Concat(bgInfo.namePrefix, altMaskSourceSuffix)));
+                            if (processedTexAms == null)
+                            {
+                                reportSb.AppendLine(string.Concat("Missing special mask source textures: ", bgInfo.namePrefix));
+                                continue;
+                            }
                         }
                         CompensatePixelShift(pixelShift, processedTexAms, maskRatio);
                     }
@@ -1515,6 +1531,8 @@ namespace BgTk
             rdtPath = Path.Combine(rdtPath, game.ToString());
             bgInfoPath = Path.Combine(bgInfoPath, game.ToString());
 
+            fm.CreateDirectory(bgInfoPath);
+
             Debug.Log(rdtPath);
             Debug.Log(bgInfoPath);
 
@@ -1812,6 +1830,25 @@ namespace BgTk
         {
             return reportSb.ToString();
         }
+
+        private Texture2D ScaleTexture(Texture2D source, int scaleRatio)
+        {
+            int tWidth = source.width * scaleRatio;
+            int tHeight = source.height * scaleRatio;
+            Texture2D result = new Texture2D(tWidth, tHeight, source.format, false);
+            Color[] rpixels = result.GetPixels();
+            for (int px = 0; px < rpixels.Length; px++)
+            {
+                float u = (px % tWidth) / (float)tWidth;
+                float v = (px / tWidth) / (float)tHeight;
+
+                rpixels[px] = source.GetPixel(Mathf.FloorToInt(u * (float)source.width), Mathf.FloorToInt(v * (float)source.height));
+            }
+            result.SetPixels(rpixels);
+            result.Apply();
+            return result;
+        }
+
     }
 
 }

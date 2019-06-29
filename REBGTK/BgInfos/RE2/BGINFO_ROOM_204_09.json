@@ -17,6 +17,19 @@
                 0,
                 1
             ]
+        },
+        {
+            "formatName": "RE2 GameCube",
+            "texNames": [
+                "tex1_128x160_35eaa3f7a61503a4_5",
+                "tex1_256x240_9d8bb59f46f527a0_5",
+				"tex1_256x256_161450e70b5b5b41_da4f7af524470b60_9"
+            ],
+            "partIndices": [
+                1,
+                0,
+				2
+            ]
         }
     ],
     "hasMask": true,
@@ -27,7 +40,8 @@
         "x": 256,
         "y": 256
     },
-    "useProcessedMaskTex": false,
+    "useProcessedMaskTex": true,
+    "isReversedMaskOrder": false,
     "masks": [
         {
             "patch": {
@@ -45,6 +59,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -70,6 +85,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -92,6 +108,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -207,6 +224,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -235,6 +253,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -260,6 +279,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -282,6 +302,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -397,6 +418,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -419,6 +441,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -441,6 +464,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -463,6 +487,7 @@
                 }
             },
             "groupIndex": 0,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -578,6 +603,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -603,6 +629,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -625,6 +652,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -740,6 +768,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -768,6 +797,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -793,6 +823,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -815,6 +846,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -930,6 +962,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -952,6 +985,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -974,6 +1008,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -996,6 +1031,7 @@
                 }
             },
             "groupIndex": 1,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -1111,6 +1147,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -1202,6 +1239,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -1224,6 +1262,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -1246,6 +1285,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -1361,6 +1401,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 6,
                 -1,
@@ -1452,6 +1493,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -1543,6 +1585,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 5,
                 -1,
@@ -1644,6 +1687,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -1735,6 +1779,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 14,
                 -1,
@@ -1766,6 +1811,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 5,
                 -1,
@@ -1857,6 +1903,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -1948,6 +1995,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 31,
                 43,
@@ -1980,6 +2028,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -2002,6 +2051,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -2117,6 +2167,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 5,
                 -1,
@@ -2247,6 +2298,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -2338,6 +2390,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 53,
                 -1,
@@ -2363,6 +2416,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 93,
                 -1,
@@ -2394,6 +2448,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 5,
                 -1,
@@ -2485,6 +2540,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -2576,6 +2632,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -2667,6 +2724,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 5,
                 -1,
@@ -2734,6 +2792,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 79,
                 91,
@@ -2763,6 +2822,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 7,
                 -1,
@@ -2830,6 +2890,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 5,
                 -1,
@@ -2897,6 +2958,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -2964,6 +3026,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -3055,6 +3118,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3077,6 +3141,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3144,6 +3209,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 7,
                 -1,
@@ -3268,6 +3334,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3320,6 +3387,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -3435,6 +3503,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3502,6 +3571,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3569,6 +3639,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -3660,6 +3731,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3682,6 +3754,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3749,6 +3822,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 71,
                 -1,
@@ -3858,6 +3932,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3925,6 +4000,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 50,
                 51,
@@ -4021,6 +4097,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 3,
                 -1,
@@ -4112,6 +4189,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 120,
                 -1,
@@ -4134,6 +4212,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 120,
                 -1,
@@ -4204,6 +4283,7 @@
                 }
             },
             "groupIndex": 2,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 16,
                 -1,
@@ -4265,6 +4345,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 7,
                 -1,
@@ -4312,6 +4393,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -4355,6 +4437,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -4417,6 +4500,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 10,
                 -1,
@@ -4489,6 +4573,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 1,
@@ -4513,6 +4598,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 3,
                 -1,
@@ -4580,6 +4666,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -4647,6 +4734,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 51,
                 52,
@@ -4670,6 +4758,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -4737,6 +4826,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -4792,6 +4882,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 48,
                 -1,
@@ -4820,6 +4911,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 3,
                 -1,
@@ -4847,6 +4939,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -4913,6 +5006,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 2,
                 -1,
@@ -4956,6 +5050,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 32,
                 -1,
@@ -5042,6 +5137,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -5109,6 +5205,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -5172,6 +5269,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -5235,6 +5333,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -5276,6 +5375,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 0,
                 -1,
@@ -5343,6 +5443,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 48,
                 -1,
@@ -5371,6 +5472,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 64,
                 -1,
@@ -5399,6 +5501,7 @@
                 }
             },
             "groupIndex": 3,
+            "ignoreAltMaskSource": false,
             "opaqueIndices": [
                 96,
                 -1,

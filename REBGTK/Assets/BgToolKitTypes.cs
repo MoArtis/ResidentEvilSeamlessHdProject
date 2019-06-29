@@ -170,6 +170,8 @@ namespace BgTk
         public float patchMinMatchValue;
         public float candidateMinMatchValue;
         public bool savePatchTexures;
+        public bool inconsistentMaskSize;
+        public bool resetDumpMatches;
     }
 
     [System.Serializable]
@@ -188,6 +190,12 @@ namespace BgTk
 
         public void AddTexName(string name, int partIndex)
         {
+            for (int i = 0; i < texNames.Length; i++)
+            {
+                if (texNames[i] == name)
+                    return;
+            }
+
             texNames = texNames.Concat(new string[] { name }).ToArray();
             partIndices = partIndices.Concat(new int[] { partIndex }).ToArray();
         }
