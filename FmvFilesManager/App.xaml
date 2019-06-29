@@ -1,0 +1,20 @@
+﻿<Application x:Class="RESHDP_FmvFilesManager.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:RESHDP_FmvFilesManager"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:RESHDP_FmvFilesManager="clr-namespace:RESHDP_FmvFilesManager"
+             StartupUri="MainWindow.xaml">
+    
+    <Application.Resources>
+
+        <ObjectDataProvider x:Key="FrameskipRatio" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="RESHDP_FmvFilesManager:FrameskipRatio"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        
+    </Application.Resources>
+    
+</Application>

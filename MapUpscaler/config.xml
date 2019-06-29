@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScalerTest>
+    <FilePathInput>C:\Users\Mathieu Philippe\Desktop\ScalerTest\tex1_256x256_53ae680bd9d7aacb_5edf79c89bd98d81_8.png</FilePathInput>
+    <FilePathOutput>C:\Users\Mathieu Philippe\Desktop\ScalerTest\upscaled.png</FilePathOutput>
+    <ScalerType>xBRZ</ScalerType>
+    <ScaleFactor>4</ScaleFactor>
+    <ShowScalerName>true</ShowScalerName>
+    <xBRZConfig>
+        <EqualColorTolerance>30</EqualColorTolerance>
+        <CenterDirectionBias>4</CenterDirectionBias>
+        <DetectDominantDirectionWeight>3.6</DetectDominantDirectionWeight>
+        <DetectSteepWeight>2.2</DetectSteepWeight>
+        <LuminanceWeight>1</LuminanceWeight>
+        <NewTestAttribute>0</NewTestAttribute>
+    </xBRZConfig>
+    <ColorTester>
+        <ReferenceColor Red="0" Green="0" Blue="0"/>
+        <LuminanceWeight>1</LuminanceWeight>
+        <EqualColorTolerance>154</EqualColorTolerance>
+        <ColorSpaceZ>296</ColorSpaceZ>
+    </ColorTester>
+</ScalerTest>
