@@ -22,18 +22,18 @@
 {% endif %}
 
 <script>
-var currentIndex = {{ selectedIndex }};
+var currentIndex_{{ include.name }} = {{ selectedIndex }};
 
 function refreshWidthSelector_{{ include.name }}(index) {
 
 	var items = document.getElementsByClassName("juxtapose_{{ include.name }}");
 	for(i = 0; i < items.length; i++)
 	{
-		items[i].style.height = items[currentIndex].style.height;
-		items[i].style.width = items[currentIndex].style.width;
+		items[i].style.height = items[currentIndex_{{ include.name }}].style.height;
+		items[i].style.width = items[currentIndex_{{ include.name }}].style.width;
 	} 
 
-	currentIndex = index;
+	currentIndex_{{ include.name }} = index;
 
 }
 
@@ -42,21 +42,21 @@ function refreshWidth_{{ include.name }}(isNext) {
 	var items = document.getElementsByClassName("juxtapose_{{ include.name }}");
 	for(i = 0; i < items.length; i++)
 	{
-		items[i].style.height = items[currentIndex].style.height;
-		items[i].style.width = items[currentIndex].style.width;
+		items[i].style.height = items[currentIndex_{{ include.name }}].style.height;
+		items[i].style.width = items[currentIndex_{{ include.name }}].style.width;
 	}  
 	  
 	if(isNext)
 	{
-		currentIndex++;
-		if(currentIndex >= items.length)
-			currentIndex = 0;
+		currentIndex_{{ include.name }}++;
+		if(currentIndex_{{ include.name }} >= items.length)
+		currentIndex_{{ include.name }} = 0;
 	}
 	else
 	{
-		currentIndex--;
-		if(currentIndex < 0)
-			currentIndex = items.length - 1;
+		currentIndex_{{ include.name }}--;
+		if(currentIndex_{{ include.name }} < 0)
+		currentIndex_{{ include.name }} = items.length - 1;
 	}
 	
 }
