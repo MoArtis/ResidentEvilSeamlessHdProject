@@ -67,10 +67,10 @@ gallery_do:
 
 fmvs:
   - /fmvs/FMV_Birkin
-  - /fmvs/FMV_Pistol
+  - /fmvs/FMV_LeonPistol
   - /fmvs/FMV_Claire
   - /fmvs/FMV_RPD
-  - /fmvs/FMV_Explosion
+  - /fmvs/FMV_LeonExplosion
 
 backgrounds:
   - /bgs/ROOM_60E_01
