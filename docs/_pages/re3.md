@@ -52,8 +52,8 @@ gallery_do:
     image_path: /img/galleries/RE3_do/3dmodels_th.jpg
     alt: "RE3SHDP 3d Model textures"
     title: "Upscaled 3D model textures"
-  - url: /img/galleries/RE3_do/computer_f.jpg
-    image_path: /img/galleries/RE3_do/computer_th.jpg
+  - url: /img/galleries/RE3_do/Computer_f.jpg
+    image_path: /img/galleries/RE3_do/Computer_th.jpg
     alt: "RE3SHDP Computer"
     title: "Manually edited in-game screens"
   - url: /img/galleries/RE3_do/vfx_f.jpg
@@ -109,7 +109,7 @@ header:
   actions:
    - label: "1.0 Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "Mirrors: <a href=\"\">Google Drive</a> - <a href=\"/assets/RE3SHDP-1.0.torrent\">Torrent</a>"
+     caption: "Mirrors: <a href=\"https://drive.google.com/file/d/19d0xUNHrpTfjKtlQAC1WV6QiUF-1scA0/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE3SHDP-1.0.torrent\">Torrent</a>"
      url: "https://mega.nz/#!aQRliYoZ!DkuZLZu-akCJyCeJUekuWQXs1oz4hV_vrCYrDgWpMMw"
    - label: "FMV Pack"
      # icon: /img/gamecube_logo_rect.png
