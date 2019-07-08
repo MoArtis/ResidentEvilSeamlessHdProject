@@ -12,81 +12,81 @@ share: true
 discord: true
 
 gallery_seamless:
-  - url: /img/galleries/seamless/Seam_crop_f.jpg
-    image_path: /img/galleries/seamless/Seam_crop_th.jpg
+  - url: /img/galleries/RE2_seamless/Seam_crop_f.jpg
+    image_path: /img/galleries/RE2_seamless/Seam_crop_th.jpg
     alt: "Filtering applied on the mask texture"
     title: "Filtering applied on the mask texture"
-  - url: /img/galleries/seamless/Mixed_crop_f.jpg
-    image_path: /img/galleries/seamless/Mixed_crop_th.jpg
+  - url: /img/galleries/RE2_seamless/Mixed_crop_f.jpg
+    image_path: /img/galleries/RE2_seamless/Mixed_crop_th.jpg
     alt: "Basic solution: Skipping the mask textures"
     title: "Basic solution: Skipping the mask textures"
-  - url: /img/galleries/seamless/Seamless_crop_f.jpg
-    image_path: /img/galleries/seamless/Seamless_crop_th.jpg
+  - url: /img/galleries/RE2_seamless/Seamless_crop_f.jpg
+    image_path: /img/galleries/RE2_seamless/Seamless_crop_th.jpg
     alt: "The RESHDP solution"
     title: "The RESHDP solution"
 
 gallery_dolphin:
-  - url: /img/galleries/dolphin/aspect_ratio_f.jpg
-    image_path: /img/galleries/dolphin/aspect_ratio_th.jpg
+  - url: /img/galleries/RE2_dolphin/aspect_ratio_f.jpg
+    image_path: /img/galleries/RE2_dolphin/aspect_ratio_th.jpg
     alt: "Dolphin Aspect ratio"
     title: "New aspect ratio mode: Fit 4:3"
-  - url: /img/galleries/dolphin/music_bug_f.jpg
-    image_path: /img/galleries/dolphin/music_bug_th.jpg
+  - url: /img/galleries/RE2_dolphin/music_bug_f.jpg
+    image_path: /img/galleries/RE2_dolphin/music_bug_th.jpg
     alt: "Dolphin Music bug fix"
     title: "No music stuttering (This scene was impacted)"
-  - url: /img/galleries/dolphin/portable_f.jpg
-    image_path: /img/galleries/dolphin/portable_th.jpg
+  - url: /img/galleries/RE2_dolphin/portable_f.jpg
+    image_path: /img/galleries/RE2_dolphin/portable_th.jpg
     alt: "Dolphin Portable"
     title: "Pre-configured and Portable"
 
 gallery_do:
-  - url: /img/galleries/do/bgs_masks_re2shdp_f.jpg
-    image_path: /img/galleries/do/bgs_masks_re2shdp_th.jpg
+  - url: /img/galleries/RE2_do/bgs_masks_re2shdp_f.jpg
+    image_path: /img/galleries/RE2_do/bgs_masks_re2shdp_th.jpg
     alt: "RE2SHDP Bgs and Masks"
     title: "Upscaled backgrounds with vectorized masks"
-  - url: /img/galleries/do/bg_texts_re2shdp_f.jpg
-    image_path: /img/galleries/do/bg_texts_re2shdp_th.jpg
+  - url: /img/galleries/RE2_do/bg_texts_re2shdp_f.jpg
+    image_path: /img/galleries/RE2_do/bg_texts_re2shdp_th.jpg
     alt: "RE2SHDP Bg Texts"
     title: "Restored integrated texts"
-  - url: /img/galleries/do/3dmodels_re2shdp_f.jpg
-    image_path: /img/galleries/do/3dmodels_re2shdp_th.jpg
+  - url: /img/galleries/RE2_do/3dmodels_re2shdp_f.jpg
+    image_path: /img/galleries/RE2_do/3dmodels_re2shdp_th.jpg
     alt: "RE2SHDP 3d Model textures"
     title: "Upscaled 3D model textures"
-  - url: /img/galleries/do/computer_re2shdp_f.jpg
-    image_path: /img/galleries/do/computer_re2shdp_th.jpg
+  - url: /img/galleries/RE2_do/computer_re2shdp_f.jpg
+    image_path: /img/galleries/RE2_do/computer_re2shdp_th.jpg
     alt: "RE2SHDP Computer"
     title: "Manually edited in-game screens"
-  - url: /img/galleries/do/vfx_re2shdp_f.jpg
-    image_path: /img/galleries/do/vfx_re2shdp_th.jpg
+  - url: /img/galleries/RE2_do/vfx_re2shdp_f.jpg
+    image_path: /img/galleries/RE2_do/vfx_re2shdp_th.jpg
     alt: "RE2SHDP visual effects"
     title: "Improved visual effects"
-  - url: /img/galleries/do/inventory_portrait_re2shdp_f.jpg
-    image_path: /img/galleries/do/inventory_portrait_re2shdp_th.jpg
+  - url: /img/galleries/RE2_do/inventory_portrait_re2shdp_f.jpg
+    image_path: /img/galleries/RE2_do/inventory_portrait_re2shdp_th.jpg
     alt: "RE2SHDP inventory and portraits"
     title: "Upscaled menu elements and HR portraits."
 
 fmvs:
-  - /fmvs/FMV_Birkin
-  - /fmvs/FMV_LeonPistol
-  - /fmvs/FMV_Claire
-  - /fmvs/FMV_RPD
-  - /fmvs/FMV_LeonExplosion
+  - /RE2_fmvs/FMV_Birkin
+  - /RE2_fmvs/FMV_LeonPistol
+  - /RE2_fmvs/FMV_Claire
+  - /RE2_fmvs/FMV_RPD
+  - /RE2_fmvs/FMV_LeonExplosion
 
 backgrounds:
-  - /bgs/ROOM_60E_01
-  - /bgs/ROOM_109_03
-  - /bgs/ROOM_118_05
-  - /bgs/ROOM_11B_03
-  - /bgs/ROOM_11C_11
-  - /bgs/ROOM_200_06
-  - /bgs/ROOM_20B_05
-  - /bgs/ROOM_212_00
-  - /bgs/ROOM_300_01
-  - /bgs/ROOM_501_12
-  - /bgs/ROOM_508_11
-  - /bgs/ROOM_603_10
-  - /bgs/ROOM_60D_02
-  - /bgs/ROOM_60F_04
+  - /RE2_bgs/ROOM_60E_01
+  - /RE2_bgs/ROOM_109_03
+  - /RE2_bgs/ROOM_118_05
+  - /RE2_bgs/ROOM_11B_03
+  - /RE2_bgs/ROOM_11C_11
+  - /RE2_bgs/ROOM_200_06
+  - /RE2_bgs/ROOM_20B_05
+  - /RE2_bgs/ROOM_212_00
+  - /RE2_bgs/ROOM_300_01
+  - /RE2_bgs/ROOM_501_12
+  - /RE2_bgs/ROOM_508_11
+  - /RE2_bgs/ROOM_603_10
+  - /RE2_bgs/ROOM_60D_02
+  - /RE2_bgs/ROOM_60F_04
 
 #Header
 header:
@@ -97,7 +97,7 @@ header:
    - label: "1.1 Full Pack"
      # icon: /img/gamecube_logo_rect.png
      caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1eZuRyDj_leiehOV5HUARKmPyEuCmjIp7/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP-1.1.torrent\">Torrent</a>"
-     url: "https://mega.nz/#!HZwDjSiD!TiiYPfpvqa5B9R5vzq7G82ZXBBsf1eWrtF7SYVmg7IM"
+     url: "https://mega.nz/#!KJJDGaba!vWQOv-up51zMFfl9NZhqvJgWIhxJV7jSOcKF8A-wWuQ"
    - label: "1.0 to 1.1 Pack"
      # icon: /img/gamecube_logo_rect.png
      caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1MzAR4C1Tk1sdOyZhi6hIwpJPdzW3Oa2S/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP - 1.0 to 1.1 Patch.torrent\">Torrent</a>"
@@ -117,7 +117,8 @@ header:
 <!-- <div class="feature__wrapper"> -->
 
 Time to re-experience this classic survival-horror game with **Machine Learning** upscaled backgrounds,<br> **seamless masks** and many other small improvements in this **all-in-one texture pack.**<br>
-{% include fa n="fas fa-exclamation-circle" %} Please note that **RESHDP** is a free fan project. {% include fa n="fas fa-exclamation-circle" %}
+{% include fa n="fas fa-exclamation-circle" %} Please note that **RESHDP** is a free fan project. {% include fa n="fas fa-exclamation-circle" %}<br>
+Please check the [FAQ](#frequently-asked-questions) before playing.
 {: .text-center}
 {: .notice }
 
@@ -125,7 +126,7 @@ Time to re-experience this classic survival-horror game with **Machine Learning*
 
 # How the backgrounds look like?
 
-{% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="Original" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=0 %}
+{% include carousel_juxtapose.html name="backgrounds" width=960 images=page.backgrounds prev_label="RE2 PC" next_label="RE2SHDP" comp_suffix="_altMaskSource" img_format=".jpg" selectedIndex=0 %}
 
 <div class="feature__wrapper"></div>
 
@@ -152,7 +153,7 @@ Our pack comes along a custom version of Dolphin (a Gamecube emulator). All you 
 {: .notice }
 
 >**Is it compatible with the PAL version?**<br>
-Yes but the pack was made with the US (NTSC) version in mind. Therefore you need to rename the folder "\*dolphin_path\*\User\Load\Textures\\<wbr>**GHAE08**" to "**GHAP08**". Please note that the texts and some 3d models will not be upscaled. We plan to make the pack fully compatible with the PAL version in the future.
+Yes but the pack was made with the US (NTSC) version in mind. Therefore you need to rename the folder "\*dolphin_path\*\User\Load\Textures\\<wbr>**GHAE08**" to "**GHAP08**". Please note that the texts and some 3d models will not be upscaled.
 {: .notice }
 
 >**Can I use the pack on the PC version ?**<br>
@@ -160,7 +161,7 @@ Sadly no... Two community patches exist for RE2 PC: _Peixoto_ and _Classic Rebir
 {: .notice }
 
 >**...and on Dolphin for Mac/Android?**<br>
-Yes. But we don't provide a custom version of Dolphin for these platforms. We are looking into it though.
+Yes. But we don't provide a custom version of Dolphin for these platforms. That being said, the source code is available on [Github <i class="fab fa-github"></i>](https://github.com/MoArtis/dolphin) and can be built for these platforms.
 {: .notice }
 
 <!-- >**Do I need to download the 2 packs ?**<br>
@@ -214,16 +215,16 @@ The source code of this custom build is available on [Github <i class="fab fa-gi
 
 No. And we would like to give you more details about the most obvious issues.
 
-![image-left](/img/perfect/text_issue.jpg){: .align-left}
-**Neural networks upscaling is not magic.** The algorithm has an especially hard time with dark areas and RE2 is clearly not a game with bright and colorful backgrounds. Expect to see a lot of **"melting" artefacts** on dark corners and distant parts of the backgrounds.<br>
+![image-left](/img/RE2_perfect/text_issue.jpg){: .align-left}
+**Neural networks upscaling is not magic.** The algorithm has an especially hard time with dark areas and RE games are clearly not games with the brightest and the most colorful backgrounds. Expect to see a lot of **"melting" artefacts** on dark corners and distant parts of the backgrounds.<br>
 Small texts will also end up being processed as melting garbage. We replaced them when the result was too distracting.
 
-![image-right](/img/perfect/mask_issue.jpg){: .align-right}
+![image-right](/img/RE2_perfect/mask_issue.jpg){: .align-right}
 Many original **mask textures don't line up perfectly** with their respective background texture. Thus some pixels which are not part of the foreground appear on top of the 3D models.<br>
 These issues are barely noticeable at such low resolution and on a CRT (And the game was intended to be displayed on a CRT like any game of that era).<br>
 But these issues can be very distracting at an high resolution and on a flatscreen. We touched up the worst offenders but thousands of man-hours is required to clean up everything.
 
-![image-left](/img/perfect/vectorization_issue.jpg){: .align-left}
+![image-left](/img/RE2_perfect/vectorization_issue.jpg){: .align-left}
 The full process to create this pack is quite complex and involve multiple tools through multiple steps: Game data analysis, PC to GameCube texture matching, analysis of mask special cases, mask alpha layers vectorization, texture upscaling, texture recreation... **Bugs are to be expected** with such process. So even if we carefully tested the pack during development, you will certainly encounter small unexpected issues.
 
 That being said, if you encounter such issues, have any problem with the pack or notice a big imperfection, don't hesitate to report it on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).
@@ -240,7 +241,7 @@ Considering the massive size of the pack (3.4 GB), the new resolution might seem
 
 But even with those constrains, we still believe the quality to be noticeably better anyway. Check out our comparison images below and [give it a try yourself](#top). One caveat though: **we do not recommend to use texture prefetching** with the FMV pack as the amount of memory needed is extremely high.
 
-{% include carousel_juxtapose.html name="fmvs" width=1000 images=page.fmvs prev_label="Original" next_label="RE2SHDP" comp_suffix="_original" img_format=".jpg" selectedIndex=0 %}
+{% include carousel_juxtapose.html name="fmvs" width=1000 images=page.fmvs prev_label="RE2 GC" next_label="RE2SHDP" comp_suffix="_original" img_format=".jpg" selectedIndex=0 %}
 
 <div class="feature__wrapper"></div>
 
