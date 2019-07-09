@@ -110,7 +110,7 @@ header:
    - label: "1.0 Pack"
      # icon: /img/gamecube_logo_rect.png
      caption: "Mirrors: <a href=\"https://drive.google.com/file/d/19d0xUNHrpTfjKtlQAC1WV6QiUF-1scA0/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE3SHDP-1.0.torrent\">Torrent</a>"
-     url: "https://mega.nz/#!aQRliYoZ!DkuZLZu-akCJyCeJUekuWQXs1oz4hV_vrCYrDgWpMMw"
+     url: "https://mega.nz/#!OVJkWKBY!s66yfjGrcBQHz5EDZ6zxOFKYk3ghPCgZl0WVxsKK5F4"
    - label: "FMV Pack"
      # icon: /img/gamecube_logo_rect.png
      caption: "<a href=\"#fmv-pack\">More Info</a> - Mirrors: <a href=\"/assets/RE3SHDP - FMVs Only.torrent\">Torrent</a>"
