@@ -237,7 +237,7 @@ Your feedbacks will help us to improve the quality of the pack.
 
 RESHDP provides an optional pack which replaces the original interlaced 320x160 FMVs to a new WHOPPING resolution of 400x200...?
 
-Considering the massive size of the pack (3.4 GB), the new resolution might seems oddly small. The main reason is that **we can't replace the actual video files from the disc.** Thus we are replacing their frames as they are displayed by the GPU using a massive amount of texture files. It's extremely wasteful as we can't benefit from any basic video compression techniques.
+Considering the massive size of the pack (3.4 GB), the new resolution might seems oddly small. The main reason is that **we can't replace the actual video files from the disc.** Thus we are replacing their frames as they are displayed by the GPU using a massive amount of texture files. It's extremely wasteful as we can't benefit from any basic video compression technique.
 
 But even with those constrains, we still believe the quality to be noticeably better anyway. Check out our comparison images below and [give it a try yourself](#top). One caveat though: **we do not recommend to use texture prefetching** with the FMV pack as the amount of memory needed is extremely high.
 
