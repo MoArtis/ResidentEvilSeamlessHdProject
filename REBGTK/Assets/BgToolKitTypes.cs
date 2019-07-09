@@ -217,6 +217,7 @@ namespace BgTk
         public BgTexturePart[] bgParts; //if none => The BG texture remains whole
         public Vector2Int maskForcedSize; //if 0,0 => follow what is indicated in the BgInfo
         public Vector2Int maskUsageSize; //At which screen resolution these maks are being rendered / used (320x240 on RE2 and RE3)
+        public Vector2Int texPixelShift;
 
         public override bool Equals(object obj)
         {

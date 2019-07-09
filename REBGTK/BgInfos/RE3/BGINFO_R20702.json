@@ -38,7 +38,7 @@
         "x": 256,
         "y": 64
     },
-    "useProcessedMaskTex": false,
+    "useProcessedMaskTex": true,
     "isReversedMaskOrder": false,
     "masks": [
         {
@@ -57,7 +57,7 @@
                 }
             },
             "groupIndex": 0,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 6,
                 -1,
@@ -173,7 +173,7 @@
                 }
             },
             "groupIndex": 0,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -196,7 +196,7 @@
                 }
             },
             "groupIndex": 0,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 5,
                 -1,
@@ -312,7 +312,7 @@
                 }
             },
             "groupIndex": 0,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -335,7 +335,7 @@
                 }
             },
             "groupIndex": 0,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 4,
                 -1,
@@ -427,7 +427,7 @@
                 }
             },
             "groupIndex": 0,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,

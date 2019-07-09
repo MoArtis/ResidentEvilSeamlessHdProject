@@ -4,5 +4,9 @@
 	"maskForcedSize": {
         "x": 256,
         "y": 256
+    },
+	"texPixelShift": {
+        "x": 1,
+        "y": -1
     }
 }

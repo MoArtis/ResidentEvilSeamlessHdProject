@@ -11,13 +11,9 @@
             "formatName": "RE3 SourceNext",
             "texNames": [
                 "R30E0E",
-                "R30E0E_mask",
-                "R3160E",
-                "R3160E_mask"
+                "R30E0E_mask"
             ],
             "partIndices": [
-                0,
-                1,
                 0,
                 1
             ]

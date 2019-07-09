@@ -38,7 +38,7 @@
         "x": 256,
         "y": 104
     },
-    "useProcessedMaskTex": true,
+    "useProcessedMaskTex": false,
     "isReversedMaskOrder": false,
     "masks": [
         {

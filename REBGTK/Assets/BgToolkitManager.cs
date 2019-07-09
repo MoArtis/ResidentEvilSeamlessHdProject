@@ -45,7 +45,6 @@ public class BgToolkitManager : MonoBehaviour
     protected DumpFormat[] dumpFormats;
 
     [SerializeField] protected AlphaChannelConfig alphaConfig;
-    [SerializeField] protected Vector2Int recreateTexPixelShift;
 
     [SerializeField] protected TextureMatchingConfig texMatchingConfig;
 
@@ -67,28 +66,50 @@ public class BgToolkitManager : MonoBehaviour
 
         ChangeState(State.MainMenu);
 
+        //int bgInfoCount = fm.LoadFiles(System.IO.Path.Combine(bgInfoPath, "RE3"), "json");
+        //BgInfo[] bgInfos = fm.GetObjectsFromFiles<BgInfo>();
+
+        //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+        //for (int i = 0; i < bgInfoCount; i++)
+        //{
+        //    sb.AppendLine(string.Format("- /RE3_bgs/{0}", bgInfos[i].namePrefix));
+        //}
+
+        //System.IO.File.WriteAllText("./RE3_BGs.txt", sb.ToString());
+
         //Trash code to generate RE3 OSD Room ID
         //int bgInfoCount = fm.LoadFiles(System.IO.Path.Combine(bgInfoPath, "RE3"), "json");
         //BgInfo[] bgInfos = fm.GetObjectsFromFiles<BgInfo>();
         //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        //System.Text.StringBuilder sbRoomIds = new System.Text.StringBuilder();
 
         //for (int i = 0; i < bgInfoCount; i++)
         //{
         //    if (bgInfos[i].texDumpMatches.Length <= 1)
         //        continue;
 
-        //    for (int j = 0; j < bgInfos[i].texDumpMatches[1].partIndices.Length; j++)
+        //    sbRoomIds.Clear();
+
+        //    for (int j = 0; j < bgInfos[i].texDumpMatches[0].partIndices.Length; j++)
         //    {
-        //        if(bgInfos[i].texDumpMatches[1].partIndices[j] == 0)
+        //        if(bgInfos[i].texDumpMatches[0].partIndices[j] == 0)
         //        {
-        //            sb.AppendLine(string.Format("if (base_filename == \"{0}\")", bgInfos[i].texDumpMatches[1].texNames[j]));
-        //            sb.AppendLine("{");
-        //            sb.AppendLine(string.Format("OSD::AddMessage(\"{0}\");", bgInfos[i].namePrefix));
-        //            sb.AppendLine("}");
+        //            sbRoomIds.Append(bgInfos[i].texDumpMatches[0].texNames[j]);
+        //            sbRoomIds.Append(" ");
         //        }
         //    }
-        //}
 
+        //    for (int j = 0; j < bgInfos[i].texDumpMatches[1].partIndices.Length; j++)
+        //    {
+
+        //        if (bgInfos[i].texDumpMatches[1].partIndices[j] == 0)
+        //        {
+        //            sb.AppendLine(string.Format("reThreeRoomOsdMap[\"{0}\"] = \"{1}\";", bgInfos[i].texDumpMatches[1].texNames[j], sbRoomIds.ToString()));
+        //        }
+
+        //    }
+        //}
         //System.IO.File.WriteAllText("./RE3_OSD_CODE.txt", sb.ToString());
 
         //Trash code to find a stupid missing background
@@ -347,7 +368,7 @@ public class BgToolkitManager : MonoBehaviour
         DumpFormat dumpFormat = dumpFormats[recreateTexDumpFormatIndex];
         StartCoroutine(toolkit.RecreateTextures(
             processedPath, bgInfoPath, alphaChannelPath, resultsPath,   //Paths
-            recreateTexPixelShift,       //Pixel shifts
+            dumpFormat.texPixelShift,       //Pixel shifts
             dumpFormat, ProgressCallback, DoneCallback));               //Config structs and callbacks
     }
 

@@ -2533,7 +2533,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 4,
                 -1,
@@ -2601,7 +2601,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 5,
                 -1,
@@ -2669,7 +2669,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 7,
                 -1,
@@ -2737,7 +2737,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -2760,7 +2760,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 8,
@@ -2785,7 +2785,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 3,
                 -1,
@@ -2904,7 +2904,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -2927,7 +2927,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3022,7 +3022,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 27,
                 28,
@@ -3056,7 +3056,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 5,
                 -1,
@@ -3160,7 +3160,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3183,7 +3183,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3284,7 +3284,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 31,
                 38,
@@ -3332,7 +3332,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 1,
                 -1,
@@ -3379,7 +3379,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3438,7 +3438,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 8,
@@ -3461,7 +3461,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 47,
                 55,
@@ -3486,7 +3486,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 5,
                 -1,
@@ -3581,7 +3581,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3604,7 +3604,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 0,
                 -1,
@@ -3705,7 +3705,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 15,
                 23,
@@ -3770,7 +3770,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 50,
                 -1,
@@ -3793,7 +3793,7 @@
                 }
             },
             "groupIndex": 2,
-            "ignoreAltMaskSource": false,
+            "ignoreAltMaskSource": true,
             "opaqueIndices": [
                 56,
                 57,

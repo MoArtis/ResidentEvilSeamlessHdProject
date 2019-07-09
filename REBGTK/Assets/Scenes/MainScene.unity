@@ -273,7 +273,7 @@ MonoBehaviour:
     clipValue: 0
     boostValue: 0
     saveDebugTextures: 0
-  recreateTexPixelShift: {x: 2, y: -2}
+  recreateTexPixelShift: {x: 1, y: -1}
   texMatchingConfig:
     histogramPatchCount: 20
     histogramPatchSize: {x: 10, y: 10}

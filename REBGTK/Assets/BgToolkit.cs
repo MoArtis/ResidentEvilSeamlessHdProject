@@ -865,7 +865,10 @@ namespace BgTk
                 string expectedBgName = string.Concat(bgInfo.namePrefix, ".png");
                 FileInfo bgTexFileInfo = fm.fileInfos.FirstOrDefault(x => x.Name == expectedBgName);
                 if (bgTexFileInfo == null)
+                {
+                    reportSb.AppendLine(string.Concat("Missing upscaled BG texture: ", bgInfo.namePrefix));
                     continue;
+                }
 
                 progressCb(new ProgressInfo(string.Concat("Recreating Textures - ", bgInfo.namePrefix), i + 1, bgInfosCount, i / (float)(bgInfosCount - 1)));
                 yield return new WaitForEndOfFrame();

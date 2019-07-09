@@ -13,7 +13,7 @@ foreach ($file in $files) {
 
     $pbmFile = $fileName + ".pbm"
     $svgFile = $fileName + ".svg"
-    $potraceCommand = $Potrace + $pbmFile + (" -o " + $svgFile) + " -b svg -r 24 -t 0 -a 0.9 -O 0 -i -C '#0000ff'"
+    $potraceCommand = $Potrace + $pbmFile + (" -o " + $svgFile) + " -b svg -r 24 -t 0 -a 0.675 -O 0 -i -C '#0000ff'"
 
     magick.exe $file.FullName $pbmFile
     Invoke-Expression $potraceCommand 
