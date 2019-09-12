@@ -97,7 +97,7 @@ header:
    - label: "1.1 Full Pack"
      # icon: /img/gamecube_logo_rect.png
      caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1OhVGFP8pD1YPptueLN9lPohocNKCxwYZ/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP-1.1.torrent\">Torrent</a>"
-     url: "https://mega.nz/#!KJJDGaba!vWQOv-up51zMFfl9NZhqvJgWIhxJV7jSOcKF8A-wWuQ"
+     url: "https://mega.nz/#!fFg2UIrL!VBs0-RJVvKz6ztMhatf9EFTM3JkbSuGDM09WPsqG9u0"
    - label: "1.0 to 1.1 Pack"
      # icon: /img/gamecube_logo_rect.png
      caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1MzAR4C1Tk1sdOyZhi6hIwpJPdzW3Oa2S/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP - 1.0 to 1.1 Patch.torrent\">Torrent</a>"
