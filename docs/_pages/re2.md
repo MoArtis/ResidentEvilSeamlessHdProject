@@ -96,15 +96,15 @@ header:
   actions:
    - label: "1.1 Full Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1OhVGFP8pD1YPptueLN9lPohocNKCxwYZ/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP-1.1.torrent\">Torrent</a>"
+     caption: "Mirror: <a href=\"https://drive.google.com/file/d/1OhVGFP8pD1YPptueLN9lPohocNKCxwYZ/view?usp=sharing\">Google Drive</a>"
      url: "https://mega.nz/#!fFg2UIrL!VBs0-RJVvKz6ztMhatf9EFTM3JkbSuGDM09WPsqG9u0"
    - label: "1.0 to 1.1 Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1MzAR4C1Tk1sdOyZhi6hIwpJPdzW3Oa2S/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE2SHDP - 1.0 to 1.1 Patch.torrent\">Torrent</a>"
+     caption: "Mirror: <a href=\"https://drive.google.com/file/d/1MzAR4C1Tk1sdOyZhi6hIwpJPdzW3Oa2S/view?usp=sharing\">Google Drive</a>"
      url: "https://mega.nz/#!aVg3CC4B!uKJsRWckyjzcO2fYRIDbOAQ84-8VpVrj2Fazy-epwv4"
    - label: "FMV Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "<a href=\"#fmv-pack\">More Info</a> - Mirrors: <a href=\"/assets/RE2SHDP - FMVs Only.torrent\">Torrent</a>"
+     caption: "<a href=\"#fmv-pack\">More Info</a>"
      url: "https://mega.nz/#!XUQ1BSTR!RvlzAWakDtkH-VsCjAiFI6YWXMujJOU-nLxp7S_8WvY"
   #  - label: "Download"
   #    fa_icon: "fas fa-images"

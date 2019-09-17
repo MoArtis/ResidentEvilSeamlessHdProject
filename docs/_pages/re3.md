@@ -109,11 +109,12 @@ header:
   actions:
    - label: "1.0 Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "Mirrors: <a href=\"https://drive.google.com/file/d/1kna7HjBbj0HbBuelmKak3ePqdU-oLVZt/view?usp=sharing\">Google Drive</a> - <a href=\"/assets/RE3SHDP-1.0.torrent\">Torrent</a>"
+     caption: "Mirror: <a href=\"https://drive.google.com/file/d/1kna7HjBbj0HbBuelmKak3ePqdU-oLVZt/view?usp=sharing\">Google Drive</a>"
      url: "https://mega.nz/#!OVJkWKBY!s66yfjGrcBQHz5EDZ6zxOFKYk3ghPCgZl0WVxsKK5F4"
    - label: "FMV Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "<a href=\"#fmv-pack\">More Info</a> - Mirrors: <a href=\"/assets/RE3SHDP - FMVs Only.torrent\">Torrent</a>"
+     caption: "<a href=\"#fmv-pack\">More Info</a>"
+  #	 - Mirrors: <a href=\"/assets/RE3SHDP - FMVs Only.torrent\">Torrent</a>"
      url: "https://mega.nz/#!ncAkBSAJ!gYRXLfHYFNU7wZpqvI_puqj1pZEsNF1KfJdlNF-5RZY"
   #  - label: "Download"
   #    fa_icon: "fas fa-images"
