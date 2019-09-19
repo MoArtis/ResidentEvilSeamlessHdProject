@@ -1,3 +1,7 @@
+# RESHDP
+*.rdt
+REBGTK/Reports/
+
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
