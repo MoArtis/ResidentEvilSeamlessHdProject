@@ -798,6 +798,7 @@ namespace BgTk
                     {
                         reportSb.Append(string.Concat("[", fm.fileInfos[candidates[i].fileInfoIndices[j]].Name, "]"));
                     }
+                    reportSb.Append(string.Concat(" - ", bgInfos[bestBgInfoIndex].namePrefix));
                     reportSb.Append(string.Concat(" - ", bestBgInfoMatchValue.ToString("0.00")));
                     reportSb.AppendLine();
 
@@ -1535,9 +1536,6 @@ namespace BgTk
             bgInfoPath = Path.Combine(bgInfoPath, game.ToString());
 
             fm.CreateDirectory(bgInfoPath);
-
-            Debug.Log(rdtPath);
-            Debug.Log(bgInfoPath);
 
             switch (game)
             {

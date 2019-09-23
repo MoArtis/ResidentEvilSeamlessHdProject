@@ -22,10 +22,12 @@
             "formatName": "RE3 GameCube",
             "texNames": [
                 "tex1_640x480_9909f423a4da08d4_5",
-                "tex1_256x256_$_e5944160451a5945_9"
+                "tex1_256x256_$_e5944160451a5945_9",
+                "tex1_256x256_$_3d65e093c809d74b_9"
             ],
             "partIndices": [
                 0,
+                1,
                 1
             ]
         }
