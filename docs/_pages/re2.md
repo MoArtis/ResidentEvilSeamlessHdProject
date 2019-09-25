@@ -94,7 +94,7 @@ header:
   hide_title: true
   overlay_image: /img/re2header_uw.jpg
   actions:
-   - label: "1.1 Full Pack"
+   - label: "1.1 Pack"
      # icon: /img/gamecube_logo_rect.png
      caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1Cl_GPHW7DqYiUCSjnbwMTCbQSmOCl7eg&export=download\">Google Drive</a>"
      url: "https://mega.nz/#!fFg2UIrL!VBs0-RJVvKz6ztMhatf9EFTM3JkbSuGDM09WPsqG9u0"

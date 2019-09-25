@@ -107,10 +107,14 @@ header:
   hide_title: true
   overlay_image: /img/re3header_uw.jpg
   actions:
-   - label: "1.0 Pack"
+   - label: "1.1 Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1kna7HjBbj0HbBuelmKak3ePqdU-oLVZt&export=download\">Google Drive</a>"
-     url: "https://mega.nz/#!OVJkWKBY!s66yfjGrcBQHz5EDZ6zxOFKYk3ghPCgZl0WVxsKK5F4"
+     caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1iVloEu9cPaTJ3izokKeaQCOVKZNWeigx&export=download\">Google Drive</a>"
+     url: "https://mega.nz/#!7YwH3K7b!cR-X9cYO_rGHTZeJCNGQlq6jutPAcxQOAMOZ-KEdqq4"
+   - label: "1.0 to 1.1 Patch"
+     # icon: /img/gamecube_logo_rect.png
+     caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1ILf1TMR1o8uEm-jq9pKpPNuU-N_OiEq9&export=download\">Google Drive</a>"
+     url: "https://mega.nz/#!7EAjHYrJ!RwovN46hr-EWPD4PmP3FeDqNfDNfqur7cP9Ir0Lkr4s"
    - label: "FMV Pack"
      # icon: /img/gamecube_logo_rect.png
      caption: "<a href=\"#fmv-pack\">More Info</a>"
