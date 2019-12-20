@@ -1,0 +1,1 @@
+bundle.bat exec "jekyll serve --baseurl ''"

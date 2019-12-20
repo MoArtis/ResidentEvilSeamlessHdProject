@@ -109,15 +109,15 @@ header:
   actions:
    - label: "1.1 Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1iVloEu9cPaTJ3izokKeaQCOVKZNWeigx&export=download\">Google Drive</a>"
+     caption: "Mirrors: <a href=\"https://drive.google.com/uc?id=1iVloEu9cPaTJ3izokKeaQCOVKZNWeigx&export=download\">Google Drive</a> - <a href=\"http://www.mediafire.com/file/iud6f46vf2hr99w/RE3SHDP-1.1.zip/file\">MediaFire</a>"
      url: "https://mega.nz/#!7YwH3K7b!cR-X9cYO_rGHTZeJCNGQlq6jutPAcxQOAMOZ-KEdqq4"
-   - label: "1.0 to 1.1 Patch"
-     # icon: /img/gamecube_logo_rect.png
-     caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1ILf1TMR1o8uEm-jq9pKpPNuU-N_OiEq9&export=download\">Google Drive</a>"
-     url: "https://mega.nz/#!7EAjHYrJ!RwovN46hr-EWPD4PmP3FeDqNfDNfqur7cP9Ir0Lkr4s"
+   #- label: "1.0 to 1.1 Patch"
+   #  # icon: /img/gamecube_logo_rect.png
+   #  caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1ILf1TMR1o8uEm-jq9pKpPNuU-N_OiEq9&export=download\">Google Drive</a>"
+   #  url: "https://mega.nz/#!7EAjHYrJ!RwovN46hr-EWPD4PmP3FeDqNfDNfqur7cP9Ir0Lkr4s"
    - label: "FMV Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "<a href=\"#fmv-pack\">More Info</a>"
+     caption: "Mirror: <a href=\"http://www.mediafire.com/file/iuuj5mvqwqw2n7h/RE3SHDP_-_FMVs_Only.zip/file\">MediaFire</a> (<a href=\"#fmv-pack\">More Info</a>)"
   #	 - Mirrors: <a href=\"/assets/RE3SHDP - FMVs Only.torrent\">Torrent</a>"
      url: "https://mega.nz/#!ncAkBSAJ!gYRXLfHYFNU7wZpqvI_puqj1pZEsNF1KfJdlNF-5RZY"
   #  - label: "Download"

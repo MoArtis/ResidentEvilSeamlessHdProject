@@ -96,11 +96,11 @@ header:
   actions:
    - label: "1.1 Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1Cl_GPHW7DqYiUCSjnbwMTCbQSmOCl7eg&export=download\">Google Drive</a>"
+     caption: "Mirrors: <a href=\"https://drive.google.com/uc?id=1Cl_GPHW7DqYiUCSjnbwMTCbQSmOCl7eg&export=download\">Google Drive</a> - <a href=\"http://www.mediafire.com/file/k9gv4zzo6rq9zej/RE2SHDP-1.1.zip/file\">MediaFire</a>"
      url: "https://mega.nz/#!fFg2UIrL!VBs0-RJVvKz6ztMhatf9EFTM3JkbSuGDM09WPsqG9u0"
    - label: "FMV Pack"
      # icon: /img/gamecube_logo_rect.png
-     caption: "<a href=\"#fmv-pack\">More Info</a>"
+     caption: "Mirror: <a href=\"https://www.mediafire.com/file/we9qf5i6hihl3ha/RE2SHDP_-_FMVs_Only.zip/file\">MediaFire</a> (<a href=\"#fmv-pack\">More Info</a>)"
      url: "https://mega.nz/#!XUQ1BSTR!RvlzAWakDtkH-VsCjAiFI6YWXMujJOU-nLxp7S_8WvY"
   #  - label: "Download"
   #    fa_icon: "fas fa-images"
