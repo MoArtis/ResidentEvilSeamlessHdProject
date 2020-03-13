@@ -1,0 +1,26 @@
+<div class="wrapper" style="margin-bottom: 2em;">
+    {% for dl in include.downloads %}
+        <div class="btn--wrapper" style="margin-bottom: 0.4em;">
+            {% if dl.caption %}
+                <div class="btn--caption">{{ dl.caption }}</div>
+            {% endif %}
+            {% for btn in dl.buttons %}
+                {% if btn.url contains "://" %}
+                    {% assign url = btn.url %}
+                {% elsif btn.url contains "#" %}
+                    {% assign url = page.url | append: btn.url | relative_url %}
+                {% else %}
+                    {% assign url = btn.url | relative_url %}
+                {% endif %}
+                <a href="{{ url }}" class="btn btn--textShadow btn--{{ btn.color | default: "primary" }} btn--fixedWidth">
+                    {% if btn.icon %}
+                        <img class="icon" src="{{ btn.icon | prepend: site.baseurl }}" alt="{{ btn.icon }}">
+                    {% elsif btn.fa_icon %}
+                        {% include fa n=btn.fa_icon %}
+                    {% endif %}
+                    {{ btn.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}
+                </a>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

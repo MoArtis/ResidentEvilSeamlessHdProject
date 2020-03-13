@@ -8,8 +8,12 @@
 
 .btn {
 
+  &--textShadow {
+      text-shadow: 1px 1px 4px rgba(#000, 0.5);
+  }
+
   &--fixedWidth {
-    width: 10em;
+    width: 7em;
   }
 
   svg {
@@ -48,7 +52,7 @@
   /* button colors */
   $buttoncolors: (primary, $primary-color), (inverse, #fff), (light-outline, transparent), (success, $success-color),
     (warning, $warning-color), (danger, $danger-color), (info, $info-color), (facebook, $facebook-color),
-    (twitter, $twitter-color), (linkedin, $linkedin-color), (discord, $discord-color);
+    (twitter, $twitter-color), (linkedin, $linkedin-color), (discord, $discord-color), (gdrive, $stackoverflow-color);
 
   @each $buttoncolor, $color in $buttoncolors {
     &--#{$buttoncolor} {
@@ -117,7 +121,8 @@
 
   &--caption {
     margin-left: 0.5em;
-    font-size: $type-size-7;
+    font-size: $type-size-5;
+    font-weight: bold;
   }
 
   &--wrapper {

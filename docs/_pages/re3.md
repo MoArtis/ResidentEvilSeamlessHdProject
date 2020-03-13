@@ -101,29 +101,48 @@ backgrounds:
 - /RE3_bgs/R50003
 - /RE3_bgs/R50A04
 
+downloads:
+   - caption: "1.2 Pack (Emulator included)"
+     buttons:
+      - label: "Mega"
+        url: "https://mega.nz/#!fRIQBKJR!yQ-SiQ8xOvwAjGh32irM8e2uT5RR7DshI-YQU2nwNcM"
+      - label: "MediaFire"
+        url: "https://www.mediafire.com/file/qcaoexnprysb10p/RE3SHDP-1.2.zip/file"
+        color: "facebook"
+      - label: "GDrive"
+        url: "https://drive.google.com/uc?id=15p83dmkpunRyacKieWt_Epav58oLseob&export=download"
+        color: "gdrive"
+   - caption: "1.1 to 1.2 Patch"
+     buttons:
+      - label: "Mega"
+        url: "https://mega.nz/#!adBU1ILL!ka5eymLbZQxVAbCPS68AyOJgYxXTq-QR9rBPVHzsLPk"
+      - label: "MediaFire"
+        url: "http://www.mediafire.com/file/83t4apy39oswaz6/RE3SHDP_-_1.1__to_1.2_Patch.zip/file"
+        color: "facebook"
+      - label: "GDrive"
+        url: "https://drive.google.com/uc?id=15PaIEZ9thtzxH8jL_hLPiobhXEcJEFvN&export=download"
+        color: "gdrive"
+   - caption: "FMV Pack (Optional)"
+     buttons:
+      - label: "Mega"
+        url: "https://mega.nz/#!ncAkBSAJ!gYRXLfHYFNU7wZpqvI_puqj1pZEsNF1KfJdlNF-5RZY"
+      - label: "MediaFire"
+        url: "https://www.mediafire.com/file/iuuj5mvqwqw2n7h/RE3SHDP_-_FMVs_Only.zip/file"
+        color: "facebook"
+      - label: "More info"
+        url: "#fmv-pack"
+        color: "info"
+
 #Header
 header:
   og_image: "/img/RE3SHDP_logo_og.jpg"
   hide_title: true
   overlay_image: /img/re3header_uw.jpg
   actions:
-   - label: "1.1 Pack"
-     # icon: /img/gamecube_logo_rect.png
-     caption: "Mirrors: <a href=\"https://drive.google.com/uc?id=1iVloEu9cPaTJ3izokKeaQCOVKZNWeigx&export=download\">Google Drive</a> - <a href=\"http://www.mediafire.com/file/iud6f46vf2hr99w/RE3SHDP-1.1.zip/file\">MediaFire</a>"
-     url: "https://mega.nz/#!7YwH3K7b!cR-X9cYO_rGHTZeJCNGQlq6jutPAcxQOAMOZ-KEdqq4"
-   #- label: "1.0 to 1.1 Patch"
-   #  # icon: /img/gamecube_logo_rect.png
-   #  caption: "Mirror: <a href=\"https://drive.google.com/uc?id=1ILf1TMR1o8uEm-jq9pKpPNuU-N_OiEq9&export=download\">Google Drive</a>"
-   #  url: "https://mega.nz/#!7EAjHYrJ!RwovN46hr-EWPD4PmP3FeDqNfDNfqur7cP9Ir0Lkr4s"
-   - label: "FMV Pack"
-     # icon: /img/gamecube_logo_rect.png
-     caption: "Mirror: <a href=\"http://www.mediafire.com/file/iuuj5mvqwqw2n7h/RE3SHDP_-_FMVs_Only.zip/file\">MediaFire</a> (<a href=\"#fmv-pack\">More Info</a>)"
-  #	 - Mirrors: <a href=\"/assets/RE3SHDP - FMVs Only.torrent\">Torrent</a>"
-     url: "https://mega.nz/#!ncAkBSAJ!gYRXLfHYFNU7wZpqvI_puqj1pZEsNF1KfJdlNF-5RZY"
-  #  - label: "Download"
-  #    fa_icon: "fas fa-images"
-  #    caption: "RE2SHDP v1.0 PNG Pack"
-  #    url: "https://mega.nz/#!0sNFCYbY!3raWMmiajJpmu8zFPC6F_ZsNDQv-u0uRgVpcq98NJeI"
+   - caption: ""
+     buttons:
+      - label: "Downloads"
+        url: "#downloads"
 ---
 
 <!-- <div class="feature__wrapper"> -->
@@ -133,6 +152,11 @@ Time to re-experience this classic survival-horror game with **Machine Learning*
 Please check the [FAQ](#frequently-asked-questions) before playing.
 {: .text-center}
 {: .notice }
+
+# Downloads
+{% include downloads.html downloads=page.downloads %}
+
+<div class="feature__wrapper"></div>
 
 <!-- </div> -->
 

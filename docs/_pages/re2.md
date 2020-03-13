@@ -88,20 +88,49 @@ backgrounds:
   - /RE2_bgs/ROOM_60D_02
   - /RE2_bgs/ROOM_60F_04
 
+downloads:
+   - caption: "1.2 Pack (Emulator included)"
+     buttons:
+      - label: "Mega"
+        url: "https://mega.nz/#!6IYGzADY!z8SnyXKxfjddFlFCWDIAV9UAhB9ipID0kHHiBSb0YCE"
+      - label: "MediaFire"
+        url: "http://www.mediafire.com/file/6yqf0cnxxdbsvlj/RE2SHDP-1.2.zip/file"
+        color: "facebook"
+      - label: "GDrive"
+        url: "https://drive.google.com/uc?id=1q23weqLE_Dl1o5a5besIgCCA0QuD6DK9&export=download"
+        color: "gdrive"
+   - caption: "1.1 to 1.2 Patch"
+     buttons:
+      - label: "Mega"
+        url: "https://mega.nz/#!TYJi2QqK!Uj7BUt_d5JhYZMy-ypw-LAYsFMrqjNxu0cbSqhIor6o"
+      - label: "MediaFire"
+        url: "http://www.mediafire.com/file/ogx88qgid14vr7f/RE2SHDP_-_1.1_to_1.2_patch.zip/file"
+        color: "facebook"
+      - label: "GDrive"
+        url: "https://drive.google.com/uc?id=1LBTAIx2TG0EHnx5bu33Wile0h-99MnYp&export=download"
+        color: "gdrive"
+   - caption: "FMV Pack (Optional)"
+     buttons:
+      - label: "Mega"
+        url: "https://mega.nz/#!XUQ1BSTR!RvlzAWakDtkH-VsCjAiFI6YWXMujJOU-nLxp7S_8WvY"
+      - label: "MediaFire"
+        url: "https://www.mediafire.com/file/we9qf5i6hihl3ha/RE2SHDP_-_FMVs_Only.zip/file"
+        color: "facebook"
+      - label: "More info"
+        url: "#fmv-pack"
+        color: "info"
+
 #Header
 header:
+  min-height: "600px"
   og_image: "/img/RE2SHDP_logo_og.jpg"
   hide_title: true
   overlay_image: /img/re2header_uw.jpg
   actions:
-   - label: "1.1 Pack"
-     # icon: /img/gamecube_logo_rect.png
-     caption: "Mirrors: <a href=\"https://drive.google.com/uc?id=1Cl_GPHW7DqYiUCSjnbwMTCbQSmOCl7eg&export=download\">Google Drive</a> - <a href=\"http://www.mediafire.com/file/k9gv4zzo6rq9zej/RE2SHDP-1.1.zip/file\">MediaFire</a>"
-     url: "https://mega.nz/#!fFg2UIrL!VBs0-RJVvKz6ztMhatf9EFTM3JkbSuGDM09WPsqG9u0"
-   - label: "FMV Pack"
-     # icon: /img/gamecube_logo_rect.png
-     caption: "Mirror: <a href=\"https://www.mediafire.com/file/we9qf5i6hihl3ha/RE2SHDP_-_FMVs_Only.zip/file\">MediaFire</a> (<a href=\"#fmv-pack\">More Info</a>)"
-     url: "https://mega.nz/#!XUQ1BSTR!RvlzAWakDtkH-VsCjAiFI6YWXMujJOU-nLxp7S_8WvY"
+   - caption: ""
+     buttons:
+      - label: "Downloads"
+        url: "#downloads"
   #  - label: "Download"
   #    fa_icon: "fas fa-images"
   #    caption: "RE2SHDP v1.0 PNG Pack"
@@ -110,6 +139,7 @@ header:
 
 <!-- [![Join us on Discord!](https://discordapp.com/api/guilds/549168005553192980/widget.png?style=banner3)](https://discord.gg/HCZWV6q) -->
 
+
 <!-- <div class="feature__wrapper"> -->
 
 Time to re-experience this classic survival-horror game with **Machine Learning** upscaled backgrounds,<br> **seamless masks** and many other small improvements in this **all-in-one texture pack.**<br>
@@ -117,6 +147,11 @@ Time to re-experience this classic survival-horror game with **Machine Learning*
 Please check the [FAQ](#frequently-asked-questions) before playing.
 {: .text-center}
 {: .notice }
+
+# Downloads
+{% include downloads.html downloads=page.downloads %}
+
+<div class="feature__wrapper"></div>
 
 <!-- </div> -->
 

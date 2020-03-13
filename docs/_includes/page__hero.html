@@ -59,27 +59,39 @@
         class="btn btn--light-outline btn--large">{{ page.header.cta_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
     </p>
     {% endif %}
+    
+    <!-- Actions -->
     {% if page.header.actions %}
-
     {% for action in page.header.actions %}
-    {% if action.url contains "://" %}
-    {% assign url = action.url %}
-    {% else %}
-    {% assign url = action.url | relative_url %}
-    {% endif %}
-    <div class="btn--wrapper">
-      <a href="{{ url }}" class="btn btn--primary btn--fixedWidth">
-        {% if action.icon %}
-        <img class="icon" src="{{ action.icon | prepend: site.baseurl }}" alt="{{ action.icon }}">
-        {% elsif action.fa_icon %}
-        {% include fa n=action.fa_icon %}
-        {% endif %}{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
-      {% if action.caption %}
-      <span class="btn--caption">{{ action.caption }}</span>
-      {% endif %}
-    </div>
+        <div class="btn--wrapper">
+          
+          {% if action.caption %}
+            <div class="btn--caption">{{ action.caption }}</div>
+          {% endif %}
+
+          {% for btn in action.buttons %}
+            {% if btn.url contains "://" %}
+                {% assign url = btn.url %}
+            {% elsif btn.url contains "#" %}
+                {% assign url = btn.url %}
+            {% else %}
+                {% assign url = btn.url | relative_url %}
+            {% endif %}
+
+            <a href="{{ url }}" class="btn btn--large btn--{{ btn.color | default: "primary" }} btn--fixedWidth">
+            {% if btn.icon %}
+              <img class="icon" src="{{ btn.icon | prepend: site.baseurl }}" alt="{{ btn.icon }}">
+            {% elsif btn.fa_icon %}
+              {% include fa n=btn.fa_icon %}
+            {% endif %}
+            {{ btn.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}
+            </a>
+          {% endfor %}
+                
+        </div>
     {% endfor %}
     {% endif %}
+
   </div>
   {% else %}
   <img src="{{ img_path }}" alt="{{ image_description }}" class="page__hero-image">
