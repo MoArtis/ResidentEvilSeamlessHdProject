@@ -122,7 +122,7 @@ downloads:
 
 #Header
 header:
-  min-height: "600px"
+  # min-height: "600px"
   og_image: "/img/RE2SHDP_logo_og.jpg"
   hide_title: true
   overlay_image: /img/re2header_uw.jpg
