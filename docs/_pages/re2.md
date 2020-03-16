@@ -112,9 +112,9 @@ downloads:
    - caption: "FMV Pack (Optional)"
      buttons:
       - label: "Mega"
-        url: "https://mega.nz/#!XUQ1BSTR!RvlzAWakDtkH-VsCjAiFI6YWXMujJOU-nLxp7S_8WvY"
+        url: "https://mega.nz/#!OJgBkQqZ!1tRXRZl5Ub4N7MgDQbJaJhujj5PD-3nJjicsMCCRWt4"
       - label: "MediaFire"
-        url: "https://www.mediafire.com/file/we9qf5i6hihl3ha/RE2SHDP_-_FMVs_Only.zip/file"
+        url: "https://www.mediafire.com/file/haxz7vl93a3lcmk/RE2SHDP_-_FMVs_Only.zip/file"
         color: "facebook"
       - label: "More info"
         url: "#fmv-pack"
