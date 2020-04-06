@@ -127,7 +127,7 @@ downloads:
       - label: "Mega"
         url: "https://mega.nz/#!SIhz0YDa!2VzGrDKqT50yK78Uvr-sEygaCRPyqe23jmlxoJw2FkI"
       - label: "MediaFire"
-        url: "https://www.mediafire.com/file/g1h3ajcglzj04c2/RE3SHDP_-_FMVs_Only.zip/file"
+        url: "https://www.mediafire.com/file/0ovjq42u1ms7cqb/RE3_FMV_-_DDS.zip/file"
         color: "facebook"
       - label: "More info"
         url: "#fmv-pack"
