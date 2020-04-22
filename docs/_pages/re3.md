@@ -105,7 +105,7 @@ downloads:
    - caption: "1.2 Pack (Emulator included)"
      buttons:
       - label: "Mega"
-        url: "https://mega.nz/#!fRIQBKJR!yQ-SiQ8xOvwAjGh32irM8e2uT5RR7DshI-YQU2nwNcM"
+        url: "https://mega.nz/file/TcZWFChT#VMzMcJxcVVUtYmP4aUj0IDdSPnbRHPSZ_OemePsfI-A"
       - label: "MediaFire"
         url: "https://www.mediafire.com/file/qcaoexnprysb10p/RE3SHDP-1.2.zip/file"
         color: "facebook"
