@@ -92,7 +92,7 @@ downloads:
    - caption: "1.2 Pack (Emulator included)"
      buttons:
       - label: "Mega"
-        url: "https://mega.nz/#!6IYGzADY!z8SnyXKxfjddFlFCWDIAV9UAhB9ipID0kHHiBSb0YCE"
+        url: "https://mega.nz/file/LVRXlCba#4enNY48ZnP79PVWDpDIBeqkMjYaSWDc6uNrZ4-0scDw"
       - label: "MediaFire"
         url: "http://www.mediafire.com/file/6yqf0cnxxdbsvlj/RE2SHDP-1.2.zip/file"
         color: "facebook"
@@ -102,7 +102,7 @@ downloads:
    - caption: "1.1 to 1.2 Patch"
      buttons:
       - label: "Mega"
-        url: "https://mega.nz/#!TYJi2QqK!Uj7BUt_d5JhYZMy-ypw-LAYsFMrqjNxu0cbSqhIor6o"
+        url: "https://mega.nz/file/fVYh1QjJ#1Bk61iHkz2gtXaeoIRdL1x-GKkVW2F4UKFOFBnl9RVw"
       - label: "MediaFire"
         url: "http://www.mediafire.com/file/ogx88qgid14vr7f/RE2SHDP_-_1.1_to_1.2_patch.zip/file"
         color: "facebook"

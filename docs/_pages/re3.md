@@ -115,7 +115,7 @@ downloads:
    - caption: "1.1 to 1.2 Patch"
      buttons:
       - label: "Mega"
-        url: "https://mega.nz/#!adBU1ILL!ka5eymLbZQxVAbCPS68AyOJgYxXTq-QR9rBPVHzsLPk"
+        url: "https://mega.nz/file/rMYlGQ5b#Puzgv5pT0f9wN3I-ATTe3zFzLeQ3_Na-Z9IWu1y_8uE"
       - label: "MediaFire"
         url: "http://www.mediafire.com/file/83t4apy39oswaz6/RE3SHDP_-_1.1__to_1.2_Patch.zip/file"
         color: "facebook"
