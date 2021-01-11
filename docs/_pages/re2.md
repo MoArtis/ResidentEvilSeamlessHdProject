@@ -186,46 +186,51 @@ Our solution was to create a tool that analyzes the game data to **regenerate co
 Our pack comes along a custom version of Dolphin (a Gamecube emulator). All you have to do is to extract the Zip file, open Dolphin.exe, select the folder containing your game ISO, configure the controller if needed and play! **We don't provide the game ISO** and we will not help you to find one. If you can't open the zip file, you might need to download and use [7Zip <i class="fas fa-external-link-alt"></i>](https://www.7-zip.org/download.html).
 {: .notice }
 
+
 >**Is it compatible with the PAL version?**<br>
-Yes but the pack was made with the US (NTSC) version in mind. Therefore you need to rename the folder "\*dolphin_path\*\User\Load\Textures\\<wbr>**GHAE08**" to "**GHAP08**". Please note that the texts and some 3d models will not be upscaled.
+Yes but the pack was made with the US (NTSC) version in mind thus some texts and 3d models will not be upscaled.
 {: .notice }
+
 
 >**Can I use the pack on the PC version ?**<br>
-Sadly no... Two community patches exist for RE2 PC: _Peixoto_ and _Classic Rebirth_. _Peixoto_ would require us to dump the textures of the game manually one by one. _Classic Rebirth_, while being a great and easy to use patch, doesn't feature texture upscaling (yet). We will work on a PC version when it will be possible.
+Not yet but it's on the good way thanks to the Classic Rebirth patches by Gemini. These patches will soon allow HD textures to be used. Visit https://appleofeden.de-doc.com/ for more info.
 {: .notice }
 
->**...and on Dolphin for Mac/Android?**<br>
-Yes. But we don't provide a custom version of Dolphin for these platforms. That being said, the source code is available on [Github <i class="fab fa-github"></i>](https://github.com/MoArtis/dolphin) and can be built for these platforms.
+
+>**…and on Dolphin for Mac/Linux/Android ?**<br>
+Yes. There are already pre-packaged builds for Android and Linux available on our [Discord server <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q). The sources of our custom Dolphin build are available on Github if you want to try to build it yourself: [Dolphin RESHDP edition <i class="fab fa-github"></i>](https://github.com/MoArtis/dolphin)
 {: .notice }
 
-<!-- >**Do I need to download the 2 packs ?**<br>
-No, if you just want to play, only the first link is necessary ("Custom Dolphin + RE2SHDP"). The second link is only provided to people who want to have a look at the source files since the playable pack is using optimized DDS files.
-{: .notice } -->
 
 >**What can I do if I have hiccups?**<br>
-If you are experiencing **noticeable performance hiccups and slowdowns** when the background changes or when you open the inventory, try this on Dolphin: Open the "Graphics" menu, go to the "Advanced" tab and, in the "Utility" section, turn on the the "**Prefetch Custom Textures**" option. You need to restart the game and wait for a bit for the change to take effect. 
+If you are experiencing **noticeable performance hiccups and slowdowns** when the background changes or when you open the inventory, try this on Dolphin: Open the "Graphics" menu, go to the "Advanced" tab and, in the "Utility" section, turn on the the "**Prefetch Custom Textures**" option. You need to restart the game and wait for a bit for the change to take effect.
 {: .notice }
 
-<!-- Please note that this option uses a lot of RAM (~4GB), the game will slow down a lot for a minute and turning on and off the pack -->
 
 >**How to turn off the pack while playing?**<br>
 You can turn the pack on and off while playing with the **DELETE** key. Please note that if you have the "**Prefetch Custom Textures**" option activated, the textures will have to be reloaded entirely again.
 {: .notice }
 
+
 >**How to skip the door animations?**<br>
-You can't do that in the Gamecube version. But you can hold the **TAB** key to speed up the game at any time.
+You can't do that in the Gamecube version. But you can hold the TAB key to speed up the game at any time. If it doesn't work, you might need to check if your GPU control panel is forcing VSync and disable it.
 {: .notice }
+
+
+>**How to fix the "missing DLL" errors?**<br>
+Just install the x64 version of the Visual C++ redistributable. You can download it from here: https://go.microsoft.com/fwlink/?LinkId=746572
+{: .notice }
+
 
 >**Can you help me regarding Dolphin?**<br>
 Yes. As we modified the emulator, it is better to ask us directly. You will find different ways to contact us just below.
-<!-- We only made tiny modifications to the emulator so, if you have any problem or question regarding Dolphin you better off checking their [FAQ <i class="fas fa-external-link-alt"></i>](https://dolphin-emu.org/docs/faq/) or asking on their [forum <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/). -->
 {: .notice }
 
+
 >**How can I contact you?**<br>
-You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q) or write us an issue on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues). 
-If you are part of the Dolphin community, you can check out [our dedicated forum thread <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/Thread-resident-evil-2-resident-evil-3-hd-ui-and-upscaled-textures).
-We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with even more ways to contact us.
+You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q) or write us an issue on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).  If you are part of the Dolphin community, you can check out [our dedicated forum thread <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/Thread-resident-evil-2-resident-evil-3-hd-ui-and-upscaled-textures). We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with even more ways to contact us.
 {: .notice }
+
 
 <div class="feature__wrapper"></div>
 
