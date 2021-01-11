@@ -183,7 +183,7 @@ Our solution was to create a tool that analyzes the game data to **regenerate co
 # Frequently Asked Questions
 
 >**How do I install the pack?**<br>
-Our pack comes along a custom version of Dolphin (a Gamecube emulator). All you have to do is to extract the Zip file, open Dolphin.exe, select the folder containing your game ISO, configure the controller if needed and play! **We don't provide the game ISO** and we will not help you to find one. If you can't open the zip file, you might need to download and use [7Zip <i class="fas fa-external-link-alt"></i>](https://www.7-zip.org/download.html).
+Our pack includes a custom version of Dolphin (a Gamecube emulator). All you have to do is to extract the Zip file, open Dolphin.exe, select the folder containing your game ISO, configure the controller if needed and play! **We don't provide the game ISO** and we will not help you to find one. If you can't open the zip file, you might need to download and use [7Zip <i class="fas fa-external-link-alt"></i>](https://www.7-zip.org/download.html).
 {: .notice }
 
 
