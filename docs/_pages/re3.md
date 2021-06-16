@@ -208,7 +208,7 @@ Sadly no... As far as we know there is no community patch for RE3 that would pot
 
 
 >**…and on Dolphin for Mac/Linux/Android ?**<br>
-Yes. There are already pre-packaged builds for Android and Linux available on our [Discord server <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q). The sources of our custom Dolphin build are available on Github if you want to try to build it yourself: [Dolphin RESHDP edition <i class="fab fa-github"></i>](https://github.com/MoArtis/dolphin)
+Yes. There are already pre-packaged builds for Android and Linux available on our [Discord server <i class="fab fa-discord"></i>](https://discord.gg/xZ24wxG7FK). The sources of our custom Dolphin build are available on Github if you want to try to build it yourself: [Dolphin RESHDP edition <i class="fab fa-github"></i>](https://github.com/MoArtis/dolphin)
 {: .notice }
 
 
@@ -238,7 +238,7 @@ Yes. As we modified the emulator, it is better to ask us directly. You will find
 
 
 >**How can I contact you?**<br>
-You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q) or write us an issue on [Github <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).  If you are part of the Dolphin community, you can check out [our dedicated forum thread <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/Thread-resident-evil-2-resident-evil-3-hd-ui-and-upscaled-textures). We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with even more ways to contact us.
+You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/xZ24wxG7FK) or write us an issue on [Github <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).  If you are part of the Dolphin community, you can check out [our dedicated forum thread <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/Thread-resident-evil-2-resident-evil-3-hd-ui-and-upscaled-textures). We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with even more ways to contact us.
 {: .notice }
 
 
