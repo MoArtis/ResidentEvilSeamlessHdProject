@@ -1,10 +1,8 @@
 {
-    "name": "RE3 SourceNext",
+    "name": "RE1 Classic Rebirth",
     "bgParts": [],
 	"maskUsageSize": {
         "x": 320,
         "y": 240
-    },
-	"isJpgBg" : true,
-	"jpgQuality": 90
+    }
 }

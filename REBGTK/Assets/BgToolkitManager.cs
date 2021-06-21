@@ -291,6 +291,10 @@ public class BgToolkitManager : MonoBehaviour
         string baseDumpFormatName = "";
         switch (game)
         {
+            case Game.RE1:
+                baseDumpFormatName = "RE1 Classic Rebirth";
+                break;
+            
             case Game.RE2:
                 baseDumpFormatName = "RE2 Classic Rebirth";
                 break;
@@ -311,7 +315,7 @@ public class BgToolkitManager : MonoBehaviour
             }
         }
 
-        if (baseDumpFormat.name == null || baseDumpFormat.name == "")
+        if (string.IsNullOrEmpty(baseDumpFormat.name))
         {
             //ChangeState(State.Error);
             //errorMessage.ChangeMessage("The dump format named " + baseDumpFormatName + " is missing. Check the Dump Format folder.");
@@ -368,7 +372,6 @@ public class BgToolkitManager : MonoBehaviour
         DumpFormat dumpFormat = dumpFormats[recreateTexDumpFormatIndex];
         StartCoroutine(toolkit.RecreateTextures(
             processedPath, bgInfoPath, alphaChannelPath, resultsPath,   //Paths
-            dumpFormat.texPixelShift,       //Pixel shifts
             dumpFormat, ProgressCallback, DoneCallback));               //Config structs and callbacks
     }
 

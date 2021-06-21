@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        UpdateGameOptions(2);
+        UpdateGameOptions(0);
     }
 
     public void Show()

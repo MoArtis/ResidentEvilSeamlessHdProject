@@ -13,14 +13,14 @@ namespace BgTk
     public class BgToolkit
     {
         //TODO - A Config struct that can be configured / stored from another class / object
-        public BgToolkit(Game game, DumpFormat baseDumpFormat, string maskSuffix, string altMaskSourceSuffix, bool prettifyJsonOnSave)
+        public BgToolkit(Game game, DumpFormat baseDumpFormat, string maskSuffix, string altMaskSourceSuffix,
+            bool prettifyJsonOnSave)
         {
             this.game = game;
             this.baseDumpFormat = baseDumpFormat;
             this.prettifyJsonOnSave = prettifyJsonOnSave;
             this.maskSuffix = maskSuffix;
             this.altMaskSourceSuffix = altMaskSourceSuffix;
-
         }
 
         protected Game game;
@@ -35,7 +35,8 @@ namespace BgTk
 
         public StringBuilder reportSb = new StringBuilder();
 
-        public IEnumerator GenerateMaskSource(string bgInfoPath, string dumpTexPath, System.Action<ProgressInfo> progressCb, System.Action doneCb)
+        public IEnumerator GenerateMaskSource(string bgInfoPath, string dumpTexPath,
+            System.Action<ProgressInfo> progressCb, System.Action doneCb)
         {
             reportSb.Clear();
             reportSb.AppendLine("== Mask Source Generation report ==");
@@ -48,37 +49,41 @@ namespace BgTk
             yield return new WaitForEndOfFrame();
 
             //Load all the bg infos for later
-            int bgInfoCount = fm.LoadFiles(Path.Combine(bgInfoPath, game.ToString()), "json");
-            BgInfo[] bgInfos = fm.GetObjectsFromFiles<BgInfo>();
+            var bgInfoCount = fm.LoadFiles(Path.Combine(bgInfoPath, game.ToString()), "json");
+            var bgInfos = fm.GetObjectsFromFiles<BgInfo>();
 
             dumpTexPath = Path.Combine(dumpTexPath, baseDumpFormat.name);
-
-            for (int i = 0; i < bgInfoCount; i++)
+    
+            for (var i = 0; i < bgInfoCount; i++)
             {
                 if (bgInfos[i].hasMask == false || bgInfos[i].useProcessedMaskTex == false)
                     continue;
 
-                BgInfo bgInfo = bgInfos[i];
+                var bgInfo = bgInfos[i];
 
-                int scaleRatio = bgInfo.bgTexSize.y / baseDumpFormat.maskUsageSize.y;
+                var scaleRatio = bgInfo.bgTexSize.y / baseDumpFormat.maskUsageSize.y;
 
-                progressCb(new ProgressInfo("Generating special Mask source", i + 1, bgInfoCount, i / (float)(bgInfoCount - 1)));
+                progressCb(new ProgressInfo("Generating special Mask source", i + 1, bgInfoCount,
+                    i / (float) (bgInfoCount - 1)));
                 yield return new WaitForEndOfFrame();
 
-                Texture2D bgTex = fm.GetTextureFromPath(Path.Combine(dumpTexPath, bgInfo.namePrefix));
-                Texture2D srcMaskTex = fm.GetTextureFromPath(Path.Combine(dumpTexPath, string.Concat(bgInfo.namePrefix, maskSuffix)));
-                Texture2D maskTex = ScaleTexture(srcMaskTex, scaleRatio);
+                var bgTex = fm.GetTextureFromPath(Path.Combine(dumpTexPath, bgInfo.namePrefix));
+                var srcMaskTex =
+                    fm.GetTextureFromPath(Path.Combine(dumpTexPath, string.Concat(bgInfo.namePrefix, maskSuffix)));
+                var maskTex = ScaleTexture(srcMaskTex, scaleRatio);
                 //fm.SaveTextureToPng(maskTex, dumpTexPath, srcMaskTex.name + "_us");
 
                 if (bgTex == null)
                 {
-                    reportSb.AppendLine(string.Concat(bgInfo.namePrefix, " is missing its BG texture in the dump folder (", dumpTexPath, ")"));
+                    reportSb.AppendLine(string.Concat(bgInfo.namePrefix,
+                        " is missing its BG texture in the dump folder (", dumpTexPath, ")"));
                     continue;
                 }
 
                 if (maskTex == null)
                 {
-                    reportSb.AppendLine(string.Concat(bgInfo.namePrefix, " is missing its Mask texture in the dump folder (", dumpTexPath, ")"));
+                    reportSb.AppendLine(string.Concat(bgInfo.namePrefix,
+                        " is missing its Mask texture in the dump folder (", dumpTexPath, ")"));
                     Object.Destroy(bgTex);
                     continue;
                 }
@@ -88,15 +93,18 @@ namespace BgTk
                     bgInfo.masks = bgInfo.masks.Reverse().ToArray();
 
                 //Read all the mask patches from the mask texture and apply them to the bgTex, then save it into a new special texture.
-                for (int j = 0; j < bgInfo.masks.Length; j++)
+                for (var j = 0; j < bgInfo.masks.Length; j++)
                 {
-                    Mask mask = bgInfo.masks[j];
+                    var mask = bgInfo.masks[j];
 
-                    Color[] maskColors = maskTex.GetPixels(mask.patch.srcPos.x * scaleRatio, mask.patch.srcPos.y * scaleRatio, mask.patch.size.x * scaleRatio, mask.patch.size.y * scaleRatio);
+                    var maskColors = maskTex.GetPixels(mask.patch.srcPos.x * scaleRatio,
+                        mask.patch.srcPos.y * scaleRatio, mask.patch.size.x * scaleRatio,
+                        mask.patch.size.y * scaleRatio);
 
-                    Color[] bgColors = bgTex.GetPixels(mask.patch.dstPos.x * scaleRatio, mask.patch.dstPos.y * scaleRatio, mask.patch.size.x * scaleRatio, mask.patch.size.y * scaleRatio);
+                    var bgColors = bgTex.GetPixels(mask.patch.dstPos.x * scaleRatio, mask.patch.dstPos.y * scaleRatio,
+                        mask.patch.size.x * scaleRatio, mask.patch.size.y * scaleRatio);
 
-                    for (int k = 0; k < maskColors.Length; k++)
+                    for (var k = 0; k < maskColors.Length; k++)
                     {
                         //if opaque // no semi transparency at this stage
                         if (maskColors[k].a < 0.5f)
@@ -105,7 +113,8 @@ namespace BgTk
                         }
                     }
 
-                    bgTex.SetPixels(mask.patch.dstPos.x * scaleRatio, mask.patch.dstPos.y * scaleRatio, mask.patch.size.x * scaleRatio, mask.patch.size.y * scaleRatio, maskColors);
+                    bgTex.SetPixels(mask.patch.dstPos.x * scaleRatio, mask.patch.dstPos.y * scaleRatio,
+                        mask.patch.size.x * scaleRatio, mask.patch.size.y * scaleRatio, maskColors);
                 }
 
                 //Todo - store the special mask suffix as a variable
@@ -116,14 +125,16 @@ namespace BgTk
                 Object.Destroy(srcMaskTex);
             }
 
-            reportSb.AppendLine(string.Format("== Mask source generation done! ({0} seconds) ==", (Time.unscaledTime - taskTime).ToString("#.0")));
+            reportSb.AppendLine(string.Format("== Mask source generation done! ({0} seconds) ==",
+                (Time.unscaledTime - taskTime).ToString("#.0")));
 
             fm.OpenFolder(dumpTexPath);
 
             doneCb();
         }
 
-        public IEnumerator GenerateAlphaChannel(string bgInfoPath, string alphaChannelPath, AlphaChannelConfig config, System.Action<ProgressInfo> progressCb, System.Action doneCb)
+        public IEnumerator GenerateAlphaChannel(string bgInfoPath, string alphaChannelPath, AlphaChannelConfig config,
+            System.Action<ProgressInfo> progressCb, System.Action doneCb)
         {
             reportSb.Clear();
             reportSb.AppendLine("== Alpha channel generation report ==");
@@ -135,45 +146,45 @@ namespace BgTk
 
             taskTime = Time.unscaledTime;
 
-            xBRZScaler xBrzScaler = new xBRZScaler();
+            var xBrzScaler = new xBRZScaler();
 
-            byte boostValue = (byte)(config.boostValue * 255f);
-            byte clipValue = (byte)(config.clipValue * 255f);
+            var boostValue = (byte) (config.boostValue * 255f);
+            var clipValue = (byte) (config.clipValue * 255f);
 
             alphaChannelPath = Path.Combine(alphaChannelPath, game.ToString());
             fm.CreateDirectory(alphaChannelPath);
 
             bgInfoPath = Path.Combine(bgInfoPath, game.ToString());
-            int bgInfosCount = fm.LoadFiles(bgInfoPath, "json");
+            var bgInfosCount = fm.LoadFiles(bgInfoPath, "json");
             if (bgInfosCount <= 0)
             {
                 reportSb.AppendLine("== Alpha channel generation aborted! - No Bg Info ==");
                 doneCb();
             }
 
-            for (int i = 0; i < bgInfosCount; i++)
+            for (var i = 0; i < bgInfosCount; i++)
             {
-                BgInfo bgInfo = fm.GetObjectFromFileIndex<BgInfo>(i);
+                var bgInfo = fm.GetObjectFromFileIndex<BgInfo>(i);
 
                 if (bgInfo.hasMask == false)
                 {
                     if (i % 100 == 0)
                     {
-                        progressCb(new ProgressInfo(bgInfo.namePrefix, i + 1, bgInfosCount, i / (float)bgInfosCount));
+                        progressCb(new ProgressInfo(bgInfo.namePrefix, i + 1, bgInfosCount, i / (float) bgInfosCount));
                         yield return new WaitForEndOfFrame();
                     }
                 }
                 else
                 {
-                    progressCb(new ProgressInfo(bgInfo.namePrefix, i + 1, bgInfosCount, i / (float)bgInfosCount));
+                    progressCb(new ProgressInfo(bgInfo.namePrefix, i + 1, bgInfosCount, i / (float) bgInfosCount));
                     yield return new WaitForEndOfFrame();
                     yield return new WaitForEndOfFrame();
 
-                    for (int g = 0; g < bgInfo.groupsCount; g++)
+                    for (var g = 0; g < bgInfo.groupsCount; g++)
                     {
-                        string alphaChannelName = string.Concat(bgInfo.namePrefix, "_", g);
+                        var alphaChannelName = string.Concat(bgInfo.namePrefix, "_", g);
 
-                        Texture2D alphaTex = new Texture2D(
+                        var alphaTex = new Texture2D(
                             //bgInfo.bgTexSize.x,
                             //bgInfo.bgTexSize.y,
                             baseDumpFormat.maskUsageSize.x,
@@ -181,34 +192,38 @@ namespace BgTk
                             TextureFormat.RGBA32, false);
                         alphaTex.wrapMode = TextureWrapMode.Clamp;
 
-                        Texture2D smoothAlphaTex = new Texture2D(
+                        var smoothAlphaTex = new Texture2D(
                             //bgInfo.bgTexSize.x * config.scaleRatio,
                             //bgInfo.bgTexSize.y * config.scaleRatio,
                             baseDumpFormat.maskUsageSize.x * config.scaleRatio,
                             baseDumpFormat.maskUsageSize.y * config.scaleRatio,
                             TextureFormat.RGBA32, false);
 
-                        Color opaqueColor = Color.blue;
-                        Color transparentColor = new Color();
+                        var opaqueColor = Color.blue;
+                        var transparentColor = new Color();
 
                         alphaTex.Fill(transparentColor);
 
-                        for (int j = 0; j < bgInfo.masks.Length; j++)
+                        for (var j = 0; j < bgInfo.masks.Length; j++)
                         {
-                            Mask mask = bgInfo.masks[j];
+                            var mask = bgInfo.masks[j];
 
                             if (mask.groupIndex != g)
                                 continue;
 
-                            Color[] maskColors = alphaTex.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y);
-                            for (int k = 0; k < mask.opaqueIndices.Length; k++)
+                            // var patch = mask.patch.Fit(baseDumpFormat.maskUsageSize);
+                            var patch = mask.patch;
+
+                            var maskColors = alphaTex.GetPixels(patch.dstPos.x, patch.dstPos.y, patch.size.x,
+                                patch.size.y);
+                            for (var k = 0; k < mask.opaqueIndices.Length; k++)
                             {
-                                int index = mask.opaqueIndices[k];
+                                var index = mask.opaqueIndices[k];
                                 if (index == -1)
                                 {
-                                    int firstIndex = mask.opaqueIndices[k - 1] + 1;
-                                    int lastIndex = mask.opaqueIndices[k + 1];
-                                    for (int l = 0; l < lastIndex - firstIndex + 1; l++)
+                                    var firstIndex = mask.opaqueIndices[k - 1] + 1;
+                                    var lastIndex = mask.opaqueIndices[k + 1];
+                                    for (var l = 0; l < lastIndex - firstIndex + 1; l++)
                                     {
                                         maskColors[firstIndex + l] = opaqueColor;
                                     }
@@ -218,19 +233,23 @@ namespace BgTk
                                     maskColors[index] = opaqueColor;
                                 }
                             }
-                            alphaTex.SetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y, maskColors);
+
+                            alphaTex.SetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x,
+                                mask.patch.size.y, maskColors);
                         }
 
                         if (config.saveDebugTextures)
-                            fm.SaveTextureToPng(alphaTex, alphaChannelPath, string.Concat(alphaChannelName, "_DEBUG_1_Original"));
+                            fm.SaveTextureToPng(alphaTex, alphaChannelPath,
+                                string.Concat(alphaChannelName, "_DEBUG_1_Original"));
 
                         if (config.scalingType == ScalingType.xBRZ && config.scaleRatio > 1 && config.scaleRatio <= 5)
                         {
-                            Color32[] xBrzColors = xBrzScaler.ScaleImage(alphaTex, config.scaleRatio);
-                            for (int j = 0; j < xBrzColors.Length; j++)
+                            var xBrzColors = xBrzScaler.ScaleImage(alphaTex, config.scaleRatio);
+                            for (var j = 0; j < xBrzColors.Length; j++)
                             {
                                 xBrzColors[j].a = xBrzColors[j].b;
                             }
+
                             smoothAlphaTex.SetPixels32(xBrzColors);
                         }
                         else
@@ -244,12 +263,12 @@ namespace BgTk
                                 alphaTex.filterMode = FilterMode.Bilinear;
 
                                 //Bilinear filtering trick
-                                for (int y = 0; y < smoothAlphaTex.height; y++)
+                                for (var y = 0; y < smoothAlphaTex.height; y++)
                                 {
-                                    for (int x = 0; x < smoothAlphaTex.width; x++)
+                                    for (var x = 0; x < smoothAlphaTex.width; x++)
                                     {
-                                        float xFrac = (x + 0.5f) / (smoothAlphaTex.width - 1);
-                                        float yFrac = (y + 0.5f) / (smoothAlphaTex.height - 1);
+                                        var xFrac = (x + 0.5f) / (smoothAlphaTex.width - 1);
+                                        var yFrac = (y + 0.5f) / (smoothAlphaTex.height - 1);
 
                                         Color c;
                                         if (config.scalingType == ScalingType.Bilinear)
@@ -258,7 +277,8 @@ namespace BgTk
                                         }
                                         else
                                         {
-                                            c = alphaTex.GetPixel(Mathf.FloorToInt(x / (float)config.scaleRatio), Mathf.FloorToInt(y / (float)config.scaleRatio));
+                                            c = alphaTex.GetPixel(Mathf.FloorToInt(x / (float) config.scaleRatio),
+                                                Mathf.FloorToInt(y / (float) config.scaleRatio));
                                         }
 
                                         smoothAlphaTex.SetPixel(x, y, c);
@@ -268,38 +288,42 @@ namespace BgTk
                         }
 
                         if (config.saveDebugTextures)
-                            fm.SaveTextureToPng(smoothAlphaTex, alphaChannelPath, string.Concat(alphaChannelName, "_DEBUG_2_Scaled"));
+                            fm.SaveTextureToPng(smoothAlphaTex, alphaChannelPath,
+                                string.Concat(alphaChannelName, "_DEBUG_2_Scaled"));
 
                         if (config.hasBlur)
                         {
                             smoothAlphaTex.Blur(config.blurRadius, config.blurIteration);
 
                             if (config.saveDebugTextures)
-                                fm.SaveTextureToPng(smoothAlphaTex, alphaChannelPath, string.Concat(alphaChannelName, "_DEBUG_3_Scaled+Blurred"));
+                                fm.SaveTextureToPng(smoothAlphaTex, alphaChannelPath,
+                                    string.Concat(alphaChannelName, "_DEBUG_3_Scaled+Blurred"));
                         }
 
 
                         //Alpha clipping and boost for sharper edges
                         if (clipValue > byte.MinValue || boostValue > byte.MinValue)
                         {
-                            Color32[] colors = smoothAlphaTex.GetPixels32();
-                            for (int j = 0; j < colors.Length; j++)
+                            var colors = smoothAlphaTex.GetPixels32();
+                            for (var j = 0; j < colors.Length; j++)
                             {
-                                Color32 c = colors[j];
+                                var c = colors[j];
 
                                 c.a = c.a <= clipValue ? byte.MinValue : c.a;
 
                                 if (c.a > byte.MinValue)
                                 {
-                                    c.a = (byte)Mathf.Clamp(c.a + boostValue, c.a, 255);
+                                    c.a = (byte) Mathf.Clamp(c.a + boostValue, c.a, 255);
                                 }
 
                                 colors[j] = c;
                             }
+
                             smoothAlphaTex.SetPixels32(colors);
 
                             if (config.saveDebugTextures)
-                                fm.SaveTextureToPng(smoothAlphaTex, alphaChannelPath, string.Concat(alphaChannelName, "_DEBUG_4_Scaled+Blurred+ClipBoost"));
+                                fm.SaveTextureToPng(smoothAlphaTex, alphaChannelPath,
+                                    string.Concat(alphaChannelName, "_DEBUG_4_Scaled+Blurred+ClipBoost"));
                         }
 
                         fm.SaveTextureToPng(smoothAlphaTex, alphaChannelPath, alphaChannelName);
@@ -312,19 +336,22 @@ namespace BgTk
 
             yield return new WaitForEndOfFrame();
 
-            reportSb.AppendLine(string.Format("== Alpha channel generation Done! ({0} seconds) ==", (Time.unscaledTime - taskTime).ToString("#.0")));
+            reportSb.AppendLine(string.Format("== Alpha channel generation Done! ({0} seconds) ==",
+                (Time.unscaledTime - taskTime).ToString("#.0")));
 
             fm.OpenFolder(alphaChannelPath);
 
             doneCb();
-
         }
 
-        public IEnumerator MatchTextures(string bgInfoPath, string dumpTexPath, DumpFormat dumpFormat, TextureMatchingConfig config, System.Action<ProgressInfo> progressCb, System.Action doneCb)
+        public IEnumerator MatchTextures(string bgInfoPath, string dumpTexPath, DumpFormat dumpFormat,
+            TextureMatchingConfig config, System.Action<ProgressInfo> progressCb, System.Action doneCb)
         {
             if (dumpFormat.Equals(baseDumpFormat))
             {
-                Debug.LogWarning(string.Format("The current base texture format ({0}) is the same as the selected texture format for matching ({1}). This is useless.", baseDumpFormat.name, dumpFormat.name));
+                Debug.LogWarning(string.Format(
+                    "The current base texture format ({0}) is the same as the selected texture format for matching ({1}). This is useless.",
+                    baseDumpFormat.name, dumpFormat.name));
                 doneCb();
                 yield break;
             }
@@ -342,44 +369,47 @@ namespace BgTk
 
             //Load all the bg infos for later
             bgInfoPath = Path.Combine(bgInfoPath, game.ToString());
-            int bgInfoCount = fm.LoadFiles(bgInfoPath, "json");
-            BgInfo[] bgInfos = fm.GetObjectsFromFiles<BgInfo>();
+            var bgInfoCount = fm.LoadFiles(bgInfoPath, "json");
+            var bgInfos = fm.GetObjectsFromFiles<BgInfo>();
 
             //Load all the file info of the textures to match
-            int mcTexCount = fm.LoadFiles(Path.Combine(dumpTexPath, dumpFormat.name), "png", SearchOption.AllDirectories);
+            var mcTexCount = fm.LoadFiles(Path.Combine(dumpTexPath, dumpFormat.name), "png",
+                SearchOption.AllDirectories);
 
-            List<MatchCandidate> candidatesList = new List<MatchCandidate>();
+            var candidatesList = new List<MatchCandidate>();
 
-            int texDuplicatesCount = 0;
-            int unmatchedTexCount = 0;
-            int unmatchedMcCount = 0;
+            var texDuplicatesCount = 0;
+            var unmatchedTexCount = 0;
+            var unmatchedMcCount = 0;
 
             //1. Prepare the MatchCandidates
-            for (int i = 0; i < mcTexCount; i++)
+            for (var i = 0; i < mcTexCount; i++)
             {
                 if (i % 50 == 0)
                 {
-                    progressCb(new ProgressInfo("Preparing candidates", i + 1, mcTexCount, i / (float)(mcTexCount - 1)));
+                    progressCb(
+                        new ProgressInfo("Preparing candidates", i + 1, mcTexCount, i / (float) (mcTexCount - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
-                Texture2D mcTex = fm.GetTextureFromFileIndex(i);
+                var mcTex = fm.GetTextureFromFileIndex(i);
 
-                MatchCandidate mc = new MatchCandidate();
+                var mc = new MatchCandidate();
                 mc.md5 = fm.GetMd5(mcTex.GetRawTextureData());
-                mc.fileInfoIndices = new int[] { i };
+                mc.fileInfoIndices = new int[] {i};
                 mc.texSize.x = mcTex.width;
                 mc.texSize.y = mcTex.height;
                 mc.bgInfoMatchIndex = new List<int>();
                 mc.bgInfoMatchValue = new List<float>();
 
                 //Check for duplicates
-                bool isDuplicate = false;
-                for (int j = 0; j < candidatesList.Count; j++)
+                var isDuplicate = false;
+                for (var j = 0; j < candidatesList.Count; j++)
                 {
                     if (candidatesList[j].md5 == mc.md5)
                     {
-                        reportSb.AppendLine(string.Concat(mcTex.name, " is a duplicate of ", fm.fileInfos[candidatesList[j].fileInfoIndices[0]].Name));
+                        reportSb.AppendLine(string.Concat(mcTex.name, " is a duplicate of ",
+                            fm.fileInfos[candidatesList[j].fileInfoIndices[0]].Name));
                         texDuplicatesCount++;
 
                         //int[] indices = new int[candidatesList[j].fileInfoIndices.Length + 1];
@@ -388,9 +418,9 @@ namespace BgTk
                         //    indices[k] = candidatesList[j].fileInfoIndices[k];
                         //}
                         //indices[indices.Length - 1] = j;
-                        int[] indices = candidatesList[j].fileInfoIndices.Concat(new int[] { i }).ToArray();
+                        var indices = candidatesList[j].fileInfoIndices.Concat(new int[] {i}).ToArray();
 
-                        MatchCandidate duplicatedMc = candidatesList[j];
+                        var duplicatedMc = candidatesList[j];
                         duplicatedMc.SetFileInfoIndices(indices);
                         candidatesList[j] = duplicatedMc;
 
@@ -425,9 +455,10 @@ namespace BgTk
                     }
                     else
                     {
-                        for (int j = 0; j < dumpFormat.bgParts.Length; j++)
+                        for (var j = 0; j < dumpFormat.bgParts.Length; j++)
                         {
-                            if (mcTex.width == dumpFormat.bgParts[j].size.x && mcTex.height == dumpFormat.bgParts[j].size.y)
+                            if (mcTex.width == dumpFormat.bgParts[j].size.x &&
+                                mcTex.height == dumpFormat.bgParts[j].size.y)
                             {
                                 mc.bgPartIndex = j;
                                 break;
@@ -438,7 +469,7 @@ namespace BgTk
 
                 //RE3 WARNING - That doesn't WORK AT ALL ON RE3 GAMECUBE
                 //Create a special patch for mask texture, thus It will only pick colors into the non fully transparent area.
-                Patch partPatch = new Patch();
+                var partPatch = new Patch();
                 if (mc.isMask)
                 {
                     if (config.inconsistentMaskSize)
@@ -447,9 +478,9 @@ namespace BgTk
                     }
                     else
                     {
-                        Color[] line = mcTex.GetPixels(12, 0, 1, mcTex.height);
-                        bool foundFlag = false;
-                        for (int k = 0; k < line.Length; k++)
+                        var line = mcTex.GetPixels(12, 0, 1, mcTex.height);
+                        var foundFlag = false;
+                        for (var k = 0; k < line.Length; k++)
                         {
                             if (line[k].a > 0.9f)
                             {
@@ -460,17 +491,19 @@ namespace BgTk
                                 break;
                             }
                         }
+
                         if (foundFlag == false || partPatch.size.y < config.histogramPatchSize.y)
                         {
                             unmatchedMcCount++;
                             unmatchedTexCount += mc.fileInfoIndices.Length;
-                            reportSb.AppendLine(string.Concat(mcTex.name, " seems fully transparent mask. Match it manually."));
+                            reportSb.AppendLine(string.Concat(mcTex.name,
+                                " seems fully transparent mask. Match it manually."));
                             continue;
                         }
 
                         line = mcTex.GetPixels(0, mcTex.height - 4, mcTex.width, 1);
                         foundFlag = false;
-                        for (int k = mcTex.width - 1; k >= 0; k--)
+                        for (var k = mcTex.width - 1; k >= 0; k--)
                         {
                             if (line[k].a > 0.9f)
                             {
@@ -479,31 +512,33 @@ namespace BgTk
                                 break;
                             }
                         }
+
                         if (foundFlag == false || partPatch.size.x < config.histogramPatchSize.x)
                         {
                             unmatchedMcCount++;
                             unmatchedTexCount += mc.fileInfoIndices.Length;
-                            reportSb.AppendLine(string.Concat(mcTex.name, " seems fully transparent mask. Match it manually."));
+                            reportSb.AppendLine(string.Concat(mcTex.name,
+                                " seems fully transparent mask. Match it manually."));
                             continue;
                         }
                     }
                 }
 
                 //Generate the histogram data
-                int histGenAttemptsCount = 0;
-                bool isMonochromatic = false;
+                var histGenAttemptsCount = 0;
+                var isMonochromatic = false;
 
                 mc.histograms = new Histogram[config.histogramPatchCount];
                 mc.HistPatches = new Patch[config.histogramPatchCount];
                 //mc.histBgPartPatchIndices = new int[config.histogramPatchCount];
 
-                for (int j = 0; j < config.histogramPatchCount; j++)
+                for (var j = 0; j < config.histogramPatchCount; j++)
                 {
                     if (mc.isMask == false)
                     {
                         if (mc.bgPartIndex != -1)
                         {
-                            int bgPartPatchIndex = Random.Range(0, dumpFormat.bgParts[mc.bgPartIndex].patches.Length);
+                            var bgPartPatchIndex = Random.Range(0, dumpFormat.bgParts[mc.bgPartIndex].patches.Length);
                             partPatch = dumpFormat.bgParts[mc.bgPartIndex].patches[bgPartPatchIndex];
                         }
                         else
@@ -512,18 +547,18 @@ namespace BgTk
                         }
                     }
 
-                    Patch p = partPatch;
+                    var p = partPatch;
                     p.size = config.histogramPatchSize;
 
-                    Vector2Int patchPos = partPatch.size - config.histogramPatchSize;
+                    var patchPos = partPatch.size - config.histogramPatchSize;
                     patchPos.x = Random.Range(0, patchPos.x);
                     patchPos.y = Random.Range(0, patchPos.y);
 
                     p.Move(patchPos);
 
-                    Histogram histogram = new Histogram(mc.isMask ? 4 : 3, config.histogramStepCount, 1f);
+                    var histogram = new Histogram(mc.isMask ? 4 : 3, config.histogramStepCount, 1f);
 
-                    Color[] patchColors = mcTex.GetPixels(p.srcPos.x, p.srcPos.y, p.size.x, p.size.y);
+                    var patchColors = mcTex.GetPixels(p.srcPos.x, p.srcPos.y, p.size.x, p.size.y);
 
                     histogram.AddValues(patchColors, mc.isMask);
 
@@ -547,7 +582,7 @@ namespace BgTk
 
                     if (config.savePatchTexures)
                     {
-                        Texture2D test = new Texture2D(p.size.x, p.size.y);
+                        var test = new Texture2D(p.size.x, p.size.y);
                         test.SetPixels(patchColors);
                         fm.SaveTextureToPng(test, "./test", mcTex.name + "_" + j);
                         Object.Destroy(test);
@@ -562,7 +597,8 @@ namespace BgTk
                 {
                     unmatchedMcCount++;
                     unmatchedTexCount += mc.fileInfoIndices.Length;
-                    reportSb.AppendLine(string.Concat(mcTex.name, " is too consistent visually to be analyzed properly. Match it manually."));
+                    reportSb.AppendLine(string.Concat(mcTex.name,
+                        " is too consistent visually to be analyzed properly. Match it manually."));
                 }
                 else
                 {
@@ -582,15 +618,15 @@ namespace BgTk
 
             //2. The match candidates are now all generated, we can go through all the BgInfo and for each BgInfo, going through all the MCs to find the best match.
             //For sure this way increase risk of false positives but it is also much faster than loading entire textures exponentially...
-            MatchCandidate[] candidates = candidatesList.ToArray();
-            string baseDumpPath = Path.Combine(dumpTexPath, baseDumpFormat.name);
+            var candidates = candidatesList.ToArray();
+            var baseDumpPath = Path.Combine(dumpTexPath, baseDumpFormat.name);
             //int mcMatchesCount = 0;
-            int texMatchesCount = 0;
-            for (int i = 0; i < bgInfoCount; i++)
+            var texMatchesCount = 0;
+            for (var i = 0; i < bgInfoCount; i++)
             {
                 //if (i % 10 == 0)
                 //{
-                progressCb(new ProgressInfo("Looking for matches", i + 1, bgInfoCount, i / (float)(bgInfoCount - 1)));
+                progressCb(new ProgressInfo("Looking for matches", i + 1, bgInfoCount, i / (float) (bgInfoCount - 1)));
                 yield return new WaitForEndOfFrame();
                 //}
 
@@ -602,25 +638,29 @@ namespace BgTk
                 //if (mcMatchesCount >= candidates.Length)
                 //    break;
 
-                Texture2D bgTex = fm.GetTextureFromPath(Path.Combine(baseDumpPath, bgInfos[i].texDumpMatches[0].texNames[0]));
-                Texture2D maskTex = bgInfos[i].hasMask ? fm.GetTextureFromPath(Path.Combine(baseDumpPath, bgInfos[i].texDumpMatches[0].texNames[1])) : null;
+                var bgTex = fm.GetTextureFromPath(Path.Combine(baseDumpPath, bgInfos[i].texDumpMatches[0].texNames[0]));
+                var maskTex = bgInfos[i].hasMask
+                    ? fm.GetTextureFromPath(Path.Combine(baseDumpPath, bgInfos[i].texDumpMatches[0].texNames[1]))
+                    : null;
 
                 //TODO - max possible match for one bg info and one bg part, List suck ass and realistically I never saw 3 textures exactly the same (and there is no duplicate on GC)
-                List<float>[] bestMatchValues = new List<float>[dumpFormat.bgParts.Length == 0 ? 2 : dumpFormat.bgParts.Length + 1];
-                List<int>[] bestMatchCandidateIndices = new List<int>[dumpFormat.bgParts.Length == 0 ? 2 : dumpFormat.bgParts.Length + 1];
+                var bestMatchValues =
+                    new List<float>[dumpFormat.bgParts.Length == 0 ? 2 : dumpFormat.bgParts.Length + 1];
+                var bestMatchCandidateIndices =
+                    new List<int>[dumpFormat.bgParts.Length == 0 ? 2 : dumpFormat.bgParts.Length + 1];
 
-                for (int j = 0; j < bestMatchValues.Length; j++)
+                for (var j = 0; j < bestMatchValues.Length; j++)
                 {
                     bestMatchValues[j] = new List<float>();
                     bestMatchCandidateIndices[j] = new List<int>();
                 }
 
-                for (int j = 0; j < candidates.Length; j++)
+                for (var j = 0; j < candidates.Length; j++)
                 {
                     //if (candidates[j].isMatched)
                     //    continue;
 
-                    MatchCandidate mc = candidates[j];
+                    var mc = candidates[j];
 
                     //Quick Pruning for mask, compare the size. Masks tend to have different size.
                     if (mc.isMask)
@@ -646,12 +686,12 @@ namespace BgTk
                             continue;
                     }
 
-                    float mcMatchValue = 0f;
+                    var mcMatchValue = 0f;
 
-                    bool isImpossibleMatch = false;
-                    for (int k = 0; k < mc.HistPatches.Length; k++)
+                    var isImpossibleMatch = false;
+                    for (var k = 0; k < mc.HistPatches.Length; k++)
                     {
-                        Patch p = mc.HistPatches[k];
+                        var p = mc.HistPatches[k];
 
                         mc.tempHistogram.Reset();
 
@@ -660,10 +700,9 @@ namespace BgTk
                         {
                             if (config.inconsistentMaskSize)
                             {
-                                int dstPosY = maskTex.height - 23 + (p.dstPos.y - (256 - 23));
+                                var dstPosY = maskTex.height - 23 + (p.dstPos.y - (256 - 23));
                                 pixels = maskTex.GetPixels(p.dstPos.x, dstPosY, p.size.x, p.size.y);
                                 mc.tempHistogram.AddValues(pixels, true);
-
                             }
                             else
                             {
@@ -679,13 +718,13 @@ namespace BgTk
 
                         if (config.savePatchTexures)
                         {
-                            Texture2D test = new Texture2D(p.size.x, p.size.y);
+                            var test = new Texture2D(p.size.x, p.size.y);
                             test.SetPixels(pixels);
                             fm.SaveTextureToPng(test, "./test", (mc.isMask ? maskTex.name : bgTex.name) + "_" + k);
                             Object.Destroy(test);
                         }
 
-                        float patchMatchValue = mc.histograms[k].Compare(mc.tempHistogram);
+                        var patchMatchValue = mc.histograms[k].Compare(mc.tempHistogram);
 
                         //if the match value of one patch is SO BAD, you can stop here and move to the next MC.
                         if (patchMatchValue <= config.patchMinMatchValue)
@@ -703,7 +742,8 @@ namespace BgTk
                     mcMatchValue = mcMatchValue / mc.HistPatches.Length;
 
                     //bool isFirstValue = bestMatchValues[mc.bgPartIndex].Count <= 0;
-                    if (mcMatchValue >= config.candidateMinMatchValue)// && (isFirstValue || mcMatchValue >= bestMatchValues[mc.bgPartIndex][0]))
+                    if (mcMatchValue >= config.candidateMinMatchValue
+                    ) // && (isFirstValue || mcMatchValue >= bestMatchValues[mc.bgPartIndex][0]))
                     {
                         //To deal with multiple perfect match... but I haven't already identified duplicates via checksum?
                         //if (!isFirstValue && mcMatchValue != bestMatchValues[mc.bgPartIndex][0])
@@ -721,18 +761,18 @@ namespace BgTk
                 //But the opposite is crazy bad in term of performance. An exponential amount of disk fetching.
 
                 //For each part (typically 0 = Left, 1 = right, 2 mask)
-                int partCount = bestMatchValues.Length;
+                var partCount = bestMatchValues.Length;
                 //bool hasMatches = false;
-                for (int j = 0; j < partCount; j++)
+                for (var j = 0; j < partCount; j++)
                 {
-                    int matchCount = bestMatchValues[j].Count;
-                    for (int k = 0; k < matchCount; k++)
+                    var matchCount = bestMatchValues[j].Count;
+                    for (var k = 0; k < matchCount; k++)
                     {
                         //it should be defaulted to 0 anyway.
                         if (bestMatchValues[j][k] >= config.candidateMinMatchValue)
                         {
                             //candidates[bestMatchCandidateIndices[j][k]].isMatched = true;
-                            MatchCandidate mc = candidates[bestMatchCandidateIndices[j][k]];
+                            var mc = candidates[bestMatchCandidateIndices[j][k]];
                             //for (int l = 0; l < mc.fileInfoIndices.Length; l++)
                             //{
                             //    string texName = fm.RemoveExtensionFromFileInfo(fm.fileInfos[mc.fileInfoIndices[l]]);
@@ -756,26 +796,27 @@ namespace BgTk
             }
 
             //Analyze the Match candidates' possible bg info matches
-            for (int i = 0; i < candidates.Length; i++)
+            for (var i = 0; i < candidates.Length; i++)
             {
-                MatchCandidate mc = candidates[i];
+                var mc = candidates[i];
                 if (mc.bgInfoMatchIndex.Count <= 0)
                 {
                     //Report the unmatchable candidates
                     unmatchedMcCount++;
                     reportSb.Append(string.Concat("Candidate ", i, " can't find a match: "));
-                    for (int j = 0; j < candidates[i].fileInfoIndices.Length; j++)
+                    for (var j = 0; j < candidates[i].fileInfoIndices.Length; j++)
                     {
                         unmatchedTexCount++;
                         reportSb.Append(string.Concat("[", fm.fileInfos[candidates[i].fileInfoIndices[j]].Name, "]"));
                     }
+
                     reportSb.AppendLine();
                 }
                 else
                 {
-                    float bestBgInfoMatchValue = 0f;
-                    int bestBgInfoIndex = 0;
-                    for (int j = 0; j < mc.bgInfoMatchIndex.Count; j++)
+                    var bestBgInfoMatchValue = 0f;
+                    var bestBgInfoIndex = 0;
+                    for (var j = 0; j < mc.bgInfoMatchIndex.Count; j++)
                     {
                         if (mc.bgInfoMatchValue[j] > bestBgInfoMatchValue)
                         {
@@ -785,36 +826,42 @@ namespace BgTk
                     }
 
                     //Update and save the best bg info match 
-                    for (int j = 0; j < mc.fileInfoIndices.Length; j++)
+                    for (var j = 0; j < mc.fileInfoIndices.Length; j++)
                     {
-                        string texName = fm.RemoveExtensionFromFileInfo(fm.fileInfos[mc.fileInfoIndices[j]]);
+                        var texName = fm.RemoveExtensionFromFileInfo(fm.fileInfos[mc.fileInfoIndices[j]]);
 
                         bgInfos[bestBgInfoIndex].AddDumpMatch(dumpFormat.name, texName, mc.bgPartIndex);
                         texMatchesCount++;
                     }
 
                     reportSb.Append(string.Concat("Candidate ", i, " matched: "));
-                    for (int j = 0; j < candidates[i].fileInfoIndices.Length; j++)
+                    for (var j = 0; j < candidates[i].fileInfoIndices.Length; j++)
                     {
                         reportSb.Append(string.Concat("[", fm.fileInfos[candidates[i].fileInfoIndices[j]].Name, "]"));
                     }
+
                     reportSb.Append(string.Concat(" - ", bgInfos[bestBgInfoIndex].namePrefix));
                     reportSb.Append(string.Concat(" - ", bestBgInfoMatchValue.ToString("0.00")));
                     reportSb.AppendLine();
 
-                    fm.SaveToJson(bgInfos[bestBgInfoIndex], bgInfoPath, bgInfos[bestBgInfoIndex].GetFileName(), prettifyJsonOnSave);
+                    fm.SaveToJson(bgInfos[bestBgInfoIndex], bgInfoPath, bgInfos[bestBgInfoIndex].GetFileName(),
+                        prettifyJsonOnSave);
                 }
             }
 
-            reportSb.AppendLine(string.Format("{0} matches for {1} textures ({2} duplicates). {3} unmatchable textures from {4} candidates.", texMatchesCount, mcTexCount, texDuplicatesCount, unmatchedTexCount, unmatchedMcCount));
-            reportSb.AppendLine(string.Format("== Texture Matching done! ({0} seconds) ==", (Time.unscaledTime - taskTime).ToString("#.0")));
+            reportSb.AppendLine(string.Format(
+                "{0} matches for {1} textures ({2} duplicates). {3} unmatchable textures from {4} candidates.",
+                texMatchesCount, mcTexCount, texDuplicatesCount, unmatchedTexCount, unmatchedMcCount));
+            reportSb.AppendLine(string.Format("== Texture Matching done! ({0} seconds) ==",
+                (Time.unscaledTime - taskTime).ToString("#.0")));
 
             fm.OpenFolder(bgInfoPath);
 
             doneCb();
         }
 
-        public IEnumerator RecreateTextures(string processedPath, string bgInfoPath, string alphaChannelPath, string resultsPath, Vector2Int pixelShift, DumpFormat dumpFormat, System.Action<ProgressInfo> progressCb, System.Action doneCb)
+        public IEnumerator RecreateTextures(string processedPath, string bgInfoPath, string alphaChannelPath,
+            string resultsPath, DumpFormat dumpFormat, System.Action<ProgressInfo> progressCb, System.Action doneCb)
         {
             reportSb.Clear();
             reportSb.AppendLine("== Texture recreation report ==");
@@ -834,7 +881,7 @@ namespace BgTk
             resultsPath = Path.Combine(resultsPath, dumpFormat.name);
             fm.CreateDirectory(resultsPath);
 
-            int bgInfosCount = fm.LoadFiles(bgInfoPath, "json");
+            var bgInfosCount = fm.LoadFiles(bgInfoPath, "json");
 
             if (bgInfosCount <= 0)
             {
@@ -843,9 +890,9 @@ namespace BgTk
                 yield break;
             }
 
-            BgInfo[] bgInfos = fm.GetObjectsFromFiles<BgInfo>();
+            var bgInfos = fm.GetObjectsFromFiles<BgInfo>();
 
-            int processedTexCount = fm.LoadFiles(processedPath, "png", SearchOption.AllDirectories);
+            var processedTexCount = fm.LoadFiles(processedPath, "png", SearchOption.AllDirectories);
 
             if (processedTexCount <= 0)
             {
@@ -854,44 +901,49 @@ namespace BgTk
                 yield break;
             }
 
-            progressCb(new ProgressInfo(string.Concat("Recreating Textures - ", bgInfos[0].namePrefix), 1, bgInfosCount, 0 / (float)(bgInfosCount - 1)));
+            progressCb(new ProgressInfo(string.Concat("Recreating Textures - ", bgInfos[0].namePrefix), 1, bgInfosCount,
+                0 / (float) (bgInfosCount - 1)));
             yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
 
-            for (int i = 0; i < bgInfosCount; i++)
+            for (var i = 0; i < bgInfosCount; i++)
             {
-                BgInfo bgInfo = bgInfos[i];
+                var bgInfo = bgInfos[i];
 
                 //Get the right processed background
-                string expectedBgName = string.Concat(bgInfo.namePrefix, ".png");
-                FileInfo bgTexFileInfo = fm.fileInfos.FirstOrDefault(x => x.Name == expectedBgName);
+                var expectedBgName = string.Concat(bgInfo.namePrefix, ".png");
+                var bgTexFileInfo = fm.fileInfos.FirstOrDefault(x => x.Name == expectedBgName);
                 if (bgTexFileInfo == null)
                 {
                     reportSb.AppendLine(string.Concat("Missing upscaled BG texture: ", bgInfo.namePrefix));
                     continue;
                 }
 
-                progressCb(new ProgressInfo(string.Concat("Recreating Textures - ", bgInfo.namePrefix), i + 1, bgInfosCount, i / (float)(bgInfosCount - 1)));
+                progressCb(new ProgressInfo(string.Concat("Recreating Textures - ", bgInfo.namePrefix), i + 1,
+                    bgInfosCount, i / (float) (bgInfosCount - 1)));
                 yield return new WaitForEndOfFrame();
 
                 Texture2D processedTexAms = null;
-                Texture2D processedTex = fm.GetTextureFromFileInfo(bgTexFileInfo);
+                var processedTex = fm.GetTextureFromFileInfo(bgTexFileInfo);
 
                 //float texRatioFloat = processedTex.width / (float)bgInfo.bgTexSize.x;
-                float bgRatioFloat = processedTex.width / (float)bgInfo.bgTexSize.x;
-                float maskRatioFloat = processedTex.width / (float)baseDumpFormat.maskUsageSize.x;
+                var bgRatioFloat = processedTex.width / (float) bgInfo.bgTexSize.x;
+                var maskRatioFloat = processedTex.width / (float) baseDumpFormat.maskUsageSize.x;
 
-                if (bgRatioFloat - Mathf.Floor(bgRatioFloat) != 0f || maskRatioFloat - Mathf.Floor(maskRatioFloat) != 0f)
+                if (bgRatioFloat - Mathf.Floor(bgRatioFloat) != 0f ||
+                    maskRatioFloat - Mathf.Floor(maskRatioFloat) != 0f)
                 {
-                    reportSb.AppendLine(string.Concat("Error: This tool is not compatible with non integer scaling. Please fix this processed texture:", processedTex.name));
+                    reportSb.AppendLine(string.Concat(
+                        "Error: This tool is not compatible with non integer scaling. Please fix this processed texture:",
+                        processedTex.name));
                     Object.Destroy(processedTex);
                     continue;
                 }
 
-                int bgRatio = Mathf.RoundToInt(bgRatioFloat);
-                int maskRatio = Mathf.RoundToInt(maskRatioFloat);
+                var bgRatio = Mathf.RoundToInt(bgRatioFloat);
+                var maskRatio = Mathf.RoundToInt(maskRatioFloat);
 
-                CompensatePixelShift(pixelShift, processedTex, maskRatio);
+                CompensatePixelShift(dumpFormat.texPixelShift, processedTex, maskRatio);
 
                 //Dynamic bg size only works for full background with no parts then... it's not good.
                 //I really hope Resident evil 3 or something doesn't have backgrounds texture with different size AND splitted in some bullshit way.
@@ -900,45 +952,51 @@ namespace BgTk
                 BgTexturePart[] bgParts;
                 if (dumpFormat.bgParts == null || dumpFormat.bgParts.Length == 0)
                 {
-                    BgTexturePart fullBgPart = new BgTexturePart();
+                    var fullBgPart = new BgTexturePart();
                     fullBgPart.size = new Vector2Int(bgInfo.bgTexSize.x, bgInfo.bgTexSize.y);
-                    fullBgPart.patches = new Patch[1] { new Patch(0, 0, 0, 0, bgInfo.bgTexSize.x, bgInfo.bgTexSize.y) };
-                    bgParts = new BgTexturePart[1] { fullBgPart };
+                    fullBgPart.patches = new[] {new Patch(0, 0, 0, 0, bgInfo.bgTexSize.x, bgInfo.bgTexSize.y)};
+                    bgParts = new[] {fullBgPart};
                 }
                 else
                 {
                     bgParts = dumpFormat.bgParts;
                 }
 
-                DumpMatch dumpMatch = bgInfo.texDumpMatches.FirstOrDefault(x => x.formatName == dumpFormat.name);
+                DumpMatch dumpMatch;
+                if (bgInfo.texDumpMatches.Count(x => x.formatName == dumpFormat.name) <= 0)
+                    dumpMatch = bgInfo.texDumpMatches.FirstOrDefault(
+                        x => x.formatName == dumpFormat.alternateFormatName);
+                else
+                    dumpMatch = bgInfo.texDumpMatches.FirstOrDefault(x => x.formatName == dumpFormat.name);
+
                 if (string.IsNullOrEmpty(dumpMatch.formatName))
                 {
                     Object.Destroy(processedTex);
                     continue;
                 }
 
-                int matchGroupTexCount = bgParts.Length + (bgInfo.hasMask ? 1 : 0);
+                var matchGroupTexCount = bgParts.Length + (bgInfo.hasMask ? 1 : 0);
                 //int matchGroupCount = dumpMatch.texNames.Length / matchGroupTexCount;
 
                 //progressCb(new ProgressInfo(string.Concat(bgInfo.namePrefix, " - Recreating BG textures"), i + 1, bgInfosCount, i / (float)(bgInfosCount - 1)));
                 //yield return new WaitForEndOfFrame();
 
                 //Generate the Bg textures
-                for (int j = 0; j < bgParts.Length; j++)
+                for (var j = 0; j < bgParts.Length; j++)
                 {
-                    Texture2D bgPartTex = new Texture2D(
+                    var bgPartTex = new Texture2D(
                         Mathf.RoundToInt(bgParts[j].size.x * bgRatio),
                         Mathf.RoundToInt(bgParts[j].size.y * bgRatio),
                         TextureFormat.RGBA32, false);
 
                     bgPartTex.Fill(new Color32(0, 0, 0, 255));
 
-                    for (int k = 0; k < bgParts[j].patches.Length; k++)
+                    for (var k = 0; k < bgParts[j].patches.Length; k++)
                     {
-                        Patch p = bgParts[j].patches[k];
+                        var p = bgParts[j].patches[k];
                         p.Scale(bgRatio);
 
-                        Color[] pColors = processedTex.GetPixels(
+                        var pColors = processedTex.GetPixels(
                             p.dstPos.x, p.dstPos.y,
                             p.size.x, p.size.y);
 
@@ -951,15 +1009,18 @@ namespace BgTk
                         else
                         {
                             bgPartTex.SetPixels(
-                            p.srcPos.x, p.srcPos.y,
-                            p.size.x, p.size.y, pColors);
+                                p.srcPos.x, p.srcPos.y,
+                                p.size.x, p.size.y, pColors);
                         }
-
                     }
 
-                    for (int k = 0; k < dumpMatch.partIndices.Length; k++)
+                    for (var k = 0; k < dumpMatch.partIndices.Length; k++)
                     {
-                        if (dumpMatch.partIndices[k] == j)
+                        if (dumpMatch.partIndices[k] != j) continue;
+
+                        if (dumpFormat.isJpgBg)
+                            fm.SaveTextureToJPG(bgPartTex, resultsPath, dumpMatch.texNames[k], dumpFormat.jpgQuality);
+                        else
                             fm.SaveTextureToPng(bgPartTex, resultsPath, dumpMatch.texNames[k]);
                     }
 
@@ -973,17 +1034,21 @@ namespace BgTk
                     //yield return new WaitForEndOfFrame();
 
                     //One per group of masks
-                    Texture2D[] alphaChannels = new Texture2D[bgInfo.groupsCount];
-                    bool hasMissingAlphaChannels = false;
-                    for (int g = 0; g < bgInfo.groupsCount; g++)
+                    var alphaChannels = new Texture2D[bgInfo.groupsCount];
+                    var hasMissingAlphaChannels = false;
+                    for (var g = 0; g < bgInfo.groupsCount; g++)
                     {
-                        alphaChannels[g] = fm.GetTextureFromPath(Path.Combine(alphaChannelPath, string.Concat(bgInfo.namePrefix, "_", g)));
-                        if (alphaChannels[g] == null)
-                        {
-                            reportSb.AppendLine(string.Concat(bgInfo.namePrefix, " is missing the alpha channel texture ", g, "."));
-                            hasMissingAlphaChannels = true;
-                        }
+                        alphaChannels[g] = fm.GetTextureFromPath(Path.Combine(alphaChannelPath,
+                            string.Concat(bgInfo.namePrefix, "_", g)));
+
+                        if (alphaChannels[g] != null) continue;
+
+                        reportSb.AppendLine(string.Concat(bgInfo.namePrefix,
+                            " is missing the alpha channel texture ", g, "."));
+
+                        hasMissingAlphaChannels = true;
                     }
+
                     if (hasMissingAlphaChannels)
                     {
                         Object.Destroy(processedTex);
@@ -994,64 +1059,153 @@ namespace BgTk
                     if (bgInfo.useProcessedMaskTex)
                     {
                         //Object.Destroy(processedTex);
-                        processedTexAms = fm.GetTextureFromPath(Path.Combine(processedPath, string.Concat(bgInfo.namePrefix, altMaskSourceSuffix)));
+                        processedTexAms = fm.GetTextureFromPath(Path.Combine(processedPath,
+                            string.Concat(bgInfo.namePrefix, altMaskSourceSuffix)));
                         if (processedTexAms == null)
                         {
-                            processedTexAms = fm.GetTextureFromPath(Path.Combine(processedPath, "AMS", string.Concat(bgInfo.namePrefix, altMaskSourceSuffix)));
+                            processedTexAms = fm.GetTextureFromPath(Path.Combine(processedPath, "AMS",
+                                string.Concat(bgInfo.namePrefix, altMaskSourceSuffix)));
                             if (processedTexAms == null)
                             {
-                                reportSb.AppendLine(string.Concat("Missing special mask source textures: ", bgInfo.namePrefix));
+                                reportSb.AppendLine(string.Concat("Missing special mask source textures: ",
+                                    bgInfo.namePrefix));
                                 continue;
                             }
                         }
-                        CompensatePixelShift(pixelShift, processedTexAms, maskRatio);
+
+                        CompensatePixelShift(dumpFormat.texPixelShift, processedTexAms, maskRatio);
                     }
 
                     //Reconstruct the mask texture itself based on processed BG and the smoothed alpha texture
-                    Texture2D maskTex = new Texture2D(
-                    Mathf.RoundToInt((dumpFormat.maskForcedSize.x != 0 ? dumpFormat.maskForcedSize.x : bgInfo.maskTexSize.x) * maskRatio),
-                    Mathf.RoundToInt((dumpFormat.maskForcedSize.x != 0 ? dumpFormat.maskForcedSize.y : bgInfo.maskTexSize.y) * maskRatio),
-                    TextureFormat.RGBA32, false);
+                    var texWidth = Mathf.RoundToInt((dumpFormat.maskForcedSize.x != 0
+                        ? dumpFormat.maskForcedSize.x
+                        : bgInfo.maskTexSize.x) * maskRatio);
 
+                    var texHeight = Mathf.RoundToInt((dumpFormat.maskForcedSize.x != 0
+                        ? dumpFormat.maskForcedSize.y
+                        : bgInfo.maskTexSize.y) * maskRatio);
+
+                    var maskTex = new Texture2D(texWidth, texHeight, TextureFormat.RGBA32, false);
                     maskTex.Fill(new Color32());
 
-                    for (int j = 0; j < bgInfo.masks.Length; j++)
+                    Texture2D alternateMaskTex = null;
+                    if (dumpFormat.isMonochromaticMask && bgInfo.useProcessedMaskTex)
                     {
-                        Mask mask = bgInfo.masks[j];
+                        alternateMaskTex = new Texture2D(texWidth, texHeight, TextureFormat.RGBA32, false);
+                        alternateMaskTex.Fill(new Color32());
+                    }
+
+
+                    for (var j = 0; j < bgInfo.masks.Length; j++)
+                    {
+                        var mask = bgInfo.masks[j];
                         mask.patch.Scale(maskRatio);
 
                         Color[] pColors;
+                        var isAltMaskPatch = false;
 
                         if (bgInfo.useProcessedMaskTex == false || mask.ignoreAltMaskSource)
                         {
-                            pColors = processedTex.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y);
+                            if (dumpFormat.isMonochromaticMask)
+                            {
+                                pColors = new Color[mask.patch.size.x * mask.patch.size.y];
+                                for (var k = 0; k < pColors.Length; k++)
+                                {
+                                    pColors[k] = Color.white;
+                                }
+                            }
+                            else
+                            {
+                                pColors = processedTex.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y,
+                                    mask.patch.size.x, mask.patch.size.y);
+                            }
                         }
                         else
                         {
-                            pColors = processedTexAms.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y);
+                            if (!dumpFormat.isMonochromaticMask)
+                            {
+                                pColors = processedTexAms.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y,
+                                    mask.patch.size.x, mask.patch.size.y);
+                            }
+                            else
+                            {
+                                var amsHistogram = new Histogram(3, 16, 1f);
+                                var origHistogram = new Histogram(3, 16, 1f);
+ 
+                                pColors = processedTex.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y,
+                                    mask.patch.size.x, mask.patch.size.y);
+
+                                origHistogram.AddValues(pColors);
+
+                                pColors = processedTexAms.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y,
+                                    mask.patch.size.x, mask.patch.size.y);
+
+                                amsHistogram.AddValues(pColors);
+
+                                var histogramMatchValue = amsHistogram.Compare(origHistogram);
+                                isAltMaskPatch = histogramMatchValue <
+                                                 dumpFormat.monoMaskAmsHistogramMinMatchValue - Mathf.Epsilon;
+
+                                Debug.Log($"{bgInfo.namePrefix}_mask_{j}_{histogramMatchValue:0.00000}");
+                                
+                                if (!isAltMaskPatch)
+                                {
+                                    for (var k = 0; k < pColors.Length; k++)
+                                    {
+                                        pColors[k] = Color.white;
+                                    }
+                                }
+                                else
+                                {
+                                    var amsTestTex = new Texture2D(mask.patch.size.x, mask.patch.size.y,
+                                        TextureFormat.RGBA32, false);
+                                    
+                                    amsTestTex.SetPixels(pColors);
+                                    fm.SaveTextureToPng(amsTestTex, resultsPath,
+                                        $"{bgInfo.namePrefix}_mask_{j}_{histogramMatchValue}");
+                                }
+                            }
                         }
 
-                        Color[] aColors = alphaChannels[mask.groupIndex].GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y, mask.patch.size.x, mask.patch.size.y);
-                        for (int k = 0; k < pColors.Length; k++)
+                        var aColors = alphaChannels[mask.groupIndex].GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y,
+                            mask.patch.size.x, mask.patch.size.y);
+
+                        for (var k = 0; k < pColors.Length; k++)
                         {
                             pColors[k].a = aColors[k].a;
                         }
 
-                        int srcPosY = mask.patch.srcPos.y + (maskTex.height - bgInfo.maskTexSize.y * maskRatio);
-                        maskTex.SetPixels(mask.patch.srcPos.x, srcPosY, mask.patch.size.x, mask.patch.size.y, pColors);
+                        var srcPosY = mask.patch.srcPos.y + (maskTex.height - bgInfo.maskTexSize.y * maskRatio);
+
+                        if (isAltMaskPatch)
+                        {
+                            alternateMaskTex.SetPixels(mask.patch.srcPos.x, srcPosY, mask.patch.size.x,
+                                mask.patch.size.y,
+                                pColors);
+                        }
+                        else
+                        {
+                            maskTex.SetPixels(mask.patch.srcPos.x, srcPosY, mask.patch.size.x, mask.patch.size.y,
+                                pColors);
+                        }
                     }
 
-                    for (int j = 0; j < dumpMatch.partIndices.Length; j++)
+                    for (var j = 0; j < dumpMatch.partIndices.Length; j++)
                     {
                         if (dumpMatch.partIndices[j] == matchGroupTexCount - 1)
+                        {
+                            if (alternateMaskTex != null)
+                                fm.SaveTextureToPng(alternateMaskTex, resultsPath, $"{dumpMatch.texNames[j]}_alt");
+
                             fm.SaveTextureToPng(maskTex, resultsPath, dumpMatch.texNames[j]);
+                        }
                     }
 
                     //Clean up the mess :) 
                     //(and yes don't reuse the texture object, since other games might need dynamic texture size 
                     //AND texture.resize IS a hidden constructor too)
                     Object.Destroy(maskTex);
-                    for (int g = 0; g < bgInfo.groupsCount; g++)
+                    for (var g = 0; g < bgInfo.groupsCount; g++)
                     {
                         Object.Destroy(alphaChannels[g]);
                     }
@@ -1059,42 +1213,44 @@ namespace BgTk
 
                 Object.Destroy(processedTex);
                 Object.Destroy(processedTexAms);
-
             }
 
             yield return new WaitForEndOfFrame();
 
-            reportSb.AppendLine(string.Format("== Textures recreation Done! ({0} seconds) ==", (Time.unscaledTime - taskTime).ToString("#.0")));
+            reportSb.AppendLine(string.Format("== Textures recreation Done! ({0} seconds) ==",
+                (Time.unscaledTime - taskTime).ToString("#.0")));
 
             fm.OpenFolder(resultsPath);
 
             doneCb();
         }
 
-        private IEnumerator GenerateBgInfosRE2(string rdtPath, string dumpTexturesPath, string bgInfoPath, System.Action<ProgressInfo> progressCb)
+        private IEnumerator GenerateBgInfosRE1(string rdtPath, string dumpTexturesPath, string bgInfoPath,
+            System.Action<ProgressInfo> progressCb)
         {
-            RE2.RdtParser rdtParser = new RE2.RdtParser();
+            var rdtParser = new RE1.RdtParser();
 
             //File access is slow as fuck, let me at least display the Progress bar
             progressCb(new ProgressInfo("Loading Rdt files", 0, 0, 0f));
             yield return new WaitForEndOfFrame();
 
             //Get all the RDT data
-            int rdtFilesCount = fm.LoadFiles(rdtPath, "rdt");
-            List<RE2.RdtRoom> rdtRooms = new List<RE2.RdtRoom>();
+            var rdtFilesCount = fm.LoadFiles(rdtPath, "rdt");
+            var rdtRooms = new List<RE1.RdtRoom>();
 
-            string lastRdtRoomMd5 = "";
-            for (int i = 0; i < rdtFilesCount; i++)
+            var lastRdtRoomMd5 = "";
+            for (var i = 0; i < rdtFilesCount; i++)
             {
                 if (i % 100 == 0)
                 {
-                    progressCb(new ProgressInfo("Converting Rdt files", i + 1, rdtFilesCount, i / (float)(rdtFilesCount - 1)));
+                    progressCb(new ProgressInfo("Converting Rdt files", i + 1, rdtFilesCount,
+                        i / (float) (rdtFilesCount - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
-                byte[] data = fm.GetBytesFromFile(i);
+                var data = fm.GetBytesFromFile(i);
 
-                string rdtRoomMd5 = fm.GetMd5(data);
+                var rdtRoomMd5 = fm.GetMd5(data);
 
                 //Check if player 0 and player 1 are exactly the same, if so prune player 1.
                 if (lastRdtRoomMd5 != "")
@@ -1106,7 +1262,7 @@ namespace BgTk
                     }
                 }
 
-                if (rdtParser.ParseRdtData(data, fm.fileInfos[i].Name, out RE2.RdtRoom room))
+                if (rdtParser.ParseRdtData(data, fm.fileInfos[i].Name, out var room))
                     rdtRooms.Add(room);
 
                 lastRdtRoomMd5 = rdtRoomMd5;
@@ -1118,18 +1274,18 @@ namespace BgTk
             yield return new WaitForEndOfFrame();
 
             //Get all the CR textures
-            int crTexCount = fm.LoadFiles(Path.Combine(dumpTexturesPath, baseDumpFormat.name), "png");
+            var crTexCount = fm.LoadFiles(Path.Combine(dumpTexturesPath, baseDumpFormat.name), "png");
 
             //Make sure the textures are ordered by names
             fm.OrderFiles(x => x.Name, true);
 
-            int identifiedTexCount = 0;
+            var identifiedTexCount = 0;
 
-            BgInfo bgInfo = new BgInfo();
-            List<BgInfo> bgInfos = new List<BgInfo>();
+            var bgInfo = new BgInfo();
+            var bgInfos = new List<BgInfo>();
             while (identifiedTexCount < crTexCount)
             {
-                FileInfo bgCandidate = fm.fileInfos[identifiedTexCount];
+                var bgCandidate = fm.fileInfos[identifiedTexCount];
                 FileInfo maskCandidate;
 
                 //manage a BG only case at the end of the file array
@@ -1139,12 +1295,13 @@ namespace BgTk
                     maskCandidate = null;
 
                 //0 - Mask only (not good), 1 - BG only, 2 - BG + Mask
-                int result = IdentifyCrTextures(bgCandidate, maskCandidate);
+                var result = IdentifyCrTextures(bgCandidate, maskCandidate);
 
                 switch (result)
                 {
                     case 0:
-                        reportSb.AppendLine(string.Concat("WARNING: ", bgCandidate.Name, " is a mask without a BG. Please check your CR folder."));
+                        reportSb.AppendLine(string.Concat("WARNING: ", bgCandidate.Name,
+                            " is a mask without a BG. Please check your CR folder."));
                         identifiedTexCount++;
                         continue;
 
@@ -1161,20 +1318,22 @@ namespace BgTk
 
                 bgInfos.Add(bgInfo);
 
-                progressCb(new ProgressInfo("Matching textures", identifiedTexCount, crTexCount, identifiedTexCount / (float)(crTexCount - 1)));
+                progressCb(new ProgressInfo("Matching textures", identifiedTexCount, crTexCount,
+                    identifiedTexCount / (float) (crTexCount - 1)));
                 yield return new WaitForEndOfFrame();
             }
 
             //Check and track BG info duplicates
-            List<int> duplicateIndices = new List<int>();
-            for (int i = 0; i < bgInfos.Count; i++)
+            var duplicateIndices = new List<int>();
+            for (var i = 0; i < bgInfos.Count; i++)
             {
                 //i + 1 because an element doesn't need to check itself and when an element check all the others, the others don't need to check the former again.
-                for (int j = i + 1; j < bgInfos.Count; j++)
+                for (var j = i + 1; j < bgInfos.Count; j++)
                 {
                     if (bgInfos[i].bgMd5 == bgInfos[j].bgMd5 && bgInfos[i].maskMd5 == bgInfos[j].maskMd5)
                     {
-                        reportSb.AppendLine(string.Concat("INFO:", string.Concat(bgInfos[i].namePrefix, " has a duplicate: ", bgInfos[j].namePrefix)));
+                        reportSb.AppendLine(string.Concat("INFO:",
+                            string.Concat(bgInfos[i].namePrefix, " has a duplicate: ", bgInfos[j].namePrefix)));
                         bgInfo = bgInfos[i];
 
                         //Add the duplicate to the dump Matches for the base Dump format of the BG info
@@ -1193,19 +1352,20 @@ namespace BgTk
             duplicateIndices = duplicateIndices.Distinct().ToList();
             duplicateIndices.Sort();
             duplicateIndices.Reverse();
-            for (int i = 0; i < duplicateIndices.Count; i++)
+            for (var i = 0; i < duplicateIndices.Count; i++)
             {
                 bgInfos.RemoveAt(duplicateIndices[i]);
             }
 
             //Process RDT data
-            for (int i = 0; i < bgInfos.Count; i++)
+            for (var i = 0; i < bgInfos.Count; i++)
             {
                 bgInfo = bgInfos[i];
 
                 if (i % 2 == 0)
                 {
-                    progressCb(new ProgressInfo("Analyzing mask data", i + 1, bgInfos.Count, i / (float)(bgInfos.Count - 1)));
+                    progressCb(new ProgressInfo("Analyzing mask data", i + 1, bgInfos.Count,
+                        i / (float) (bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1213,21 +1373,23 @@ namespace BgTk
                     continue;
 
                 //Determine the camPos index of the BgInfo, will be useful later.
-                if (int.TryParse(bgInfo.namePrefix.Substring(9, 2), NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out int camPosIndex))
+                if (int.TryParse(bgInfo.namePrefix.Substring(9, 2), NumberStyles.Integer,
+                    NumberFormatInfo.InvariantInfo, out var camPosIndex))
                 {
                     bgInfo.SetCamPosIndex(camPosIndex);
                 }
                 else
                 {
-                    reportSb.AppendLine(string.Format("WARNING: Unable to determine CamPos index for {0}", bgInfo.namePrefix));
+                    reportSb.AppendLine(string.Format("WARNING: Unable to determine CamPos index for {0}",
+                        bgInfo.namePrefix));
                     continue;
                 }
 
-                string rdtName = bgInfo.namePrefix.Substring(0, 8);
+                var rdtName = bgInfo.namePrefix.Substring(0, 8);
                 //RdtRoom match = rdtRooms.First(x => x.name.Contains(rdtName));
-                for (int j = 0; j < rdtRooms.Count; j++)
+                for (var j = 0; j < rdtRooms.Count; j++)
                 {
-                    RE2.RdtRoom rdtRoom = rdtRooms[j];
+                    var rdtRoom = rdtRooms[j];
                     if (rdtRooms[j].name.Contains(rdtName))
                     {
                         //If it is player 0, check if there is a player 1
@@ -1239,17 +1401,19 @@ namespace BgTk
                         }
 
                         //Unpack the Room masks data into the BgInfo
-                        if (AddMasksFromRE2RdtRoom(ref bgInfo, rdtRoom) == false)
+                        if (AddMasksFromRE1RdtRoom(ref bgInfo, rdtRoom) == false)
                             continue;
 
-                        FileInfo maskTexFi = fm.fileInfos.FirstOrDefault(x => x.Name.Contains(bgInfo.namePrefix + maskSuffix));
+                        var maskTexFi =
+                            fm.fileInfos.FirstOrDefault(x => x.Name.Contains(bgInfo.namePrefix + maskSuffix));
                         if (maskTexFi == null)
                         {
-                            reportSb.AppendLine("Warning: " + bgInfo.namePrefix + " is supposed to have a mask but the texture is not present. Check your CR folder.");
+                            reportSb.AppendLine("Warning: " + bgInfo.namePrefix +
+                                                " is supposed to have a mask but the texture is not present. Check your CR folder.");
                             continue;
                         }
 
-                        Texture2D maskTex = fm.GetTextureFromFileInfo(maskTexFi);
+                        var maskTex = fm.GetTextureFromFileInfo(maskTexFi);
                         ComputeMaskTransparency(ref bgInfo, maskTex);
                         Object.Destroy(maskTex);
 
@@ -1266,46 +1430,51 @@ namespace BgTk
             yield return new WaitForEndOfFrame();
 
             //Save Bg Infos
-            for (int i = 0; i < bgInfos.Count; i++)
+            for (var i = 0; i < bgInfos.Count; i++)
             {
                 if (i % 5 == 0)
                 {
-                    progressCb(new ProgressInfo("Saving BgInfo files", i + 1, bgInfos.Count, i / (float)(bgInfos.Count - 1)));
+                    progressCb(new ProgressInfo("Saving BgInfo files", i + 1, bgInfos.Count,
+                        i / (float) (bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
                 fm.SaveToJson(bgInfos[i], bgInfoPath, bgInfos[i].GetFileName(), prettifyJsonOnSave);
             }
 
-            reportSb.AppendLine(string.Format("{0} BgInfos, {1} duplicates for {2} textures, {3} Rdt files ({4} Uniques)", bgInfos.Count, duplicateIndices.Count, fm.fileInfos.Length, rdtFilesCount, rdtRooms.Count));
-            reportSb.AppendLine(string.Format("== BgInfo generation done! ({0} seconds) ==", (Time.unscaledTime - taskTime).ToString("#.0")));
-
+            reportSb.AppendLine(string.Format(
+                "{0} BgInfos, {1} duplicates for {2} textures, {3} Rdt files ({4} Uniques)", bgInfos.Count,
+                duplicateIndices.Count, fm.fileInfos.Length, rdtFilesCount, rdtRooms.Count));
+            reportSb.AppendLine(string.Format("== BgInfo generation done! ({0} seconds) ==",
+                (Time.unscaledTime - taskTime).ToString("#.0")));
         }
 
-        private IEnumerator GenerateBgInfosRE3(string rdtPath, string dumpTexturesPath, string bgInfoPath, System.Action<ProgressInfo> progressCb)
+        private IEnumerator GenerateBgInfosRE2(string rdtPath, string dumpTexturesPath, string bgInfoPath,
+            System.Action<ProgressInfo> progressCb)
         {
-            RE3.RdtParser rdtParser = new RE3.RdtParser();
+            var rdtParser = new RE2.RdtParser();
 
             //File access is slow as fuck, let me at least display the Progress bar
             progressCb(new ProgressInfo("Loading Rdt files", 0, 0, 0f));
             yield return new WaitForEndOfFrame();
 
             //Get all the RDT data
-            int rdtFilesCount = fm.LoadFiles(rdtPath, "rdt");
-            List<RE3.RdtRoom> rdtRooms = new List<RE3.RdtRoom>();
+            var rdtFilesCount = fm.LoadFiles(rdtPath, "rdt");
+            var rdtRooms = new List<RE2.RdtRoom>();
 
-            string lastRdtRoomMd5 = "";
-            for (int i = 0; i < rdtFilesCount; i++)
+            var lastRdtRoomMd5 = "";
+            for (var i = 0; i < rdtFilesCount; i++)
             {
                 if (i % 100 == 0)
                 {
-                    progressCb(new ProgressInfo("Converting Rdt files", i + 1, rdtFilesCount, i / (float)(rdtFilesCount - 1)));
+                    progressCb(new ProgressInfo("Converting Rdt files", i + 1, rdtFilesCount,
+                        i / (float) (rdtFilesCount - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
-                byte[] data = fm.GetBytesFromFile(i);
+                var data = fm.GetBytesFromFile(i);
 
-                string rdtRoomMd5 = fm.GetMd5(data);
+                var rdtRoomMd5 = fm.GetMd5(data);
 
                 //Check if player 0 and player 1 are exactly the same, if so prune player 1.
                 if (lastRdtRoomMd5 != "")
@@ -1317,7 +1486,231 @@ namespace BgTk
                     }
                 }
 
-                if (rdtParser.ParseRdtData(data, fm.fileInfos[i].Name, out RE3.RdtRoom room))
+                if (rdtParser.ParseRdtData(data, fm.fileInfos[i].Name, out var room))
+                    rdtRooms.Add(room);
+
+                lastRdtRoomMd5 = rdtRoomMd5;
+            }
+
+            //Let the UI Refresh
+            progressCb(new ProgressInfo("Matching textures", 0, 0, 1f));
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+
+            //Get all the CR textures
+            var crTexCount = fm.LoadFiles(Path.Combine(dumpTexturesPath, baseDumpFormat.name), "png");
+
+            //Make sure the textures are ordered by names
+            fm.OrderFiles(x => x.Name, true);
+
+            var identifiedTexCount = 0;
+
+            var bgInfo = new BgInfo();
+            var bgInfos = new List<BgInfo>();
+            while (identifiedTexCount < crTexCount)
+            {
+                var bgCandidate = fm.fileInfos[identifiedTexCount];
+                FileInfo maskCandidate;
+
+                //manage a BG only case at the end of the file array
+                if (identifiedTexCount + 1 < fm.fileInfos.Length)
+                    maskCandidate = fm.fileInfos[identifiedTexCount + 1];
+                else
+                    maskCandidate = null;
+
+                //0 - Mask only (not good), 1 - BG only, 2 - BG + Mask
+                var result = IdentifyCrTextures(bgCandidate, maskCandidate);
+
+                switch (result)
+                {
+                    case 0:
+                        reportSb.AppendLine(string.Concat("WARNING: ", bgCandidate.Name,
+                            " is a mask without a BG. Please check your CR folder."));
+                        identifiedTexCount++;
+                        continue;
+
+                    case 1:
+                        identifiedTexCount++;
+                        GetBgInfoFromTexFiles(ref bgInfo, bgCandidate, null);
+                        break;
+
+                    case 2:
+                        identifiedTexCount += 2;
+                        GetBgInfoFromTexFiles(ref bgInfo, bgCandidate, maskCandidate);
+                        break;
+                }
+
+                bgInfos.Add(bgInfo);
+
+                progressCb(new ProgressInfo("Matching textures", identifiedTexCount, crTexCount,
+                    identifiedTexCount / (float) (crTexCount - 1)));
+                yield return new WaitForEndOfFrame();
+            }
+
+            //Check and track BG info duplicates
+            var duplicateIndices = new List<int>();
+            for (var i = 0; i < bgInfos.Count; i++)
+            {
+                //i + 1 because an element doesn't need to check itself and when an element check all the others, the others don't need to check the former again.
+                for (var j = i + 1; j < bgInfos.Count; j++)
+                {
+                    if (bgInfos[i].bgMd5 == bgInfos[j].bgMd5 && bgInfos[i].maskMd5 == bgInfos[j].maskMd5)
+                    {
+                        reportSb.AppendLine(string.Concat("INFO:",
+                            string.Concat(bgInfos[i].namePrefix, " has a duplicate: ", bgInfos[j].namePrefix)));
+                        bgInfo = bgInfos[i];
+
+                        //Add the duplicate to the dump Matches for the base Dump format of the BG info
+                        bgInfo.texDumpMatches[0].AddTexName(bgInfos[j].namePrefix, 0);
+
+                        if (bgInfo.hasMask)
+                            bgInfo.texDumpMatches[0].AddTexName(string.Concat(bgInfos[j].namePrefix, maskSuffix), 1);
+
+                        bgInfos[i] = bgInfo;
+                        duplicateIndices.Add(j);
+                    }
+                }
+            }
+
+            //Jesus, I could have just use distinct just before instead of the double for... but whatever.
+            duplicateIndices = duplicateIndices.Distinct().ToList();
+            duplicateIndices.Sort();
+            duplicateIndices.Reverse();
+            for (var i = 0; i < duplicateIndices.Count; i++)
+            {
+                bgInfos.RemoveAt(duplicateIndices[i]);
+            }
+
+            //Process RDT data
+            for (var i = 0; i < bgInfos.Count; i++)
+            {
+                bgInfo = bgInfos[i];
+
+                if (i % 2 == 0)
+                {
+                    progressCb(new ProgressInfo("Analyzing mask data", i + 1, bgInfos.Count,
+                        i / (float) (bgInfos.Count - 1)));
+                    yield return new WaitForEndOfFrame();
+                }
+
+                if (bgInfo.hasMask == false)
+                    continue;
+
+                //Determine the camPos index of the BgInfo, will be useful later.
+                if (int.TryParse(bgInfo.namePrefix.Substring(9, 2), NumberStyles.Integer,
+                    NumberFormatInfo.InvariantInfo, out var camPosIndex))
+                {
+                    bgInfo.SetCamPosIndex(camPosIndex);
+                }
+                else
+                {
+                    reportSb.AppendLine(string.Format("WARNING: Unable to determine CamPos index for {0}",
+                        bgInfo.namePrefix));
+                    continue;
+                }
+
+                var rdtName = bgInfo.namePrefix.Substring(0, 8);
+                //RdtRoom match = rdtRooms.First(x => x.name.Contains(rdtName));
+                for (var j = 0; j < rdtRooms.Count; j++)
+                {
+                    var rdtRoom = rdtRooms[j];
+                    if (rdtRooms[j].name.Contains(rdtName))
+                    {
+                        //If it is player 0, check if there is a player 1
+                        if (rdtRoom.player == "0" && rdtRooms.Count > j + 1 && rdtRooms[j + 1].player == "1")
+                        {
+                            //Take Rdt Rooms with the most Camera Positions... Not even sure this is necessary.
+                            if (rdtRoom.header.nCut < rdtRooms[j + 1].header.nCut)
+                                rdtRoom = rdtRooms[j + 1];
+                        }
+
+                        //Unpack the Room masks data into the BgInfo
+                        if (AddMasksFromRE2RdtRoom(ref bgInfo, rdtRoom) == false)
+                            continue;
+
+                        var maskTexFi =
+                            fm.fileInfos.FirstOrDefault(x => x.Name.Contains(bgInfo.namePrefix + maskSuffix));
+                        if (maskTexFi == null)
+                        {
+                            reportSb.AppendLine("Warning: " + bgInfo.namePrefix +
+                                                " is supposed to have a mask but the texture is not present. Check your CR folder.");
+                            continue;
+                        }
+
+                        var maskTex = fm.GetTextureFromFileInfo(maskTexFi);
+                        ComputeMaskTransparency(ref bgInfo, maskTex);
+                        Object.Destroy(maskTex);
+
+                        bgInfos[i] = bgInfo;
+
+                        break;
+                    }
+                }
+            }
+
+            //Let the UI Refresh
+            progressCb(new ProgressInfo("Saving BgInfo files", 0, 0, 1f));
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+
+            //Save Bg Infos
+            for (var i = 0; i < bgInfos.Count; i++)
+            {
+                if (i % 5 == 0)
+                {
+                    progressCb(new ProgressInfo("Saving BgInfo files", i + 1, bgInfos.Count,
+                        i / (float) (bgInfos.Count - 1)));
+                    yield return new WaitForEndOfFrame();
+                }
+
+                fm.SaveToJson(bgInfos[i], bgInfoPath, bgInfos[i].GetFileName(), prettifyJsonOnSave);
+            }
+
+            reportSb.AppendLine(string.Format(
+                "{0} BgInfos, {1} duplicates for {2} textures, {3} Rdt files ({4} Uniques)", bgInfos.Count,
+                duplicateIndices.Count, fm.fileInfos.Length, rdtFilesCount, rdtRooms.Count));
+            reportSb.AppendLine(string.Format("== BgInfo generation done! ({0} seconds) ==",
+                (Time.unscaledTime - taskTime).ToString("#.0")));
+        }
+
+        private IEnumerator GenerateBgInfosRE3(string rdtPath, string dumpTexturesPath, string bgInfoPath,
+            System.Action<ProgressInfo> progressCb)
+        {
+            var rdtParser = new RE3.RdtParser();
+
+            //File access is slow as fuck, let me at least display the Progress bar
+            progressCb(new ProgressInfo("Loading Rdt files", 0, 0, 0f));
+            yield return new WaitForEndOfFrame();
+
+            //Get all the RDT data
+            var rdtFilesCount = fm.LoadFiles(rdtPath, "rdt");
+            var rdtRooms = new List<RE3.RdtRoom>();
+
+            var lastRdtRoomMd5 = "";
+            for (var i = 0; i < rdtFilesCount; i++)
+            {
+                if (i % 100 == 0)
+                {
+                    progressCb(new ProgressInfo("Converting Rdt files", i + 1, rdtFilesCount,
+                        i / (float) (rdtFilesCount - 1)));
+                    yield return new WaitForEndOfFrame();
+                }
+
+                var data = fm.GetBytesFromFile(i);
+
+                var rdtRoomMd5 = fm.GetMd5(data);
+
+                //Check if player 0 and player 1 are exactly the same, if so prune player 1.
+                if (lastRdtRoomMd5 != "")
+                {
+                    if (rdtRoomMd5 == lastRdtRoomMd5)
+                    {
+                        lastRdtRoomMd5 = "";
+                        continue;
+                    }
+                }
+
+                if (rdtParser.ParseRdtData(data, fm.fileInfos[i].Name, out var room))
                 {
                     rdtRooms.Add(room);
                 }
@@ -1331,19 +1724,19 @@ namespace BgTk
             yield return new WaitForEndOfFrame();
 
             //Get all the CR textures
-            int crTexCount = fm.LoadFiles(Path.Combine(dumpTexturesPath, baseDumpFormat.name), "png");
+            var crTexCount = fm.LoadFiles(Path.Combine(dumpTexturesPath, baseDumpFormat.name), "png");
 
             //Make sure the textures are ordered by names
             fm.OrderFiles(x => x.Name, true);
 
-            int identifiedTexCount = 0;
+            var identifiedTexCount = 0;
 
-            BgInfo bgInfo = new BgInfo();
-            List<BgInfo> bgInfos = new List<BgInfo>();
-            List<FileInfo> bgLessMasks = new List<FileInfo>();
+            var bgInfo = new BgInfo();
+            var bgInfos = new List<BgInfo>();
+            var bgLessMasks = new List<FileInfo>();
             while (identifiedTexCount < crTexCount)
             {
-                FileInfo bgCandidate = fm.fileInfos[identifiedTexCount];
+                var bgCandidate = fm.fileInfos[identifiedTexCount];
                 FileInfo maskCandidate;
 
                 //manage a BG only case at the end of the file array
@@ -1353,7 +1746,7 @@ namespace BgTk
                     maskCandidate = null;
 
                 //0 - Mask only (not good), 1 - BG only, 2 - BG + Mask
-                int result = IdentifyCrTextures(bgCandidate, maskCandidate);
+                var result = IdentifyCrTextures(bgCandidate, maskCandidate);
 
                 switch (result)
                 {
@@ -1378,16 +1771,17 @@ namespace BgTk
 
                 bgInfos.Add(bgInfo);
 
-                progressCb(new ProgressInfo("Matching textures", identifiedTexCount, crTexCount, identifiedTexCount / (float)(crTexCount - 1)));
+                progressCb(new ProgressInfo("Matching textures", identifiedTexCount, crTexCount,
+                    identifiedTexCount / (float) (crTexCount - 1)));
                 yield return new WaitForEndOfFrame();
             }
 
             //Check BgLess masks for duplicates
-            for (int i = 0; i < bgLessMasks.Count; i++)
+            for (var i = 0; i < bgLessMasks.Count; i++)
             {
-                string bgLessMaskMd5 = fm.GetMd5(fm.GetTextureFromFileInfo(bgLessMasks[i]).GetRawTextureData());
-                bool isDuplicate = false;
-                for (int j = 0; j < bgInfos.Count; j++)
+                var bgLessMaskMd5 = fm.GetMd5(fm.GetTextureFromFileInfo(bgLessMasks[i]).GetRawTextureData());
+                var isDuplicate = false;
+                for (var j = 0; j < bgInfos.Count; j++)
                 {
                     bgInfo = bgInfos[j];
 
@@ -1397,27 +1791,30 @@ namespace BgTk
                         bgInfo.texDumpMatches[0].AddTexName(fm.RemoveExtensionFromFileInfo(bgLessMasks[i]), 1);
                         bgInfos[j] = bgInfo;
 
-                        reportSb.AppendLine(string.Concat("INFO: ", bgLessMasks[i].Name, " is a mask without a BG but was matched with " + bgInfo.namePrefix));
+                        reportSb.AppendLine(string.Concat("INFO: ", bgLessMasks[i].Name,
+                            " is a mask without a BG but was matched with " + bgInfo.namePrefix));
                         break;
                     }
                 }
 
                 if (isDuplicate == false)
                 {
-                    reportSb.AppendLine(string.Concat("WARNING: ", bgLessMasks[i].Name, " is a mask without a BG. Please check your CR folder."));
+                    reportSb.AppendLine(string.Concat("WARNING: ", bgLessMasks[i].Name,
+                        " is a mask without a BG. Please check your CR folder."));
                 }
             }
 
             //Check and track BG info duplicates
-            List<int> duplicateIndices = new List<int>();
-            for (int i = 0; i < bgInfos.Count; i++)
+            var duplicateIndices = new List<int>();
+            for (var i = 0; i < bgInfos.Count; i++)
             {
                 //i + 1 because an element doesn't need to check itself and when an element check all the others, the others don't need to check the former again.
-                for (int j = i + 1; j < bgInfos.Count; j++)
+                for (var j = i + 1; j < bgInfos.Count; j++)
                 {
                     if (bgInfos[i].bgMd5 == bgInfos[j].bgMd5 && bgInfos[i].maskMd5 == bgInfos[j].maskMd5)
                     {
-                        reportSb.AppendLine(string.Concat("INFO: ", string.Concat(bgInfos[i].namePrefix, " has a duplicate: ", bgInfos[j].namePrefix)));
+                        reportSb.AppendLine(string.Concat("INFO: ",
+                            string.Concat(bgInfos[i].namePrefix, " has a duplicate: ", bgInfos[j].namePrefix)));
                         bgInfo = bgInfos[i];
 
                         //Add the duplicate to the dump Matches for the base Dump format of the BG info
@@ -1436,19 +1833,20 @@ namespace BgTk
             duplicateIndices = duplicateIndices.Distinct().ToList();
             duplicateIndices.Sort();
             duplicateIndices.Reverse();
-            for (int i = 0; i < duplicateIndices.Count; i++)
+            for (var i = 0; i < duplicateIndices.Count; i++)
             {
                 bgInfos.RemoveAt(duplicateIndices[i]);
             }
 
             //Process RDT data
-            for (int i = 0; i < bgInfos.Count; i++)
+            for (var i = 0; i < bgInfos.Count; i++)
             {
                 bgInfo = bgInfos[i];
 
                 if (i % 2 == 0)
                 {
-                    progressCb(new ProgressInfo("Analyzing mask data", i + 1, bgInfos.Count, i / (float)(bgInfos.Count - 1)));
+                    progressCb(new ProgressInfo("Analyzing mask data", i + 1, bgInfos.Count,
+                        i / (float) (bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1456,21 +1854,23 @@ namespace BgTk
                     continue;
 
                 //Determine the camPos index of the BgInfo, will be useful later.
-                if (int.TryParse(bgInfo.namePrefix.Substring(4, 2), NumberStyles.HexNumber, NumberFormatInfo.InvariantInfo, out int camPosIndex))
+                if (int.TryParse(bgInfo.namePrefix.Substring(4, 2), NumberStyles.HexNumber,
+                    NumberFormatInfo.InvariantInfo, out var camPosIndex))
                 {
                     bgInfo.SetCamPosIndex(camPosIndex);
                 }
                 else
                 {
-                    reportSb.AppendLine(string.Format("WARNING: Unable to determine CamPos index for {0}", bgInfo.namePrefix));
+                    reportSb.AppendLine(string.Format("WARNING: Unable to determine CamPos index for {0}",
+                        bgInfo.namePrefix));
                     continue;
                 }
 
-                string rdtName = bgInfo.namePrefix.Substring(0, 4);
+                var rdtName = bgInfo.namePrefix.Substring(0, 4);
                 //RdtRoom match = rdtRooms.First(x => x.name.Contains(rdtName));
-                for (int j = 0; j < rdtRooms.Count; j++)
+                for (var j = 0; j < rdtRooms.Count; j++)
                 {
-                    RE3.RdtRoom rdtRoom = rdtRooms[j];
+                    var rdtRoom = rdtRooms[j];
                     if (rdtRooms[j].name.Contains(rdtName))
                     {
                         //If it is player 0, check if there is a player 1
@@ -1485,14 +1885,16 @@ namespace BgTk
                         if (AddMasksFromRE3RdtRoom(ref bgInfo, rdtRoom) == false)
                             continue;
 
-                        FileInfo maskTexFi = fm.fileInfos.FirstOrDefault(x => x.Name.Contains(bgInfo.namePrefix + maskSuffix));
+                        var maskTexFi =
+                            fm.fileInfos.FirstOrDefault(x => x.Name.Contains(bgInfo.namePrefix + maskSuffix));
                         if (maskTexFi == null)
                         {
-                            reportSb.AppendLine("Warning: " + bgInfo.namePrefix + " is supposed to have a mask but the texture is not present. Check your CR folder.");
+                            reportSb.AppendLine("Warning: " + bgInfo.namePrefix +
+                                                " is supposed to have a mask but the texture is not present. Check your CR folder.");
                             continue;
                         }
 
-                        Texture2D maskTex = fm.GetTextureFromFileInfo(maskTexFi);
+                        var maskTex = fm.GetTextureFromFileInfo(maskTexFi);
                         ComputeMaskTransparency(ref bgInfo, maskTex);
                         Object.Destroy(maskTex);
 
@@ -1509,23 +1911,27 @@ namespace BgTk
             yield return new WaitForEndOfFrame();
 
             //Save Bg Infos
-            for (int i = 0; i < bgInfos.Count; i++)
+            for (var i = 0; i < bgInfos.Count; i++)
             {
                 if (i % 5 == 0)
                 {
-                    progressCb(new ProgressInfo("Saving BgInfo files", i + 1, bgInfos.Count, i / (float)(bgInfos.Count - 1)));
+                    progressCb(new ProgressInfo("Saving BgInfo files", i + 1, bgInfos.Count,
+                        i / (float) (bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
                 fm.SaveToJson(bgInfos[i], bgInfoPath, bgInfos[i].GetFileName(), prettifyJsonOnSave);
             }
 
-            reportSb.AppendLine(string.Format("{0} BgInfos, {1} duplicates for {2} textures, {3} Rdt files ({4} Uniques)", bgInfos.Count, duplicateIndices.Count, fm.fileInfos.Length, rdtFilesCount, rdtRooms.Count));
-            reportSb.AppendLine(string.Format("== BgInfo generation done! ({0} seconds) ==", (Time.unscaledTime - taskTime).ToString("#.0")));
-
+            reportSb.AppendLine(string.Format(
+                "{0} BgInfos, {1} duplicates for {2} textures, {3} Rdt files ({4} Uniques)", bgInfos.Count,
+                duplicateIndices.Count, fm.fileInfos.Length, rdtFilesCount, rdtRooms.Count));
+            reportSb.AppendLine(string.Format("== BgInfo generation done! ({0} seconds) ==",
+                (Time.unscaledTime - taskTime).ToString("#.0")));
         }
 
-        public IEnumerator GenerateBgInfos(string rdtPath, string dumpTexturesPath, string bgInfoPath, System.Action<ProgressInfo> progressCb, System.Action doneCb)
+        public IEnumerator GenerateBgInfos(string rdtPath, string dumpTexturesPath, string bgInfoPath,
+            System.Action<ProgressInfo> progressCb, System.Action doneCb)
         {
             reportSb.Clear();
             reportSb.AppendLine("== BgInfo generation Started! ==");
@@ -1539,6 +1945,10 @@ namespace BgTk
 
             switch (game)
             {
+                case Game.RE1:
+                    yield return GenerateBgInfosRE1(rdtPath, dumpTexturesPath, bgInfoPath, progressCb);
+                    break;
+
                 case Game.RE2:
                     yield return GenerateBgInfosRE2(rdtPath, dumpTexturesPath, bgInfoPath, progressCb);
                     break;
@@ -1558,18 +1968,25 @@ namespace BgTk
             //2 ways: get the entire array of pixels32 and compute the indices for each pixels or get a specific patch of pixels with GetPixels.
             //Apparently GetPixels is slower. But I also want to challenge myself computing the indices correctly in a 1d array based on a rect.
             //Let's be lazy...
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
-            List<int> opaqueIndices = new List<int>();
+            var opaqueIndices = new List<int>();
             Mask mask;
             Color[] colors;
-            for (int i = 0; i < bgInfo.masks.Length; i++)
+            for (var i = 0; i < bgInfo.masks.Length; i++)
             {
                 mask = bgInfo.masks[i];
-                colors = maskTex.GetPixels(mask.patch.srcPos.x, mask.patch.srcPos.y, mask.patch.size.x, mask.patch.size.y);
+
+                // Debug.Log($"{bgInfo.GetFileName()} - {mask.groupIndex} - {baseDumpFormat.maskUsageSize}");
+                // var patch = mask.patch.Fit(baseDumpFormat.maskUsageSize);
+                var patch = mask.patch;
+                // Debug.Log(patch);
+                // Debug.Log(mask.patch);
+
+                colors = maskTex.GetPixels(patch.srcPos.x, patch.srcPos.y, patch.size.x, patch.size.y);
                 opaqueIndices.Clear();
-                bool isBlock = false;
-                for (int j = 0; j < colors.Length; j++)
+                var isBlock = false;
+                for (var j = 0; j < colors.Length; j++)
                 {
                     if (colors[j].a > 0.5f)
                     {
@@ -1583,8 +2000,8 @@ namespace BgTk
                         {
                             isBlock = false;
 
-                            int previousIndex = j - 1;
-                            int lastOpaqueIndex = opaqueIndices.Last();
+                            var previousIndex = j - 1;
+                            var lastOpaqueIndex = opaqueIndices.Last();
 
                             //One pixel case
                             if (lastOpaqueIndex == previousIndex)
@@ -1611,8 +2028,8 @@ namespace BgTk
                 {
                     isBlock = false;
 
-                    int previousIndex = colors.Length - 1;
-                    int lastOpaqueIndex = opaqueIndices.Last();
+                    var previousIndex = colors.Length - 1;
+                    var lastOpaqueIndex = opaqueIndices.Last();
 
                     //One pixel case
                     if (lastOpaqueIndex == previousIndex)
@@ -1638,28 +2055,29 @@ namespace BgTk
 
         protected bool AddMasksFromRE3RdtRoom(ref BgInfo bgInfo, RE3.RdtRoom room)
         {
-            int camPosIndex = bgInfo.camPosIndex;
+            var camPosIndex = bgInfo.camPosIndex;
 
             if (room.hasMasks[camPosIndex] == false)
             {
-                reportSb.AppendLine("Warning: " + bgInfo.namePrefix + " is supposed to have a mask but the associated RDT file has no mask data... This is not normal.");
+                reportSb.AppendLine("Warning: " + bgInfo.namePrefix +
+                                    " is supposed to have a mask but the associated RDT file has no mask data... This is not normal.");
                 return false;
             }
 
             bgInfo.masks = new Mask[room.cameraMasks[camPosIndex].count_masks];
             bgInfo.groupsCount = room.maskGroups[camPosIndex].Length;
 
-            Vector2Int offset = new Vector2Int();
-            int maskIndex = 0;
-            for (int i = 0; i < bgInfo.groupsCount; i++)
+            var offset = new Vector2Int();
+            var maskIndex = 0;
+            for (var i = 0; i < bgInfo.groupsCount; i++)
             {
                 offset.x = room.maskGroups[camPosIndex][i].x;
                 offset.y = room.maskGroups[camPosIndex][i].y;
                 int groupMaskCount = room.maskGroups[camPosIndex][i].count;
 
-                for (int j = 0; j < groupMaskCount; j++)
+                for (var j = 0; j < groupMaskCount; j++)
                 {
-                    RE3.RdtMask mask = room.masks[camPosIndex][i][j];
+                    var mask = room.masks[camPosIndex][i][j];
                     bgInfo.masks[maskIndex].groupIndex = i;
                     bgInfo.masks[maskIndex].patch = new Patch(
                         mask.u,
@@ -1677,28 +2095,29 @@ namespace BgTk
 
         protected bool AddMasksFromRE2RdtRoom(ref BgInfo bgInfo, RE2.RdtRoom room)
         {
-            int camPosIndex = bgInfo.camPosIndex;
+            var camPosIndex = bgInfo.camPosIndex;
 
             if (room.hasMasks[camPosIndex] == false)
             {
-                reportSb.AppendLine("Warning: " + bgInfo.namePrefix + " is supposed to have a mask but the associated RDT file has no mask data... This is not normal.");
+                reportSb.AppendLine("Warning: " + bgInfo.namePrefix +
+                                    " is supposed to have a mask but the associated RDT file has no mask data... This is not normal.");
                 return false;
             }
 
             bgInfo.masks = new Mask[room.cameraMasks[camPosIndex].count_masks];
             bgInfo.groupsCount = room.maskGroups[camPosIndex].Length;
 
-            Vector2Int offset = new Vector2Int();
-            int maskIndex = 0;
-            for (int i = 0; i < bgInfo.groupsCount; i++)
+            var offset = new Vector2Int();
+            var maskIndex = 0;
+            for (var i = 0; i < bgInfo.groupsCount; i++)
             {
                 offset.x = room.maskGroups[camPosIndex][i].x;
                 offset.y = room.maskGroups[camPosIndex][i].y;
                 int groupMaskCount = room.maskGroups[camPosIndex][i].count;
 
-                for (int j = 0; j < groupMaskCount; j++)
+                for (var j = 0; j < groupMaskCount; j++)
                 {
-                    RE2.RdtMask mask = room.masks[camPosIndex][i][j];
+                    var mask = room.masks[camPosIndex][i][j];
                     bgInfo.masks[maskIndex].groupIndex = i;
                     bgInfo.masks[maskIndex].patch = new Patch(
                         mask.u,
@@ -1714,22 +2133,79 @@ namespace BgTk
             return true;
         }
 
+        protected bool AddMasksFromRE1RdtRoom(ref BgInfo bgInfo, RE1.RdtRoom room)
+        {
+            var camPosIndex = bgInfo.camPosIndex;
+
+            if (room.hasMasks[camPosIndex] == false)
+            {
+                reportSb.AppendLine("Warning: " + bgInfo.namePrefix +
+                                    " is supposed to have a mask but the associated RDT file has no mask data... This is not normal.");
+                return false;
+            }
+
+            var maskCount = 0;
+            for (var i = 0; i < room.maskGroups[camPosIndex].Length; i++)
+            {
+                maskCount += room.maskGroups[camPosIndex][i].count;
+            }
+
+            bgInfo.masks = new Mask[maskCount];
+            bgInfo.groupsCount = room.maskGroups[camPosIndex].Length;
+
+            var offset = new Vector2Int();
+            var maskIndex = 0;
+            for (var i = 0; i < bgInfo.groupsCount; i++)
+            {
+                offset.x = room.maskGroups[camPosIndex][i].x;
+                offset.y = room.maskGroups[camPosIndex][i].y;
+                int groupMaskCount = room.maskGroups[camPosIndex][i].count;
+
+                for (var j = 0; j < groupMaskCount; j++)
+                {
+                    var mask = room.masks[camPosIndex][i][j];
+                    bgInfo.masks[maskIndex].groupIndex = i;
+                    var patch = new Patch(
+                        mask.u,
+                        bgInfo.maskTexSize.y - mask.v - mask.height,
+                        offset.x + mask.x,
+                        baseDumpFormat.maskUsageSize.y - offset.y - mask.y - mask.height,
+                        mask.width, mask.height);
+
+                    var fittedPatch = patch.Fit(baseDumpFormat.maskUsageSize);
+
+                    if (fittedPatch.size.x <= 0 || fittedPatch.size.y <= 0)
+                    {
+                        fittedPatch = new Patch(0, 0, 0, 0, 0, 0);
+                    }
+
+                    bgInfo.masks[maskIndex].patch = fittedPatch;
+
+                    maskIndex++;
+                }
+            }
+
+            return true;
+        }
+
         protected void CompensatePixelShift(Vector2Int pixelShift, Texture2D tex, int texRatio)
         {
             if (pixelShift.x != 0 || pixelShift.y != 0)
             {
                 tex.wrapMode = TextureWrapMode.Clamp;
 
-                int pixelShiftCount = Mathf.Abs(pixelShift.x) >= Mathf.Abs(pixelShift.y) ? Mathf.Abs(pixelShift.x) : Mathf.Abs(pixelShift.y);
-                int shiftX = 0;
-                int shiftY = 0;
+                var pixelShiftCount = Mathf.Abs(pixelShift.x) >= Mathf.Abs(pixelShift.y)
+                    ? Mathf.Abs(pixelShift.x)
+                    : Mathf.Abs(pixelShift.y);
+                var shiftX = 0;
+                var shiftY = 0;
 
                 //x
-                for (int j = 0; j < Mathf.Abs(pixelShift.x); j++)
+                for (var j = 0; j < Mathf.Abs(pixelShift.x); j++)
                 {
-                    int gx = 0;
-                    int sx = 0;
-                    int w = 0;
+                    var gx = 0;
+                    var sx = 0;
+                    var w = 0;
 
                     shiftX = j * 1 * texRatio;
 
@@ -1746,16 +2222,16 @@ namespace BgTk
 
                     w = tex.width - shiftX - 1;
 
-                    Color[] colors = tex.GetPixels(gx, 0, w, tex.height);
+                    var colors = tex.GetPixels(gx, 0, w, tex.height);
                     tex.SetPixels(sx, 0, w, tex.height, colors);
                 }
 
                 //Y
-                for (int j = 0; j < Mathf.Abs(pixelShift.y); j++)
+                for (var j = 0; j < Mathf.Abs(pixelShift.y); j++)
                 {
-                    int gy = 0;
-                    int sy = 0;
-                    int h = 0;
+                    var gy = 0;
+                    var sy = 0;
+                    var h = 0;
 
                     shiftY = j * 1 * texRatio;
 
@@ -1772,7 +2248,7 @@ namespace BgTk
 
                     h = tex.height - shiftY - 1;
 
-                    Color[] colors = tex.GetPixels(0, gy, tex.width, h);
+                    var colors = tex.GetPixels(0, gy, tex.width, h);
                     tex.SetPixels(0, sy, tex.width, h, colors);
                 }
             }
@@ -1782,13 +2258,13 @@ namespace BgTk
         {
             bgInfo.Reset();
 
-            Texture2D tex = fm.GetTextureFromFileInfo(bgFileInfo);
+            var tex = fm.GetTextureFromFileInfo(bgFileInfo);
 
             bgInfo.namePrefix = tex.name;
             bgInfo.bgTexSize = new Vector2Int(tex.width, tex.height);
             bgInfo.bgMd5 = fm.GetMd5(tex.GetRawTextureData());
 
-            bgInfo.texDumpMatches = new DumpMatch[] { new DumpMatch(baseDumpFormat.name, tex.name, 0) };
+            bgInfo.texDumpMatches = new DumpMatch[] {new DumpMatch(baseDumpFormat.name, tex.name, 0)};
 
             Object.Destroy(tex);
 
@@ -1811,12 +2287,12 @@ namespace BgTk
             if (bgCandidate.Name.Contains(maskSuffix))
                 return 0; //Skip this texture without creating a BG info
 
-            string bgName = fm.GetFileName(bgCandidate);
+            var bgName = fm.GetFileName(bgCandidate);
 
             if (maskCandidate == null)
                 return 1;
 
-            string maskCandidateName = fm.GetFileName(maskCandidate);
+            var maskCandidateName = fm.GetFileName(maskCandidate);
             if (bgName + maskSuffix == maskCandidateName)
             {
                 return 2;
@@ -1834,22 +2310,22 @@ namespace BgTk
 
         private Texture2D ScaleTexture(Texture2D source, int scaleRatio)
         {
-            int tWidth = source.width * scaleRatio;
-            int tHeight = source.height * scaleRatio;
-            Texture2D result = new Texture2D(tWidth, tHeight, source.format, false);
-            Color[] rpixels = result.GetPixels();
-            for (int px = 0; px < rpixels.Length; px++)
+            var tWidth = source.width * scaleRatio;
+            var tHeight = source.height * scaleRatio;
+            var result = new Texture2D(tWidth, tHeight, source.format, false);
+            var rpixels = result.GetPixels();
+            for (var px = 0; px < rpixels.Length; px++)
             {
-                float u = (px % tWidth) / (float)tWidth;
-                float v = (px / tWidth) / (float)tHeight;
+                var u = (px % tWidth) / (float) tWidth;
+                var v = (px / tWidth) / (float) tHeight;
 
-                rpixels[px] = source.GetPixel(Mathf.FloorToInt(u * (float)source.width), Mathf.FloorToInt(v * (float)source.height));
+                rpixels[px] = source.GetPixel(Mathf.FloorToInt(u * (float) source.width),
+                    Mathf.FloorToInt(v * (float) source.height));
             }
+
             result.SetPixels(rpixels);
             result.Apply();
             return result;
         }
-
     }
-
 }

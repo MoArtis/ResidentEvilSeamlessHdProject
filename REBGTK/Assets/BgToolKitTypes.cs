@@ -216,8 +216,13 @@ namespace BgTk
         public string name;
         public BgTexturePart[] bgParts; //if none => The BG texture remains whole
         public Vector2Int maskForcedSize; //if 0,0 => follow what is indicated in the BgInfo
-        public Vector2Int maskUsageSize; //At which screen resolution these maks are being rendered / used (320x240 on RE2 and RE3)
+        public Vector2Int maskUsageSize; //At which screen resolution these masks are being rendered / useful for RE3 with its inconsistent pixel density between BG and mask.
         public Vector2Int texPixelShift;
+        public bool isJpgBg;
+        public int jpgQuality;
+        public bool isMonochromaticMask;
+        public string alternateFormatName;
+        public float monoMaskAmsHistogramMinMatchValue;
 
         public override bool Equals(object obj)
         {
@@ -282,6 +287,42 @@ namespace BgTk
         {
             srcPos += translation;
             dstPos += translation;
+        }
+
+        public Patch Fit(Vector2Int bgTexsize)
+        {
+            var nPatch = this;
+
+            if (dstPos.x < 0)
+            {
+                nPatch.dstPos.x = 0;
+                nPatch.srcPos.x -= dstPos.x;
+                nPatch.size.x += dstPos.x;
+            }
+            
+            if (nPatch.dstPos.y < 0)
+            {
+                nPatch.dstPos.y = 0;
+                nPatch.srcPos.y -= dstPos.y;
+                nPatch.size.y += dstPos.y;
+            }
+                        
+            if (dstPos.x + size.x > bgTexsize.x)
+            {
+                nPatch.size.x -= dstPos.x + size.x - bgTexsize.x;
+            }
+            
+            if (dstPos.y + size.y > bgTexsize.y)
+            {
+                nPatch.size.y -= dstPos.y + size.y - bgTexsize.y;
+            }
+
+            return nPatch;
+        }
+
+        public override string ToString()
+        {
+            return $"U:{srcPos.x} | V:{srcPos.y} || X:{dstPos.x} | Y:{dstPos.y} || Size:{size}";
         }
     }
 

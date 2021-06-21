@@ -98,6 +98,13 @@ public class FileManager
         File.WriteAllBytes(fullName, data);
     }
 
+    public void SaveTextureToJPG(Texture2D tex, string path, string fileName, int quality)
+    {
+        byte[] data = ImageConversion.EncodeToJPG(tex, quality);
+        string fullName = string.Concat(path, "/", fileName, ".jpg");
+        File.WriteAllBytes(fullName, data);
+    }
+
     public void SaveReportToFile(StringBuilder reportSb, string path, string context)
     {
         string fileName = string.Concat("REPORT_", context, "_", DateTime.Now.ToString("yyyy-MM-dd_HH-mm"));
