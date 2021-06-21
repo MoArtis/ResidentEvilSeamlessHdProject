@@ -1,6 +1,10 @@
 # RESHDP
 *.rdt
 REBGTK/Reports/
+REBGTK/RDT/
+REBGTK/Dumps/
+REBGTK/Processed/
+REBGTK/Results/
 
 [Ll]ibrary/
 [Tt]emp/
