@@ -223,6 +223,7 @@ namespace BgTk
         public bool isMonochromaticMask;
         public string alternateFormatName;
         public float monoMaskAmsHistogramMinMatchValue;
+        public bool useBlackAsTransparent;
 
         public override bool Equals(object obj)
         {

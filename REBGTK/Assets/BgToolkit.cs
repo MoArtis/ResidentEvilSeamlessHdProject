@@ -53,7 +53,7 @@ namespace BgTk
             var bgInfos = fm.GetObjectsFromFiles<BgInfo>();
 
             dumpTexPath = Path.Combine(dumpTexPath, baseDumpFormat.name);
-    
+
             for (var i = 0; i < bgInfoCount; i++)
             {
                 if (bgInfos[i].hasMask == false || bgInfos[i].useProcessedMaskTex == false)
@@ -64,7 +64,7 @@ namespace BgTk
                 var scaleRatio = bgInfo.bgTexSize.y / baseDumpFormat.maskUsageSize.y;
 
                 progressCb(new ProgressInfo("Generating special Mask source", i + 1, bgInfoCount,
-                    i / (float) (bgInfoCount - 1)));
+                    i / (float)(bgInfoCount - 1)));
                 yield return new WaitForEndOfFrame();
 
                 var bgTex = fm.GetTextureFromPath(Path.Combine(dumpTexPath, bgInfo.namePrefix));
@@ -148,8 +148,8 @@ namespace BgTk
 
             var xBrzScaler = new xBRZScaler();
 
-            var boostValue = (byte) (config.boostValue * 255f);
-            var clipValue = (byte) (config.clipValue * 255f);
+            var boostValue = (byte)(config.boostValue * 255f);
+            var clipValue = (byte)(config.clipValue * 255f);
 
             alphaChannelPath = Path.Combine(alphaChannelPath, game.ToString());
             fm.CreateDirectory(alphaChannelPath);
@@ -170,13 +170,13 @@ namespace BgTk
                 {
                     if (i % 100 == 0)
                     {
-                        progressCb(new ProgressInfo(bgInfo.namePrefix, i + 1, bgInfosCount, i / (float) bgInfosCount));
+                        progressCb(new ProgressInfo(bgInfo.namePrefix, i + 1, bgInfosCount, i / (float)bgInfosCount));
                         yield return new WaitForEndOfFrame();
                     }
                 }
                 else
                 {
-                    progressCb(new ProgressInfo(bgInfo.namePrefix, i + 1, bgInfosCount, i / (float) bgInfosCount));
+                    progressCb(new ProgressInfo(bgInfo.namePrefix, i + 1, bgInfosCount, i / (float)bgInfosCount));
                     yield return new WaitForEndOfFrame();
                     yield return new WaitForEndOfFrame();
 
@@ -277,8 +277,8 @@ namespace BgTk
                                         }
                                         else
                                         {
-                                            c = alphaTex.GetPixel(Mathf.FloorToInt(x / (float) config.scaleRatio),
-                                                Mathf.FloorToInt(y / (float) config.scaleRatio));
+                                            c = alphaTex.GetPixel(Mathf.FloorToInt(x / (float)config.scaleRatio),
+                                                Mathf.FloorToInt(y / (float)config.scaleRatio));
                                         }
 
                                         smoothAlphaTex.SetPixel(x, y, c);
@@ -313,7 +313,7 @@ namespace BgTk
 
                                 if (c.a > byte.MinValue)
                                 {
-                                    c.a = (byte) Mathf.Clamp(c.a + boostValue, c.a, 255);
+                                    c.a = (byte)Mathf.Clamp(c.a + boostValue, c.a, 255);
                                 }
 
                                 colors[j] = c;
@@ -388,11 +388,31 @@ namespace BgTk
                 if (i % 50 == 0)
                 {
                     progressCb(
-                        new ProgressInfo("Preparing candidates", i + 1, mcTexCount, i / (float) (mcTexCount - 1)));
+                        new ProgressInfo("Preparing candidates", i + 1, mcTexCount, i / (float)(mcTexCount - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
                 var mcTex = fm.GetTextureFromFileIndex(i);
+
+                if (dumpFormat.useBlackAsTransparent)
+                {
+                    var colors = mcTex.GetPixels32();
+                    for (int j = 0; j < colors.Length; j++)
+                    {
+                        var c = colors[j];
+                        if (c.r + c.g + c.b <= byte.MinValue)
+                        {
+                            c.a = byte.MinValue;
+                            colors[j] = c;
+                        }
+                    }
+                    mcTex.SetPixels32(colors);
+
+                    //Save the texture with proper transparent pixels.
+                    // var fi = fm.fileInfos[i];
+                    // var testName = $"{Path.GetFileNameWithoutExtension(fi.Name)}_alpha";
+                    // fm.SaveTextureToPng(mcTex, fi.DirectoryName, testName);
+                }
 
                 var mc = new MatchCandidate();
                 mc.md5 = fm.GetMd5(mcTex.GetRawTextureData());
@@ -626,7 +646,7 @@ namespace BgTk
             {
                 //if (i % 10 == 0)
                 //{
-                progressCb(new ProgressInfo("Looking for matches", i + 1, bgInfoCount, i / (float) (bgInfoCount - 1)));
+                progressCb(new ProgressInfo("Looking for matches", i + 1, bgInfoCount, i / (float)(bgInfoCount - 1)));
                 yield return new WaitForEndOfFrame();
                 //}
 
@@ -902,7 +922,7 @@ namespace BgTk
             }
 
             progressCb(new ProgressInfo(string.Concat("Recreating Textures - ", bgInfos[0].namePrefix), 1, bgInfosCount,
-                0 / (float) (bgInfosCount - 1)));
+                0 / (float)(bgInfosCount - 1)));
             yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
 
@@ -920,15 +940,15 @@ namespace BgTk
                 }
 
                 progressCb(new ProgressInfo(string.Concat("Recreating Textures - ", bgInfo.namePrefix), i + 1,
-                    bgInfosCount, i / (float) (bgInfosCount - 1)));
+                    bgInfosCount, i / (float)(bgInfosCount - 1)));
                 yield return new WaitForEndOfFrame();
 
                 Texture2D processedTexAms = null;
                 var processedTex = fm.GetTextureFromFileInfo(bgTexFileInfo);
 
                 //float texRatioFloat = processedTex.width / (float)bgInfo.bgTexSize.x;
-                var bgRatioFloat = processedTex.width / (float) bgInfo.bgTexSize.x;
-                var maskRatioFloat = processedTex.width / (float) baseDumpFormat.maskUsageSize.x;
+                var bgRatioFloat = processedTex.width / (float)bgInfo.bgTexSize.x;
+                var maskRatioFloat = processedTex.width / (float)baseDumpFormat.maskUsageSize.x;
 
                 if (bgRatioFloat - Mathf.Floor(bgRatioFloat) != 0f ||
                     maskRatioFloat - Mathf.Floor(maskRatioFloat) != 0f)
@@ -1131,7 +1151,7 @@ namespace BgTk
                             {
                                 var amsHistogram = new Histogram(3, 16, 1f);
                                 var origHistogram = new Histogram(3, 16, 1f);
- 
+
                                 pColors = processedTex.GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y,
                                     mask.patch.size.x, mask.patch.size.y);
 
@@ -1147,7 +1167,7 @@ namespace BgTk
                                                  dumpFormat.monoMaskAmsHistogramMinMatchValue - Mathf.Epsilon;
 
                                 Debug.Log($"{bgInfo.namePrefix}_mask_{j}_{histogramMatchValue:0.00000}");
-                                
+
                                 if (!isAltMaskPatch)
                                 {
                                     for (var k = 0; k < pColors.Length; k++)
@@ -1159,7 +1179,7 @@ namespace BgTk
                                 {
                                     var amsTestTex = new Texture2D(mask.patch.size.x, mask.patch.size.y,
                                         TextureFormat.RGBA32, false);
-                                    
+
                                     amsTestTex.SetPixels(pColors);
                                     fm.SaveTextureToPng(amsTestTex, resultsPath,
                                         $"{bgInfo.namePrefix}_mask_{j}_{histogramMatchValue}");
@@ -1244,7 +1264,7 @@ namespace BgTk
                 if (i % 100 == 0)
                 {
                     progressCb(new ProgressInfo("Converting Rdt files", i + 1, rdtFilesCount,
-                        i / (float) (rdtFilesCount - 1)));
+                        i / (float)(rdtFilesCount - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1319,7 +1339,7 @@ namespace BgTk
                 bgInfos.Add(bgInfo);
 
                 progressCb(new ProgressInfo("Matching textures", identifiedTexCount, crTexCount,
-                    identifiedTexCount / (float) (crTexCount - 1)));
+                    identifiedTexCount / (float)(crTexCount - 1)));
                 yield return new WaitForEndOfFrame();
             }
 
@@ -1365,7 +1385,7 @@ namespace BgTk
                 if (i % 2 == 0)
                 {
                     progressCb(new ProgressInfo("Analyzing mask data", i + 1, bgInfos.Count,
-                        i / (float) (bgInfos.Count - 1)));
+                        i / (float)(bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1435,7 +1455,7 @@ namespace BgTk
                 if (i % 5 == 0)
                 {
                     progressCb(new ProgressInfo("Saving BgInfo files", i + 1, bgInfos.Count,
-                        i / (float) (bgInfos.Count - 1)));
+                        i / (float)(bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1468,7 +1488,7 @@ namespace BgTk
                 if (i % 100 == 0)
                 {
                     progressCb(new ProgressInfo("Converting Rdt files", i + 1, rdtFilesCount,
-                        i / (float) (rdtFilesCount - 1)));
+                        i / (float)(rdtFilesCount - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1543,7 +1563,7 @@ namespace BgTk
                 bgInfos.Add(bgInfo);
 
                 progressCb(new ProgressInfo("Matching textures", identifiedTexCount, crTexCount,
-                    identifiedTexCount / (float) (crTexCount - 1)));
+                    identifiedTexCount / (float)(crTexCount - 1)));
                 yield return new WaitForEndOfFrame();
             }
 
@@ -1589,7 +1609,7 @@ namespace BgTk
                 if (i % 2 == 0)
                 {
                     progressCb(new ProgressInfo("Analyzing mask data", i + 1, bgInfos.Count,
-                        i / (float) (bgInfos.Count - 1)));
+                        i / (float)(bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1659,7 +1679,7 @@ namespace BgTk
                 if (i % 5 == 0)
                 {
                     progressCb(new ProgressInfo("Saving BgInfo files", i + 1, bgInfos.Count,
-                        i / (float) (bgInfos.Count - 1)));
+                        i / (float)(bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1692,7 +1712,7 @@ namespace BgTk
                 if (i % 100 == 0)
                 {
                     progressCb(new ProgressInfo("Converting Rdt files", i + 1, rdtFilesCount,
-                        i / (float) (rdtFilesCount - 1)));
+                        i / (float)(rdtFilesCount - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1772,7 +1792,7 @@ namespace BgTk
                 bgInfos.Add(bgInfo);
 
                 progressCb(new ProgressInfo("Matching textures", identifiedTexCount, crTexCount,
-                    identifiedTexCount / (float) (crTexCount - 1)));
+                    identifiedTexCount / (float)(crTexCount - 1)));
                 yield return new WaitForEndOfFrame();
             }
 
@@ -1846,7 +1866,7 @@ namespace BgTk
                 if (i % 2 == 0)
                 {
                     progressCb(new ProgressInfo("Analyzing mask data", i + 1, bgInfos.Count,
-                        i / (float) (bgInfos.Count - 1)));
+                        i / (float)(bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -1916,7 +1936,7 @@ namespace BgTk
                 if (i % 5 == 0)
                 {
                     progressCb(new ProgressInfo("Saving BgInfo files", i + 1, bgInfos.Count,
-                        i / (float) (bgInfos.Count - 1)));
+                        i / (float)(bgInfos.Count - 1)));
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -2316,11 +2336,11 @@ namespace BgTk
             var rpixels = result.GetPixels();
             for (var px = 0; px < rpixels.Length; px++)
             {
-                var u = (px % tWidth) / (float) tWidth;
-                var v = (px / tWidth) / (float) tHeight;
+                var u = (px % tWidth) / (float)tWidth;
+                var v = (px / tWidth) / (float)tHeight;
 
-                rpixels[px] = source.GetPixel(Mathf.FloorToInt(u * (float) source.width),
-                    Mathf.FloorToInt(v * (float) source.height));
+                rpixels[px] = source.GetPixel(Mathf.FloorToInt(u * (float)source.width),
+                    Mathf.FloorToInt(v * (float)source.height));
             }
 
             result.SetPixels(rpixels);

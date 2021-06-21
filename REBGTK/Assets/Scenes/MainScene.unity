@@ -280,7 +280,7 @@ MonoBehaviour:
     patchMinMatchValue: 0.2
     candidateMinMatchValue: 0.8
     savePatchTexures: 0
-    inconsistentMaskSize: 1
+    inconsistentMaskSize: 0
     resetDumpMatches: 0
 --- !u!1 &191453687
 GameObject:

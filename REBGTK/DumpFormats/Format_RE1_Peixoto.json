@@ -1,0 +1,56 @@
+{
+    "name": "RE1 Peixoto",
+    "bgParts": [
+		{
+            "name": "Left",
+            "patches": [
+                {
+                    "srcPos": {
+                        "x": 0,
+                        "y": 16
+                    },
+                    "dstPos": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "size": {
+                        "x": 256,
+                        "y": 240
+                    }
+                }
+            ],
+            "size": {
+                "x": 256,
+                "y": 256
+            }
+        },
+		{
+            "name": "Right",
+            "patches": [
+                {
+                    "srcPos": {
+                        "x": 0,
+                        "y": 16
+                    },
+                    "dstPos": {
+                        "x": 256,
+                        "y": 0
+                    },
+                    "size": {
+                        "x": 64,
+                        "y": 240
+                    }
+                }
+            ],
+            "size": {
+                "x": 256,
+                "y": 256
+            }
+        }
+	],
+	"maskUsageSize": {
+        "x": 320,
+        "y": 240
+    },
+	"useBlackAsTransparent" : true
+}
