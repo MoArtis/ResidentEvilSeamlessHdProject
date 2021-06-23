@@ -7,6 +7,9 @@ using System.Runtime.InteropServices;
 using System.Linq;
 using UnityEngine;
 using System.Security.Cryptography;
+using ImageMagick;
+using ImageMagick.Formats;
+using ColorSpace = ImageMagick.ColorSpace;
 
 public class FileManager
 {
@@ -19,16 +22,16 @@ public class FileManager
 
     public int LoadFiles(string path, string extension, SearchOption searchOption = SearchOption.TopDirectoryOnly)
     {
-        DirectoryInfo dirInfo = new DirectoryInfo(path);
+        var dirInfo = new DirectoryInfo(path);
         fileInfos = dirInfo.GetFiles("*." + extension, searchOption);
         return fileInfos.Length;
     }
 
     public void OpenFolder(string path)
     {
-        path = path.TrimEnd(new[] { '\\', '/' }); // Mac doesn't like trailing slash
+        path = path.TrimEnd(new[] {'\\', '/'}); // Mac doesn't like trailing slash
 
-        DirectoryInfo directoryInfo = new DirectoryInfo(path);
+        var directoryInfo = new DirectoryInfo(path);
         UnityEngine.Application.OpenURL(Path.Combine("file://", directoryInfo.FullName));
     }
 
@@ -69,7 +72,7 @@ public class FileManager
 
     public Texture2D GetTextureFromFileInfo(FileInfo fileInfo)
     {
-        Texture2D tex = new Texture2D(0, 0, TextureFormat.RGBA32, false);
+        var tex = new Texture2D(0, 0, TextureFormat.RGBA32, false);
         tex.filterMode = FilterMode.Point;
         //tex.hideFlags = HideFlags.HideAndDontSave;
         if (tex.LoadImage(File.ReadAllBytes(fileInfo.FullName)) == false)
@@ -84,7 +87,7 @@ public class FileManager
 
     public Texture2D GetTextureFromPath(string path, string extension = ".png")
     {
-        FileInfo fi = new FileInfo(string.Concat(path, extension));
+        var fi = new FileInfo(string.Concat(path, extension));
         if (fi.Exists == false)
             return null;
 
@@ -93,22 +96,22 @@ public class FileManager
 
     public void SaveTextureToPng(Texture2D tex, string path, string fileName)
     {
-        byte[] data = ImageConversion.EncodeToPNG(tex);
-        string fullName = string.Concat(path, "/", fileName, ".png");
+        var data = ImageConversion.EncodeToPNG(tex);
+        var fullName = string.Concat(path, "/", fileName, ".png");
         File.WriteAllBytes(fullName, data);
     }
 
     public void SaveTextureToJPG(Texture2D tex, string path, string fileName, int quality)
     {
-        byte[] data = ImageConversion.EncodeToJPG(tex, quality);
-        string fullName = string.Concat(path, "/", fileName, ".jpg");
+        var data = ImageConversion.EncodeToJPG(tex, quality);
+        var fullName = string.Concat(path, "/", fileName, ".jpg");
         File.WriteAllBytes(fullName, data);
     }
 
     public void SaveReportToFile(StringBuilder reportSb, string path, string context)
     {
-        string fileName = string.Concat("REPORT_", context, "_", DateTime.Now.ToString("yyyy-MM-dd_HH-mm"));
-        string fullName = Path.Combine(path, fileName + ".txt");
+        var fileName = string.Concat("REPORT_", context, "_", DateTime.Now.ToString("yyyy-MM-dd_HH-mm"));
+        var fullName = Path.Combine(path, fileName + ".txt");
         File.WriteAllText(fullName, reportSb.ToString());
     }
 
@@ -117,11 +120,12 @@ public class FileManager
         if (fileInfos == null)
             return null;
 
-        T[] objects = new T[fileInfos.Length];
-        for (int i = 0; i < fileInfos.Length; i++)
+        var objects = new T[fileInfos.Length];
+        for (var i = 0; i < fileInfos.Length; i++)
         {
             objects[i] = GetObjectFromFileIndex<T>(i);
         }
+
         return objects;
     }
 
@@ -130,7 +134,7 @@ public class FileManager
         if (fileInfos == null || index >= fileInfos.Length)
             return default;
 
-        string jsonData = File.ReadAllText(fileInfos[index].FullName);
+        var jsonData = File.ReadAllText(fileInfos[index].FullName);
 
         if (jsonData == null || jsonData == "")
             return default;
@@ -142,22 +146,44 @@ public class FileManager
 
     public void SaveToJson<T>(T obj, string path, string filename, bool prettyPrint = false)
     {
-        string jsonStr = JsonUtility.ToJson(obj, prettyPrint);
-        string fullName = Path.Combine(path, filename + ".json");
+        var jsonStr = JsonUtility.ToJson(obj, prettyPrint);
+        var fullName = Path.Combine(path, filename + ".json");
         File.WriteAllText(fullName, jsonStr);
     }
 
     public string GetMd5(byte[] data)
     {
-        MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-        byte[] md5Hash = md5.ComputeHash(data);
+        var md5 = new MD5CryptoServiceProvider();
+        var md5Hash = md5.ComputeHash(data);
 
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < md5Hash.Length; i++)
+        var sb = new StringBuilder();
+        for (var i = 0; i < md5Hash.Length; i++)
         {
             sb.Append(md5Hash[i].ToString("X2"));
         }
 
         return sb.ToString();
+    }
+
+    public void SaveTextureToDds(Texture2D tex, string path, string texName)
+    {
+        var test = new MagickReadSettings();
+        test.ColorSpace = ColorSpace.sRGB;
+        test.ColorType = ColorType.TrueColorAlpha;
+        test.Format = MagickFormat.Rgba;
+        test.Width = tex.width;
+        test.Height = tex.height;
+
+        var bytes = tex.GetRawTextureData();
+        // var bytes = tex.GetRawTextureData().Reverse().ToArray();
+        
+        using (var image = new MagickImage(bytes, test))
+        {
+            // image.Rotate(180.0);
+            image.Flip();
+            // image.Flop();
+            image.Settings.SetDefine(MagickFormat.Dds, "compression", "dxt5");
+            image.Write(Path.Combine(path, $"{texName}.dds"));
+        }
     }
 }

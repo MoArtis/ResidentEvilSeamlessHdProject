@@ -5,6 +5,6 @@
         "x": 320,
         "y": 240
     },
-	"isJpgBg" : true,
+	"bgFormat" : "Jpg",
 	"jpgQuality": 90
 }

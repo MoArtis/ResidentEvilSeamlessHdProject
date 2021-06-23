@@ -23,6 +23,7 @@ namespace BgTk
     public struct MatchCandidate
     {
         public int[] fileInfoIndices; //An Array of int to handle duplicates
+
         public string md5;
         public Vector2Int texSize;
 
@@ -210,6 +211,14 @@ namespace BgTk
         public Vector2Int size;
     }
 
+    public enum ImageFormat
+    {
+        Png,
+        Jpg,
+        DdsBc7,
+        DdsBc3
+    }
+    
     [System.Serializable]
     public struct DumpFormat
     {
@@ -218,13 +227,40 @@ namespace BgTk
         public Vector2Int maskForcedSize; //if 0,0 => follow what is indicated in the BgInfo
         public Vector2Int maskUsageSize; //At which screen resolution these masks are being rendered / useful for RE3 with its inconsistent pixel density between BG and mask.
         public Vector2Int texPixelShift;
-        public bool isJpgBg;
+
+        public string bgFormat;
+        public ImageFormat BgFormat => stringToImageFormat(bgFormat);
+        
+        public string maskFormat;
+        public ImageFormat MaskFormat => stringToImageFormat(maskFormat);
+        
         public int jpgQuality;
         public bool isMonochromaticMask;
         public string alternateFormatName;
         public float monoMaskAmsHistogramMinMatchValue;
         public bool useBlackAsTransparent;
+        public bool usePeixotoCandidateIdentification;
 
+        private ImageFormat stringToImageFormat(string bgFormatStr)
+        {
+            switch (bgFormatStr)
+            {
+                case "Png":
+                    return ImageFormat.Png;
+                    
+                case "Jpg":
+                    return ImageFormat.Jpg;
+                    
+                case "DdsBc7":
+                    return ImageFormat.DdsBc7;
+                    
+                case "DdsBc3":
+                    return ImageFormat.DdsBc3;
+            }
+
+            return ImageFormat.Png;
+        }
+        
         public override bool Equals(object obj)
         {
             if (!(obj is DumpFormat))

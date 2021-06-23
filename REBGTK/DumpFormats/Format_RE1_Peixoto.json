@@ -52,5 +52,8 @@
         "x": 320,
         "y": 240
     },
-	"useBlackAsTransparent" : true
+	"useBlackAsTransparent" : true,
+	"usePeixotoCandidateIdentification" : true,
+	"bgFormat" : "DdsBc3",
+	"maskFormat" : "DdsBc3"
 }
