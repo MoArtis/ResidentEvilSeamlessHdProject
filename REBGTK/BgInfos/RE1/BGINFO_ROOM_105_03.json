@@ -17,6 +17,43 @@
                 0,
                 1
             ]
+        },
+        {
+            "formatName": "RE1 Peixoto",
+            "texNames": [
+                "dump228",
+                "dump229",
+                "dump230",
+                "dump352",
+                "dump353",
+                "dump231",
+                "dump232",
+                "dump233",
+                "dump354",
+                "dump355",
+                "dump234",
+                "dump235",
+                "dump236",
+                "dump356",
+                "dump357"
+            ],
+            "partIndices": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
         }
     ],
     "hasMask": true,

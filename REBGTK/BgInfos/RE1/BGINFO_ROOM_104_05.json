@@ -15,6 +15,25 @@
             "partIndices": [
                 0
             ]
+        },
+        {
+            "formatName": "RE1 Peixoto",
+            "texNames": [
+                "dump482",
+                "dump483",
+                "dump484",
+                "dump485",
+                "dump486",
+                "dump487"
+            ],
+            "partIndices": [
+                0,
+                0,
+                0,
+                1,
+                1,
+                1
+            ]
         }
     ],
     "hasMask": false,
