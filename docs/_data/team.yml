@@ -18,10 +18,15 @@
     icon: "fab fa-twitter"
   - link: "https://www.youtube.com/channel/UCXXDesaEK0DwrCLjpXFhidA"
     icon: "fab fa-youtube"
-- name: "Saeed"
-  image: /img/team/saeed_256.png
-  role: "Quality Assurance"
+- name: "Doze_D"
+  image: /img/team/doze_d_256.png
+  role: "HD textures"
   excerpt: ""
+  links:
+  - link: "https://twitter.com/DozeD9"
+    icon: "fab fa-twitter"
+  - link: "https://www.youtube.com/channel/UC030AjHSPMbaV4VBa61fbVQ"
+    icon: "fab fa-youtube"
 - name: "FrankWesker"
   image: /img/team/frankwesker_256.png
   role: "Additional Art"
@@ -33,3 +38,7 @@
     icon: "fab fa-deviantart"
   - link: "https://www.instagram.com/iFrankWesker/"
     icon: "fab fa-instagram"
+- name: "Saeed"
+  image: /img/team/saeed_256.png
+  role: "Quality Assurance"
+  excerpt: ""

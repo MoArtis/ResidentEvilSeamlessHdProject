@@ -52,7 +52,7 @@
 
   .team-member {
     @include breakpoint($small) {
-      width: calc(25%);
+      width: calc(20%);
       padding-bottom: 0em;
       padding-top: 0em;
       border-bottom-width: 0em;
@@ -74,7 +74,7 @@
 
     a {
 
-      width: 70%;
+      width: 80%;
 
       svg {
         font-size: $type-size-3;
