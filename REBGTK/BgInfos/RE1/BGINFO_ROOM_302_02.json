@@ -1,0 +1,40 @@
+{
+    "namePrefix": "ROOM_302_02",
+    "status": 0,
+    "bgMd5": "919B9AAFF10F422AFD219C76E15D0165",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_302_02"
+            ],
+            "partIndices": [
+                0
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_3022"
+            ],
+            "partIndices": [
+                0
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

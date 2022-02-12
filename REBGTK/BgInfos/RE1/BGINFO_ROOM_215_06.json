@@ -1,0 +1,44 @@
+{
+    "namePrefix": "ROOM_215_06",
+    "status": 0,
+    "bgMd5": "41F0CC83EA43567322CB5319E9CECA78",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_215_06",
+                "ROOM_215_06_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_2156",
+                "msk_2156"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "82778A08AA33C8FFAAEF7B4A17A67D17",
+    "maskTexSize": {
+        "x": 256,
+        "y": 256
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

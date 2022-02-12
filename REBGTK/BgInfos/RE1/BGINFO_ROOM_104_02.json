@@ -17,46 +17,12 @@
             ]
         },
         {
-            "formatName": "RE1 Peixoto",
+            "formatName": "RE1 TeamX",
             "texNames": [
-                "dump395",
-                "dump396",
-                "dump397",
-                "dump410",
-                "dump411",
-                "dump446",
-                "dump447",
-                "dump454",
-                "dump455",
-                "dump398",
-                "dump399",
-                "dump400",
-                "dump412",
-                "dump413",
-                "dump448",
-                "dump449",
-                "dump456",
-                "dump457"
+                "bkg_1042"
             ],
             "partIndices": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
+                0
             ]
         }
     ],

@@ -1,0 +1,140 @@
+{
+    "namePrefix": "ROOM_501_06",
+    "status": 0,
+    "bgMd5": "DC6BE23737A3B82DA9A7A73B371E497E",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_501_06",
+                "ROOM_501_06_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_5016",
+                "msk_5016"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 6,
+    "groupsCount": 1,
+    "maskMd5": "4E9C457C97C88897C57C8FE28B32D3A3",
+    "maskTexSize": {
+        "x": 128,
+        "y": 128
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 96
+                },
+                "dstPos": {
+                    "x": 217,
+                    "y": 107
+                },
+                "size": {
+                    "x": 40,
+                    "y": 32
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                280,
+                -1,
+                312,
+                320,
+                -1,
+                352,
+                360,
+                -1,
+                392,
+                400,
+                -1,
+                432,
+                440,
+                -1,
+                472,
+                480,
+                -1,
+                512,
+                524,
+                -1,
+                552,
+                564,
+                -1,
+                592,
+                604,
+                -1,
+                632,
+                644,
+                -1,
+                672,
+                684,
+                -1,
+                712,
+                724,
+                -1,
+                752,
+                764,
+                -1,
+                792,
+                804,
+                -1,
+                832,
+                845,
+                -1,
+                872,
+                885,
+                -1,
+                912,
+                925,
+                -1,
+                952,
+                965,
+                -1,
+                992,
+                1005,
+                -1,
+                1032,
+                1045,
+                -1,
+                1072,
+                1085,
+                -1,
+                1112,
+                1125,
+                -1,
+                1152,
+                1165,
+                -1,
+                1192,
+                1203,
+                -1,
+                1232,
+                1242,
+                -1,
+                1272
+            ]
+        }
+    ]
+}

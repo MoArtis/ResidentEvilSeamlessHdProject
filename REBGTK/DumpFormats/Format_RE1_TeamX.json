@@ -1,0 +1,14 @@
+{
+    "name": "RE1 TeamX",
+    "bgParts": [],
+	"maskUsageSize": {
+        "x": 320,
+        "y": 240
+    },
+	"maskForcedSize": {
+		"x": 256,
+		"y": 256
+	},
+	"useBlackAsTransparentInAlphaChannelTextures": true,
+	"useAlphaClipInAlphaChannelTextures": true
+}

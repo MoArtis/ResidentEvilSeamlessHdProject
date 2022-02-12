@@ -1,0 +1,172 @@
+{
+    "namePrefix": "ROOM_10A_00",
+    "status": 0,
+    "bgMd5": "1A298DE5E5DACE2BED7453ECA3720FCA",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_10A_00",
+                "ROOM_10A_00_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_10A0",
+                "msk_10A0"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 0,
+    "groupsCount": 1,
+    "maskMd5": "A094ABBB9C8BDC46D5497DF3146AF059",
+    "maskTexSize": {
+        "x": 128,
+        "y": 128
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 112
+                },
+                "dstPos": {
+                    "x": 228,
+                    "y": 201
+                },
+                "size": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                7,
+                13,
+                14,
+                16,
+                20,
+                -1,
+                23,
+                29,
+                30,
+                32,
+                36,
+                -1,
+                39,
+                52,
+                -1,
+                56,
+                68,
+                -1,
+                72,
+                84,
+                -1,
+                88,
+                99,
+                -1,
+                106,
+                115,
+                -1,
+                123,
+                130,
+                -1,
+                140,
+                146,
+                -1,
+                156,
+                162,
+                -1,
+                173,
+                178,
+                -1,
+                189,
+                194,
+                -1,
+                205,
+                211,
+                -1,
+                220,
+                227,
+                -1,
+                236,
+                244,
+                -1,
+                251
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 104
+                },
+                "dstPos": {
+                    "x": 228,
+                    "y": 193
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                4,
+                -1,
+                6,
+                20,
+                -1,
+                22,
+                36,
+                -1,
+                38,
+                45,
+                46,
+                52,
+                -1,
+                54,
+                61,
+                62,
+                68,
+                -1,
+                70,
+                77,
+                78,
+                84,
+                -1,
+                87,
+                92,
+                -1,
+                94,
+                97,
+                -1,
+                110,
+                112,
+                -1,
+                126
+            ]
+        }
+    ]
+}

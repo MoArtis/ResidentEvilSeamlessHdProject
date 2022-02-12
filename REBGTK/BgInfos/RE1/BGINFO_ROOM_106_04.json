@@ -19,27 +19,13 @@
             ]
         },
         {
-            "formatName": "RE1 Peixoto",
+            "formatName": "RE1 TeamX",
             "texNames": [
-                "dump638",
-                "dump639",
-                "dump640",
-                "dump641",
-                "dump642",
-                "dump643",
-                "dump644",
-                "dump645",
-                "dump646"
+                "bkg_1064",
+                "msk_1064"
             ],
             "partIndices": [
-                2,
-                2,
-                2,
                 0,
-                0,
-                0,
-                1,
-                1,
                 1
             ]
         }

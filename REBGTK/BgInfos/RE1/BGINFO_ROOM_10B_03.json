@@ -1,0 +1,334 @@
+{
+    "namePrefix": "ROOM_10B_03",
+    "status": 0,
+    "bgMd5": "3DF43A1C54CD2D04EF970E0B08B84EA5",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_10B_03",
+                "ROOM_10B_03_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_10B3",
+                "msk_10B3"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 3,
+    "groupsCount": 2,
+    "maskMd5": "236610079E3978E0851664F5D48F26E9",
+    "maskTexSize": {
+        "x": 128,
+        "y": 128
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 88
+                },
+                "dstPos": {
+                    "x": 81,
+                    "y": 200
+                },
+                "size": {
+                    "x": 8,
+                    "y": 40
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                41,
+                48,
+                -1,
+                51,
+                56,
+                -1,
+                319
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 8,
+                    "y": 88
+                },
+                "dstPos": {
+                    "x": 89,
+                    "y": 200
+                },
+                "size": {
+                    "x": 8,
+                    "y": 40
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                56,
+                64,
+                -1,
+                68,
+                72,
+                -1,
+                319
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 16,
+                    "y": 88
+                },
+                "dstPos": {
+                    "x": 97,
+                    "y": 200
+                },
+                "size": {
+                    "x": 8,
+                    "y": 40
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                72,
+                80,
+                -1,
+                84,
+                88,
+                -1,
+                319
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 96
+                },
+                "dstPos": {
+                    "x": 105,
+                    "y": 208
+                },
+                "size": {
+                    "x": 16,
+                    "y": 32
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                48,
+                64,
+                -1,
+                68,
+                80,
+                -1,
+                88,
+                96,
+                -1,
+                108,
+                112,
+                -1,
+                511
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 96
+                },
+                "dstPos": {
+                    "x": 121,
+                    "y": 208
+                },
+                "size": {
+                    "x": 16,
+                    "y": 32
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                112,
+                128,
+                -1,
+                132,
+                144,
+                -1,
+                152,
+                160,
+                -1,
+                171,
+                176,
+                -1,
+                511
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 56,
+                    "y": 104
+                },
+                "dstPos": {
+                    "x": 137,
+                    "y": 216
+                },
+                "size": {
+                    "x": 16,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                64,
+                -1,
+                67,
+                80,
+                -1,
+                88,
+                96,
+                -1,
+                108,
+                112,
+                -1,
+                383
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 72,
+                    "y": 104
+                },
+                "dstPos": {
+                    "x": 153,
+                    "y": 216
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                168,
+                192,
+                -1,
+                195,
+                216,
+                -1,
+                223,
+                240,
+                -1,
+                251,
+                264,
+                -1,
+                280,
+                288,
+                -1,
+                307,
+                312,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 72
+                },
+                "dstPos": {
+                    "x": 177,
+                    "y": 224
+                },
+                "size": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                96,
+                -1,
+                100,
+                112,
+                -1,
+                120,
+                128,
+                -1,
+                140,
+                144,
+                -1,
+                255
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 16,
+                    "y": 72
+                },
+                "dstPos": {
+                    "x": 193,
+                    "y": 224
+                },
+                "size": {
+                    "x": 24,
+                    "y": 16
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                216,
+                240,
+                -1,
+                243,
+                264,
+                -1,
+                271,
+                288,
+                -1,
+                300,
+                312,
+                -1,
+                327,
+                336,
+                -1,
+                355,
+                360,
+                -1,
+                383
+            ]
+        }
+    ]
+}

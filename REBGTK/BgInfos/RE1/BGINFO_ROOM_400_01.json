@@ -1,0 +1,120 @@
+{
+    "namePrefix": "ROOM_400_01",
+    "status": 0,
+    "bgMd5": "0BE0C8A3EF45A2E92FA13A1EAF6FDDBA",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_400_01",
+                "ROOM_400_01_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_4001",
+                "msk_4001"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 1,
+    "groupsCount": 1,
+    "maskMd5": "3357FE9024365F7FD893DF2C17EDA320",
+    "maskTexSize": {
+        "x": 128,
+        "y": 128
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 106
+                },
+                "dstPos": {
+                    "x": 311,
+                    "y": 0
+                },
+                "size": {
+                    "x": 9,
+                    "y": 22
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                17,
+                19,
+                -1,
+                26,
+                28,
+                -1,
+                35,
+                38,
+                -1,
+                44,
+                47,
+                -1,
+                53,
+                56,
+                -1,
+                62,
+                66,
+                -1,
+                71,
+                75,
+                -1,
+                80,
+                85,
+                -1,
+                89,
+                94,
+                -1,
+                98,
+                103,
+                -1,
+                107,
+                113,
+                -1,
+                116,
+                122,
+                -1,
+                125,
+                132,
+                -1,
+                134,
+                141,
+                -1,
+                143,
+                150,
+                -1,
+                152,
+                160,
+                161,
+                169,
+                170,
+                179,
+                188,
+                197
+            ]
+        }
+    ]
+}

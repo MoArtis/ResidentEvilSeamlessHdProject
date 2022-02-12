@@ -329,7 +329,7 @@ public class BgToolkitManager : MonoBehaviour
     public void GenerateSpecialMaskSources()
     {
         ChangeState(State.GenerateMaskSources);
-        DumpFormat dumpFormat = dumpFormats[recreateTexDumpFormatIndex];
+        // StartCoroutine(toolkit.AddTeamxNamingConvention(bgInfoPath, ProgressCallback, DoneCallback));
         StartCoroutine(toolkit.GenerateMaskSource(bgInfoPath, dumpTexturesPath, ProgressCallback, DoneCallback));
     }
 

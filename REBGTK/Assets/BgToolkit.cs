@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using xBRZNet;
+using Object = UnityEngine.Object;
 
 namespace BgTk
 {
@@ -1445,6 +1447,64 @@ namespace BgTk
             result.SetPixels(rpixels);
             result.Apply();
             return result;
+        }
+
+        public IEnumerator AddTeamxNamingConvention(string bgInfoPath, System.Action<ProgressInfo> progressCb,
+            System.Action doneCb)
+        {
+            progressCb(new ProgressInfo("Modifying Bg Infos", 0, 0, 0f));
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+
+            bgInfoPath = Path.Combine(bgInfoPath, game.ToString());
+            
+            var bgInfosCount = fm.LoadFiles(bgInfoPath, "json");
+
+            if (bgInfosCount <= 0)
+            {
+                doneCb();
+                yield break;
+            }
+
+            var bgInfos = fm.GetObjectsFromFiles<BgInfo>();
+
+            for (var i = 0; i < bgInfosCount; i++)
+            {
+                var bgInfo = bgInfos[i];
+                
+                progressCb(new ProgressInfo(string.Concat("Modifying Bg Infos - ", bgInfo.namePrefix), i + 1,
+                    bgInfosCount, i / (float)(bgInfosCount - 1)));
+                yield return new WaitForEndOfFrame();
+
+                var roomName = bgInfo.namePrefix;
+                var nameParts = roomName.Split(new[] {'_'}, StringSplitOptions.RemoveEmptyEntries);
+                var roomIndex = nameParts[1];
+                var camIndex = nameParts[2].TrimStart('0');
+                camIndex = string.IsNullOrEmpty(camIndex) ? "0" : camIndex;
+
+                var bgName = $"bkg_{roomIndex}{camIndex}";
+                var maskName = $"msk_{roomIndex}{camIndex}";
+
+                for (var j = 0; j < bgInfo.texDumpMatches.Length; j++)
+                {
+                    if (bgInfo.texDumpMatches[j].formatName != "RE1 Classic Rebirth")
+                        continue;
+
+                    var tdm = bgInfo.texDumpMatches[j];
+                    foreach (var partIndex in tdm.partIndices)
+                    {
+                        if (partIndex == 0)
+                            bgInfo.AddDumpMatch("RE1 TeamX", bgName, 0);
+                        else
+                            bgInfo.AddDumpMatch("RE1 TeamX", maskName, 1);
+                    }
+                }
+                
+                fm.SaveToJson(bgInfo, bgInfoPath, bgInfos[i].GetFileName(), prettifyJsonOnSave);
+            }
+            
+            yield return new WaitForEndOfFrame();
+            doneCb();
         }
     }
 }

@@ -17,6 +17,17 @@
                 0,
                 1
             ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_1056",
+                "msk_1056"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
         }
     ],
     "hasMask": true,

@@ -1,0 +1,74 @@
+{
+    "namePrefix": "ROOM_104_02",
+    "status": 0,
+    "bgMd5": "A7D77E408B05FFBB3D41B9B672595C52",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_104_02"
+            ],
+            "partIndices": [
+                0
+            ]
+        },
+        {
+            "formatName": "RE1 Peixoto",
+            "texNames": [
+                "dump395",
+                "dump396",
+                "dump397",
+                "dump410",
+                "dump411",
+                "dump446",
+                "dump447",
+                "dump454",
+                "dump455",
+                "dump398",
+                "dump399",
+                "dump400",
+                "dump412",
+                "dump413",
+                "dump448",
+                "dump449",
+                "dump456",
+                "dump457"
+            ],
+            "partIndices": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        }
+    ],
+    "hasMask": false,
+    "camPosIndex": 0,
+    "groupsCount": 0,
+    "maskMd5": "",
+    "maskTexSize": {
+        "x": 0,
+        "y": 0
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": []
+}

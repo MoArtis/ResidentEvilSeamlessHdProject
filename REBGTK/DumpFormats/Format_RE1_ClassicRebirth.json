@@ -4,5 +4,6 @@
 	"maskUsageSize": {
         "x": 320,
         "y": 240
-    }
+    },
+	"useBlackAsTransparentInAlphaChannelTextures": true
 }

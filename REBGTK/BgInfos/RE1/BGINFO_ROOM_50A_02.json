@@ -1,0 +1,2590 @@
+{
+    "namePrefix": "ROOM_50A_02",
+    "status": 0,
+    "bgMd5": "7620ECE05AAE3E2090411BAD04FDD3F9",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_50A_02",
+                "ROOM_50A_02_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_50A2",
+                "msk_50A2"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 2,
+    "groupsCount": 6,
+    "maskMd5": "172FA3E457404BBE623209D4CDB8C997",
+    "maskTexSize": {
+        "x": 256,
+        "y": 256
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 248
+                },
+                "dstPos": {
+                    "x": 230,
+                    "y": 90
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                1,
+                -1,
+                7,
+                9,
+                -1,
+                15,
+                17,
+                -1,
+                23,
+                25,
+                -1,
+                31,
+                34,
+                -1,
+                39,
+                42,
+                -1,
+                47,
+                50,
+                -1,
+                55,
+                58,
+                -1,
+                61
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 230,
+                    "y": 74
+                },
+                "size": {
+                    "x": 8,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                3,
+                -1,
+                7,
+                11,
+                -1,
+                15,
+                18,
+                -1,
+                79,
+                81,
+                -1,
+                87,
+                89,
+                -1,
+                95,
+                97,
+                -1,
+                103,
+                105,
+                -1,
+                111,
+                113,
+                -1,
+                119,
+                121,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 224
+                },
+                "dstPos": {
+                    "x": 230,
+                    "y": 66
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                31,
+                38,
+                39,
+                45,
+                -1,
+                47,
+                53,
+                -1,
+                55,
+                60,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 8,
+                    "y": 248
+                },
+                "dstPos": {
+                    "x": 238,
+                    "y": 90
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                111,
+                125,
+                126
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 248
+                },
+                "dstPos": {
+                    "x": 254,
+                    "y": 90
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                5,
+                8,
+                -1,
+                12,
+                16,
+                -1,
+                19,
+                24,
+                -1,
+                26,
+                32,
+                33,
+                40
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 8,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 238,
+                    "y": 74
+                },
+                "size": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                255
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 8,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 238,
+                    "y": 58
+                },
+                "size": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                83,
+                -1,
+                95,
+                98,
+                -1,
+                111,
+                114,
+                -1,
+                127,
+                129,
+                -1,
+                255
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 254,
+                    "y": 74
+                },
+                "size": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                8,
+                16,
+                -1,
+                24,
+                32,
+                -1,
+                40,
+                48,
+                -1,
+                56,
+                64,
+                -1,
+                72,
+                80,
+                -1,
+                88,
+                96,
+                -1,
+                105,
+                112,
+                -1,
+                120,
+                128,
+                -1,
+                136,
+                144,
+                -1,
+                151,
+                160,
+                -1,
+                167,
+                176,
+                -1,
+                183,
+                192,
+                -1,
+                198,
+                208,
+                -1,
+                214,
+                224,
+                -1,
+                230,
+                240,
+                -1,
+                246
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 216
+                },
+                "dstPos": {
+                    "x": 254,
+                    "y": 58
+                },
+                "size": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                80,
+                -1,
+                86,
+                96,
+                -1,
+                102,
+                112,
+                -1,
+                119,
+                128,
+                -1,
+                135,
+                144,
+                -1,
+                151,
+                160,
+                -1,
+                167,
+                176,
+                -1,
+                183,
+                192,
+                -1,
+                199,
+                208,
+                -1,
+                215,
+                224,
+                -1,
+                231,
+                240,
+                -1,
+                247
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 248
+                },
+                "dstPos": {
+                    "x": 260,
+                    "y": 85
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                1,
+                -1,
+                23,
+                25,
+                -1,
+                31,
+                33,
+                -1,
+                39,
+                41,
+                -1,
+                47,
+                50,
+                -1,
+                55
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 240
+                },
+                "dstPos": {
+                    "x": 260,
+                    "y": 77
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                7,
+                14,
+                15,
+                21,
+                -1,
+                23,
+                28,
+                -1,
+                31,
+                35,
+                -1,
+                39,
+                43,
+                -1,
+                47,
+                51,
+                -1,
+                55,
+                58,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 248
+                },
+                "dstPos": {
+                    "x": 268,
+                    "y": 85
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                111
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 64,
+                    "y": 248
+                },
+                "dstPos": {
+                    "x": 284,
+                    "y": 85
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                10,
+                16,
+                -1,
+                24,
+                32,
+                -1,
+                39,
+                48,
+                -1,
+                53,
+                64,
+                -1,
+                68,
+                80,
+                -1,
+                82
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 260,
+                    "y": 69
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": []
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 268,
+                    "y": 69
+                },
+                "size": {
+                    "x": 8,
+                    "y": 16
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                7,
+                14,
+                15,
+                21,
+                -1,
+                23,
+                28,
+                -1,
+                31,
+                35,
+                -1,
+                39,
+                42,
+                -1,
+                47,
+                49,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 56,
+                    "y": 240
+                },
+                "dstPos": {
+                    "x": 276,
+                    "y": 77
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 72,
+                    "y": 240
+                },
+                "dstPos": {
+                    "x": 292,
+                    "y": 77
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                13,
+                16,
+                -1,
+                27,
+                32,
+                -1,
+                42,
+                48,
+                -1,
+                56,
+                64,
+                -1,
+                71,
+                80,
+                -1,
+                86,
+                96,
+                -1,
+                100,
+                112,
+                -1,
+                115
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 224
+                },
+                "dstPos": {
+                    "x": 268,
+                    "y": 61
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": []
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 56,
+                    "y": 224
+                },
+                "dstPos": {
+                    "x": 276,
+                    "y": 61
+                },
+                "size": {
+                    "x": 8,
+                    "y": 16
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                27,
+                34,
+                35,
+                41,
+                -1,
+                43,
+                48,
+                -1,
+                51,
+                56,
+                -1,
+                59,
+                64,
+                -1,
+                67,
+                72,
+                -1,
+                75,
+                80,
+                -1,
+                83,
+                88,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 64,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 284,
+                    "y": 69
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                48,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 80,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 300,
+                    "y": 69
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 1,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                48,
+                -1,
+                59,
+                64,
+                -1,
+                74,
+                80,
+                -1,
+                89,
+                96,
+                -1,
+                103,
+                112,
+                -1,
+                118
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 96,
+                    "y": 240
+                },
+                "dstPos": {
+                    "x": 281,
+                    "y": 94
+                },
+                "size": {
+                    "x": 8,
+                    "y": 16
+                }
+            },
+            "groupIndex": 2,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                39,
+                46,
+                47,
+                52,
+                -1,
+                55,
+                59,
+                -1,
+                63,
+                65,
+                -1,
+                95,
+                97,
+                -1,
+                103
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 104,
+                    "y": 248
+                },
+                "dstPos": {
+                    "x": 289,
+                    "y": 102
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 2,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                30,
+                32,
+                -1,
+                45,
+                48,
+                -1,
+                60,
+                64,
+                -1,
+                74,
+                85,
+                -1,
+                89
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 104,
+                    "y": 240
+                },
+                "dstPos": {
+                    "x": 289,
+                    "y": 94
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 2,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                5,
+                -1,
+                15,
+                20,
+                -1,
+                31,
+                34,
+                -1,
+                47,
+                49,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 104,
+                    "y": 232
+                },
+                "dstPos": {
+                    "x": 289,
+                    "y": 86
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 2,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                46,
+                47,
+                61,
+                -1,
+                63,
+                75,
+                -1,
+                79,
+                90,
+                -1,
+                95,
+                104,
+                -1,
+                111,
+                119,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 192
+                },
+                "dstPos": {
+                    "x": 264,
+                    "y": 185
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                9,
+                -1,
+                23,
+                33,
+                -1,
+                47,
+                58,
+                -1,
+                71,
+                82,
+                -1,
+                95,
+                106,
+                -1,
+                119,
+                130,
+                -1,
+                143,
+                154,
+                -1,
+                167,
+                179,
+                -1,
+                191,
+                203,
+                -1,
+                215,
+                227,
+                -1,
+                239,
+                251,
+                -1,
+                263,
+                276,
+                -1,
+                287,
+                300,
+                -1,
+                311,
+                324,
+                -1,
+                335,
+                348,
+                -1,
+                359,
+                372,
+                -1,
+                383,
+                397,
+                -1,
+                407,
+                421,
+                -1,
+                431,
+                445,
+                -1,
+                455,
+                469,
+                -1,
+                479,
+                494,
+                -1,
+                503,
+                518,
+                -1,
+                527,
+                542,
+                -1,
+                551,
+                566,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 192
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 185
+                },
+                "size": {
+                    "x": 32,
+                    "y": 24
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                767
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 168
+                },
+                "dstPos": {
+                    "x": 264,
+                    "y": 161
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                4,
+                -1,
+                23,
+                28,
+                -1,
+                47,
+                52,
+                -1,
+                71,
+                76,
+                -1,
+                95,
+                101,
+                -1,
+                119,
+                125,
+                -1,
+                143,
+                149,
+                -1,
+                167,
+                173,
+                -1,
+                191,
+                198,
+                -1,
+                215,
+                222,
+                -1,
+                239,
+                246,
+                -1,
+                263,
+                270,
+                -1,
+                287,
+                294,
+                -1,
+                311,
+                319,
+                -1,
+                335,
+                343,
+                -1,
+                359,
+                367,
+                -1,
+                383,
+                391,
+                -1,
+                407,
+                416,
+                -1,
+                431,
+                440,
+                -1,
+                455,
+                464,
+                -1,
+                479,
+                488,
+                -1,
+                503,
+                512,
+                -1,
+                527,
+                537,
+                -1,
+                551,
+                561,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 168
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 161
+                },
+                "size": {
+                    "x": 32,
+                    "y": 24
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                767
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 144
+                },
+                "dstPos": {
+                    "x": 264,
+                    "y": 137
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                215,
+                217,
+                -1,
+                239,
+                241,
+                -1,
+                263,
+                265,
+                -1,
+                287,
+                289,
+                -1,
+                311,
+                313,
+                -1,
+                335,
+                338,
+                -1,
+                359,
+                362,
+                -1,
+                383,
+                386,
+                -1,
+                407,
+                410,
+                -1,
+                431,
+                434,
+                -1,
+                455,
+                459,
+                -1,
+                479,
+                483,
+                -1,
+                503,
+                507,
+                -1,
+                527,
+                531,
+                -1,
+                551,
+                556,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 144
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 137
+                },
+                "size": {
+                    "x": 8,
+                    "y": 24
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                191
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 160
+                },
+                "dstPos": {
+                    "x": 296,
+                    "y": 153
+                },
+                "size": {
+                    "x": 24,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                191
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 152
+                },
+                "dstPos": {
+                    "x": 296,
+                    "y": 145
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 144
+                },
+                "dstPos": {
+                    "x": 296,
+                    "y": 137
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                6,
+                8,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 152
+                },
+                "dstPos": {
+                    "x": 304,
+                    "y": 145
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 144
+                },
+                "dstPos": {
+                    "x": 304,
+                    "y": 137
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                32,
+                40,
+                48,
+                51,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 152
+                },
+                "dstPos": {
+                    "x": 312,
+                    "y": 145
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 144
+                },
+                "dstPos": {
+                    "x": 312,
+                    "y": 137
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                39,
+                43,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 264,
+                    "y": 113
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 136
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 129
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                12,
+                16,
+                -1,
+                29,
+                32,
+                -1,
+                45,
+                48,
+                -1,
+                61,
+                64,
+                -1,
+                77,
+                80,
+                -1,
+                94,
+                96,
+                -1,
+                110,
+                112,
+                -1,
+                126
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 128
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 121
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                10,
+                16,
+                -1,
+                27,
+                32,
+                -1,
+                43,
+                48,
+                -1,
+                59,
+                64,
+                -1,
+                75,
+                80,
+                -1,
+                92,
+                96,
+                -1,
+                108,
+                112,
+                -1,
+                124
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 113
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 296,
+                    "y": 113
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                1,
+                7,
+                8,
+                15,
+                -1,
+                17,
+                24,
+                25,
+                32,
+                33,
+                40,
+                41,
+                48,
+                -1,
+                50,
+                56,
+                -1,
+                58
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 304,
+                    "y": 113
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                15
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 312,
+                    "y": 113
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                4,
+                -1,
+                7,
+                12,
+                -1,
+                15,
+                23
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 96
+                },
+                "dstPos": {
+                    "x": 264,
+                    "y": 89
+                },
+                "size": {
+                    "x": 24,
+                    "y": 24
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                47,
+                68,
+                -1,
+                262,
+                264,
+                -1,
+                284,
+                288,
+                -1,
+                307,
+                312,
+                -1,
+                329,
+                336,
+                -1,
+                352,
+                360,
+                -1,
+                376,
+                384,
+                -1,
+                400,
+                408,
+                -1,
+                425,
+                432,
+                -1,
+                575
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 112
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 105
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                16,
+                -1,
+                21,
+                24,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 112
+                },
+                "dstPos": {
+                    "x": 296,
+                    "y": 105
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                6,
+                7,
+                12,
+                -1,
+                15,
+                19,
+                -1,
+                57,
+                61,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 112
+                },
+                "dstPos": {
+                    "x": 304,
+                    "y": 105
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 48,
+                    "y": 112
+                },
+                "dstPos": {
+                    "x": 312,
+                    "y": 105
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                32,
+                34,
+                -1,
+                40,
+                43,
+                -1,
+                48,
+                52,
+                -1,
+                56,
+                60,
+                -1,
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 104
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 97
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 104
+                },
+                "dstPos": {
+                    "x": 296,
+                    "y": 97
+                },
+                "size": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                63
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 104
+                },
+                "dstPos": {
+                    "x": 304,
+                    "y": 97
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                1,
+                -1,
+                15,
+                17,
+                -1,
+                31,
+                33,
+                -1,
+                47,
+                49,
+                -1,
+                63,
+                65,
+                -1,
+                79,
+                81,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 96
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 89
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                1,
+                -1,
+                13,
+                16,
+                -1,
+                27,
+                32,
+                -1,
+                42,
+                48,
+                -1,
+                56,
+                64,
+                -1,
+                71,
+                80,
+                -1,
+                85,
+                96,
+                -1,
+                100,
+                112,
+                -1,
+                114
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 40,
+                    "y": 96
+                },
+                "dstPos": {
+                    "x": 304,
+                    "y": 89
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 3,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                1,
+                -1,
+                15,
+                17,
+                -1,
+                31,
+                33,
+                -1,
+                47,
+                49,
+                -1,
+                63,
+                65,
+                -1,
+                79,
+                81,
+                -1,
+                95,
+                97,
+                -1,
+                111,
+                113,
+                -1,
+                127
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 56,
+                    "y": 176
+                },
+                "dstPos": {
+                    "x": 256,
+                    "y": 49
+                },
+                "size": {
+                    "x": 16,
+                    "y": 40
+                }
+            },
+            "groupIndex": 4,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                95,
+                110,
+                111,
+                126,
+                127,
+                141,
+                -1,
+                143,
+                156,
+                -1,
+                159,
+                171,
+                -1,
+                175,
+                186,
+                -1,
+                191,
+                201,
+                -1,
+                207,
+                216,
+                -1,
+                223,
+                232,
+                -1,
+                239,
+                247,
+                -1,
+                255,
+                262,
+                -1,
+                271,
+                278,
+                -1,
+                287,
+                294,
+                -1,
+                303,
+                310,
+                -1,
+                319,
+                326,
+                -1,
+                335,
+                342,
+                -1,
+                351,
+                358,
+                -1,
+                367,
+                374,
+                -1,
+                383,
+                390,
+                -1,
+                398,
+                407,
+                -1,
+                413,
+                423,
+                -1,
+                428,
+                439,
+                -1,
+                443,
+                455,
+                -1,
+                458,
+                471,
+                -1,
+                473,
+                487,
+                488,
+                550
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 72,
+                    "y": 168
+                },
+                "dstPos": {
+                    "x": 272,
+                    "y": 41
+                },
+                "size": {
+                    "x": 8,
+                    "y": 32
+                }
+            },
+            "groupIndex": 4,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                39,
+                46,
+                47,
+                53,
+                -1,
+                55,
+                61,
+                -1,
+                63,
+                68,
+                -1,
+                71,
+                75,
+                -1,
+                79,
+                82,
+                -1,
+                87,
+                89,
+                -1,
+                190,
+                192,
+                -1,
+                197,
+                200,
+                -1,
+                204,
+                208,
+                -1,
+                211,
+                216,
+                -1,
+                219,
+                224,
+                -1,
+                226,
+                232,
+                233,
+                240
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 88,
+                    "y": 200
+                },
+                "dstPos": {
+                    "x": 288,
+                    "y": 73
+                },
+                "size": {
+                    "x": 32,
+                    "y": 16
+                }
+            },
+            "groupIndex": 4,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                23,
+                -1,
+                31,
+                54,
+                -1,
+                63,
+                84,
+                -1,
+                95,
+                115,
+                -1,
+                127,
+                146,
+                -1,
+                159,
+                176,
+                -1,
+                191,
+                207,
+                -1,
+                223,
+                237,
+                -1,
+                255,
+                268,
+                -1,
+                287,
+                299,
+                -1,
+                319,
+                329,
+                -1,
+                351,
+                360,
+                -1,
+                383,
+                391,
+                -1,
+                415,
+                421,
+                -1,
+                447,
+                452,
+                -1,
+                479,
+                482,
+                -1,
+                494,
+                497,
+                -1,
+                511
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 80,
+                    "y": 184
+                },
+                "dstPos": {
+                    "x": 280,
+                    "y": 57
+                },
+                "size": {
+                    "x": 40,
+                    "y": 16
+                }
+            },
+            "groupIndex": 4,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                599,
+                632,
+                -1,
+                639
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 80,
+                    "y": 168
+                },
+                "dstPos": {
+                    "x": 280,
+                    "y": 41
+                },
+                "size": {
+                    "x": 40,
+                    "y": 16
+                }
+            },
+            "groupIndex": 4,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                3,
+                -1,
+                39,
+                42,
+                -1,
+                79,
+                81,
+                -1,
+                639
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 80,
+                    "y": 152
+                },
+                "dstPos": {
+                    "x": 280,
+                    "y": 25
+                },
+                "size": {
+                    "x": 40,
+                    "y": 16
+                }
+            },
+            "groupIndex": 4,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                17,
+                -1,
+                39,
+                56,
+                -1,
+                79,
+                95,
+                -1,
+                119,
+                134,
+                -1,
+                159,
+                173,
+                -1,
+                199,
+                212,
+                -1,
+                239,
+                251,
+                -1,
+                279,
+                290,
+                -1,
+                319,
+                330,
+                -1,
+                359,
+                369,
+                -1,
+                399,
+                408,
+                -1,
+                439,
+                447,
+                -1,
+                479,
+                486,
+                -1,
+                519,
+                525,
+                -1,
+                559,
+                564,
+                -1,
+                599,
+                603,
+                -1,
+                639
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 96,
+                    "y": 127
+                },
+                "dstPos": {
+                    "x": 296,
+                    "y": 0
+                },
+                "size": {
+                    "x": 24,
+                    "y": 25
+                }
+            },
+            "groupIndex": 4,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                22,
+                23,
+                45,
+                -1,
+                47,
+                68,
+                -1,
+                71,
+                92,
+                -1,
+                95,
+                115,
+                -1,
+                119,
+                138,
+                -1,
+                143,
+                161,
+                -1,
+                167,
+                184,
+                -1,
+                191,
+                207,
+                -1,
+                215,
+                230,
+                -1,
+                239,
+                254,
+                -1,
+                263,
+                277,
+                -1,
+                287,
+                300,
+                -1,
+                311,
+                323,
+                -1,
+                335,
+                346,
+                -1,
+                359,
+                369,
+                -1,
+                383,
+                392,
+                -1,
+                407,
+                415,
+                -1,
+                431,
+                439,
+                -1,
+                455,
+                462,
+                -1,
+                479,
+                485,
+                -1,
+                503,
+                508,
+                -1,
+                527,
+                531,
+                -1,
+                551,
+                554,
+                -1,
+                575,
+                577,
+                -1,
+                599
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 64,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 256,
+                    "y": 113
+                },
+                "size": {
+                    "x": 8,
+                    "y": 32
+                }
+            },
+            "groupIndex": 5,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                1,
+                -1,
+                7,
+                9,
+                -1,
+                15,
+                18,
+                -1,
+                23,
+                26,
+                -1,
+                31,
+                34,
+                -1,
+                39,
+                42,
+                -1,
+                47,
+                51,
+                -1,
+                55,
+                59,
+                -1,
+                63,
+                67,
+                -1,
+                71,
+                75,
+                -1,
+                79,
+                83,
+                -1,
+                87,
+                92,
+                -1,
+                95,
+                100,
+                -1,
+                103,
+                108,
+                -1,
+                111,
+                116,
+                -1,
+                119,
+                125,
+                -1,
+                127,
+                133,
+                -1,
+                135,
+                141,
+                -1,
+                143,
+                149,
+                -1,
+                151,
+                157,
+                -1,
+                159,
+                166,
+                167,
+                174,
+                175,
+                182,
+                183,
+                190,
+                191,
+                199,
+                207,
+                215,
+                223,
+                231
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 56,
+                    "y": 96
+                },
+                "dstPos": {
+                    "x": 248,
+                    "y": 89
+                },
+                "size": {
+                    "x": 16,
+                    "y": 24
+                }
+            },
+            "groupIndex": 5,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                28,
+                43,
+                -1,
+                45,
+                58,
+                -1,
+                63,
+                73,
+                -1,
+                79,
+                88,
+                -1,
+                95,
+                103,
+                -1,
+                111,
+                118,
+                -1,
+                127,
+                134,
+                -1,
+                143,
+                150,
+                -1,
+                159,
+                166,
+                -1,
+                175,
+                182,
+                -1,
+                191,
+                199,
+                -1,
+                207,
+                215,
+                -1,
+                223,
+                231,
+                -1,
+                239,
+                247,
+                -1,
+                255,
+                263,
+                -1,
+                271,
+                280,
+                -1,
+                287,
+                296,
+                -1,
+                303,
+                312,
+                -1,
+                319,
+                328,
+                -1,
+                335,
+                345,
+                -1,
+                351,
+                361,
+                -1,
+                367,
+                377,
+                -1,
+                383
+            ]
+        }
+    ]
+}

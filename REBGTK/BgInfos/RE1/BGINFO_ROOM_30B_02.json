@@ -1,0 +1,271 @@
+{
+    "namePrefix": "ROOM_30B_02",
+    "status": 0,
+    "bgMd5": "4A878FF2BE8CC4F970C7085829C2BD64",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_30B_02",
+                "ROOM_30B_02_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_30B2",
+                "msk_30B2"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 2,
+    "groupsCount": 1,
+    "maskMd5": "C52B633B1919DADED2C32C245E49A89F",
+    "maskTexSize": {
+        "x": 128,
+        "y": 128
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 48
+                },
+                "dstPos": {
+                    "x": 74,
+                    "y": 97
+                },
+                "size": {
+                    "x": 16,
+                    "y": 80
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                96,
+                -1,
+                1279
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 16,
+                    "y": 48
+                },
+                "dstPos": {
+                    "x": 90,
+                    "y": 97
+                },
+                "size": {
+                    "x": 8,
+                    "y": 80
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                48,
+                -1,
+                54,
+                56,
+                -1,
+                639
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 24,
+                    "y": 48
+                },
+                "dstPos": {
+                    "x": 98,
+                    "y": 97
+                },
+                "size": {
+                    "x": 8,
+                    "y": 80
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                64,
+                72,
+                -1,
+                74,
+                80,
+                -1,
+                83,
+                88,
+                -1,
+                93,
+                96,
+                -1,
+                102,
+                104,
+                -1,
+                614,
+                616,
+                -1,
+                622,
+                624,
+                -1,
+                630,
+                632,
+                -1,
+                637
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 32,
+                    "y": 48
+                },
+                "dstPos": {
+                    "x": 106,
+                    "y": 97
+                },
+                "size": {
+                    "x": 8,
+                    "y": 80
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                112,
+                120,
+                121,
+                128,
+                129,
+                136,
+                137,
+                144,
+                145,
+                152,
+                153,
+                160,
+                161,
+                168,
+                169,
+                176,
+                177,
+                184,
+                185,
+                192,
+                193,
+                200,
+                201,
+                208,
+                209,
+                216,
+                217,
+                224,
+                225,
+                232,
+                233,
+                240,
+                241,
+                248,
+                249,
+                256,
+                257,
+                264,
+                265,
+                272,
+                280,
+                288,
+                296,
+                304,
+                312,
+                320,
+                328,
+                336,
+                344,
+                352,
+                360,
+                368,
+                376,
+                377,
+                384,
+                385,
+                392,
+                -1,
+                394,
+                400,
+                -1,
+                402,
+                408,
+                -1,
+                410,
+                416,
+                -1,
+                419,
+                424,
+                -1,
+                427,
+                432,
+                -1,
+                435,
+                440,
+                -1,
+                443,
+                448,
+                -1,
+                451,
+                456,
+                -1,
+                459,
+                464,
+                -1,
+                467,
+                472,
+                -1,
+                475,
+                480,
+                -1,
+                483,
+                488,
+                -1,
+                491,
+                496,
+                -1,
+                499,
+                504,
+                -1,
+                506,
+                512,
+                -1,
+                514,
+                520,
+                521,
+                528,
+                529,
+                536,
+                537,
+                544,
+                552
+            ]
+        }
+    ]
+}

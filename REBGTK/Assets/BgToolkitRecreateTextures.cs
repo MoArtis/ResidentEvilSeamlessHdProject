@@ -331,9 +331,25 @@ namespace BgTk
                         var aColors = alphaChannels[mask.groupIndex].GetPixels(mask.patch.dstPos.x, mask.patch.dstPos.y,
                             mask.patch.size.x, mask.patch.size.y);
 
-                        for (var k = 0; k < pColors.Length; k++)
+                        if (dumpFormat.useBlackAsTransparentInAlphaChannelTextures)
                         {
-                            pColors[k].a = aColors[k].a;
+                            for (var k = 0; k < pColors.Length; k++)
+                            {
+                                if (dumpFormat.useAlphaClipInAlphaChannelTextures)
+                                    pColors[k].a = aColors[k].r < 0.65f ? 0f : 1f;
+                                else
+                                    pColors[k].a = aColors[k].r;
+                            }
+                        }
+                        else
+                        {
+                            for (var k = 0; k < pColors.Length; k++)
+                            {
+                                if (dumpFormat.useAlphaClipInAlphaChannelTextures)
+                                    pColors[k].a = aColors[k].a < 0.65f ? 0f : 1f;
+                                else
+                                    pColors[k].a = aColors[k].a;
+                            }
                         }
 
                         var srcPosY = mask.patch.srcPos.y + (maskTex.height - bgInfo.maskTexSize.y * maskRatio);

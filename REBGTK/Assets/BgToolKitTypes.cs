@@ -241,6 +241,9 @@ namespace BgTk
         public bool useBlackAsTransparent;
         public bool usePeixotoCandidateIdentification;
 
+        public bool useBlackAsTransparentInAlphaChannelTextures;
+        public bool useAlphaClipInAlphaChannelTextures;
+
         private ImageFormat stringToImageFormat(string bgFormatStr)
         {
             switch (bgFormatStr)

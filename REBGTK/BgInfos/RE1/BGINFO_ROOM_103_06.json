@@ -1,0 +1,146 @@
+{
+    "namePrefix": "ROOM_103_06",
+    "status": 0,
+    "bgMd5": "FABBFE24A19FCD0D7070A94E93534E96",
+    "bgTexSize": {
+        "x": 320,
+        "y": 240
+    },
+    "texDumpMatches": [
+        {
+            "formatName": "RE1 Classic Rebirth",
+            "texNames": [
+                "ROOM_103_06",
+                "ROOM_103_06_mask"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_1036",
+                "msk_1036"
+            ],
+            "partIndices": [
+                0,
+                1
+            ]
+        }
+    ],
+    "hasMask": true,
+    "camPosIndex": 6,
+    "groupsCount": 1,
+    "maskMd5": "67CC46557E567EE24382678B0BEFE120",
+    "maskTexSize": {
+        "x": 128,
+        "y": 128
+    },
+    "useProcessedMaskTex": false,
+    "isReversedMaskOrder": false,
+    "masks": [
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 120
+                },
+                "dstPos": {
+                    "x": 112,
+                    "y": 198
+                },
+                "size": {
+                    "x": 16,
+                    "y": 8
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                0,
+                -1,
+                8,
+                17,
+                -1,
+                25,
+                32,
+                -1,
+                41,
+                48,
+                -1,
+                57,
+                64,
+                -1,
+                73,
+                80,
+                -1,
+                88,
+                97,
+                -1,
+                104,
+                115,
+                -1,
+                119
+            ]
+        },
+        {
+            "patch": {
+                "srcPos": {
+                    "x": 0,
+                    "y": 104
+                },
+                "dstPos": {
+                    "x": 112,
+                    "y": 182
+                },
+                "size": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            "groupIndex": 0,
+            "ignoreAltMaskSource": false,
+            "opaqueIndices": [
+                113,
+                128,
+                129,
+                134,
+                144,
+                145,
+                149,
+                150,
+                160,
+                -1,
+                170,
+                176,
+                -1,
+                178,
+                181,
+                182,
+                184,
+                -1,
+                186,
+                192,
+                193,
+                197,
+                198,
+                200,
+                -1,
+                202,
+                208,
+                209,
+                213,
+                214,
+                224,
+                229,
+                230,
+                240,
+                242,
+                -1,
+                247
+            ]
+        }
+    ]
+}

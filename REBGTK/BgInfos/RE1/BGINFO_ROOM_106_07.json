@@ -15,6 +15,15 @@
             "partIndices": [
                 0
             ]
+        },
+        {
+            "formatName": "RE1 TeamX",
+            "texNames": [
+                "bkg_1067"
+            ],
+            "partIndices": [
+                0
+            ]
         }
     ],
     "hasMask": false,
