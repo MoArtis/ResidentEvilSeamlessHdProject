@@ -15,17 +15,8 @@
             "partIndices": [
                 0
             ]
-        },
-        {
-            "formatName": "RE3 GameCube",
-            "texNames": [
-                "tex1_640x480_e15436761392abba_5"
-            ],
-            "partIndices": [
-                0
-            ]
         }
-    ],
+            ],
     "hasMask": false,
     "camPosIndex": 0,
     "groupsCount": 0,
