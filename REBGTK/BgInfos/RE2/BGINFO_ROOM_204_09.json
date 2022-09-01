@@ -12,6 +12,7 @@
             "texNames": [
                 "ROOM_204_09",
                 "ROOM_204_09_mask"
+			
             ],
             "partIndices": [
                 0,
@@ -23,12 +24,16 @@
             "texNames": [
                 "tex1_128x160_35eaa3f7a61503a4_5",
                 "tex1_256x240_9d8bb59f46f527a0_5",
-				"tex1_256x256_161450e70b5b5b41_da4f7af524470b60_9"
+			"tex1_256x256_161450e70b5b5b4_da4f7af524470b6_9",
+			"tex1_128x160_26bdf2f8590429ae_5",
+			"tex1_256x240_b54ea6302a428a8b_5"
             ],
             "partIndices": [
                 1,
                 0,
-				2
+			2,
+			1,
+			0
             ]
         }
     ],

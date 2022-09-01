@@ -10,12 +10,16 @@
         {
             "formatName": "RE2 Classic Rebirth",
             "texNames": [
+			"ROOM_112_15",
+                "ROOM_112_15_mask",
                 "ROOM_20F_07",
                 "ROOM_20F_07_mask"
             ],
             "partIndices": [
                 0,
-                1
+                1,
+			0,
+			1
             ]
         },
         {
