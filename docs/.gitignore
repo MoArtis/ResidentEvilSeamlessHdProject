@@ -1,3 +1,8 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
 *.gem
 *.sublime-project
 *.sublime-workspace
@@ -12,3 +17,4 @@ example/_site
 Gemfile.lock
 node_modules
 npm-debug.log*
+.vscode

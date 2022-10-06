@@ -45,10 +45,10 @@
   }
 
   a {
-    color: $notice-color;
+    color: mix(#000, $notice-color, 20%);
 
     &:hover {
-      color: mix(#000, $notice-color, 40%);
+      color: mix(#000, $notice-color, 50%);
     }
   }
 

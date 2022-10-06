@@ -89,38 +89,24 @@ backgrounds:
   - /RE2_bgs/ROOM_60F_04
 
 downloads:
-   - caption: "1.2 Pack (Emulator included)"
+   - caption: "2.0 Pack for Classic Rebirth"
      buttons:
-      - label: "Mega"
-        url: "https://mega.nz/file/LVRXlCba#4enNY48ZnP79PVWDpDIBeqkMjYaSWDc6uNrZ4-0scDw"
-      - label: "MediaFire"
-        url: "https://www.mediafire.com/file/r5pbhqs6p34p28m/RE2SHDP-1.2.zip/file"
-        color: "facebook"
-      - label: "GDrive"
-        url: "https://drive.google.com/uc?id=1q23weqLE_Dl1o5a5besIgCCA0QuD6DK9&export=download"
-        color: "gdrive"
-   # - caption: "1.1 to 1.2 Patch"
-     # buttons:
-      # - label: "Mega"
-        # url: "https://mega.nz/file/fVYh1QjJ#1Bk61iHkz2gtXaeoIRdL1x-GKkVW2F4UKFOFBnl9RVw"
-      # - label: "MediaFire"
-        # url: "https://www.mediafire.com/file/ogx88qgid14vr7f/RE2SHDP_-_1.1_to_1.2_patch.zip/file"
-        # color: "facebook"
-      # - label: "GDrive"
-        # url: "https://drive.google.com/uc?id=1LBTAIx2TG0EHnx5bu33Wile0h-99MnYp&export=download"
-        # color: "gdrive"
-   - caption: "FMV Pack (Optional)"
+      - label: "ModDb"
+        url: "https://www.moddb.com/mods/resident-evil-2-seamless-hd-project/downloads/resident-evil-2-seamless-hd-project-for-pc-sourcenext"
+   - caption: "2.0 Packs for Dolphin"
      buttons:
-      - label: "Mega"
-        url: "https://mega.nz/#!OJgBkQqZ!1tRXRZl5Ub4N7MgDQbJaJhujj5PD-3nJjicsMCCRWt4"
-      - label: "MediaFire"
-        url: "https://www.mediafire.com/file/haxz7vl93a3lcmk/RE2SHDP_-_FMVs_Only.zip/file"
+      - label: "Dolphin"
+        url: "https://drive.google.com/file/d/1W-tUscEiKoZpYxFXasC25YZeSMpKXcq5/view?usp=sharing"
         color: "facebook"
-      - label: "GDrive"
-        url: "https://drive.google.com/u/3/uc?id=1P6cS_o721LYSyEdpewJ1niJuI0kopbQS&export=download"
+      - label: "DDS Pack"
+        url: "https://www.moddb.com/mods/resident-evil-2-seamless-hd-project/downloads/resident-evil-2-seamless-hd-project-dolphin-windows"
+   - caption: "Optional Packs for Dolphin"
+     buttons:
+      - label: "PNG Pack"
+        url: "https://www.moddb.com/mods/resident-evil-2-seamless-hd-project/downloads/resident-evil-2-seamless-hd-project-for-android"
         color: "gdrive"
-      - label: "More info"
-        url: "#fmv-pack"
+      - label: "FMV Pack"
+        url: "https://www.moddb.com/mods/resident-evil-2-seamless-hd-project/downloads/fmv-pack-for-re2shdp"
         color: "info"
 
 #Header
@@ -183,22 +169,22 @@ Our solution was to create a tool that analyzes the game data to **regenerate co
 # Frequently Asked Questions
 
 >**How do I install the pack?**<br>
-Our pack includes a custom version of Dolphin (a Gamecube emulator). All you have to do is to extract the Zip file, open Dolphin.exe, select the folder containing your game ISO, configure the controller if needed and play! **We don't provide the game ISO** and we will not help you to find one. If you can't open the zip file, you might need to download and use [7Zip <i class="fas fa-external-link-alt"></i>](https://www.7-zip.org/download.html).
+There are multiple ways to experience the Seamless HD Project for RE2 and RE3, on PC or Android. Instructions are provided in the description of the ModDB files. Just remember: GAMES ARE NOT INCLUDED FOR OBVIOUS LEGAL RESONS.  For Dolphin, you will need to get the NTSC (US) versions of the games, the packs have been made with these versions. PAL might work but will miss some HD assets related to languages.   On PC, Sourcenext versions are mandatory for the Classic Rebirth patches you can find here: <https://classicrebirth.com/>
 {: .notice }
 
 
->**Is it compatible with the PAL version?**<br>
+>**Why is it so complicated to install the PC pack?**<br>
+It involves two other parties who worked hard to make the PC version playable on recent OS and get HD textures working. We can't include everything in a pre-package because it wouldn't be fair for the original creators. When the PC versions will be truly natively compatible, it will be easier.
+{: .notice }
+
+
+>**What's the difference between DDS and PNG?**<br>
+They are different image file formats. DDS is quicker to load than PNG and should be your first choice only on Windows, it is not compatible with Android. Therefore PNG is mandatory for Android.
+{: .notice }
+
+
+>**Is it compatible with the Gamecube PAL version?**<br>
 Yes but the pack was made with the US (NTSC) version in mind thus some texts and 3d models will not be upscaled.
-{: .notice }
-
-
->**Can I use the pack on the PC version ?**<br>
-Not yet but it's on the good way thanks to the Classic Rebirth patches by Gemini. These patches will soon allow HD textures to be used. Visit https://appleofeden.de-doc.com/ for more info.
-{: .notice }
-
-
->**…and on Dolphin for Mac/Linux/Android ?**<br>
-Yes. There are already pre-packaged builds for Android and Linux available on our [Discord server <i class="fab fa-discord"></i>](https://discord.gg/xZ24wxG7FK). The sources of our custom Dolphin build are available on Github if you want to try to build it yourself: [Dolphin RESHDP edition <i class="fab fa-github"></i>](https://github.com/MoArtis/dolphin)
 {: .notice }
 
 
@@ -208,17 +194,17 @@ If you are experiencing **noticeable performance hiccups and slowdowns** when th
 
 
 >**How to turn off the pack while playing?**<br>
-You can turn the pack on and off while playing with the **DELETE** key. Please note that if you have the "**Prefetch Custom Textures**" option activated, the textures will have to be reloaded entirely again.
+**Only with the Dolphin pack.** You can turn the pack on and off while playing with the **DELETE** key. Please note that if you have the "**Prefetch Custom Textures**" option activated, the textures will have to be reloaded entirely again.
 {: .notice }
 
 
 >**How to skip the door animations?**<br>
-You can't do that in the Gamecube version. But you can hold the TAB key to speed up the game at any time. If it doesn't work, you might need to check if your GPU control panel is forcing VSync and disable it.
+You can't do that with the Dolphin pack. But you can hold the TAB key to speed up the game at any time.  If it doesn't work, you might need to check if your GPU control panel is forcing VSync and disable it.
 {: .notice }
 
 
->**How to fix the "missing DLL" errors?**<br>
-Just install the x64 version of the Visual C++ redistributable. You can download it from here: https://go.microsoft.com/fwlink/?LinkId=746572
+>**How to fix the "missing DLL" errors with Dolphin?**<br>
+Just install the x64 version of the Visual C++ redistributable. You can download it from here: <https://go.microsoft.com/fwlink/?LinkId=746572>
 {: .notice }
 
 
@@ -228,7 +214,7 @@ Yes. As we modified the emulator, it is better to ask us directly. You will find
 
 
 >**How can I contact you?**<br>
-You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/xZ24wxG7FK) or write us an issue on [Github Issues <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).  If you are part of the Dolphin community, you can check out [our dedicated forum thread <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/Thread-resident-evil-2-resident-evil-3-hd-ui-and-upscaled-textures). We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with even more ways to contact us.
+You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q) or write us an issue on [Github <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).   If you are part of the Dolphin community, you can check out [our dedicated forum thread <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/Thread-resident-evil-2-resident-evil-3-hd-ui-and-upscaled-textures).  We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with even more ways to contact us.
 {: .notice }
 
 

@@ -102,38 +102,24 @@ backgrounds:
 - /RE3_bgs/R50A04
 
 downloads:
-   - caption: "1.2 Pack (Emulator included)"
+   - caption: "2.0 Pack for Classic Rebirth"
      buttons:
-      - label: "Mega"
-        url: "https://mega.nz/file/TcZWFChT#VMzMcJxcVVUtYmP4aUj0IDdSPnbRHPSZ_OemePsfI-A"
-      - label: "MediaFire"
-        url: "https://www.mediafire.com/file/sz41fv1ny74omy3/RE3SHDP-1.2.zip/file"
-        color: "facebook"
-      - label: "GDrive"
-        url: "https://drive.google.com/uc?id=15p83dmkpunRyacKieWt_Epav58oLseob&export=download"
-        color: "gdrive"
-   # - caption: "1.1 to 1.2 patch"
-     # buttons:
-      # - label: "mega"
-        # url: "https://mega.nz/file/rmylgq5b#puzgv5pt0f9wn3i-atte3zfzleq3_na-z9iwu1y_8ue"
-      # - label: "mediafire"
-        # url: "http://www.mediafire.com/file/83t4apy39oswaz6/re3shdp_-_1.1__to_1.2_patch.zip/file"
-        # color: "facebook"
-      # - label: "gdrive"
-        # url: "https://drive.google.com/uc?id=15paiez9thtzxh8jl_hlpiobhxecjefvn&export=download"
-        # color: "gdrive"
-   - caption: "FMV Pack (Optional)"
+      - label: "ModDb"
+        url: "https://www.moddb.com/mods/resident-evil-3-nemesis-seamless-hd-project/downloads/resident-evil-3-nemesis-seamless-hd-project-for-pc-sourcenext"
+   - caption: "2.0 Packs for Dolphin"
      buttons:
-      - label: "Mega"
-        url: "https://mega.nz/file/vcQwnKzb#msT9V46NyN783RNGQSpvEzuo2ZmrKuh86AZ3i_JG4Kk"
-      - label: "MediaFire"
-        url: "https://www.mediafire.com/file/g1h3ajcglzj04c2/RE3SHDP_-_FMVs_Only.zip/file"
+      - label: "Dolphin"
+        url: "https://drive.google.com/file/d/1W-tUscEiKoZpYxFXasC25YZeSMpKXcq5/view?usp=sharing"
         color: "facebook"
-      - label: "GDrive"
-        url: "https://drive.google.com/u/3/uc?id=1424iy9U2sO8d8VCrX1DnpzWkYve8d3nH&export=download"
+      - label: "DDS Pack"
+        url: "https://www.moddb.com/mods/resident-evil-3-nemesis-seamless-hd-project/downloads/resident-evil-3-nemesis-seamless-hd-project-dolphin-windows"
+   - caption: "Optional Packs for Dolphin"
+     buttons:
+      - label: "PNG Pack"
+        url: "https://www.moddb.com/mods/resident-evil-3-nemesis-seamless-hd-project/downloads/resident-evil-3-nemesis-seamless-hd-project-for-android"
         color: "gdrive"
-      - label: "More info"
-        url: "#fmv-pack"
+      - label: "FMV Pack"
+        url: "https://www.moddb.com/mods/resident-evil-3-nemesis-seamless-hd-project/downloads/fmv-pack-for-re3shdp"
         color: "info"
 
 #Header
@@ -188,27 +174,27 @@ Our solution was to create a tool that analyzes the game data to **regenerate co
 # Frequently Asked Questions
 
 >**How do I install the pack?**<br>
-Our pack includes a custom version of Dolphin (a Gamecube emulator). All you have to do is to extract the Zip file, open Dolphin.exe, select the folder containing your game ISO, configure the controller if needed and play! **We don't provide the game ISO** and we will not help you to find one. If you can't open the zip file, you might need to download and use [7Zip <i class="fas fa-external-link-alt"></i>](https://www.7-zip.org/download.html).
+There are multiple ways to experience the Seamless HD Project for RE2 and RE3, on PC or Android. Instructions are provided in the description of the ModDB files. Just remember: GAMES ARE NOT INCLUDED FOR OBVIOUS LEGAL RESONS.  For Dolphin, you will need to get the NTSC (US) versions of the games, the packs have been made with these versions. PAL might work but will miss some HD assets related to languages.   On PC, Sourcenext versions are mandatory for the Classic Rebirth patches you can find here: <https://classicrebirth.com/>
+{: .notice }
+
+
+>**Why is it so complicated to install the PC pack?**<br>
+It involves two other parties who worked hard to make the PC version playable on recent OS and get HD textures working. We can't include everything in a pre-package because it wouldn't be fair for the original creators. When the PC versions will be truly natively compatible, it will be easier.
+{: .notice }
+
+
+>**What's the difference between DDS and PNG?**<br>
+They are different image file formats. DDS is quicker to load than PNG and should be your first choice only on Windows, it is not compatible with Android. Therefore PNG is mandatory for Android.
 {: .notice }
 
 
 >**The inventory is not upscaled. Is it normal?**<br>
-Yes. Replacing RE3's textures using Dolphin happens to be very challenging. We solved most problems but for the items displayed in the inventory and the item box, it's just impossible. The textures dumped by Dolphin are generated on the fly for every inventory combinations possible. We have no way around these billions different textures...
+Yes if you are using the Dolphin pack. Replacing RE3's textures using Dolphin happens to be very challenging. We solved most problems but for the items displayed in the inventory and the item box, it's just impossible. The textures dumped by Dolphin are generated on the fly for every inventory combinations possible. We have no way around these billions different textures...
 {: .notice }
 
 
->**Is it compatible with the PAL version?**<br>
+>**Is it compatible with the Gamecube PAL version?**<br>
 Yes but the pack was made with the US (NTSC) version in mind thus some texts and 3d models will not be upscaled.
-{: .notice }
-
-
->**Can I use the pack on the PC version ?**<br>
-Sadly no... As far as we know there is no community patch for RE3 that would potentially allow us to replace the original textures with upscaled ones. 
-{: .notice }
-
-
->**…and on Dolphin for Mac/Linux/Android ?**<br>
-Yes. There are already pre-packaged builds for Android and Linux available on our [Discord server <i class="fab fa-discord"></i>](https://discord.gg/xZ24wxG7FK). The sources of our custom Dolphin build are available on Github if you want to try to build it yourself: [Dolphin RESHDP edition <i class="fab fa-github"></i>](https://github.com/MoArtis/dolphin)
 {: .notice }
 
 
@@ -218,17 +204,17 @@ If you are experiencing **noticeable performance hiccups and slowdowns** when th
 
 
 >**How to turn off the pack while playing?**<br>
-You can turn the pack on and off while playing with the **DELETE** key. Please note that if you have the "**Prefetch Custom Textures**" option activated, the textures will have to be reloaded entirely again.
+**Only with the Dolphin pack.** You can turn the pack on and off while playing with the **DELETE** key. Please note that if you have the "**Prefetch Custom Textures**" option activated, the textures will have to be reloaded entirely again.
 {: .notice }
 
 
 >**How to skip the door animations?**<br>
-You can't do that in the Gamecube version. But you can hold the TAB key to speed up the game at any time. If it doesn't work, you might need to check if your GPU control panel is forcing VSync and disable it.
+You can't do that with the Dolphin pack. But you can hold the TAB key to speed up the game at any time.  If it doesn't work, you might need to check if your GPU control panel is forcing VSync and disable it.
 {: .notice }
 
 
->**How to fix the "missing DLL" errors?**<br>
-Just install the x64 version of the Visual C++ redistributable. You can download it from here: https://go.microsoft.com/fwlink/?LinkId=746572
+>**How to fix the "missing DLL" errors with Dolphin?**<br>
+Just install the x64 version of the Visual C++ redistributable. You can download it from here: <https://go.microsoft.com/fwlink/?LinkId=746572>
 {: .notice }
 
 
@@ -238,7 +224,7 @@ Yes. As we modified the emulator, it is better to ask us directly. You will find
 
 
 >**How can I contact you?**<br>
-You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/xZ24wxG7FK) or write us an issue on [Github <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).  If you are part of the Dolphin community, you can check out [our dedicated forum thread <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/Thread-resident-evil-2-resident-evil-3-hd-ui-and-upscaled-textures). We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with even more ways to contact us.
+You can chat with us on [Discord <i class="fab fa-discord"></i>](https://discord.gg/HCZWV6q) or write us an issue on [Github <i class="fab fa-github"></i>](https://github.com/MoArtis/ResidentEvilSeamlessHdProject/issues).   If you are part of the Dolphin community, you can check out [our dedicated forum thread <i class="fas fa-external-link-alt"></i>](https://forums.dolphin-emu.org/Thread-resident-evil-2-resident-evil-3-hd-ui-and-upscaled-textures).  We also have a <a title="The team" href="#top" class="team__toggle" type="button" style="margin-right: 0em">Team page <i class="fas fa-users"></i></a> with even more ways to contact us.
 {: .notice }
 
 
