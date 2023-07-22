@@ -5,7 +5,25 @@
     {% for member in site.data.team %}
     <div class="team-member">
         <span class="name">{{ member.name }}</span>
-        <img alt="{{ member.name }}" src="{{ member.image }}">
+        <img alt="{{ member.name }}" src="{{ member.image | relative_url }}">
+        <!-- <span class="role">{{ member.role }}</span> -->
+        {% for link in member.links %}
+        <a href="{{ link.link }}" title="{{ link.link }}" class="btn btn--primary btn--x-large">
+            {%- include fa n=link.icon -%}
+        </a>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</figure>
+
+<p class="team-title text-center">
+    Extra hands
+</p>
+
+<figure class="team-content__inner-wrap">
+    {% for member in site.data.team2 %}
+    <div class="team-member">
+        <span class="name">{{ member.name }}</span>
         <span class="role">{{ member.role }}</span>
         {% for link in member.links %}
         <a href="{{ link.link }}" title="{{ link.link }}" class="btn btn--primary btn--x-large">
@@ -15,7 +33,12 @@
     </div>
     {% endfor %}
 </figure>
+
 <p class="team-title text-center">
-    And a special thanks to <strong>Gemini</strong> for <a href="http://appleofeden.de-doc.com/index.php/downloads/resident-evil-2-classic-rebirth/">Classic Rebirth <i class="fas fa-external-link-alt"></i></a> and his help with the data structures
-    <br> and to <strong>Darren</strong> for sharing his knowledge about FMV upscaling.
+	A special thanks to these incredible folks:
+<br><strong>Gemini</strong> for <a href="https://classicrebirth.com/">Classic Rebirth <i class="fas fa-external-link-alt"></i></a> and his help with the data structures.
+<br><strong>Welsh</strong> for providing source textures.
+<br><strong>pmandin</strong> for the documentation on the different formats.
+<br><strong>TeamX</strong> for their PC HD mods and releasing their tools.
+<br><strong>Darren</strong> for sharing his knowledge about FMV upscaling.
 </p>

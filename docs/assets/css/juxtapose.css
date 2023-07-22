@@ -185,11 +185,15 @@ div.jx-image.jx-left {
 
 div.jx-image.jx-left img {
 	left: 0;
+	
+	image-rendering: pixelated;
 }
 
 div.jx-image.jx-right {
 	right: 0;
 	background-position: right;
+	
+	image-rendering: smooth;
 }
 
 div.jx-image.jx-right img {

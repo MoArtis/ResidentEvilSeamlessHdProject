@@ -1,0 +1,21 @@
+- name: "Bserv"
+  role: "RE1: User interface, Character selection screen, lab slides and more"
+  excerpt: ""
+  links:
+    - link: "https://twitter.com/bserv1"
+      icon: "fab fa-twitter"
+    - link: "https://www.youtube.com/BensonServaz"
+      icon: "fab fa-youtube"
+- name: "Xuru"
+  role: "RE1: File backgrounds, Item model textures, map models and more"
+  excerpt: ""
+- name: "Leigi"
+  role: "RE1: Reworked item icons and additional help"
+  excerpt: ""
+  links:
+    - link: "https://twitter.com/VaComoPigna"
+      icon: "fab fa-twitter"
+- name: "Saeed"
+  image: /img/team/saeed_256.png
+  role: "RE2: Quality Assurance"
+  excerpt: ""
