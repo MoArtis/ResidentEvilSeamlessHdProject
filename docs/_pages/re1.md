@@ -128,7 +128,7 @@ Please check the [FAQ](#frequently-asked-questions) before playing.
 
 # Installation guide
 
-{% include video id="848514088" provider="vimeo" %}
+{% include video id="7DJ8TqxiWDo" provider="youtube" %}
 
 <div class="feature__wrapper"></div>
 
