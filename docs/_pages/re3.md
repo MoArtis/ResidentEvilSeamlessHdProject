@@ -209,7 +209,8 @@ If you are experiencing **noticeable performance hiccups and slowdowns** when th
 
 
 >**How to skip the door animations?**<br>
-Check out this Reddit post featuring door skip gecko codes for various Resident Evil games on Gamecube: <https://www.reddit.com/r/residentevil/comments/pccwk2/resident_evil_door_skip_gecko_codes_for_gamecube/>
+Check out this Reddit post featuring door skip gecko codes for various Resident Evil games on Gamecube: <https://www.reddit.com/r/residentevil/comments/pccwk2/resident_evil_door_skip_gecko_codes_for_gamecube/>.
+
 You can also hold the TAB key to speed up the game at any time.  If it doesn't work, you might need to check if your GPU control panel is forcing VSync and disable it.
 {: .notice }
 
