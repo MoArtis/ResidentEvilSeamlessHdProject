@@ -149,12 +149,6 @@ On top of the regular videos, It features an optional Capcom logo, an alternativ
 
 <div class="feature__wrapper"></div>
 
-# Video showcase
-
-{% include video id="-nqH73D_nhg" provider="youtube" %}
-
-<div class="feature__wrapper"></div>
-
 # Frequently Asked Questions
 
 >**How do I install the pack?**<br>
